@@ -89,7 +89,8 @@ button:hover {
 
 #confirmation,
 #contact,
-#login {
+#login,
+#inscription {
     display: none;
     position: absolute;
     right: 30%;
@@ -105,7 +106,8 @@ form {
 }
 
 input,
-textarea {
+textarea,
+select {
     padding: 5px;
     margin: 2px;
     border: black solid 2px;

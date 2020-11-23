@@ -1,23 +1,69 @@
 var menu = [
     ["Produits", "#", "", "fa-code"], // 0 [0,1,2]
     ["Panier", "#", "", "fa-shopping-cart"], // 1 [0,1,2]
-    ["Service", "http://google.fr", "", "fa-concierge-bell"], // 2 [0,1,2]
-    ["Contact", "#", "onclick='contact();'", "fa-comment-alt"], // 3 [0,1,2]
-    ["Connexion", "#", "onclick='loginForm();'", "fa-user-circle"] // 3 [0,1,2]
+    ["Service", "service.html", "", "fa-concierge-bell"], // 2 [0,1,2]
+    ["Contact", "#", "onclick=\"ouvrirFenetre('#contact');\"", "fa-comment-alt"], // 3 [0,1,2]
+    ["Connexion", "#", "onclick=\"ouvrirFenetre('#login');\"", "fa-user-circle"], // 3 [0,1,2]
+    ["Incription", "#", "onclick=\"ouvrirFenetre('#inscription');\"", "fa-user-circle"] // 3 [0,1,2]
 ];
 
 
+var tabTest = [1, 2, 5, 8, "hello", ["Produits", "Panier", [45465, 4, 4, [4, 5], 45]], 1, 0, 4, 5];
+
+var service = {
+    nom: "vente",
+    photo: "https://picsum.photos/500/201",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ipsum quae facere dolorum laborum at et necessitatibus voluptatum sed laudantium voluptas praesentium eius nesciunt, natus maiores corporis debitis adipisci ducimus."
+};
+
+if (document.querySelector("#service") != null) {
+
+    document.querySelector("#nomService").innerHTML = service.nom;
+    document.querySelector("#imgService").src = service.photo;
+    document.querySelector("#descriptionService").innerHTML = service.description;
+}
 
 
+var services = [{
+        nom: "Vente",
+        photo: "https://picsum.photos/500/201",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    }, {
+        nom: "Location ",
+        photo: "https://picsum.photos/500/200",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. "
+    },
+    {
+        nom: "Maintenances",
+        photo: "https://picsum.photos/500/202",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    }
+];
+
+if (document.querySelector("#services") != null) {
+    for (let i = 0; i < services.length; i++) {
+        document.querySelector("#services").innerHTML += "<h2>" + services[i].nom + "</h2><img src='" + services[i].photo + "'> <p>" + services[i].description + "</p>";
+    }
+}
 /*
 var menu = ["Produits", "Panier"];
 var menuLink =["#produits", "#panier"]
 */
-for (i = 0; i < menu.length; i++) {
-    //   document.querySelector("#menu").innerHTML += "<li><a href='#produits'>Produits</a></li>";
-    document.querySelector("#menu").innerHTML += '<li><a href="' + menu[i][1] + '" ' + menu[i][2] + '><i class="fas ' + menu[i][3] + '"></i> ' + menu[i][0] + '</a></li>';
+if (document.querySelector("#menu") != null) {
+    for (i = 0; i < menu.length; i++) {
+        //   document.querySelector("#menu").innerHTML += "<li><a href='#produits'>Produits</a></li>";
+        document.querySelector("#menu").innerHTML += '<li><a href="' + menu[i][1] + '" ' + menu[i][2] + '><i class="fas ' + menu[i][3] + '"></i> ' + menu[i][0] + '</a></li>';
+    }
 }
 
+
+
+if (document.querySelector("#ville") != null) {
+    var villes = ["paris", "marseille", "lille", "lyon"];
+    for (i = 0; i < villes.length; i++) {
+        document.querySelector("#ville").innerHTML += '<option value="' + i + '">' + villes[i] + '</option > ';
+    }
+}
 
 var total = 0;
 
@@ -31,8 +77,11 @@ var produits = [
 ];
 
 
-for (i = 0; i < produits.length; i++) {
-    document.querySelector("#produits").innerHTML += "<article ><img src='" + produits[i][1] + "' ><p>" + produits[i][0] + "<p><h2> " + produits[i][2] + "€</h2><button onclick='ajoutPanier(" + i + ");'>Ajouter au panier</button></article>";
+if (document.querySelector("#produits") != null) {
+    for (i = 0; i < produits.length; i++) {
+
+        document.querySelector("#produits").innerHTML += "<article ><img src='" + produits[i][1] + "' title='" + produits[i][0] + "' ><p>" + produits[i][0] + "<p><h2> " + produits[i][2] + "€</h2><button onclick='ajoutPanier(" + i + ");'>Ajouter au panier</button></article>";
+    }
 }
 
 
@@ -58,46 +107,13 @@ function validerPanier() {
 }
 
 
-function contact() {
-    document.querySelector("#contact").style.display = "block";
+
+function annuler(cible) {
+    document.querySelector(cible).style.display = "none";
+    return false;
 }
 
-function loginForm() {
-    document.querySelector("#login").style.display = "block";
-}
+function ouvrirFenetre(cible) {
+    document.querySelector(cible).style.display = "block";
 
-function annuler(selector) {
-    document.querySelector(selector).style.display = "none";
-}
-
-function envoyer() {
-
-    var nom = document.forms["contactForm"]["nom"].value;
-    var prenom = document.forms["contactForm"]["prenom"].value;
-    var email = document.forms["contactForm"]["email"].value;
-    var tel = document.forms["contactForm"]["tel"].value;
-    var message = document.forms["contactForm"]["message"].value;
-
-    if (nom == '' || prenom == '' || email == '' || tel == '' || message == '') {
-        alert("Merci de remplir le formulaire correctement");
-    } else {
-        alert("message envoyé");
-
-        //alert(nom + " " + prenom + " " + tel);
-    }
-}
-
-
-function connexion() {
-    var monId = "test";
-    var monMDP = "1234";
-    var identifiant = document.forms["connexionForm"]["identifiant"].value;
-    var mdp = document.forms["connexionForm"]["mdp"].value;
-
-    if (identifiant == monId && mdp == monMDP) {
-        alert("Connexion OK");
-    } else {
-        alert("identifiant ou mdp incorrect!");
-
-    }
 }

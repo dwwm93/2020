@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Variables</h1>
+    <h2>Var</h2>
+    <div id="var"></div>
+    <h2>Let</h2>
+    <div id="let"></div>
+
+    <p id="demoLet"></p>
+    <p id="demoLet2"></p>
+    <h2>Const</h2>
+    <div id="const"></div>
+
+    <script>
+        /** declaration d'une variable par VAR 
+         *  var est une variable global
+         */
+        var varVariable = "hello VAR ";
+
+        function maFonctionVar() {
+            varVariable = "greta VAR";
+            document.querySelector("#var").innerHTML = varVariable;
+        }
+        maFonctionVar();
+        document.querySelector("#var").innerHTML += varVariable;
+
+
+        /** declaration d'une variable par LET 
+        let n'est une variable global et elle ne peut pas etre redeclarer dans le meme niveau
+        */
+        let letVariable = "hello LET";
+
+        function maFonctionLet() {
+            let letVariable = "greta LET";
+            document.querySelector("#let").innerHTML = letVariable;
+        }
+        /*
+                for(var i=0 ; i < 10 ; i++)
+                {
+
+                }
+
+                alert(i); //indefinend let
+                alert(i); //9 var
+        */
+        maFonctionLet();
+        document.querySelector("#let").innerHTML += letVariable;
+
+        let test = 5;
+        test = 18;
+
+        for (let i = 0; i < 10; i++) {
+            // some statements
+            document.querySelector("#demoLet2").innerHTML += i;
+        }
+
+        document.querySelector("#demoLet").innerHTML = test;
+
+
+
+        const i = 20;
+        //i = 10;
+
+
+        document.querySelector("#const").innerHTML = i;
+
+        const monTest = function() {
+            alert("hello");
+        }
+
+        monTest();
+
+        var monObjet = {
+            a: "paris",
+            b: function() {
+                aler("test");
+            }
+        }
+
+        /** 
+        Var = on peut redeclarer et changer sa valeur 
+        Let = on ne peut pas redeclarer mais on peut changer sa valeur
+        Const = on ne peut pas redeclarer mais on peut pas changer sa valeur
+
+        */
+    </script>
+</body>
+
+</html>
