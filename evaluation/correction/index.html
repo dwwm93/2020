@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+
+    <title>Trombi</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <img src="https://www.forpro-creteil.org/images/gmte93.png" />
+        </li>
+        <li class="big">
+          <a href="#">Accueil</a>
+        </li>
+        <li class="big">
+          <a href="#">Formation</a>
+        </li>
+        <li class="big">
+          <a href="#">Contact</a>
+        </li>
+        <li class="small">
+          <button onclick="afficheMenu()">
+            <i class="fas fa-bars fa-3x"></i>
+          </button>
+        </li>
+      </ul>
+      <div class="menu-small">
+        <ul></ul>
+      </div>
+    </nav>
+
+    <header>
+      <h1>Trombi DWWM93</h1>
+    </header>
+
+    <main>
+      <section id="eleves"></section>
+    </main>
+
+    <div id="modal">
+      <article class="fiche">
+        <header>
+          Aperçu élève
+        </header>
+        <div></div>
+        <section class="contact">
+          <form>
+            <label class="required">Nom</label>
+            <input name="nom" placeholder="Nom" />
+            <label>Prénom</label>
+            <input name="prenom" placeholder="Prénom" />
+            <label class="required">Tél</label>
+            <input name="tel" placeholder="Tel" />
+            <label>Email *</label>
+            <input name="email" placeholder="Email" />
+            <label>Sujet</label>
+            <input name="sujet" placeholder="Sujet" />
+            <textarea name="message"> </textarea>
+            <button onclick="cacheModal(event)">
+              Annuler
+            </button>
+            <button>
+              Envoyer
+            </button>
+          </form>
+        </section>
+      </article>
+    </div>
+
+    <div class="overlay-gris"></div>
+
+    <footer>
+      DWWM 2020 - 2021 – votre prénom et nom
+    </footer>
+  </body>
+</html>
