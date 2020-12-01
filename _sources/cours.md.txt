@@ -509,3 +509,17 @@ Pour se remettre de ces émotions, petite révision HTML grâce au site [webdesi
 
 Fait tous ensemble collaborativement, reprise depuis les bases, via le tutoriel [javascript en 14 minutes](https://jgthms.com/javascript-in-14-minutes/) ! (C'est mensonger, cela nous a pris 2h !!)
 
+## Mercredi 2020/11/25
+
+Découverte et inscription sur "codingwars.com".
+
+Plusieurs exercices réalisés ensemble et corrigés ensemble.
+
+## Jeudi 2020/11/26
+
+Correction en "live coding" de l'évaluation faite le mardi 24.
+
+cf `https://github.com/dwwm93/2020/tree/master/evaluation/correction`.
+
+et sur [glitch](https://glitch.com/edit/#!/cypress-obtainable-spandex)
+
