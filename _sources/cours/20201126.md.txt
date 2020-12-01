@@ -2,7 +2,7 @@
 
 Correction en "live coding" de l'évaluation faite le mardi 24.
 
-cf `https://github.com/dwwm93/2020/tree/master/evaluation/correction`.
+cf [https://github.com/dwwm93/2020/tree/master/evaluation/correction](https://github.com/dwwm93/2020/tree/master/evaluation/correction).
 
 et sur [glitch](https://glitch.com/edit/#!/cypress-obtainable-spandex)
 
