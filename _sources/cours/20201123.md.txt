@@ -1,0 +1,49 @@
+## Lundi 2020/11/23
+
+### Decouverte de LET et CONST
+
+Var = on peut redeclarer et changer sa valeur 
+Let = on ne peut pas redeclarer mais on peut changer sa valeur
+Const = on ne peut pas redeclarer mais on peut pas changer sa valeur
+
+Explications détaillées du TP, revue des concepts de la veille, notamment les appels de fonctions en paramètre d'autres fonctions.
+
+### Variable LET
+
+Example LET :
+
+```javascript
+let test = 5;
+    test = 18;
+
+    for (let i = 0; i < 10; i++) {
+        // some statements
+        document.querySelector("#demoLet2").innerHTML += i;
+    }
+
+    document.querySelector("#demoLet").innerHTML = test;
+```
+
+
+### Variable CONST
+
+Example CONST :
+
+```javascript
+ const i = 20;
+//i = 10; erreur
+    document.querySelector("#const").innerHTML = i;
+    const monTest = function() {
+        alert("hello");
+    }
+    monTest();
+
+    const monObjet = {
+        a: "paris",
+        b: function() {
+            aler("test");
+        }
+    }
+
+```
+
