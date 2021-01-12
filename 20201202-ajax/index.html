@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Informations externes</h1>
+      <button onclick="afficheChuck()">Chuck Norris fact !</button>
+      <button onclick="affichePokemon('pikachu')">Pokemon infos !</button>
+      <article id="infos">
+        <section></section>
+        <section>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente
+            culpa ab eos ullam minus! Accusamus dolorem provident blanditiis
+            adipisci natus nihil! Dignissimos soluta ullam repellat molestias
+            ducimus beatae quidem ipsum.
+          </p>
+        </section>
+      </article>
+
+      <article id="tableau">
+        <h2>Affichage des informations pour chaque pokemon</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Nom du pokemon</th>
+              <th>son image</th>
+              <th>son poids</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="nom">pikachu</td>
+              <td class="image"></td> <!-- .sprites.front_default -->
+              <td></td> <!-- .weight -->
+            </tr>
+            <tr>
+              <td class="nom">mew</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="nom">charizard</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="nom">pichu</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="nom">FAUX</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </main>
+  </body>
+</html>
