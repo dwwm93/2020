@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mardi 2020/01/12 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="mardi-2020-01-12">
+<h1>Mardi 2020/01/12<a class="headerlink" href="#mardi-2020-01-12" title="Lien permanent vers ce titre">¶</a></h1>
+<p>phpmyadmin vs mysql vs sql</p>
+<div class="section" id="manipulation-de-phpmyadmin">
+<h2>Manipulation de phpmyadmin<a class="headerlink" href="#manipulation-de-phpmyadmin" title="Lien permanent vers ce titre">¶</a></h2>
+<ol class="simple">
+<li><p>Création des tables à partir du script SQL créé dans looping ou JMerise, la veille à partir du MCD.</p></li>
+<li><p>Affichage du résultat dans le concepteur de Phpmyadmin pour bien comprendre la différence
+entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si une ligne existe dans phpmyadmin</p></li>
+<li><p>Régler les pbs d”auto increment</p></li>
+<li><p>Remplir avec des données</p></li>
+</ol>
+</div>
+<div class="section" id="sql-mysql">
+<h2>SQL /Mysql<a class="headerlink" href="#sql-mysql" title="Lien permanent vers ce titre">¶</a></h2>
+<p>pour nommer les identifiants (clé primaires!), il y a plusieurs formalismes :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">table_id</span></code> (en changeant “table” bien sûr)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tab_id</span></code> (on garde 3 lettres)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id_table</span></code></p></li>
+</ul>
+<p>mais ça ne pose aucun pb quel que soit le choix</p>
+<p>Par contre tout ce qui n”est pas comme ça, est probablement un mauvais choix</p>
+</div>
+<div class="section" id="tables-de-jointures-reexpliquees">
+<h2>Tables de jointures réexpliquées<a class="headerlink" href="#tables-de-jointures-reexpliquees" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
+<div class="section" id="ldd">
+<h2>LDD<a class="headerlink" href="#ldd" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">article</span><span class="p">(</span>
+   <span class="n">id</span> <span class="nb">INT</span>  <span class="n">AUTO_INCREMENT</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="p">,</span>
+ <span class="p">....</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="decouverte-des-requetes-lmd">
+<h2>Découverte des requêtes LMD<a class="headerlink" href="#decouverte-des-requetes-lmd" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Jusqu”à présent, on a utilisé du « LDD » (CREATE , ALTER …) pour donner les instructions à mysql sur comment créer la structure des données</p>
+<p>now il est temps d”utiliser le LMD !</p>
+<p>c”est la partie de SQL qui permet de manipuler les données</p>
+<p>=&gt; lire les données :
+<code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">.....</span> <span class="pre">FROM</span> <span class="pre">la_table;</span></code></p>
+<p>=&gt; <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">col1,</span> <span class="pre">col2</span> <span class="pre">...</span> <span class="pre">FROM</span> <span class="pre">ma_table;</span></code></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="k">user</span><span class="p">;</span>  
+</pre></div>
+</div>
+<blockquote>
+<div><p>Petite recommandation : mettre en majuscule les mots clé SQL, et en minuscule le reste</p>
+</div></blockquote>
+<p>NB: les ` sont facultatifs</p>
+<p>si je veux toutes les colonnes : <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">ma_table;</span></code></p>
+<p>pour le <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> : conditions que les données que je veux récupérer doivent valider</p>
+<p>exemple : <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">utilisateur</span> <span class="pre">WHERE</span> <span class="pre">nom</span> <span class="pre">=</span> <span class="pre">'dusse';</span></code></p>
+<p>la ca veut dire : selectionner toutes les colonnes d”utilisateur où le nom est « dusse » ?</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">utilisateur</span> <span class="k">WHERE</span> <span class="n">nom</span> <span class="o">=</span> <span class="s1">&#39;dusse&#39;</span> <span class="k">AND</span> <span class="n">prenom</span> <span class="o">=</span> <span class="s1">&#39;jean-claude&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>autant de AND qu”on veut</p>
+</div></blockquote>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">utilisateur</span> <span class="k">WHERE</span> <span class="n">nom</span> <span class="o">=</span> <span class="s1">&#39;dusse&#39;</span> <span class="k">OR</span> <span class="n">prenom</span> <span class="o">=</span> <span class="s1">&#39;jean-claude&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Ou Dusse ou les jean Claude?</p>
+<p>le OR n”est pas exclusif, donc ce sera tous les jean claude + les dusse</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">utilisateur</span> <span class="k">WHERE</span> <span class="n">nom</span> <span class="o">=</span> <span class="s1">&#39;dusse&#39;</span> <span class="k">OR</span> <span class="n">prenom</span> <span class="o">=</span> <span class="s1">&#39;jean-claude&#39;</span> <span class="k">AND</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>:danger:</p>
+<p>là c”est comme les « + » et les « x » qd vous étiez au collège : qui gagne ??!!</p>
+<p>une idée de réponse : <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">utilisateur</span> <span class="pre">WHERE</span> <span class="pre">(nom</span> <span class="pre">=</span> <span class="pre">'dusse'</span> <span class="pre">OR</span> <span class="pre">prenom</span> <span class="pre">=</span> <span class="pre">'jean-claude')</span> <span class="pre">AND</span> <span class="pre">age</span> <span class="pre">&gt;</span> <span class="pre">50;</span></code></p>
+<div class="section" id="insert">
+<h3>INSERT<a class="headerlink" href="#insert" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">ma_table</span> <span class="p">(</span><span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">,</span> <span class="p">...)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">,</span> <span class="p">...);</span>
+</pre></div>
+</div>
+<p>Ici l”ordre est important : val1 va dans col1, val2 va dans col2 …</p>
+<p><a class="reference external" href="https://www.w3schools.com/sql/sql_syntax.asp">w3schools sql</a> !</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">ma_table</span> <span class="k">SET</span> <span class="n">col1</span> <span class="o">=</span> <span class="n">val1</span><span class="p">,</span> <span class="n">col2</span><span class="o">=</span><span class="n">val2</span> <span class="k">WHERE</span> <span class="n">id</span><span class="o">=</span> <span class="n">xxx</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>ATTENTION à ne pas oublier le WHERE !!</p>
+<blockquote>
+<div><p>permet de modifier tous les enregistrements (les lignes quoi) qui correspondent à la condition du WHERE</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2020</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/20210112.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

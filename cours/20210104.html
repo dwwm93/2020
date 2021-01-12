@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lundi 2021/01/04 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="lundi-2021-01-04">
+<h1>Lundi 2021/01/04<a class="headerlink" href="#lundi-2021-01-04" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Début du php !!</p>
+<div class="section" id="presentation">
+<h2>Présentation<a class="headerlink" href="#presentation" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>PHP = logiciel ET un langage</p></li>
+<li><p>par ex sur windows : le logiciel est php.exe</p></li>
+<li><p>le langage reste « PHP »</p></li>
+</ul>
+<p>au départ ça voulait dire Personal Home Page le but c”était de générer du HTML
+exactement le meme but que lorsqu”on créait des innerHTML en javascript</p>
+<p>On crée un fichier « index.php » !</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+  <span class="k">echo</span> <span class="s2">&quot;premier code php&quot;</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h2>
+<ol class="simple">
+<li><p>Ouvrir le terminal intégré dans vscode</p></li>
+<li><p>Taper <code class="docutils literal notranslate"><span class="pre">php</span> <span class="pre">-v</span></code>  (le v est en minuscule, et notez l”espace)</p></li>
+</ol>
+<p>pour ceux qui ont des windows, ça ne devrait pas marcher, pour les autres (mac, linux…) ça devrait le faire</p>
+<p>comment faire pour les windowsiens ?</p>
+<p>=&gt; https://getcomposer.org/doc/00-intro.md#using-the-installer
+getcomposer.orggetcomposer.org
+Introduction - Composer
+A Dependency Manager for PHP</p>
+<p>on va installer « composer » (on s”en servira plus tard), et il va nous rendre php accessible partout</p>
+<p>options par défaut, sauf le « PATH » de php</p>
+<p>exemple de chemin vers php pour les windows : C:/wamp64/bin/php7.2/php.exe</p>
+<p>ensuite fermer vscode et le rouvrir, puis refaire php -v</p>
+<p>https://www.wampserver.com/</p>
+<div class="section" id="intelephense">
+<h3>Intelephense<a class="headerlink" href="#intelephense" title="Lien permanent vers ce titre">¶</a></h3>
+</div>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Lien permanent vers ce titre">¶</a></h2>
+<p>plusieurs choses :</p>
+<ol class="simple">
+<li><p>les variables commencent par des « $ » en php (ici en js on aurait : let var = « texte »;</p></li>
+<li><p>les instructions se terminent par un « ; » !!!!!!!</p></li>
+<li><p>en js on aurait : <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">bonjour</span> <span class="pre">=</span> <span class="pre">&quot;Bonjour</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">nom;</span></code> donc la concaténation des chaines de caractères en php se fait avec le « . »</p></li>
+</ol>
+<p>Exécution :</p>
+<p><code class="docutils literal notranslate"><span class="pre">php</span> <span class="pre">le_nom_du_script.php</span></code></p>
+<p>avec un espace entre php et <code class="docutils literal notranslate"><span class="pre">le_nom_du_script.php</span></code>.</p>
+<p>Vu :</p>
+<ul class="simple">
+<li><p>tableaux</p></li>
+<li><p>boucles</p></li>
+<li><p>conditions</p></li>
+<li><p>tableaux associatifs</p></li>
+</ul>
+</div>
+<div class="section" id="exercice-pour-s-entrainer-pour-les-fonctions">
+<h2>Exercice pour s”entraîner pour les fonctions<a class="headerlink" href="#exercice-pour-s-entrainer-pour-les-fonctions" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Afficher un tableau sous forme de texte.</p>
+<p>But : utiliser uniquement les fonctions que je fournissais</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2020</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/20210104.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

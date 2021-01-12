@@ -1,0 +1,76 @@
+## Lundi 2021/01/04
+
+Début du php !!
+
+### Présentation 
+
+* PHP = logiciel ET un langage
+* par ex sur windows : le logiciel est php.exe
+* le langage reste "PHP"
+
+au départ ça voulait dire Personal Home Page le but c'était de générer du HTML
+exactement le meme but que lorsqu'on créait des innerHTML en javascript
+
+On crée un fichier "index.php" !
+
+```php
+<?php
+  echo "premier code php";
+?>
+```
+### Installation
+
+1. Ouvrir le terminal intégré dans vscode
+2. Taper `php -v`  (le v est en minuscule, et notez l'espace) 
+
+pour ceux qui ont des windows, ça ne devrait pas marcher, pour les autres (mac, linux...) ça devrait le faire
+
+comment faire pour les windowsiens ?
+
+=> https://getcomposer.org/doc/00-intro.md#using-the-installer
+getcomposer.orggetcomposer.org
+Introduction - Composer
+A Dependency Manager for PHP
+
+on va installer "composer" (on s'en servira plus tard), et il va nous rendre php accessible partout
+
+options par défaut, sauf le "PATH" de php
+
+exemple de chemin vers php pour les windows : C:/wamp64/bin/php7.2/php.exe
+
+ensuite fermer vscode et le rouvrir, puis refaire php -v
+
+https://www.wampserver.com/
+
+#### Intelephense
+
+
+
+### Code
+
+plusieurs choses :
+
+1. les variables commencent par des "$" en php (ici en js on aurait : let var = "texte";
+2. les instructions se terminent par un ";" !!!!!!!
+3. en js on aurait : `let bonjour = "Bonjour " + nom;` donc la concaténation des chaines de caractères en php se fait avec le "."
+
+Exécution :
+
+`php le_nom_du_script.php`
+
+avec un espace entre php et `le_nom_du_script.php`.
+
+Vu :
+
+* tableaux
+* boucles
+* conditions
+* tableaux associatifs
+
+### Exercice pour s'entraîner pour les fonctions
+
+Afficher un tableau sous forme de texte.
+
+But : utiliser uniquement les fonctions que je fournissais
+
+

@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeudi 2020/12/17 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="jeudi-2020-12-17">
+<h1>Jeudi 2020/12/17<a class="headerlink" href="#jeudi-2020-12-17" title="Lien permanent vers ce titre">¶</a></h1>
+<p>NB: Pendant ce temps les élèves avaient les réunions pédagogiques.</p>
+<p>On continue le projet de fin d”année avec des conseils sur la mise en page et le code.</p>
+<div class="section" id="mise-en-page-footer">
+<h2>Mise en page Footer<a class="headerlink" href="#mise-en-page-footer" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="https://www.alioze.com/footer">ressource alioze.com</a></p>
+<blockquote>
+<div><p>Tout d’abord, votre pied de page doit être divisé en une section différente pour chacun des éléments : menu de navigation, mentions légales et CGU, appel à l’action (CTA), icônes de réseaux sociaux, etc. Les éléments les plus importants (souvent les informations de contact ou les appels à l’action) doivent être mis en avant.</p>
+</div></blockquote>
+</div>
+<div class="section" id="cta">
+<h2>CTA<a class="headerlink" href="#cta" title="Lien permanent vers ce titre">¶</a></h2>
+<blockquote>
+<div><p>CTA = call to action =&gt; « Un call to action - aussi appelé CTA - est un élément cliquable positionné sur une page de site internet, un blog ou un email qui incite vos visiteurs à effectuer une action précise, mais une action utile qui les font avancer dans leur parcours d’achat.
+Il peut prendre la forme d’une image, d’un lien, d’un bouton voire d’un bot et doit être utilisé à toutes les étapes du parcours d’achat. «  (source : https://www.ideagency.fr/blog/call-to-action )</p>
+</div></blockquote>
+</div>
+<div class="section" id="json">
+<h2>JSON<a class="headerlink" href="#json" title="Lien permanent vers ce titre">¶</a></h2>
+<p>pour rappel : JSON = chaine de caractère (c”est du texte) qui représente un « objet » javascript</p>
+<p>On peut transformer un objet js en json et vice versa grâce à :</p>
+<p><code class="docutils literal notranslate"><span class="pre">JSON.stringify(objet_js)</span></code> : js =&gt; json</p>
+<p><code class="docutils literal notranslate"><span class="pre">JSON.parse(chaine_json)</span></code> : json =&gt; js</p>
+</div>
+<div class="section" id="chaining">
+<h2>Chaining<a class="headerlink" href="#chaining" title="Lien permanent vers ce titre">¶</a></h2>
+<p>:danger:  si vous faites plusieurs « . » en jquery d”affilée (genre $(“#id1”).append(« … »).append(« xx »).on(« click »… , vous etes en train de faire ça : https://www.w3schools.com/JQuery/jquery_chaining.asp</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>exemple :
+
+let elem = $(&#39;#id1&#39;);
+let res = elem.append(&quot;&lt;p&gt;texte&lt;/p&gt;&quot;);
+</pre></div>
+</div>
+<p>=&gt; qu”y a til dans « res » ?? la balise « p » ou la balise « #id1 » ?</p>
+<p>donc si on fait <code class="docutils literal notranslate"><span class="pre">res.on(&quot;click&quot;</span> <span class="pre">,</span> <span class="pre">function</span> <span class="pre">(....</span></code> =&gt; quel est l”élément qui déclenche le clic ? le clic sur le p ou le clic sur le “#id1” ? !</p>
+</div>
+<div class="section" id="jquery-each">
+<h2>Jquery each<a class="headerlink" href="#jquery-each" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">key</span> <span class="o">&lt;</span> <span class="nx">tableau</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">key</span><span class="o">++</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">tableau</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
+    <span class="c1">// traitement</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>c”est similaire à</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">tableau</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// traitement</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>c”est jquery qui te fournit key et val à ta place</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2020</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/20201217.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

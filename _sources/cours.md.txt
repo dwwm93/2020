@@ -1098,3 +1098,268 @@ https://www.w3schools.com/bootstrap4/bootstrap_modal.asp
 https://bootswatch.com/
 
 puis ajouter une modale qui contient un form, et essayer de mettre le $.post de ce matin
+
+## Jeudi 2020/12/17
+
+NB: Pendant ce temps les élèves avaient les réunions pédagogiques.
+
+On continue le projet de fin d'année avec des conseils sur la mise en page et le code.
+
+### Mise en page Footer
+
+[ressource alioze.com](https://www.alioze.com/footer)
+
+> Tout d’abord, votre pied de page doit être divisé en une section différente pour chacun des éléments : menu de navigation, mentions légales et CGU, appel à l’action (CTA), icônes de réseaux sociaux, etc. Les éléments les plus importants (souvent les informations de contact ou les appels à l’action) doivent être mis en avant.
+
+### CTA
+
+> CTA = call to action => "Un call to action - aussi appelé CTA - est un élément cliquable positionné sur une page de site internet, un blog ou un email qui incite vos visiteurs à effectuer une action précise, mais une action utile qui les font avancer dans leur parcours d’achat. 
+> Il peut prendre la forme d’une image, d’un lien, d’un bouton voire d’un bot et doit être utilisé à toutes les étapes du parcours d’achat. " (source : https://www.ideagency.fr/blog/call-to-action )
+
+### JSON
+
+pour rappel : JSON = chaine de caractère (c'est du texte) qui représente un "objet" javascript
+
+On peut transformer un objet js en json et vice versa grâce à :
+
+`JSON.stringify(objet_js)` : js => json
+
+`JSON.parse(chaine_json)` : json => js
+
+### Chaining
+
+:danger:  si vous faites plusieurs "." en jquery d'affilée (genre $('#id1').append("...").append("xx").on("click"... , vous etes en train de faire ça : https://www.w3schools.com/JQuery/jquery_chaining.asp
+
+    exemple :
+
+    let elem = $('#id1');
+    let res = elem.append("<p>texte</p>");
+
+=> qu'y a til dans "res" ?? la balise "p" ou la balise "#id1" ?
+
+donc si on fait `res.on("click" , function (....` => quel est l'élément qui déclenche le clic ? le clic sur le p ou le clic sur le '#id1' ? ! 
+
+### Jquery each
+
+```js
+for (let key = 0; key < tableau.length; key++){
+    let val = tableau[key]
+    // traitement
+}
+```
+
+c'est similaire à
+
+```js
+$.each(tableau, function (key, val) {
+  // traitement
+})
+```
+
+c'est jquery qui te fournit key et val à ta place
+
+
+## Vendredi 2020/12/18
+
+Dernière ligne droite pour le projet.
+
+On fait bien attention :
+
+1. à faire des fonctions génériques - boîtes noires -, qui prennent des arguments en entrée, et pas des fonctions qui vont modifier / utiliser des variables qui ne leur appartiennent pas
+
+2. à écrire des commentaires de qualité qui expliquent fonctionnellement ce que font les bouts de codes ( syntaxe : 
+
+```js
+/**
+ * Commentaire de ma fonction
+ * @param {string} paramString blablabla
+ */
+```
+
+3. à l'ordre de déclenchement des instructions, car quand on utilise $.get ou autres fonctions "ajax" (= asynchrone !!), l'ordre d'exécution n'est pas linéaire
+
+### Révisions jquery / bootstrap
+
+## Lundi 2021/01/04
+
+Début du php !!
+
+### Présentation 
+
+* PHP = logiciel ET un langage
+* par ex sur windows : le logiciel est php.exe
+* le langage reste "PHP"
+
+au départ ça voulait dire Personal Home Page le but c'était de générer du HTML
+exactement le meme but que lorsqu'on créait des innerHTML en javascript
+
+On crée un fichier "index.php" !
+
+```php
+<?php
+  echo "premier code php";
+?>
+```
+### Installation
+
+1. Ouvrir le terminal intégré dans vscode
+2. Taper `php -v`  (le v est en minuscule, et notez l'espace) 
+
+pour ceux qui ont des windows, ça ne devrait pas marcher, pour les autres (mac, linux...) ça devrait le faire
+
+comment faire pour les windowsiens ?
+
+=> https://getcomposer.org/doc/00-intro.md#using-the-installer
+getcomposer.orggetcomposer.org
+Introduction - Composer
+A Dependency Manager for PHP
+
+on va installer "composer" (on s'en servira plus tard), et il va nous rendre php accessible partout
+
+options par défaut, sauf le "PATH" de php
+
+exemple de chemin vers php pour les windows : C:/wamp64/bin/php7.2/php.exe
+
+ensuite fermer vscode et le rouvrir, puis refaire php -v
+
+https://www.wampserver.com/
+
+#### Intelephense
+
+
+
+### Code
+
+plusieurs choses :
+
+1. les variables commencent par des "$" en php (ici en js on aurait : let var = "texte";
+2. les instructions se terminent par un ";" !!!!!!!
+3. en js on aurait : `let bonjour = "Bonjour " + nom;` donc la concaténation des chaines de caractères en php se fait avec le "."
+
+Exécution :
+
+`php le_nom_du_script.php`
+
+avec un espace entre php et `le_nom_du_script.php`.
+
+Vu :
+
+* tableaux
+* boucles
+* conditions
+* tableaux associatifs
+
+### Exercice pour s'entraîner pour les fonctions
+
+Afficher un tableau sous forme de texte.
+
+But : utiliser uniquement les fonctions que je fournissais
+
+
+## Mardi 2020/01/12
+
+phpmyadmin vs mysql vs sql 
+
+### Manipulation de phpmyadmin
+
+1. Création des tables à partir du script SQL créé dans looping ou JMerise, la veille à partir du MCD.
+2. Affichage du résultat dans le concepteur de Phpmyadmin pour bien comprendre la différence
+   entre le MCD et le MLD, et l'absence de "relation" dans le MLD, même si une ligne existe dans phpmyadmin
+3. Régler les pbs d'auto increment
+4. Remplir avec des données
+
+### SQL /Mysql
+
+pour nommer les identifiants (clé primaires!), il y a plusieurs formalismes :
+
+* `id`
+* `table_id` (en changeant 'table' bien sûr)
+* `tab_id` (on garde 3 lettres)
+* `id_table`
+
+mais ça ne pose aucun pb quel que soit le choix
+
+Par contre tout ce qui n'est pas comme ça, est probablement un mauvais choix
+
+### Tables de jointures réexpliquées
+
+### LDD
+
+```sql
+CREATE TABLE article(
+   id INT  AUTO_INCREMENT NOT NULL ,
+ ....
+) ENGINE=InnoDB;
+```  
+
+### Découverte des requêtes LMD
+
+Jusqu'à présent, on a utilisé du "LDD" (CREATE , ALTER ...) pour donner les instructions à mysql sur comment créer la structure des données  
+
+now il est temps d'utiliser le LMD !
+
+c'est la partie de SQL qui permet de manipuler les données
+
+=> lire les données :
+`SELECT ..... FROM la_table;`
+
+=> `SELECT col1, col2 ... FROM ma_table;`
+
+```sql
+SELECT name FROM user;  
+```
+
+> Petite recommandation : mettre en majuscule les mots clé SQL, et en minuscule le reste
+
+NB: les ` sont facultatifs
+
+si je veux toutes les colonnes : `SELECT * FROM ma_table;`
+
+pour le `WHERE` : conditions que les données que je veux récupérer doivent valider
+
+exemple : `SELECT * FROM utilisateur WHERE nom = 'dusse';`
+
+la ca veut dire : selectionner toutes les colonnes d'utilisateur où le nom est "dusse" ?
+
+```sql
+SELECT * FROM utilisateur WHERE nom = 'dusse' AND prenom = 'jean-claude';
+```
+
+> autant de AND qu'on veut
+
+```sql
+SELECT * FROM utilisateur WHERE nom = 'dusse' OR prenom = 'jean-claude';
+```
+
+Ou Dusse ou les jean Claude?
+
+le OR n'est pas exclusif, donc ce sera tous les jean claude + les dusse
+
+```sql
+SELECT * FROM utilisateur WHERE nom = 'dusse' OR prenom = 'jean-claude' AND age > 50;
+```
+
+:danger:
+
+là c'est comme les "+" et les "x" qd vous étiez au collège : qui gagne ??!!
+
+une idée de réponse : `SELECT * FROM utilisateur WHERE (nom = 'dusse' OR prenom = 'jean-claude') AND age > 50;`
+
+#### INSERT
+
+```sql
+INSERT INTO ma_table (col1, col2, ...) VALUES (val1, val2, ...);
+```
+
+Ici l'ordre est important : val1 va dans col1, val2 va dans col2 ...
+
+[w3schools sql](https://www.w3schools.com/sql/sql_syntax.asp) !
+
+```sql
+UPDATE ma_table SET col1 = val1, col2=val2 WHERE id= xxx;
+```
+
+ATTENTION à ne pas oublier le WHERE !!  
+
+> permet de modifier tous les enregistrements (les lignes quoi) qui correspondent à la condition du WHERE
+
