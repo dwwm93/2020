@@ -1,0 +1,64 @@
+## Mercredi 2020/12/02
+
+des exercices pour jquery : [w3schools](https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors1)
+
+=> exercices : selectors , get, set, add, remove, hide and show (modifié) 
+
+l'explication pour l'exercice 6 des selecteurs : https://api.jquery.com/odd-selector/ , c'est équivalent à "nth-child(odd)" d'habitude
+
+pour l'instant, il n'y a pas besoin d'aller lire cette page !! c'est la doc officielle jquery, mais elle n'est pas très accessible aux débutants
+
+à savoir : "GET" = récupération des données, donc il s'agit des méthodes jquery qui lisent les valeurs, comme $('p').text() ou $("input#prenom").val() -> ça va lire le contenu du texte des balises <p> ou lire la valeur des input d'id=prenom !
+
+quant à "SET" = modification des données, donc on utilise les mêmes méthodes mais en donnant des paramètres qui vont remplacer la valeur actuelle, ex: $('p').text("nouveau texte") 
+
+vous pouvez zapper les questions sur les "attributs"
+
+### Première présentation de AJAX
+
+#### Version avec "load"
+
+```javascript
+$("article#infos>section:first-child").text("Je remplis ma section.");
+
+const urlChuckNorris = "https://api.icndb.com/jokes/random";
+
+const urlPokemon = "https://pokeapi.co/api/v2/pokemon/";// https://api.jquery.com/load/
+
+/**
+ * Affiche dans la balise pre>p un chuck norris fact
+ */
+function afficheChuck() {
+  $("article#infos>section>pre>p").load(urlChuckNorris);
+}
+
+/**
+ * Affiche les caractéristiques du pokemon demandé !
+ *
+ * @param {string} pokemon
+ */
+function affichePokemon(pokemon) {
+  const url = urlPokemon + pokemon; // https://pokeapi.co/api/v2/pokemon/pikachu si pokemon = 'pikachu'
+  $("article#infos>section>pre>p").load(url);
+}
+```
+
+#### Version avec .get
+
+```javascript
+/**
+ *
+ * @param {string} pokemon Nom du pokemon à afficher
+ */
+function affichePokemon(pokemon) {
+  let url = urlPokemon + pokemon;
+  $.get(url).done(function (resultat) {
+    console.log(resultat);
+    $("article#infos>section>p").text(resultat.name);
+    $("article#infos>section>p").append(
+      "<img src='" + resultat.sprites.front_shiny + "'>"
+    );
+  });
+}
+```
+

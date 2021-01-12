@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeudi 2020/12/10 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="jeudi-2020-12-10">
+<h1>Jeudi 2020/12/10<a class="headerlink" href="#jeudi-2020-12-10" title="Lien permanent vers ce titre">¶</a></h1>
+<p>https://developer.mozilla.org/fr/docs/Web/HTTP/M%C3%A9thode</p>
+<blockquote>
+<div><p>HTTP définit un ensemble de méthodes de requête qui indiquent l”action que l”on souhaite réaliser sur la ressource indiquée. Bien qu”on rencontre également des noms (en anglais), ces méthodes sont souvent appelées verbes HTTP. Chacun d”eux implémente une sémantique différente mais certaines fonctionnalités courantes peuvent être partagées par différentes méthodes (e.g. une méthode de requête peut être sûre (safe), idempotente ou être mise en cache (cacheable)).</p>
+</div></blockquote>
+<p>HTTP = moyen que les gens qui ont inventé internet utilisent pour que les machines communiquent entre elles</p>
+<p>(ps : http:// ça vient de là ! et la version sécurisée : https://)</p>
+<p>il faut imaginer internet comme une ville : pour relier les maisons on a fait les routes (=les cables), les adresses postales (les IP), les lettres/sonnettes - dsl pour l”analogie bof- (http)</p>
+<p>et un protocole d”affichage (j”ai pas d”exemple pour la ville) le web</p>
+<p>les méthodes qui nous préoccupent GET / POST / DELETE</p>
+<p>GET = récupération de la page indiquée</p>
+<p>POST = envoi d”une information à l”adresse indiquée</p>
+<p>ex: formulaire !!</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;index.html&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nom&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;quel est le nom du pokemon ?&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>OK<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>DELETE = ??? à votre avis :sourire_narquois:</p>
+<p>https://api.jquery.com/jquery.ajax/</p>
+<p>sur la page https://api.jquery.com/jquery.get/ , pour la methode $.get, on voit que ça se base sur « $.ajax »</p>
+<p>il disent :</p>
+<blockquote>
+<div><p>This is a shorthand Ajax function, which is equivalent to:</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$.ajax({
+  url: url,
+  type: &quot;GET&quot;,
+  data: data,
+  success: success,
+  dataType: dataType
+});
+</pre></div>
+</div>
+<div class="section" id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
+<p>sur la page que vous voulez, avec ajax vous allez faire un GET sur https://jsonplaceholder.typicode.com/users , et afficher le résultat dans un <pre> sans chichi</p>
+<p>si tu veux que ce soit plus joli tu peux mettre direct JSON.stringify(data)</p>
+<p>puis on va faire un « POST » sur la meme url</p>
+<p>par le biais d”un formulaire pour commencer</p>
+<p>SOLUTION : j”ai l”id 11 c”est bon</p>
+</div>
+<div class="section" id="post-jquery">
+<h2>POST jquery<a class="headerlink" href="#post-jquery" title="Lien permanent vers ce titre">¶</a></h2>
+<p>le formulaire vous « déplace » vers la cible de l”action, donc vous vous retrouvez sur le site https://jsonplaceholder.typicode.com/users</p>
+<p>avec la réponse id:11</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;https://jsonplaceholder.typicode.com/users&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nb">input</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span> <span class="n">placeholder</span><span class="o">=</span><span class="s2">&quot;Nom de l&#39;utilisateur&quot;</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="n">button</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">&gt;</span><span class="n">Envoyer</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>une des caractéristiques de la requête HTTP « POST » : c”est qu”elle peut transporter des informations supplémentaires</p>
+<p>donc ici les infos c”est <code class="docutils literal notranslate"><span class="pre">{name:</span> <span class="pre">CE_QUI_EST_ECRIT_DANS_L_INPUT}</span></code></p>
+<p>ici name est la valeur de l”attribut « name » dans la balise input</p>
+<p>donc si j”ai <code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">name=&quot;prenom&quot;</span> <span class="pre">/&gt;</span></code>  =&gt; quelles vont etre les infos POST-ées ?</p>
+<p>=&gt; {prenom: INPUT_VALUE}</p>
+<p>la version jquery POST</p>
+<p>$.post(url, data).done(function (response) …..</p>
+<p>la différence c”est « data »</p>
+<p>=&gt; les données supplémentaires que le POST peut envoyer</p>
+<p>sous la forme d”un objet js, exemple : <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">nom:</span> <span class="pre">&quot;kim&quot;,</span> <span class="pre">prenom:</span> <span class="pre">&quot;san</span> <span class="pre">goku&quot;</span> <span class="pre">}</span></code></p>
+<p>cf ici !</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="o">//</span> <span class="n">Si</span> <span class="n">la</span> <span class="n">requete</span> <span class="n">échoue</span><span class="p">,</span> <span class="n">c</span><span class="s1">&#39;est cette fonction anonyme là qui va être utilisée par jquery,</span>
+      <span class="o">//</span> <span class="n">et</span> <span class="n">pas</span> <span class="n">celle</span> <span class="n">de</span> <span class="s2">&quot;.done&quot;</span>
+      <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+      <span class="o">//</span> <span class="n">J</span><span class="s1">&#39;affiche l&#39;</span><span class="n">erreur</span> <span class="n">dans</span> <span class="n">la</span> <span class="n">case</span> <span class="n">à</span> <span class="n">côté</span> <span class="p">:</span>
+      <span class="n">caseJquery</span>
+        <span class="o">.</span><span class="n">next</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">html</span><span class="p">(</span><span class="s2">&quot;&lt;span style=&#39;color: red;&#39;&gt; &quot;</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">responseText</span> <span class="o">+</span> <span class="s2">&quot; &lt;/span&gt;&quot;</span><span class="p">);</span>
+    <span class="p">})</span>
+</pre></div>
+</div>
+<p>Donc on pourrait écrire ça :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>const url = &quot;https://jsonplaceholder.typicode.com/users&quot;;
+const data = { nom: &quot;baggins&quot;, prenom: &quot;bilbo&quot; };$.post(url, data).done(function(reponse){
+   $(&#39;h1&#39;).text(&quot;SUCCESS !&quot;); // ou pourquoi pas $(&#39;..............&#39;).html(JSON.stringify(reponse))
+}).fail(function (reponse){
+  $(&#39;h1&#39;).text(&quot;ERROR &quot; + reponse.responseText);
+})
+</pre></div>
+</div>
+<p>BOOTSTRAP https://www.w3schools.com/bootstrap4/</p>
+<p>https://www.w3schools.com/bootstrap4/trybs_template1.htm</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2020</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/20201210.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

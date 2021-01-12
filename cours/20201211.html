@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vendredi 2020/12/11 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="vendredi-2020-12-11">
+<h1>Vendredi 2020/12/11<a class="headerlink" href="#vendredi-2020-12-11" title="Lien permanent vers ce titre">¶</a></h1>
+<p>bon, on se met en jambes en faisant l”exercice d”hier soir ?</p>
+<p>on essaie de déclencher le $.post en cliquant sur le bouton submit</p>
+<p>ca marche</p>
+<p>Pour l”exercice :</p>
+<ul class="simple">
+<li><p>est-ce que ça marchait bien pour vous sans changer de page avec le $.post hier ?</p></li>
+<li><p>est-ce que vous arrivez à lire les valeurs de l”input du form et à les envoyer via le $.post ainsi que la valeur de l”attribut action du form pour remplir l”url du $.post ?</p></li>
+<li><p>est-ce que vous arrivez à déclencher le $.post à partir du bouton submit ?</p></li>
+<li><p>est-ce que vous arrivez à supprimer le submit par défaut du formulaire pour éviter de vous rendre sur la page indiquée dans <code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">action=&quot;xxxx&quot;</span></code></p></li>
+</ul>
+<p>vous ete sur discord??</p>
+<p>oui</p>
+<p>oui</p>
+<p>:croissant:</p>
+<p>:croissant:</p>
+<p>je peut avoir un lien svp!</p>
+<p>moi j’ arive pas</p>
+<p>en fait perso j”ai téléchargé l”appli</p>
+<p>https://discord.com/channels/783391372169183265/783391372169183268
+DiscordDiscord
+Discord - A New Way to Chat with Friends &amp; Communities
+Discord is the easiest way to communicate over voice, video, and text. Chat, hang out, and stay close with your friends and communities. (62 ko)
+https://discord.com/assets/ee7c382d9257652a88c8f7b7f22a994d.png</p>
+<p>Thank”s Rathak</p>
+<p>merci</p>
+<p>derien</p>
+<p>https://stackoverflow.com/a/1357151/8721626 je pose ça là …
+Stack OverflowStack Overflow
+event.preventDefault() vs. return false
+When I want to prevent other event handlers from executing after a certain event is fired, I can use one of two techniques. I”ll use jQuery in the examples, but this applies to plain-JS as well: 1.</p>
+<p>il y a une différence entre le « event » du formulaire normal, et le « event » de jquery</p>
+<p>ce n”est pas le même « event » !</p>
+<p>celui de jquery il est redispatché à tous les autres (parce que je peux créer plusieurs $(“xxx”).on(“click”,</p>
+<form ...>
+  <button onclick='mafunc()' >clic
+...function mafunc(event){
+  event.preventDefault()
+}<p>Ici c”est l”event du navigateur</p>
+<p>Par contre si on utilise jquery !</p>
+<p>on va avoir un bouton sans « onclick », et à la place on aura :</p>
+<p>$(“button”).on(“click”, function (event) {..</p>
+<p>ici l”event est un evenment JQUERY pas celui du navigateur, parce que je peux déclarer plusieurs on(“click”, … sur le meme bouton</p>
+<p>donc pour un event jquery il faut :</p>
+<p>event.preventDefault()</p>
+<p>et</p>
+<p>event.stopPropagation()</p>
+<p>pour pas que l”event passe au formulaire quand même</p>
+<p>3ème solution, celle d”Esat : <code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">onSubmit=&quot;return</span> <span class="pre">false&quot;</span></code></p>
+<p><a class="reference external" href="https://apical.xyz/fiches/la_validation_d_un_formulaire_web_002/event_preventDefault_vs_event_stopPropagation">preventDefault apical.xyzapical.xyz</a></p>
+<p>ah merci !</p>
+<p>Sympa le lien ! Merci !</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_colors.asp
+w3schools.comw3schools.com
+Bootstrap 4 Colors
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_containers.asp
+w3schools.comw3schools.com
+Bootstrap 4 Containers
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_typography.asp
+w3schools.comw3schools.com
+Bootstrap 4 Text/Typography
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_grid_basic.asp
+w3schools.comw3schools.com
+Bootstrap 4 Grid Basic
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
+<p>! important !!</p>
+<div class="section" id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
+<p>2/12 sur la premiere et les 2 autres se répartissent le reste pour la page d”exemple,
+avec 3 colonnes</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp
+https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_cards.asp</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_carousel.asp</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_forms.asp</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_modal.asp</p>
+<p>https://bootswatch.com/</p>
+<p>puis ajouter une modale qui contient un form, et essayer de mettre le $.post de ce matin</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2020</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/20201211.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercredi 2020/12/02 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="mercredi-2020-12-02">
+<h1>Mercredi 2020/12/02<a class="headerlink" href="#mercredi-2020-12-02" title="Lien permanent vers ce titre">¶</a></h1>
+<p>des exercices pour jquery : <a class="reference external" href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors1">w3schools</a></p>
+<p>=&gt; exercices : selectors , get, set, add, remove, hide and show (modifié)</p>
+<p>l”explication pour l”exercice 6 des selecteurs : https://api.jquery.com/odd-selector/ , c”est équivalent à « nth-child(odd) » d”habitude</p>
+<p>pour l”instant, il n”y a pas besoin d”aller lire cette page !! c”est la doc officielle jquery, mais elle n”est pas très accessible aux débutants</p>
+<p>à savoir : « GET » = récupération des données, donc il s”agit des méthodes jquery qui lisent les valeurs, comme $(“p”).text() ou $(« input#prenom »).val() -&gt; ça va lire le contenu du texte des balises <p> ou lire la valeur des input d”id=prenom !</p>
+<p>quant à « SET » = modification des données, donc on utilise les mêmes méthodes mais en donnant des paramètres qui vont remplacer la valeur actuelle, ex: $(“p”).text(« nouveau texte »)</p>
+<p>vous pouvez zapper les questions sur les « attributs »</p>
+<div class="section" id="premiere-presentation-de-ajax">
+<h2>Première présentation de AJAX<a class="headerlink" href="#premiere-presentation-de-ajax" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="version-avec-load">
+<h3>Version avec « load »<a class="headerlink" href="#version-avec-load" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section:first-child&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Je remplis ma section.&quot;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">urlChuckNorris</span> <span class="o">=</span> <span class="s2">&quot;https://api.icndb.com/jokes/random&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">urlPokemon</span> <span class="o">=</span> <span class="s2">&quot;https://pokeapi.co/api/v2/pokemon/&quot;</span><span class="p">;</span><span class="c1">// https://api.jquery.com/load/</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Affiche dans la balise pre&gt;p un chuck norris fact</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">afficheChuck</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;pre&gt;p&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="nx">urlChuckNorris</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Affiche les caractéristiques du pokemon demandé !</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param {string} pokemon</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">affichePokemon</span><span class="p">(</span><span class="nx">pokemon</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">urlPokemon</span> <span class="o">+</span> <span class="nx">pokemon</span><span class="p">;</span> <span class="c1">// https://pokeapi.co/api/v2/pokemon/pikachu si pokemon = &#39;pikachu&#39;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;pre&gt;p&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="version-avec-get">
+<h3>Version avec .get<a class="headerlink" href="#version-avec-get" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param {string} pokemon Nom du pokemon à afficher</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">affichePokemon</span><span class="p">(</span><span class="nx">pokemon</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">urlPokemon</span> <span class="o">+</span> <span class="nx">pokemon</span><span class="p">;</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resultat</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultat</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;p&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">resultat</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;p&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span>
+      <span class="s2">&quot;&lt;img src=&#39;&quot;</span> <span class="o">+</span> <span class="nx">resultat</span><span class="p">.</span><span class="nx">sprites</span><span class="p">.</span><span class="nx">front_shiny</span> <span class="o">+</span> <span class="s2">&quot;&#39;&gt;&quot;</span>
+    <span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2020</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/20201202.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

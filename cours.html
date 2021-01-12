@@ -12,7 +12,6 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
@@ -568,15 +567,15 @@ Const = on ne peut pas redeclarer mais on peut pas changer sa valeur</p>
 <div class="section" id="variable-const">
 <h3>Variable CONST<a class="headerlink" href="#variable-const" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Example CONST :</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span> <span class="kr">const</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">20</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span> <span class="kd">const</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">20</span><span class="p">;</span>
 <span class="c1">//i = 10; erreur</span>
     <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#const&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">monTest</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">monTest</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="nx">monTest</span><span class="p">();</span>
 
-    <span class="kr">const</span> <span class="nx">monObjet</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">monObjet</span> <span class="o">=</span> <span class="p">{</span>
         <span class="nx">a</span><span class="o">:</span> <span class="s2">&quot;paris&quot;</span><span class="p">,</span>
         <span class="nx">b</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
             <span class="nx">aler</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">);</span>
@@ -689,6 +688,374 @@ Les informations des étudiants doivent venir un objet JS</p>
 <p>cf <a class="reference external" href="https://github.com/dwwm93/2020/tree/master/evaluation/correction">https://github.com/dwwm93/2020/tree/master/evaluation/correction</a>.</p>
 <p>et sur <a class="reference external" href="https://glitch.com/edit/#%21/cypress-obtainable-spandex">glitch</a></p>
 </div>
+<div class="section" id="mercredi-2020-12-02">
+<h2>Mercredi 2020/12/02<a class="headerlink" href="#mercredi-2020-12-02" title="Lien permanent vers ce titre">¶</a></h2>
+<p>des exercices pour jquery : <a class="reference external" href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors1">w3schools</a></p>
+<p>=&gt; exercices : selectors , get, set, add, remove, hide and show (modifié)</p>
+<p>l”explication pour l”exercice 6 des selecteurs : https://api.jquery.com/odd-selector/ , c”est équivalent à « nth-child(odd) » d”habitude</p>
+<p>pour l”instant, il n”y a pas besoin d”aller lire cette page !! c”est la doc officielle jquery, mais elle n”est pas très accessible aux débutants</p>
+<p>à savoir : « GET » = récupération des données, donc il s”agit des méthodes jquery qui lisent les valeurs, comme $(“p”).text() ou $(« input#prenom »).val() -&gt; ça va lire le contenu du texte des balises <p> ou lire la valeur des input d”id=prenom !</p>
+<p>quant à « SET » = modification des données, donc on utilise les mêmes méthodes mais en donnant des paramètres qui vont remplacer la valeur actuelle, ex: $(“p”).text(« nouveau texte »)</p>
+<p>vous pouvez zapper les questions sur les « attributs »</p>
+<div class="section" id="premiere-presentation-de-ajax">
+<h3>Première présentation de AJAX<a class="headerlink" href="#premiere-presentation-de-ajax" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="version-avec-load">
+<h4>Version avec « load »<a class="headerlink" href="#version-avec-load" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section:first-child&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Je remplis ma section.&quot;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">urlChuckNorris</span> <span class="o">=</span> <span class="s2">&quot;https://api.icndb.com/jokes/random&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">urlPokemon</span> <span class="o">=</span> <span class="s2">&quot;https://pokeapi.co/api/v2/pokemon/&quot;</span><span class="p">;</span><span class="c1">// https://api.jquery.com/load/</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Affiche dans la balise pre&gt;p un chuck norris fact</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">afficheChuck</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;pre&gt;p&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="nx">urlChuckNorris</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Affiche les caractéristiques du pokemon demandé !</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param {string} pokemon</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">affichePokemon</span><span class="p">(</span><span class="nx">pokemon</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">urlPokemon</span> <span class="o">+</span> <span class="nx">pokemon</span><span class="p">;</span> <span class="c1">// https://pokeapi.co/api/v2/pokemon/pikachu si pokemon = &#39;pikachu&#39;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;pre&gt;p&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="version-avec-get">
+<h4>Version avec .get<a class="headerlink" href="#version-avec-get" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param {string} pokemon Nom du pokemon à afficher</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">affichePokemon</span><span class="p">(</span><span class="nx">pokemon</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">urlPokemon</span> <span class="o">+</span> <span class="nx">pokemon</span><span class="p">;</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resultat</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultat</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;p&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">resultat</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;p&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span>
+      <span class="s2">&quot;&lt;img src=&#39;&quot;</span> <span class="o">+</span> <span class="nx">resultat</span><span class="p">.</span><span class="nx">sprites</span><span class="p">.</span><span class="nx">front_shiny</span> <span class="o">+</span> <span class="s2">&quot;&#39;&gt;&quot;</span>
+    <span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="jeudi-2020-12-03">
+<h2>Jeudi 2020/12/03<a class="headerlink" href="#jeudi-2020-12-03" title="Lien permanent vers ce titre">¶</a></h2>
+<p>https://www.w3schools.com/jquery/exercise_jq.asp  aujourd”hui on va se mettre en jambe en faisant « cssClasse », « animate », « events » et « traversing »</p>
+<p>pour les events : https://www.w3schools.com/jquery/jquery_events.asp</p>
+<div class="section" id="exercice">
+<h3>Exercice :<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>ajoutez plusieurs balises « p » avec un lorem dedans</p></li>
+<li><p>on click sur un « p », je voudrais changer la couleur de fond en rouge par ex, et je voudrais que cette fonction soit anonyme</p></li>
+<li><p>on double click sur p, je voudrais changer la couleur du texte en blanc, et  je voudrais que cela utilise la fonction existante ci dessous :</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">texteBlanc</span><span class="p">(){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="s2">&quot;white&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Correction :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>function texteBlanc(){
+  $(&#39;p&#39;).css(&#39;color&#39;, &quot;white&quot;);
+}// fonction &quot;anonyme&quot;
+$(&quot;p&quot;).click(function(){
+  $(&#39;p&#39;).css(&quot;background-color&quot;, &quot;red&quot;)
+});
+// fonction nommée &quot;texteBlanc&quot;
+$(&quot;p&quot;).dblclick(texteBlanc);
+</pre></div>
+</div>
+<p>ou on aurait pu écrire <code class="docutils literal notranslate"><span class="pre">$('p').on(&quot;dblclick&quot;,</span> <span class="pre">texteBlanc)</span></code></p>
+<p>si tu veux donner un paramètre à texteBlanc (genre texteBlanc(gras){ pour dire que tu veux ou pas mettre aussi en gras)</p>
+<p>Sachant qu”on a donc :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>function texteBlanc(gras){
+   if (gras) {
+     $(&#39;p&#39;).css({color: &quot;white&quot;, fontWeight: 600});
+   }
+   else {
+     $(&#39;p&#39;).css(&quot;color&quot;: &quot;white&quot;);
+   }
+}
+</pre></div>
+</div>
+<p>2 possibilités :</p>
+<ol>
+<li><div class="highlight-function texteBlancGras(){ notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>texteBlanc(true);
+}</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+et on passe texteBlancGras à $(&#39;p&#39;).dblclick(texteBlancGras) (modifié) 
+
+2. `$(&#39;p&#39;).dblclick(texteBlanc.bind(null, true))`
+
+.bind va &quot;créer&quot; une nouvelle fonction avec les paramètres remplis les uns après les autres
+
+si y&#39;a plusieurs paramètres ça fait .bind(null, param1, param2, param3...)
+
+### Exercice 2 : Plus dur :
+
+=&gt; je voudrais modifier non pas tous les &quot;p&quot; mais que celui que j&#39;ai cliqué !!!
+
+SOLUTION : $(this) !!!
+
+on reconnaît $() de jquery , et this de javascript
+
+=&gt; la magie :mage: elle est dans le &quot;this&quot;
+
+dans la fonction appelée par dblclick, le &quot;this&quot; contient l&#39;élément qui a déclenché l&#39;event !
+
+donc solution :
+</pre></div>
+</div>
+<p>function texteBlanc(){
+$(this).css(“color”, “white”);
+}</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">MAIS</span> <span class="n">ATTENTION</span> <span class="n">je</span> <span class="n">ne</span> <span class="n">peux</span> <span class="n">plus</span> <span class="n">appeler</span> <span class="n">texteBlanc</span> <span class="n">n</span><span class="s1">&#39;importe où maintenant, sinon this sera &quot;window&quot;! </span>
+
+<span class="o">=&gt;</span> <span class="n">donc</span> <span class="n">plutot</span> <span class="n">utiliser</span> <span class="n">des</span> <span class="n">fonctions</span> <span class="n">anonymes</span>
+
+<span class="n">SOLUTION</span> <span class="n">POSSIBLE</span> <span class="p">:</span>
+</pre></div>
+</div>
+<p>/**</p>
+<ul class="simple">
+<li><p>Je me prépare à recevoir des événements « click » sur la colonne des noms des pokemons</p></li>
+<li></li>
+</ul>
+<p>*/
+$(« article#tableau&gt;table td.nom »).on(« click », function () {
+// Je récupère l”élément cliqué de javascript
+let caseCliquee = this;
+// je le transforme en jquery pour pouvoir utiliser les méthodes « faciles »
+let caseJquery = $(caseCliquee);
+// je récupère le contenu de ma case, c”est à dire le nom du pokemon
+let pokemon = caseJquery.text();  // avec le nom je construis l”url
+let url = urlPokemon + pokemon;
+// puis je vais récupérer les infos avec AJAX !
+$.get(url)
+.done(function (data) {
+// Quand les infos sont récupérées, cette fonction anonyme est appelée
+// et jquery lui passe le résultat de la requete, qui se retrouve stocké
+// dans la variable « data ».
+// On peut donc en extraire des infos :
+let poids = data.weight;
+let img = data.sprites.front_default;      // Puis je cherche à les afficher dans les colonnes adjacentes :
+let colonnes = caseJquery.siblings(« td »);
+// Je transforme chaque colonne reçue en JQuery pour pouvoir utiliser les méthodes
+// et je les remplis avec les infos.
+// NB: il y a  plein d”autres manières de faire, aussi bonnes voire meilleures que celle ci !
+$(colonnes[0]).html(« <img src='" + img + "' /> »);
+$(colonnes[1]).text(poids);
+})
+.fail(function (data) {
+// Si la requete échoue, c”est cette fonction anonyme là qui va être utilisée par jquery,
+// et pas celle de « .done »
+console.log(data);
+// J”affiche l”erreur dans la case à côté :
+caseJquery
+.next()
+.html(« <span style='color: red;'> «  + data.responseText + «  </span> »);
+});
+});</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+## Jeudi 2020/12/10
+
+
+https://developer.mozilla.org/fr/docs/Web/HTTP/M%C3%A9thode
+
+&gt; HTTP définit un ensemble de méthodes de requête qui indiquent l&#39;action que l&#39;on souhaite réaliser sur la ressource indiquée. Bien qu&#39;on rencontre également des noms (en anglais), ces méthodes sont souvent appelées verbes HTTP. Chacun d&#39;eux implémente une sémantique différente mais certaines fonctionnalités courantes peuvent être partagées par différentes méthodes (e.g. une méthode de requête peut être sûre (safe), idempotente ou être mise en cache (cacheable)).
+
+HTTP = moyen que les gens qui ont inventé internet utilisent pour que les machines communiquent entre elles
+
+(ps : http:// ça vient de là ! et la version sécurisée : https://)
+
+il faut imaginer internet comme une ville : pour relier les maisons on a fait les routes (=les cables), les adresses postales (les IP), les lettres/sonnettes - dsl pour l&#39;analogie bof- (http)
+
+et un protocole d&#39;affichage (j&#39;ai pas d&#39;exemple pour la ville) le web
+
+les méthodes qui nous préoccupent GET / POST / DELETE
+
+GET = récupération de la page indiquée
+
+POST = envoi d&#39;une information à l&#39;adresse indiquée
+
+ex: formulaire !!
+
+```html
+&lt;form action=&quot;index.html&quot; method=&quot;post&quot;&gt;
+    &lt;input name=&quot;nom&quot; placeholder=&quot;quel est le nom du pokemon ?&quot; /&gt;
+    &lt;button type=&quot;submit&quot;&gt;OK&lt;/button&gt;
+&lt;/form&gt;
+</pre></div>
+</div>
+<p>DELETE = ??? à votre avis :sourire_narquois:</p>
+<p>https://api.jquery.com/jquery.ajax/</p>
+<p>sur la page https://api.jquery.com/jquery.get/ , pour la methode $.get, on voit que ça se base sur « $.ajax »</p>
+<p>il disent :</p>
+<blockquote>
+<div><p>This is a shorthand Ajax function, which is equivalent to:</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$.ajax({
+  url: url,
+  type: &quot;GET&quot;,
+  data: data,
+  success: success,
+  dataType: dataType
+});
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>Exercice<a class="headerlink" href="#id9" title="Lien permanent vers ce titre">¶</a></h3>
+<p>sur la page que vous voulez, avec ajax vous allez faire un GET sur https://jsonplaceholder.typicode.com/users , et afficher le résultat dans un <pre> sans chichi</p>
+<p>si tu veux que ce soit plus joli tu peux mettre direct JSON.stringify(data)</p>
+<p>puis on va faire un « POST » sur la meme url</p>
+<p>par le biais d”un formulaire pour commencer</p>
+<p>SOLUTION : j”ai l”id 11 c”est bon</p>
+</div>
+<div class="section" id="post-jquery">
+<h3>POST jquery<a class="headerlink" href="#post-jquery" title="Lien permanent vers ce titre">¶</a></h3>
+<p>le formulaire vous « déplace » vers la cible de l”action, donc vous vous retrouvez sur le site https://jsonplaceholder.typicode.com/users</p>
+<p>avec la réponse id:11</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;https://jsonplaceholder.typicode.com/users&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nb">input</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span> <span class="n">placeholder</span><span class="o">=</span><span class="s2">&quot;Nom de l&#39;utilisateur&quot;</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="n">button</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">&gt;</span><span class="n">Envoyer</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>une des caractéristiques de la requête HTTP « POST » : c”est qu”elle peut transporter des informations supplémentaires</p>
+<p>donc ici les infos c”est <code class="docutils literal notranslate"><span class="pre">{name:</span> <span class="pre">CE_QUI_EST_ECRIT_DANS_L_INPUT}</span></code></p>
+<p>ici name est la valeur de l”attribut « name » dans la balise input</p>
+<p>donc si j”ai <code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">name=&quot;prenom&quot;</span> <span class="pre">/&gt;</span></code>  =&gt; quelles vont etre les infos POST-ées ?</p>
+<p>=&gt; {prenom: INPUT_VALUE}</p>
+<p>la version jquery POST</p>
+<p>$.post(url, data).done(function (response) …..</p>
+<p>la différence c”est « data »</p>
+<p>=&gt; les données supplémentaires que le POST peut envoyer</p>
+<p>sous la forme d”un objet js, exemple : <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">nom:</span> <span class="pre">&quot;kim&quot;,</span> <span class="pre">prenom:</span> <span class="pre">&quot;san</span> <span class="pre">goku&quot;</span> <span class="pre">}</span></code></p>
+<p>cf ici !</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="o">//</span> <span class="n">Si</span> <span class="n">la</span> <span class="n">requete</span> <span class="n">échoue</span><span class="p">,</span> <span class="n">c</span><span class="s1">&#39;est cette fonction anonyme là qui va être utilisée par jquery,</span>
+      <span class="o">//</span> <span class="n">et</span> <span class="n">pas</span> <span class="n">celle</span> <span class="n">de</span> <span class="s2">&quot;.done&quot;</span>
+      <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+      <span class="o">//</span> <span class="n">J</span><span class="s1">&#39;affiche l&#39;</span><span class="n">erreur</span> <span class="n">dans</span> <span class="n">la</span> <span class="n">case</span> <span class="n">à</span> <span class="n">côté</span> <span class="p">:</span>
+      <span class="n">caseJquery</span>
+        <span class="o">.</span><span class="n">next</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">html</span><span class="p">(</span><span class="s2">&quot;&lt;span style=&#39;color: red;&#39;&gt; &quot;</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">responseText</span> <span class="o">+</span> <span class="s2">&quot; &lt;/span&gt;&quot;</span><span class="p">);</span>
+    <span class="p">})</span>
+</pre></div>
+</div>
+<p>Donc on pourrait écrire ça :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>const url = &quot;https://jsonplaceholder.typicode.com/users&quot;;
+const data = { nom: &quot;baggins&quot;, prenom: &quot;bilbo&quot; };$.post(url, data).done(function(reponse){
+   $(&#39;h1&#39;).text(&quot;SUCCESS !&quot;); // ou pourquoi pas $(&#39;..............&#39;).html(JSON.stringify(reponse))
+}).fail(function (reponse){
+  $(&#39;h1&#39;).text(&quot;ERROR &quot; + reponse.responseText);
+})
+</pre></div>
+</div>
+<p>BOOTSTRAP https://www.w3schools.com/bootstrap4/</p>
+<p>https://www.w3schools.com/bootstrap4/trybs_template1.htm</p>
+</div>
+</div>
+<div class="section" id="vendredi-2020-12-11">
+<h2>Vendredi 2020/12/11<a class="headerlink" href="#vendredi-2020-12-11" title="Lien permanent vers ce titre">¶</a></h2>
+<p>bon, on se met en jambes en faisant l”exercice d”hier soir ?</p>
+<p>on essaie de déclencher le $.post en cliquant sur le bouton submit</p>
+<p>ca marche</p>
+<p>Pour l”exercice :</p>
+<ul class="simple">
+<li><p>est-ce que ça marchait bien pour vous sans changer de page avec le $.post hier ?</p></li>
+<li><p>est-ce que vous arrivez à lire les valeurs de l”input du form et à les envoyer via le $.post ainsi que la valeur de l”attribut action du form pour remplir l”url du $.post ?</p></li>
+<li><p>est-ce que vous arrivez à déclencher le $.post à partir du bouton submit ?</p></li>
+<li><p>est-ce que vous arrivez à supprimer le submit par défaut du formulaire pour éviter de vous rendre sur la page indiquée dans <code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">action=&quot;xxxx&quot;</span></code></p></li>
+</ul>
+<p>vous ete sur discord??</p>
+<p>oui</p>
+<p>oui</p>
+<p>:croissant:</p>
+<p>:croissant:</p>
+<p>je peut avoir un lien svp!</p>
+<p>moi j’ arive pas</p>
+<p>en fait perso j”ai téléchargé l”appli</p>
+<p>https://discord.com/channels/783391372169183265/783391372169183268
+DiscordDiscord
+Discord - A New Way to Chat with Friends &amp; Communities
+Discord is the easiest way to communicate over voice, video, and text. Chat, hang out, and stay close with your friends and communities. (62 ko)
+https://discord.com/assets/ee7c382d9257652a88c8f7b7f22a994d.png</p>
+<p>Thank”s Rathak</p>
+<p>merci</p>
+<p>derien</p>
+<p>https://stackoverflow.com/a/1357151/8721626 je pose ça là …
+Stack OverflowStack Overflow
+event.preventDefault() vs. return false
+When I want to prevent other event handlers from executing after a certain event is fired, I can use one of two techniques. I”ll use jQuery in the examples, but this applies to plain-JS as well: 1.</p>
+<p>il y a une différence entre le « event » du formulaire normal, et le « event » de jquery</p>
+<p>ce n”est pas le même « event » !</p>
+<p>celui de jquery il est redispatché à tous les autres (parce que je peux créer plusieurs $(“xxx”).on(“click”,</p>
+<form ...>
+  <button onclick='mafunc()' >clic
+...function mafunc(event){
+  event.preventDefault()
+}<p>Ici c”est l”event du navigateur</p>
+<p>Par contre si on utilise jquery !</p>
+<p>on va avoir un bouton sans « onclick », et à la place on aura :</p>
+<p>$(“button”).on(“click”, function (event) {..</p>
+<p>ici l”event est un evenment JQUERY pas celui du navigateur, parce que je peux déclarer plusieurs on(“click”, … sur le meme bouton</p>
+<p>donc pour un event jquery il faut :</p>
+<p>event.preventDefault()</p>
+<p>et</p>
+<p>event.stopPropagation()</p>
+<p>pour pas que l”event passe au formulaire quand même</p>
+<p>3ème solution, celle d”Esat : <code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">onSubmit=&quot;return</span> <span class="pre">false&quot;</span></code></p>
+<p><a class="reference external" href="https://apical.xyz/fiches/la_validation_d_un_formulaire_web_002/event_preventDefault_vs_event_stopPropagation">preventDefault apical.xyzapical.xyz</a></p>
+<p>ah merci !</p>
+<p>Sympa le lien ! Merci !</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_colors.asp
+w3schools.comw3schools.com
+Bootstrap 4 Colors
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_containers.asp
+w3schools.comw3schools.com
+Bootstrap 4 Containers
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_typography.asp
+w3schools.comw3schools.com
+Bootstrap 4 Text/Typography
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_grid_basic.asp
+w3schools.comw3schools.com
+Bootstrap 4 Grid Basic
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
+<p>! important !!</p>
+<div class="section" id="id10">
+<h3>Exercice<a class="headerlink" href="#id10" title="Lien permanent vers ce titre">¶</a></h3>
+<p>2/12 sur la premiere et les 2 autres se répartissent le reste pour la page d”exemple,
+avec 3 colonnes</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp
+https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_cards.asp</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_carousel.asp</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_forms.asp</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_modal.asp</p>
+<p>https://bootswatch.com/</p>
+<p>puis ajouter une modale qui contient un form, et essayer de mettre le $.post de ce matin</p>
+</div>
+</div>
 </div>
 
 
@@ -738,6 +1105,9 @@ Les informations des étudiants doivent venir un objet JS</p>
 <li class="toctree-l2"><a class="reference internal" href="#mardi-2020-11-24">Mardi 2020/11/24</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mercredi-2020-11-25">Mercredi 2020/11/25</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#jeudi-2020-11-26">Jeudi 2020/11/26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mercredi-2020-12-02">Mercredi 2020/12/02</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jeudi-2020-12-03">Jeudi 2020/12/03</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vendredi-2020-12-11">Vendredi 2020/12/11</a></li>
 </ul>
 </li>
 </ul>
@@ -776,7 +1146,7 @@ Les informations des étudiants doivent venir un objet JS</p>
       &copy;2020, Esat + Marc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

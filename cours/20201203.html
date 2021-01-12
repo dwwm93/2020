@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeudi 2020/12/03 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="jeudi-2020-12-03">
+<h1>Jeudi 2020/12/03<a class="headerlink" href="#jeudi-2020-12-03" title="Lien permanent vers ce titre">¶</a></h1>
+<p>https://www.w3schools.com/jquery/exercise_jq.asp  aujourd”hui on va se mettre en jambe en faisant « cssClasse », « animate », « events » et « traversing »</p>
+<p>pour les events : https://www.w3schools.com/jquery/jquery_events.asp</p>
+<div class="section" id="exercice">
+<h2>Exercice :<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>ajoutez plusieurs balises « p » avec un lorem dedans</p></li>
+<li><p>on click sur un « p », je voudrais changer la couleur de fond en rouge par ex, et je voudrais que cette fonction soit anonyme</p></li>
+<li><p>on double click sur p, je voudrais changer la couleur du texte en blanc, et  je voudrais que cela utilise la fonction existante ci dessous :</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">texteBlanc</span><span class="p">(){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="s2">&quot;white&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Correction :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>function texteBlanc(){
+  $(&#39;p&#39;).css(&#39;color&#39;, &quot;white&quot;);
+}// fonction &quot;anonyme&quot;
+$(&quot;p&quot;).click(function(){
+  $(&#39;p&#39;).css(&quot;background-color&quot;, &quot;red&quot;)
+});
+// fonction nommée &quot;texteBlanc&quot;
+$(&quot;p&quot;).dblclick(texteBlanc);
+</pre></div>
+</div>
+<p>ou on aurait pu écrire <code class="docutils literal notranslate"><span class="pre">$('p').on(&quot;dblclick&quot;,</span> <span class="pre">texteBlanc)</span></code></p>
+<p>si tu veux donner un paramètre à texteBlanc (genre texteBlanc(gras){ pour dire que tu veux ou pas mettre aussi en gras)</p>
+<p>Sachant qu”on a donc :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>function texteBlanc(gras){
+   if (gras) {
+     $(&#39;p&#39;).css({color: &quot;white&quot;, fontWeight: 600});
+   }
+   else {
+     $(&#39;p&#39;).css(&quot;color&quot;: &quot;white&quot;);
+   }
+}
+</pre></div>
+</div>
+<p>2 possibilités :</p>
+<ol>
+<li><div class="highlight-function texteBlancGras(){ notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>texteBlanc(true);
+}</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+et on passe texteBlancGras à $(&#39;p&#39;).dblclick(texteBlancGras) (modifié) 
+
+2. `$(&#39;p&#39;).dblclick(texteBlanc.bind(null, true))`
+
+.bind va &quot;créer&quot; une nouvelle fonction avec les paramètres remplis les uns après les autres
+
+si y&#39;a plusieurs paramètres ça fait .bind(null, param1, param2, param3...)
+
+### Exercice 2 : Plus dur :
+
+=&gt; je voudrais modifier non pas tous les &quot;p&quot; mais que celui que j&#39;ai cliqué !!!
+
+SOLUTION : $(this) !!!
+
+on reconnaît $() de jquery , et this de javascript
+
+=&gt; la magie :mage: elle est dans le &quot;this&quot;
+
+dans la fonction appelée par dblclick, le &quot;this&quot; contient l&#39;élément qui a déclenché l&#39;event !
+
+donc solution :
+</pre></div>
+</div>
+<p>function texteBlanc(){
+$(this).css(“color”, “white”);
+}</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">MAIS</span> <span class="n">ATTENTION</span> <span class="n">je</span> <span class="n">ne</span> <span class="n">peux</span> <span class="n">plus</span> <span class="n">appeler</span> <span class="n">texteBlanc</span> <span class="n">n</span><span class="s1">&#39;importe où maintenant, sinon this sera &quot;window&quot;! </span>
+
+<span class="o">=&gt;</span> <span class="n">donc</span> <span class="n">plutot</span> <span class="n">utiliser</span> <span class="n">des</span> <span class="n">fonctions</span> <span class="n">anonymes</span>
+
+<span class="n">SOLUTION</span> <span class="n">POSSIBLE</span> <span class="p">:</span>
+</pre></div>
+</div>
+<p>/**</p>
+<ul class="simple">
+<li><p>Je me prépare à recevoir des événements « click » sur la colonne des noms des pokemons</p></li>
+<li></li>
+</ul>
+<p>*/
+$(« article#tableau&gt;table td.nom »).on(« click », function () {
+// Je récupère l”élément cliqué de javascript
+let caseCliquee = this;
+// je le transforme en jquery pour pouvoir utiliser les méthodes « faciles »
+let caseJquery = $(caseCliquee);
+// je récupère le contenu de ma case, c”est à dire le nom du pokemon
+let pokemon = caseJquery.text();  // avec le nom je construis l”url
+let url = urlPokemon + pokemon;
+// puis je vais récupérer les infos avec AJAX !
+$.get(url)
+.done(function (data) {
+// Quand les infos sont récupérées, cette fonction anonyme est appelée
+// et jquery lui passe le résultat de la requete, qui se retrouve stocké
+// dans la variable « data ».
+// On peut donc en extraire des infos :
+let poids = data.weight;
+let img = data.sprites.front_default;      // Puis je cherche à les afficher dans les colonnes adjacentes :
+let colonnes = caseJquery.siblings(« td »);
+// Je transforme chaque colonne reçue en JQuery pour pouvoir utiliser les méthodes
+// et je les remplis avec les infos.
+// NB: il y a  plein d”autres manières de faire, aussi bonnes voire meilleures que celle ci !
+$(colonnes[0]).html(« <img src='" + img + "' /> »);
+$(colonnes[1]).text(poids);
+})
+.fail(function (data) {
+// Si la requete échoue, c”est cette fonction anonyme là qui va être utilisée par jquery,
+// et pas celle de « .done »
+console.log(data);
+// J”affiche l”erreur dans la case à côté :
+caseJquery
+.next()
+.html(« <span style='color: red;'> «  + data.responseText + «  </span> »);
+});
+});</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2020</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/20201203.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
