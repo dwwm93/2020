@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercredi 2021/01/13 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="mercredi-2021-01-13">
+<h1>Mercredi 2021/01/13<a class="headerlink" href="#mercredi-2021-01-13" title="Lien permanent vers ce titre">¶</a></h1>
+<p>finalement on a vu quoi : on peut représenter ses données sous forme d”entités et de relations dans un MCD, en fonction des buts de l”application</p>
+<p>ça nous permet de manière automatique de transformer ce modèle « théorique » ,  en modèle physique interprétable directement par les logiciels de base de données</p>
+<p>dans notre cas on utilise des BDD relationnelles , donc qui permettent d”avoir des « relations » entre les tables, par le biais des clés primaires et clé étrangères ! (il n”y a donc pas de « lien » entre les tables, mais bien des « contraintes » entre les colonnes qui contiennent les clés primaires et celles qui contiennent les clés étrangères). Un base non relationnelle ne dispose pas de ces contraintes</p>
+<p>dans notre cas bis, on utilise des BDD SQL , donc qui demandent du langage SQL pour savoir comment :</p>
+<ol class="simple">
+<li><p>structurer les données que la BDD va stocker (LDD)</p></li>
+<li><p>manipuler les données une fois stockées (LMD)</p></li>
+</ol>
+<p>Pour le LDD on a vu déjà les requêtes SQL : <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">DATABASE</span> <span class="pre">ma_database;</span></code> et <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span> <span class="pre">ma_table</span> <span class="pre">(col1</span> <span class="pre">INT</span> <span class="pre">...)</span> <span class="pre">ENGINE=InnoDB;</span></code>, ainsi que vite fait <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">ma_table</span> <span class="pre">...;</span></code></p>
+<p>et pour le LMD on a vu <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> pour lire les données, <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> pour créer des données et <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> pour modifier des données</p>
+<p>l”intérêt de ce langage c”est qu”on peut l”exécuter sans interface graphique (sans phpmyadmin donc), directement depuis le php ! donc on va être en mesure depuis notre site d”aller lire des infos en base, les modifier, les créer etc.</p>
+<p>:ordinateur: :tada: :gâteau: :informaticienne: :clavier: :homme_technologue:</p>
+<div class="section" id="projet-informatique">
+<h2>Projet informatique<a class="headerlink" href="#projet-informatique" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ordre à suivre :</p>
+<ol class="simple">
+<li><p>recueil des besoins ! (cahier des charges, etc.)</p></li>
+<li><p>conception (MERISE, wireframes, use case, UI/UX)</p></li>
+<li><p>réalisation (back et front , dans l”ordre que vous voulez, mais le back est nécessaire au front, l”inverse non, donc probablement qu”il faudra commencer un peu + sur le back)</p></li>
+</ol>
+</div>
+<div class="section" id="merise">
+<h2>Merise<a class="headerlink" href="#merise" title="Lien permanent vers ce titre">¶</a></h2>
+<p>En terme de Merise, les rappels pour le MCD :</p>
+<ul class="simple">
+<li><p>on regroupe les données dans les rectangles (appelés Entité)</p></li>
+<li><p>on définit des relations entre les rectangles, qui sont des relations fonctionnelles (qui dépendent du cahier des charges  ! c”est la fonction de notre application quoi), représentées par des ovales</p></li>
+<li><p>on précise nos relations avec des cardinalités, pour indiquer combien d”éléments différents on peut relier les uns aux autres</p></li>
+</ul>
+<p>lors de la transformation en modèle physique , il faudra créer les fameuses contraintes, càd les colonnes qui vont contenir les clés primaires et étrangères</p>
+<p>et :danger:  : si la relation entre 2 entités est ManyToMany (ie : plusieurs entités de type A peuvent être liées à plusieurs entités de type B, ex: user et role) alors ces colonnes seront stockées dans une nouvelle table !!</p>
+<p>ceci étant comme tout est automatisé à partir du MCD dans looping / jmerise , ça peut être transparent pour vous. Mais sans logiciel vous seriez obligés de faire le MLD intermédiaire oui</p>
+</div>
+<div class="section" id="suite-sql">
+<h2>Suite SQL<a class="headerlink" href="#suite-sql" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">ma_table</span> <span class="k">WHERE</span> <span class="n">condition_pour_selectionner_mon_element_à_supprimer</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Exercice:</p>
+<p>Créer avec des requêtes SQL :</p>
+<ul class="simple">
+<li><p>au moins 4 articles : n”importe</p></li>
+<li><p>au moins 3 utilisateurs : « james bond », « sangoku kim » et n”importe</p></li>
+<li><p>au moins 2 roles (et les lier aux utilisateurs) : « admin » et « moderateur »</p></li>
+<li><p>au moins 2 catégories: « actualite », « covid »</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#1451 - Cannot delete or update a parent row: a foreign key constraint fails (`news1`.`user_role`, CONSTRAINT `user_role_user1_FK` FOREIGN KEY (`id`) REFERENCES `user1` (`id`))</span>
+</pre></div>
+</div>
+<p>c”est normal, tu essaies de supprimer une clé primaire, alors qu”elle est référencée par une clé étrangère qque part !</p>
+<p>=&gt; il faut supprimer dans l”ordre inverse des insertions qu”on a faites hier !!!</p>
+</div>
+<div class="section" id="reprise-du-tp2">
+<h2>Reprise du TP2<a class="headerlink" href="#reprise-du-tp2" title="Lien permanent vers ce titre">¶</a></h2>
+<ol class="simple">
+<li><p>connexion à la bdd avec le fichier <code class="docutils literal notranslate"><span class="pre">connexion.php</span></code></p></li>
+<li><p>requetage et affichage dans un tableau html dans <code class="docutils literal notranslate"><span class="pre">accueil.php</span></code></p></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2020</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/20210113.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -34,6 +34,8 @@ A Dependency Manager for PHP
 
 on va installer "composer" (on s'en servira plus tard), et il va nous rendre php accessible partout
 
+![install composer](composer-install-php.png)
+
 options par défaut, sauf le "PATH" de php
 
 exemple de chemin vers php pour les windows : C:/wamp64/bin/php7.2/php.exe
@@ -67,10 +69,106 @@ Vu :
 * conditions
 * tableaux associatifs
 
+## Mardi 2021/01/05
+
 ### Exercice pour s'entraîner pour les fonctions
 
 Afficher un tableau sous forme de texte.
 
 But : utiliser uniquement les fonctions que je fournissais
 
+### Correction ? (voir fichiers associés)
+
+en js on faisait `res += "toto"` pour concaténer 2 strings, ici on fait `$res .= "toto";`
+
+c'est égal à `res = res + "toto"`, et `"$res = $res . "toto";`
+
+étape 1 du déroulement du code :
+
+```php
+$tbl .= ajouteSautDeLigne(genCol(majuscule($eleve["nom"])) . genCol(minuscule($eleve["prenom"])));
+```
+
+étape 2 du déroulement :
+
+```php
+$tbl .= ajouteSautDeLigne(genCol(majuscule("kim")) . genCol(minuscule("sangoku")));
+```
+
+étape 3 :
+
+```php
+$tbl .= ajouteSautDeLigne(genCol("KIM") . genCol("sangoku"));
+```
+
+étape 4 :
+
+```php
+$tbl .= ajouteSautDeLigne("KIM|" . "sangoku|");
+```
+
+étape 5 :
+
+```php
+$tbl .= ajouteSautDeLigne("KIM|sangoku|");
+```
+
+étape 6 :
+
+```php
+$tbl .= "KIM|sangoku|\n";
+```
+
+étape 7 :
+
+```php
+$tbl = $tbl . "KIM|sangoku|\n";
+```
+
+alors
+
+```php
+// si $tbl = "==========\n";
+// alors
+// => donc $tbl est égal à "==========\nKIM|sangoku|\n"
+```
+
+si je fais ensuite
+
+```php
+echo $tbl;
+```
+
+alors ça affiche :
+
+```
+==========
+KIM|sangoku|
+```
+
+si je vous mets la meme chose formatée un peu mieux :
+
+```php
+$tbl .= ajouteSautDeLigne(
+            genCol(
+                majuscule(
+                    $eleve[
+                        $colonnes[0]
+                    ]
+                )
+            ) . genCol(
+                minuscule(
+                    $eleve[
+                        $colonnes[1]
+                    ]
+                )
+            )
+        );
+```
+
+il reste à faire
+
+```php
+afficheDansLeTerminal($tbl);
+```
 

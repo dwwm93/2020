@@ -63,6 +63,7 @@ getcomposer.orggetcomposer.org
 Introduction - Composer
 A Dependency Manager for PHP</p>
 <p>on va installer « composer » (on s”en servira plus tard), et il va nous rendre php accessible partout</p>
+<p><img alt="install composer" src="../_images/composer-install-php.png" /></p>
 <p>options par défaut, sauf le « PATH » de php</p>
 <p>exemple de chemin vers php pour les windows : C:/wamp64/bin/php7.2/php.exe</p>
 <p>ensuite fermer vscode et le rouvrir, puis refaire php -v</p>
@@ -90,10 +91,83 @@ A Dependency Manager for PHP</p>
 <li><p>tableaux associatifs</p></li>
 </ul>
 </div>
+</div>
+<div class="section" id="mardi-2021-01-05">
+<h1>Mardi 2021/01/05<a class="headerlink" href="#mardi-2021-01-05" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="exercice-pour-s-entrainer-pour-les-fonctions">
 <h2>Exercice pour s”entraîner pour les fonctions<a class="headerlink" href="#exercice-pour-s-entrainer-pour-les-fonctions" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Afficher un tableau sous forme de texte.</p>
 <p>But : utiliser uniquement les fonctions que je fournissais</p>
+</div>
+<div class="section" id="correction-voir-fichiers-associes">
+<h2>Correction ? (voir fichiers associés)<a class="headerlink" href="#correction-voir-fichiers-associes" title="Lien permanent vers ce titre">¶</a></h2>
+<p>en js on faisait <code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">+=</span> <span class="pre">&quot;toto&quot;</span></code> pour concaténer 2 strings, ici on fait <code class="docutils literal notranslate"><span class="pre">$res</span> <span class="pre">.=</span> <span class="pre">&quot;toto&quot;;</span></code></p>
+<p>c”est égal à <code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">=</span> <span class="pre">res</span> <span class="pre">+</span> <span class="pre">&quot;toto&quot;</span></code>, et <code class="docutils literal notranslate"><span class="pre">&quot;$res</span> <span class="pre">=</span> <span class="pre">$res</span> <span class="pre">.</span> <span class="pre">&quot;toto&quot;;</span></code></p>
+<p>étape 1 du déroulement du code :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(genCol(majuscule($eleve[&quot;nom&quot;])) . genCol(minuscule($eleve[&quot;prenom&quot;])));</span>
+</pre></div>
+</div>
+<p>étape 2 du déroulement :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(genCol(majuscule(&quot;kim&quot;)) . genCol(minuscule(&quot;sangoku&quot;)));</span>
+</pre></div>
+</div>
+<p>étape 3 :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(genCol(&quot;KIM&quot;) . genCol(&quot;sangoku&quot;));</span>
+</pre></div>
+</div>
+<p>étape 4 :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(&quot;KIM|&quot; . &quot;sangoku|&quot;);</span>
+</pre></div>
+</div>
+<p>étape 5 :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(&quot;KIM|sangoku|&quot;);</span>
+</pre></div>
+</div>
+<p>étape 6 :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= &quot;KIM|sangoku|\n&quot;;</span>
+</pre></div>
+</div>
+<p>étape 7 :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl = $tbl . &quot;KIM|sangoku|\n&quot;;</span>
+</pre></div>
+</div>
+<p>alors</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">// si $tbl = &quot;==========\n&quot;;</span>
+<span class="x">// alors</span>
+<span class="x">// =&gt; donc $tbl est égal à &quot;==========\nKIM|sangoku|\n&quot;</span>
+</pre></div>
+</div>
+<p>si je fais ensuite</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">echo $tbl;</span>
+</pre></div>
+</div>
+<p>alors ça affiche :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==========</span>
+<span class="n">KIM</span><span class="o">|</span><span class="n">sangoku</span><span class="o">|</span>
+</pre></div>
+</div>
+<p>si je vous mets la meme chose formatée un peu mieux :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(</span>
+<span class="x">            genCol(</span>
+<span class="x">                majuscule(</span>
+<span class="x">                    $eleve[</span>
+<span class="x">                        $colonnes[0]</span>
+<span class="x">                    ]</span>
+<span class="x">                )</span>
+<span class="x">            ) . genCol(</span>
+<span class="x">                minuscule(</span>
+<span class="x">                    $eleve[</span>
+<span class="x">                        $colonnes[1]</span>
+<span class="x">                    ]</span>
+<span class="x">                )</span>
+<span class="x">            )</span>
+<span class="x">        );</span>
+</pre></div>
+</div>
+<p>il reste à faire</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">afficheDansLeTerminal($tbl);</span>
+</pre></div>
+</div>
 </div>
 </div>
 

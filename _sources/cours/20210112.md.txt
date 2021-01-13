@@ -1,4 +1,4 @@
-## Mardi 2020/01/12
+## Mardi 2021/01/12
 
 phpmyadmin vs mysql vs sql 
 
@@ -32,7 +32,7 @@ CREATE TABLE article(
    id INT  AUTO_INCREMENT NOT NULL ,
  ....
 ) ENGINE=InnoDB;
-```  
+```
 
 ### Découverte des requêtes LMD
 

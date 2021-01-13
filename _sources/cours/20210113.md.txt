@@ -1,0 +1,76 @@
+## Mercredi 2021/01/13
+
+finalement on a vu quoi : on peut représenter ses données sous forme d'entités et de relations dans un MCD, en fonction des buts de l'application
+
+
+ça nous permet de manière automatique de transformer ce modèle "théorique" ,  en modèle physique interprétable directement par les logiciels de base de données
+
+
+dans notre cas on utilise des BDD relationnelles , donc qui permettent d'avoir des "relations" entre les tables, par le biais des clés primaires et clé étrangères ! (il n'y a donc pas de "lien" entre les tables, mais bien des "contraintes" entre les colonnes qui contiennent les clés primaires et celles qui contiennent les clés étrangères). Un base non relationnelle ne dispose pas de ces contraintes
+
+dans notre cas bis, on utilise des BDD SQL , donc qui demandent du langage SQL pour savoir comment :
+
+1. structurer les données que la BDD va stocker (LDD)
+2. manipuler les données une fois stockées (LMD)
+
+Pour le LDD on a vu déjà les requêtes SQL : `CREATE DATABASE ma_database;` et `CREATE TABLE ma_table (col1 INT ...) ENGINE=InnoDB;`, ainsi que vite fait `ALTER TABLE ma_table ...;`
+
+
+et pour le LMD on a vu `SELECT` pour lire les données, `INSERT` pour créer des données et `UPDATE` pour modifier des données
+
+
+l'intérêt de ce langage c'est qu'on peut l'exécuter sans interface graphique (sans phpmyadmin donc), directement depuis le php ! donc on va être en mesure depuis notre site d'aller lire des infos en base, les modifier, les créer etc.
+
+:ordinateur: :tada: :gâteau: :informaticienne: :clavier: :homme_technologue:
+
+
+### Projet informatique
+
+Ordre à suivre :
+
+1. recueil des besoins ! (cahier des charges, etc.)
+2. conception (MERISE, wireframes, use case, UI/UX)
+3. réalisation (back et front , dans l'ordre que vous voulez, mais le back est nécessaire au front, l'inverse non, donc probablement qu'il faudra commencer un peu + sur le back)
+
+### Merise
+
+En terme de Merise, les rappels pour le MCD :
+
+* on regroupe les données dans les rectangles (appelés Entité)
+* on définit des relations entre les rectangles, qui sont des relations fonctionnelles (qui dépendent du cahier des charges  ! c'est la fonction de notre application quoi), représentées par des ovales
+* on précise nos relations avec des cardinalités, pour indiquer combien d'éléments différents on peut relier les uns aux autres
+
+lors de la transformation en modèle physique , il faudra créer les fameuses contraintes, càd les colonnes qui vont contenir les clés primaires et étrangères
+
+
+et :danger:  : si la relation entre 2 entités est ManyToMany (ie : plusieurs entités de type A peuvent être liées à plusieurs entités de type B, ex: user et role) alors ces colonnes seront stockées dans une nouvelle table !!
+
+ceci étant comme tout est automatisé à partir du MCD dans looping / jmerise , ça peut être transparent pour vous. Mais sans logiciel vous seriez obligés de faire le MLD intermédiaire oui
+
+### Suite SQL
+
+```sql
+DELETE FROM ma_table WHERE condition_pour_selectionner_mon_element_à_supprimer;
+```
+
+Exercice: 
+
+Créer avec des requêtes SQL :
+
+*    au moins 4 articles : n'importe
+*    au moins 3 utilisateurs : "james bond", "sangoku kim" et n'importe
+*    au moins 2 roles (et les lier aux utilisateurs) : "admin" et "moderateur"
+*    au moins 2 catégories: "actualite", "covid"
+
+
+    #1451 - Cannot delete or update a parent row: a foreign key constraint fails (`news1`.`user_role`, CONSTRAINT `user_role_user1_FK` FOREIGN KEY (`id`) REFERENCES `user1` (`id`))
+
+c'est normal, tu essaies de supprimer une clé primaire, alors qu'elle est référencée par une clé étrangère qque part !
+
+=> il faut supprimer dans l'ordre inverse des insertions qu'on a faites hier !!!
+
+### Reprise du TP2
+
+1. connexion à la bdd avec le fichier `connexion.php`
+2. requetage et affichage dans un tableau html dans `accueil.php`
+
