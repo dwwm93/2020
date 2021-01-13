@@ -1,0 +1,133 @@
+/* css top 10 des films */
+#Top10 img{
+    max-width: 200px;
+    
+    
+}
+#Top10 li{
+    list-style-type: none;
+    
+    
+}
+#Top10 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: grey;
+
+}
+
+/* css des pages contact, connexion et inscription */
+.contact, .login, .inscription {
+    font-family: Georgia, 'Times New Roman', Times, serif, cursive;
+    background-color: cyan;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: blanchedalmond;
+    font-size: 18px;
+}
+
+.title{
+    font-family: Georgia, 'Times New Roman', Times, serif, cursive;
+    padding: 0 15px;
+    text-shadow: 0 0 5px black;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.title-1{
+    font-size: 50px;
+    margin-bottom: 30px;
+
+}
+.container1, .container2{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 3px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0, 4);
+    padding: 30px;
+}
+
+.form_group{
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+
+
+.form_input{
+    font-size: 16px;
+    font-family: inherit;
+    padding: 3px 10px;
+    border-radius: 3px;
+    border: none;
+    border-bottom: 4px solid transparent;
+    width: 100%;
+}
+
+.submitBtn{
+    display: block;
+    padding: 5px 30px;
+    border: none;
+    outline: none;
+    background-color: cyan;
+    color: darkgrey;
+    border-radius: 30px;
+    margin: 20px auto;
+    
+}
+
+/* css du dossier Tarif */
+.col-sm{
+    align-items: center;
+}
+
+.card{
+    border: solid black;
+    border-radius: 10px;
+}
+main{
+    background-color: cyan;
+}
+
+
+/* responsive */
+@media(max-width:700px){
+
+     #top10{
+         display: flex;
+         flex-direction: column;
+         flex-wrap: wrap;
+         align-items: center;
+ 
+     }
+     .footer{
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         text-align: center;
+
+         
+     }
+     .marfoot{
+         margin: 5px;
+     }
+     .carte{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+
+     }
+
+     .container2{
+         height: 100vh;
+         
+        
+     }
+ }
