@@ -140,4 +140,15 @@ class Article
             ":utilisateur_id" => $this->utilisateur_id,
         ]);
     }
+
+    /**
+     * Supprime l'enregistrement associé à l'objet en cours
+     */
+    public function delete()
+    {
+        if (!$this->id) throw new \Exception("On ne peut pas supprimer un enregistrement avec un id null");
+        $requete = "DELETE FROM article WHERE id=:id";
+        $sql = $this->bdd->prepare($requete);
+        $sql->execute([":id" => $this->id]);
+    }
 }

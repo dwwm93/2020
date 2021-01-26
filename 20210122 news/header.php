@@ -13,11 +13,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-light" id="navbar">
-        <a class="navbar-brand" href="index.php?page=">NEWS</a>
-        <ul class="navbar-nav">
-            <li class="nav-item" ><a class="nav-link" href="index.php?page=inscription">Inscription<a></li>
-            <?php menu($bdd); ?>
-        </ul>
-    </nav>
-
+    <?php
+    $menu = new Menu($bdd, "NEWS", null, "bg-dark");
+    $menu->affiche();
+    ?>

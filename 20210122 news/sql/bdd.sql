@@ -9,3 +9,9 @@ CREATE TABLE article
     categorie_id INT(11), -- FK vers categorie.id
     utilisateur_id INT(11) -- FK vers utilisateur.id
 )
+
+CREATE TABLE categorie 
+(
+    id INT(11) AUTO_INCREMENT,
+    nom VARCHAR(255)
+)
