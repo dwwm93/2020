@@ -2,11 +2,6 @@
     <h2 class="mt-2">Créer une nouvelle catégorie</h2>
 
     <?php
-
-    $categorie = new Categorie($bdd);
-    $categorie->nom = @$_POST["nom"];
-    $categorie->insert();
-
     if ($categorie->id !== null) {
         echo "La catégorie vient d'être créée !!";
     }

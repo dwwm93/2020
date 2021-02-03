@@ -1,48 +1,55 @@
 <?php
 
-include('bdd.php');
+include("bdd.php");
 
-include('functions.php');
-include('model/article.php');
+include("model/article.php");
 include("model/categorie.php");
+include("model/menu.php");
 
-include('header.php');
+include("controller/categorieController.php");
+include("controller/accueilController.php");
+include("controller/menuController.php");
 
+include("view/templates.php");
+include("view/header.php");
 
-$page = @$_GET["page"]; // décomposition de l'url : localhost/index.php?page=MAPAGE
+class Router
+{
+    private $page;
 
-switch ($page) {
-    case 'cat':
-        include('categories.php');
-        break;
-    case 'art':
-        include('vue/read_article_blog.php');
-        break;
-    case 'create_art':
-        include('vue/create_article.php'); // localhost/index.php?page=create_art
-        break;
-    case 'update_art':
-        include('vue/update_article.php');
-        break;
-    case 'delete_art':
-        include('vue/delete_article.php');
-        break;
-    case 'create_cat':
-        include('vue/categorie/createCategorie.php'); // localhost/index.php?page=create_cat
-        break;
-    case 'update_cat':
-        include('vue/categorie/updateCategorie.php');
-        break;
-    case 'delete_cat':
-        include('vue/categorie/deleteCategorie.php');
-        break;
-    case 'inscription':
-        include('inscription.php');
-        break;
+    public function __construct($page = null)
+    {
+        $this->page = $page;
+    }
 
-    default:
-        include("accueil.php");
+    /**
+     * Déclenche l'appel au controller adéquat en fonction de la page demandée par l'utilisateur.
+     * 
+     * @param PDO $bdd Objet de connexion à la BDD.
+     */
+    function getPage(PDO $bdd)
+    {
+        switch ($this->page) {
+            case 'create_cat':
+                $controller = new CategorieController($bdd);
+                $controller->create();
+                break;
+            case 'update_cat':
+                $controller = new CategorieController($bdd);
+                $controller->update($_GET["id"]);
+                break;
+
+            default:
+                $controller = new AccueilController($bdd);
+                $controller->affiche();
+                break;
+        }
+    }
 }
 
+$router = new Router(@$_GET["page"]); // On récupère la valeur associée à la clé "page" dans l'url
+// exemple localhost/index.php?page=create_cat 
 
-include('footer.php');
+$router->getPage($bdd);
+
+include("view/footer.php");

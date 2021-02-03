@@ -14,6 +14,6 @@
 
 <body>
     <?php
-    $menu = new Menu($bdd, "NEWS", null, "bg-dark");
-    $menu->affiche();
+    $menuController = new MenuController($bdd);
+    $menuController->affiche();
     ?>

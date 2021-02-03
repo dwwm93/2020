@@ -37,16 +37,11 @@ class Article
     }
 
     /**
-     * Article + affichage liste top
+     * Renvoie la liste des TOP articles.
      */
-    function topArticle($bdd)
+    function topArticles()
     {
-        echo '<div class="container border mt-4">';
-        $cat = $bdd->query('SELECT * FROM article');
-        while ($colonne = $cat->fetch()) {
-            echo '<h2><a href="?page=art&id=' . $colonne["id_cat"] . '&id_art=' . $colonne["id_article"] . '">' . $colonne["titre"] . '</a></h2>';
-        };
-        echo '</div>';
+        return $this->bdd->query('SELECT * FROM article LIMIT 5');
     }
 
     /**
