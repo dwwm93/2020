@@ -1,0 +1,105 @@
+## Mercredi 2021/02/03
+
+Reprise des cours objet précédents
+
+### UML
+
+Présentation
+
+* MERISE : but créer une base de données
+* UML : Langage de modélisation unifié : but représenter le fonctionnement de l'application
+
+=> c'est un langage : utilisé pour communiquer entre différents métiers
+
+Il y a bcp de schémas différents en UML, + qu'en Merise (MCD, MLD ...) !
+
+On va se concentrer sur 2 schémas en ce qui nous concerne : Diagramme de Cas d'Utilisation, et Diagramme de Classe
+
+#### Diagramme de cas d'utilisation
+
+permet de voir qui agit sur le système (acteur), et ce qu'il peut faire (utilisations).
+
+on n'a pas le choix :
+
+* à gauche les acteurs
+* à droite un rectangle qui représente le système
+* les actions autorisées sont représentées par des ovales
+* les relations de dépendances entre les acteurs ou entre les actions sont matérialisées par des flèches
+
+FORMALISME obligatoire :
+meme les bonshommes moches sont dans la norme !
+
+NB : utile en phase de conception !
+
+include : buy book ----> open account : le cas d'utilisation "open account" est "nécessaire" ("inclus") dans le cas d'utilsation "acheter livre"
+
+extends : search------> buy : il indique que "search" peut venir "compléter" le cas d'utilisation "buy"
+
+il faut garder le mot "extends" ou "inclide" à cote de la fleche sinon on ne peut pas les distinguer
+
+du point de vue de "buy" les 2 flches n'ont pas la même direction
+
+#### Diagramme de classe
+
+
+    ---------------------------------------
+    |      Ma_classe                      |
+    ---------------------------------------
+    | - propriétéPrivée : type            |
+    | + propriétéPublique : type          |
+    | # propriétéProtegée : type          |
+    ---------------------------------------
+    | + méthodePublique(arguments) : type |
+    ---------------------------------------
+
+ATTENTION toujours diviser le rectangle en 3 !
+
+s'il n'y a pas de propriété ou de méthode, il faut mettre une division vide
+
+Un diagramme de classe, permet de représenter... des classes :tada:
+
+càd son nom, ses propriétés et ses méthodes + l'héritage et relations (par les flèches/traits)
+
+Donc un parent => plusieurs enfants, un enfant => un parent
+
+##### void
+
+dans les types des propriétés, des arguments ou des retours, on trouve : "int", "string" etc.
+
+un des types "speciaux" c'est void : c'est pour un retour de fonction *QUI NE RETOURNE RIEN*
+
+ex: supprimeProfil()
+
+```php
+public function supprimeProfil(int $id): void
+{
+    $bdd->prepare("DELETE ......");
+    // ...
+    // PAS DE RETURN
+}
+```
+
+si je fais `$return = supprimeProfil(1);` => dans $return il n'y a ... rien (void)
+
+##### Héritage
+
+ATTENTION la fleche de l'héritage, est "blanche" !! (triangulaire) (modifié) 
+
+c'est une comme ça --|> et pas une comme ça --->
+
+la flèche standard a une autre signification, donc à ne pas utiliser par erreur
+
+##### Relations
+
+on vient de voir les relations
+
+et les flèches "triangle" c'est l'héritage
+
+Pour la lecture des relations c'est l'inverse du MCD (la cardinalité est de l'autre coté du trait).
+
+NB: static = souligné, protected = #
+
+https://creately.com/blog/diagrams/class-diagram-relationships/
+
+![résumé](img/Class-Diagram-Relationships.png)
+	

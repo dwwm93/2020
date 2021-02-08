@@ -1,0 +1,6 @@
+## Vendredi 2021/01/22
+
+Mise en pratique POO sur le projet de news
+
+Voir le code [ici](https://github.com/dwwm93/2020/2021-01-22-news)
+

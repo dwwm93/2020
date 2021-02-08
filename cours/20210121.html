@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jeudi 2020/11/19 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
+    <title>Jeudi 2021/01/21 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -31,29 +31,28 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="jeudi-2020-11-19">
-<h1>Jeudi 2020/11/19<a class="headerlink" href="#jeudi-2020-11-19" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="travail-sur-les-objets">
-<h2>Travail sur les objets<a class="headerlink" href="#travail-sur-les-objets" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Création d”un site web simple pour afficher une liste d”élèves.</p>
-<p>Les élèves sont des objets avec un nom, un prénom et un âge.</p>
-<p>Travail collaboratif sur glitch : https://glitch.com/edit/#!/different-boundless-break</p>
-<p>On a bien noté qu”il fallait utiliser la syntaxe « . » pour accéder à la propriété d”un objet.
-Mais on peut également y accéder en faisant <code class="docutils literal notranslate"><span class="pre">objet[&quot;string_propriete&quot;]</span></code> .
-Exemple : <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3][&quot;length&quot;]</span></code></p>
+  <div class="section" id="jeudi-2021-01-21">
+<h1>Jeudi 2021/01/21<a class="headerlink" href="#jeudi-2021-01-21" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="mcd-contraintes-relations">
+<h2>MCD + Contraintes / Relations<a class="headerlink" href="#mcd-contraintes-relations" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Explications MCD / Merise, notamment la différence entre les relations (MCD) et leur traduction en MPD/SQL : les contraintes.</p>
+<p><img alt="MCD" src="../_images/2021-01-21_10-20-22.png" /></p>
 </div>
-<div class="section" id="fonction-en-parametre-d-une-fonction">
-<h2>Fonction en paramètre d”une fonction<a class="headerlink" href="#fonction-en-parametre-d-une-fonction" title="Lien permanent vers ce titre">¶</a></h2>
-<p>On a essayé de trier la liste des objets. Mais javascript n”est pas capable de décider si un objet est oui ou non plus grand q”un autre !!</p>
-<p>Par exemple est-ce que l”objet <code class="docutils literal notranslate"><span class="pre">{nom:</span> <span class="pre">&quot;Rambo&quot;,</span> <span class="pre">prenom:</span> <span class="pre">&quot;John&quot;}</span></code> est plus grand que l”objet <code class="docutils literal notranslate"><span class="pre">{nom:</span> <span class="pre">&quot;Schwarzenegger&quot;,</span> <span class="pre">prenom:</span> <span class="pre">&quot;Arnold&quot;}</span></code> ?? puisqu”ils font parti tous les 2 de la liste <code class="docutils literal notranslate"><span class="pre">expandables</span></code>.</p>
-<p>Comme javascript ne peut pas le deviner, il nous demande de lui donner une fonction capable de comparer 2 éléments l”un par rapport à l”autre. Elle doit renvoyer 1 si le premier est plus grand, -1 sinon.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">comparerBourrin</span><span class="p">(</span><span class="nx">acteur1</span><span class="p">,</span> <span class="nx">acteur2</span><span class="p">){</span>
-   <span class="k">return</span> <span class="nx">acteur1</span><span class="p">.</span><span class="nx">nom</span> <span class="o">&gt;</span> <span class="nx">acteur2</span><span class="p">.</span><span class="nx">nom</span> <span class="o">?</span> <span class="mf">1</span> <span class="o">:</span> <span class="o">-</span><span class="mf">1</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+<div class="section" id="php-pdo">
+<h2>PHP PDO<a class="headerlink" href="#php-pdo" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Explications fonctionnement requêtage de BDD avec PDO et php.</p>
+<ul class="simple">
+<li><p>requetes</p></li>
+<li><p>requetes préparées
+…</p></li>
+</ul>
+<p><img alt="pdo" src="../_images/2021_01_21_0j4_Kleki.png" />
+<img alt="pdo2" src="../_images/2021_01_21_0ju_Kleki.png" /></p>
 </div>
-<p>Et pour l”utiliser il faut la passer, <strong>sans l”appeler</strong> en argument de l”appel de <code class="docutils literal notranslate"><span class="pre">sort()</span></code>, c”est à dire dans notre cas : <code class="docutils literal notranslate"><span class="pre">expandables.sort(comparerBourrin)</span></code>.</p>
-<p>Puis on a essayé de faire une bascule pour se souvenir de l”état de tri (ascendant ou descendant) entre les clics.</p>
+<div class="section" id="poo-programmation-orientee-objet">
+<h2>POO : Programmation orientée objet<a class="headerlink" href="#poo-programmation-orientee-objet" title="Lien permanent vers ce titre">¶</a></h2>
+<p><img alt="poo" src="../_images/2021_01_21_0l3_Kleki.png" />
+<img alt="poo2" src="../_images/2021_01_21_0r6_Kleki.png" /></p>
 </div>
 </div>
 
@@ -136,7 +135,7 @@ Exemple : <code class="docutils literal notranslate"><span class="pre">[1,</span
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="../_sources/cours/20201119.md.txt"
+      <a href="../_sources/cours/20210121.md.txt"
           rel="nofollow">Page source</a>
     </div>
 
