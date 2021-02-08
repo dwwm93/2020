@@ -37,7 +37,7 @@ jobs:
           pip3 install sphinx sphinx-rtd-theme recommonmark
 
       - name: "Generate cours.md"
-        run: find docs/cours/ -maxdepth 1 -iname '*.md' -exec cat {} > docs/cours.md && cat docs/cours.md
+        run: find docs/cours/ -maxdepth 1 -iname '*.md' -exec cat {} +> docs/cours.md && cat docs/cours.md
 
       - name: "Build Sphinx Doc"
         run: |
