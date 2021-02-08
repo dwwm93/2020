@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vendredi 2020/11/13 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
+    <title>Cours TP DWWM &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -32,811 +32,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="vendredi-2020-11-13">
-<h1>Vendredi 2020/11/13<a class="headerlink" href="#vendredi-2020-11-13" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="reprise-du-tp-banque">
-<h2>Reprise du TP banque<a class="headerlink" href="#reprise-du-tp-banque" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Objectif: maîtriser les fonctions.</p>
-<p>On essaie de faire des fonctions qui marchent pour n”importe lequel des comptes bancaires html.</p>
-<p>Alors qu”avant la fonction ne modifiait que le premier compte qu”elle trouvait, il faut maintenant lui donner le compte qu”elle doit modifier.</p>
-</div>
-<div class="section" id="addendum-fonctions">
-<h2>Addendum fonctions :<a class="headerlink" href="#addendum-fonctions" title="Lien permanent vers ce titre">¶</a></h2>
-<p><strong>Une fonction est une ACTION</strong>, donc on doit lui dire qui doit l”effectuer, et avec quoi etc.</p>
-<p>=&gt; les arguments sont <strong>indispensables</strong> !</p>
-</div>
-<div class="section" id="installation-git-github">
-<h2>Installation git + github<a class="headerlink" href="#installation-git-github" title="Lien permanent vers ce titre">¶</a></h2>
-<ol class="simple">
-<li><p>création du compte github</p></li>
-<li><p>installation de git sur les pc (pour windows par ex c”est ici :<a class="reference external" href="gitforwindows.org">git for windows</a>) (on accepte tous les paramètres par défaut)</p></li>
-<li><p>paramétrage de vscode pour utiliser git (il suffit de le relancer !!)</p></li>
-<li><p>mise à jour email et name de « git config »</p></li>
-<li><p>premier commit =&gt; autorisations github demandées et acceptées !</p></li>
-<li><p>modifier un fichier (créer un README par exemple) et le « commiter » et l”envoyer sur github</p></li>
-<li><p>on vérifie que tout est bien affiché sur github</p></li>
-<li><p>profit</p></li>
-</ol>
-</div>
-</div>
-<div class="section" id="jeudi-2020-11-19">
-<h1>Jeudi 2020/11/19<a class="headerlink" href="#jeudi-2020-11-19" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="travail-sur-les-objets">
-<h2>Travail sur les objets<a class="headerlink" href="#travail-sur-les-objets" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Création d”un site web simple pour afficher une liste d”élèves.</p>
-<p>Les élèves sont des objets avec un nom, un prénom et un âge.</p>
-<p>Travail collaboratif sur glitch : https://glitch.com/edit/#!/different-boundless-break</p>
-<p>On a bien noté qu”il fallait utiliser la syntaxe « . » pour accéder à la propriété d”un objet.
-Mais on peut également y accéder en faisant <code class="docutils literal notranslate"><span class="pre">objet[&quot;string_propriete&quot;]</span></code> .
-Exemple : <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3][&quot;length&quot;]</span></code></p>
-</div>
-<div class="section" id="fonction-en-parametre-d-une-fonction">
-<h2>Fonction en paramètre d”une fonction<a class="headerlink" href="#fonction-en-parametre-d-une-fonction" title="Lien permanent vers ce titre">¶</a></h2>
-<p>On a essayé de trier la liste des objets. Mais javascript n”est pas capable de décider si un objet est oui ou non plus grand q”un autre !!</p>
-<p>Par exemple est-ce que l”objet <code class="docutils literal notranslate"><span class="pre">{nom:</span> <span class="pre">&quot;Rambo&quot;,</span> <span class="pre">prenom:</span> <span class="pre">&quot;John&quot;}</span></code> est plus grand que l”objet <code class="docutils literal notranslate"><span class="pre">{nom:</span> <span class="pre">&quot;Schwarzenegger&quot;,</span> <span class="pre">prenom:</span> <span class="pre">&quot;Arnold&quot;}</span></code> ?? puisqu”ils font parti tous les 2 de la liste <code class="docutils literal notranslate"><span class="pre">expandables</span></code>.</p>
-<p>Comme javascript ne peut pas le deviner, il nous demande de lui donner une fonction capable de comparer 2 éléments l”un par rapport à l”autre. Elle doit renvoyer 1 si le premier est plus grand, -1 sinon.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">comparerBourrin</span><span class="p">(</span><span class="nx">acteur1</span><span class="p">,</span> <span class="nx">acteur2</span><span class="p">){</span>
-   <span class="k">return</span> <span class="nx">acteur1</span><span class="p">.</span><span class="nx">nom</span> <span class="o">&gt;</span> <span class="nx">acteur2</span><span class="p">.</span><span class="nx">nom</span> <span class="o">?</span> <span class="mf">1</span> <span class="o">:</span> <span class="o">-</span><span class="mf">1</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Et pour l”utiliser il faut la passer, <strong>sans l”appeler</strong> en argument de l”appel de <code class="docutils literal notranslate"><span class="pre">sort()</span></code>, c”est à dire dans notre cas : <code class="docutils literal notranslate"><span class="pre">expandables.sort(comparerBourrin)</span></code>.</p>
-<p>Puis on a essayé de faire une bascule pour se souvenir de l”état de tri (ascendant ou descendant) entre les clics.</p>
-</div>
-</div>
-<div class="section" id="lundi-2021-01-04">
-<h1>Lundi 2021/01/04<a class="headerlink" href="#lundi-2021-01-04" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Début du php !!</p>
-<div class="section" id="presentation">
-<h2>Présentation<a class="headerlink" href="#presentation" title="Lien permanent vers ce titre">¶</a></h2>
-<ul class="simple">
-<li><p>PHP = logiciel ET un langage</p></li>
-<li><p>par ex sur windows : le logiciel est php.exe</p></li>
-<li><p>le langage reste « PHP »</p></li>
-</ul>
-<p>au départ ça voulait dire Personal Home Page le but c”était de générer du HTML
-exactement le meme but que lorsqu”on créait des innerHTML en javascript</p>
-<p>On crée un fichier « index.php » !</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
-  <span class="k">echo</span> <span class="s2">&quot;premier code php&quot;</span><span class="p">;</span>
-<span class="cp">?&gt;</span><span class="x"></span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h2>
-<ol class="simple">
-<li><p>Ouvrir le terminal intégré dans vscode</p></li>
-<li><p>Taper <code class="docutils literal notranslate"><span class="pre">php</span> <span class="pre">-v</span></code>  (le v est en minuscule, et notez l”espace)</p></li>
-</ol>
-<p>pour ceux qui ont des windows, ça ne devrait pas marcher, pour les autres (mac, linux…) ça devrait le faire</p>
-<p>comment faire pour les windowsiens ?</p>
-<p>=&gt; https://getcomposer.org/doc/00-intro.md#using-the-installer
-getcomposer.orggetcomposer.org
-Introduction - Composer
-A Dependency Manager for PHP</p>
-<p>on va installer « composer » (on s”en servira plus tard), et il va nous rendre php accessible partout</p>
-<p><img alt="install composer" src="img/composer-install-php.png" /></p>
-<p>options par défaut, sauf le « PATH » de php</p>
-<p>exemple de chemin vers php pour les windows : C:/wamp64/bin/php7.2/php.exe</p>
-<p>ensuite fermer vscode et le rouvrir, puis refaire php -v</p>
-<p>https://www.wampserver.com/</p>
-<div class="section" id="intelephense">
-<h3>Intelephense<a class="headerlink" href="#intelephense" title="Lien permanent vers ce titre">¶</a></h3>
-</div>
-</div>
-<div class="section" id="code">
-<h2>Code<a class="headerlink" href="#code" title="Lien permanent vers ce titre">¶</a></h2>
-<p>plusieurs choses :</p>
-<ol class="simple">
-<li><p>les variables commencent par des « $ » en php (ici en js on aurait : let var = « texte »;</p></li>
-<li><p>les instructions se terminent par un « ; » !!!!!!!</p></li>
-<li><p>en js on aurait : <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">bonjour</span> <span class="pre">=</span> <span class="pre">&quot;Bonjour</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">nom;</span></code> donc la concaténation des chaines de caractères en php se fait avec le « . »</p></li>
-</ol>
-<p>Exécution :</p>
-<p><code class="docutils literal notranslate"><span class="pre">php</span> <span class="pre">le_nom_du_script.php</span></code></p>
-<p>avec un espace entre php et <code class="docutils literal notranslate"><span class="pre">le_nom_du_script.php</span></code>.</p>
-<p>Vu :</p>
-<ul class="simple">
-<li><p>tableaux</p></li>
-<li><p>boucles</p></li>
-<li><p>conditions</p></li>
-<li><p>tableaux associatifs</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="mardi-2021-01-05">
-<h1>Mardi 2021/01/05<a class="headerlink" href="#mardi-2021-01-05" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="exercice-pour-s-entrainer-pour-les-fonctions">
-<h2>Exercice pour s”entraîner pour les fonctions<a class="headerlink" href="#exercice-pour-s-entrainer-pour-les-fonctions" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Afficher un tableau sous forme de texte.</p>
-<p>But : utiliser uniquement les fonctions que je fournissais</p>
-</div>
-<div class="section" id="correction-voir-fichiers-associes">
-<h2>Correction ? (voir fichiers associés)<a class="headerlink" href="#correction-voir-fichiers-associes" title="Lien permanent vers ce titre">¶</a></h2>
-<p>en js on faisait <code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">+=</span> <span class="pre">&quot;toto&quot;</span></code> pour concaténer 2 strings, ici on fait <code class="docutils literal notranslate"><span class="pre">$res</span> <span class="pre">.=</span> <span class="pre">&quot;toto&quot;;</span></code></p>
-<p>c”est égal à <code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">=</span> <span class="pre">res</span> <span class="pre">+</span> <span class="pre">&quot;toto&quot;</span></code>, et <code class="docutils literal notranslate"><span class="pre">&quot;$res</span> <span class="pre">=</span> <span class="pre">$res</span> <span class="pre">.</span> <span class="pre">&quot;toto&quot;;</span></code></p>
-<p>étape 1 du déroulement du code :</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(genCol(majuscule($eleve[&quot;nom&quot;])) . genCol(minuscule($eleve[&quot;prenom&quot;])));</span>
-</pre></div>
-</div>
-<p>étape 2 du déroulement :</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(genCol(majuscule(&quot;kim&quot;)) . genCol(minuscule(&quot;sangoku&quot;)));</span>
-</pre></div>
-</div>
-<p>étape 3 :</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(genCol(&quot;KIM&quot;) . genCol(&quot;sangoku&quot;));</span>
-</pre></div>
-</div>
-<p>étape 4 :</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(&quot;KIM|&quot; . &quot;sangoku|&quot;);</span>
-</pre></div>
-</div>
-<p>étape 5 :</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(&quot;KIM|sangoku|&quot;);</span>
-</pre></div>
-</div>
-<p>étape 6 :</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= &quot;KIM|sangoku|\n&quot;;</span>
-</pre></div>
-</div>
-<p>étape 7 :</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl = $tbl . &quot;KIM|sangoku|\n&quot;;</span>
-</pre></div>
-</div>
-<p>alors</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">// si $tbl = &quot;==========\n&quot;;</span>
-<span class="x">// alors</span>
-<span class="x">// =&gt; donc $tbl est égal à &quot;==========\nKIM|sangoku|\n&quot;</span>
-</pre></div>
-</div>
-<p>si je fais ensuite</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">echo $tbl;</span>
-</pre></div>
-</div>
-<p>alors ça affiche :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==========</span>
-<span class="n">KIM</span><span class="o">|</span><span class="n">sangoku</span><span class="o">|</span>
-</pre></div>
-</div>
-<p>si je vous mets la meme chose formatée un peu mieux :</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(</span>
-<span class="x">            genCol(</span>
-<span class="x">                majuscule(</span>
-<span class="x">                    $eleve[</span>
-<span class="x">                        $colonnes[0]</span>
-<span class="x">                    ]</span>
-<span class="x">                )</span>
-<span class="x">            ) . genCol(</span>
-<span class="x">                minuscule(</span>
-<span class="x">                    $eleve[</span>
-<span class="x">                        $colonnes[1]</span>
-<span class="x">                    ]</span>
-<span class="x">                )</span>
-<span class="x">            )</span>
-<span class="x">        );</span>
-</pre></div>
-</div>
-<p>il reste à faire</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">afficheDansLeTerminal($tbl);</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="vendredi-2021-01-22">
-<h1>Vendredi 2021/01/22<a class="headerlink" href="#vendredi-2021-01-22" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Mise en pratique POO sur le projet de news</p>
-<p>Voir le code <a class="reference external" href="https://github.com/dwwm93/2020/2021-01-22-news">ici</a></p>
-</div>
-<div class="section" id="vendredi-2020-12-18">
-<h1>Vendredi 2020/12/18<a class="headerlink" href="#vendredi-2020-12-18" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Dernière ligne droite pour le projet.</p>
-<p>On fait bien attention :</p>
-<ol class="simple">
-<li><p>à faire des fonctions génériques - boîtes noires -, qui prennent des arguments en entrée, et pas des fonctions qui vont modifier / utiliser des variables qui ne leur appartiennent pas</p></li>
-<li><p>à écrire des commentaires de qualité qui expliquent fonctionnellement ce que font les bouts de codes ( syntaxe :</p></li>
-</ol>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
-<span class="cm"> * Commentaire de ma fonction</span>
-<span class="cm"> * @param {string} paramString blablabla</span>
-<span class="cm"> */</span>
-</pre></div>
-</div>
-<ol class="simple">
-<li><p>à l”ordre de déclenchement des instructions, car quand on utilise $.get ou autres fonctions « ajax » (= asynchrone !!), l”ordre d”exécution n”est pas linéaire</p></li>
-</ol>
-<div class="section" id="revisions-jquery-bootstrap">
-<h2>Révisions jquery / bootstrap<a class="headerlink" href="#revisions-jquery-bootstrap" title="Lien permanent vers ce titre">¶</a></h2>
-</div>
-</div>
-<div class="section" id="vendredi-2020-12-11">
-<h1>Vendredi 2020/12/11<a class="headerlink" href="#vendredi-2020-12-11" title="Lien permanent vers ce titre">¶</a></h1>
-<p>bon, on se met en jambes en faisant l”exercice d”hier soir ?</p>
-<p>on essaie de déclencher le $.post en cliquant sur le bouton submit</p>
-<p>ca marche</p>
-<p>Pour l”exercice :</p>
-<ul class="simple">
-<li><p>est-ce que ça marchait bien pour vous sans changer de page avec le $.post hier ?</p></li>
-<li><p>est-ce que vous arrivez à lire les valeurs de l”input du form et à les envoyer via le $.post ainsi que la valeur de l”attribut action du form pour remplir l”url du $.post ?</p></li>
-<li><p>est-ce que vous arrivez à déclencher le $.post à partir du bouton submit ?</p></li>
-<li><p>est-ce que vous arrivez à supprimer le submit par défaut du formulaire pour éviter de vous rendre sur la page indiquée dans <code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">action=&quot;xxxx&quot;</span></code></p></li>
-</ul>
-<p>vous ete sur discord??</p>
-<p>oui</p>
-<p>oui</p>
-<p>:croissant:</p>
-<p>:croissant:</p>
-<p>je peut avoir un lien svp!</p>
-<p>moi j’ arive pas</p>
-<p>en fait perso j”ai téléchargé l”appli</p>
-<p>https://discord.com/channels/783391372169183265/783391372169183268
-DiscordDiscord
-Discord - A New Way to Chat with Friends &amp; Communities
-Discord is the easiest way to communicate over voice, video, and text. Chat, hang out, and stay close with your friends and communities. (62 ko)
-https://discord.com/assets/ee7c382d9257652a88c8f7b7f22a994d.png</p>
-<p>Thank”s Rathak</p>
-<p>merci</p>
-<p>derien</p>
-<p>https://stackoverflow.com/a/1357151/8721626 je pose ça là …
-Stack OverflowStack Overflow
-event.preventDefault() vs. return false
-When I want to prevent other event handlers from executing after a certain event is fired, I can use one of two techniques. I”ll use jQuery in the examples, but this applies to plain-JS as well: 1.</p>
-<p>il y a une différence entre le « event » du formulaire normal, et le « event » de jquery</p>
-<p>ce n”est pas le même « event » !</p>
-<p>celui de jquery il est redispatché à tous les autres (parce que je peux créer plusieurs $(“xxx”).on(“click”,</p>
-<form ...>
-  <button onclick='mafunc()' >clic
-...function mafunc(event){
-  event.preventDefault()
-}<p>Ici c”est l”event du navigateur</p>
-<p>Par contre si on utilise jquery !</p>
-<p>on va avoir un bouton sans « onclick », et à la place on aura :</p>
-<p>$(“button”).on(“click”, function (event) {..</p>
-<p>ici l”event est un evenment JQUERY pas celui du navigateur, parce que je peux déclarer plusieurs on(“click”, … sur le meme bouton</p>
-<p>donc pour un event jquery il faut :</p>
-<p>event.preventDefault()</p>
-<p>et</p>
-<p>event.stopPropagation()</p>
-<p>pour pas que l”event passe au formulaire quand même</p>
-<p>3ème solution, celle d”Esat : <code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">onSubmit=&quot;return</span> <span class="pre">false&quot;</span></code></p>
-<p><a class="reference external" href="https://apical.xyz/fiches/la_validation_d_un_formulaire_web_002/event_preventDefault_vs_event_stopPropagation">preventDefault apical.xyzapical.xyz</a></p>
-<p>ah merci !</p>
-<p>Sympa le lien ! Merci !</p>
-<p>https://www.w3schools.com/bootstrap4/bootstrap_colors.asp
-w3schools.comw3schools.com
-Bootstrap 4 Colors
-Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
-<p>https://www.w3schools.com/bootstrap4/bootstrap_containers.asp
-w3schools.comw3schools.com
-Bootstrap 4 Containers
-Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
-<p>https://www.w3schools.com/bootstrap4/bootstrap_typography.asp
-w3schools.comw3schools.com
-Bootstrap 4 Text/Typography
-Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
-<p>https://www.w3schools.com/bootstrap4/bootstrap_grid_basic.asp
-w3schools.comw3schools.com
-Bootstrap 4 Grid Basic
-Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
-<p>! important !!</p>
-<div class="section" id="exercice">
-<h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
-<p>2/12 sur la premiere et les 2 autres se répartissent le reste pour la page d”exemple,
-avec 3 colonnes</p>
-<p>https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp
-https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp</p>
-<p>https://www.w3schools.com/bootstrap4/bootstrap_cards.asp</p>
-<p>https://www.w3schools.com/bootstrap4/bootstrap_carousel.asp</p>
-<p>https://www.w3schools.com/bootstrap4/bootstrap_forms.asp</p>
-<p>https://www.w3schools.com/bootstrap4/bootstrap_modal.asp</p>
-<p>https://bootswatch.com/</p>
-<p>puis ajouter une modale qui contient un form, et essayer de mettre le $.post de ce matin</p>
-</div>
-</div>
-<div class="section" id="jeudi-2020-12-17">
-<h1>Jeudi 2020/12/17<a class="headerlink" href="#jeudi-2020-12-17" title="Lien permanent vers ce titre">¶</a></h1>
-<p>NB: Pendant ce temps les élèves avaient les réunions pédagogiques.</p>
-<p>On continue le projet de fin d”année avec des conseils sur la mise en page et le code.</p>
-<div class="section" id="mise-en-page-footer">
-<h2>Mise en page Footer<a class="headerlink" href="#mise-en-page-footer" title="Lien permanent vers ce titre">¶</a></h2>
-<p><a class="reference external" href="https://www.alioze.com/footer">ressource alioze.com</a></p>
-<blockquote>
-<div><p>Tout d’abord, votre pied de page doit être divisé en une section différente pour chacun des éléments : menu de navigation, mentions légales et CGU, appel à l’action (CTA), icônes de réseaux sociaux, etc. Les éléments les plus importants (souvent les informations de contact ou les appels à l’action) doivent être mis en avant.</p>
-</div></blockquote>
-</div>
-<div class="section" id="cta">
-<h2>CTA<a class="headerlink" href="#cta" title="Lien permanent vers ce titre">¶</a></h2>
-<blockquote>
-<div><p>CTA = call to action =&gt; « Un call to action - aussi appelé CTA - est un élément cliquable positionné sur une page de site internet, un blog ou un email qui incite vos visiteurs à effectuer une action précise, mais une action utile qui les font avancer dans leur parcours d’achat.
-Il peut prendre la forme d’une image, d’un lien, d’un bouton voire d’un bot et doit être utilisé à toutes les étapes du parcours d’achat. «  (source : https://www.ideagency.fr/blog/call-to-action )</p>
-</div></blockquote>
-</div>
-<div class="section" id="json">
-<h2>JSON<a class="headerlink" href="#json" title="Lien permanent vers ce titre">¶</a></h2>
-<p>pour rappel : JSON = chaine de caractère (c”est du texte) qui représente un « objet » javascript</p>
-<p>On peut transformer un objet js en json et vice versa grâce à :</p>
-<p><code class="docutils literal notranslate"><span class="pre">JSON.stringify(objet_js)</span></code> : js =&gt; json</p>
-<p><code class="docutils literal notranslate"><span class="pre">JSON.parse(chaine_json)</span></code> : json =&gt; js</p>
-</div>
-<div class="section" id="chaining">
-<h2>Chaining<a class="headerlink" href="#chaining" title="Lien permanent vers ce titre">¶</a></h2>
-<p>:danger:  si vous faites plusieurs « . » en jquery d”affilée (genre $(“#id1”).append(« … »).append(« xx »).on(« click »… , vous etes en train de faire ça : https://www.w3schools.com/JQuery/jquery_chaining.asp</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>exemple :
-
-let elem = $(&#39;#id1&#39;);
-let res = elem.append(&quot;&lt;p&gt;texte&lt;/p&gt;&quot;);
-</pre></div>
-</div>
-<p>=&gt; qu”y a til dans « res » ?? la balise « p » ou la balise « #id1 » ?</p>
-<p>donc si on fait <code class="docutils literal notranslate"><span class="pre">res.on(&quot;click&quot;</span> <span class="pre">,</span> <span class="pre">function</span> <span class="pre">(....</span></code> =&gt; quel est l”élément qui déclenche le clic ? le clic sur le p ou le clic sur le “#id1” ? !</p>
-</div>
-<div class="section" id="jquery-each">
-<h2>Jquery each<a class="headerlink" href="#jquery-each" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">key</span> <span class="o">&lt;</span> <span class="nx">tableau</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">key</span><span class="o">++</span><span class="p">){</span>
-    <span class="kd">let</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">tableau</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
-    <span class="c1">// traitement</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>c”est similaire à</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">tableau</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// traitement</span>
-<span class="p">})</span>
-</pre></div>
-</div>
-<p>c”est jquery qui te fournit key et val à ta place</p>
-</div>
-</div>
-<div class="section" id="mardi-2020-11-03">
-<h1>Mardi 2020/11/03<a class="headerlink" href="#mardi-2020-11-03" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="javascript-boucle-while">
-<h2>Javascript boucle WHILE<a class="headerlink" href="#javascript-boucle-while" title="Lien permanent vers ce titre">¶</a></h2>
-<p>boucle WHILE et exercices</p>
-<p>je declare une variable var i=1 pour commance la boucle par 1
-je met comme parametre tant que i &lt;= 10 continue la boucle
-c++ ancremente la variable i par 1</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span>
- 
-<span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;=</span> <span class="mf">10</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
-  <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="mardi-2020-11-10">
-<h1>Mardi 2020/11/10<a class="headerlink" href="#mardi-2020-11-10" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="javascript-tp-boutique">
-<h2>Javascript TP Boutique<a class="headerlink" href="#javascript-tp-boutique" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Nous avons crée un projet BOUTIQUE pour faire des exercices HTML,CSS et JS</p>
-<p>Le projet à pour but de mettre en place tous ce que nous avons fait depuis le debut des cours.</p>
-<ul class="simple">
-<li><p>HTML, creation en respectent de la structure HTML</p></li>
-<li><p>CSS, mise en place des styles dans tous le projet</p></li>
-<li><p>JS, creation des variable des fonctions, des tables, conditions et leurs utlisation,</p></li>
-</ul>
-<p>La structure HTML et CSS est realiser par tous le groupe le jour meme</p>
-</div>
-</div>
-<div class="section" id="mercredi-2020-11-25">
-<h1>Mercredi 2020/11/25<a class="headerlink" href="#mercredi-2020-11-25" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Découverte et inscription sur « codingwars.com ».</p>
-<p>Plusieurs exercices réalisés ensemble et corrigés ensemble.</p>
-</div>
-<div class="section" id="mercredi-2021-01-13">
-<h1>Mercredi 2021/01/13<a class="headerlink" href="#mercredi-2021-01-13" title="Lien permanent vers ce titre">¶</a></h1>
-<p>finalement on a vu quoi : on peut représenter ses données sous forme d”entités et de relations dans un MCD, en fonction des buts de l”application</p>
-<p>ça nous permet de manière automatique de transformer ce modèle « théorique » ,  en modèle physique interprétable directement par les logiciels de base de données</p>
-<p>dans notre cas on utilise des BDD relationnelles , donc qui permettent d”avoir des « relations » entre les tables, par le biais des clés primaires et clé étrangères ! (il n”y a donc pas de « lien » entre les tables, mais bien des « contraintes » entre les colonnes qui contiennent les clés primaires et celles qui contiennent les clés étrangères). Un base non relationnelle ne dispose pas de ces contraintes</p>
-<p>dans notre cas bis, on utilise des BDD SQL , donc qui demandent du langage SQL pour savoir comment :</p>
-<ol class="simple">
-<li><p>structurer les données que la BDD va stocker (LDD)</p></li>
-<li><p>manipuler les données une fois stockées (LMD)</p></li>
-</ol>
-<p>Pour le LDD on a vu déjà les requêtes SQL : <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">DATABASE</span> <span class="pre">ma_database;</span></code> et <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span> <span class="pre">ma_table</span> <span class="pre">(col1</span> <span class="pre">INT</span> <span class="pre">...)</span> <span class="pre">ENGINE=InnoDB;</span></code>, ainsi que vite fait <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">ma_table</span> <span class="pre">...;</span></code></p>
-<p>et pour le LMD on a vu <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> pour lire les données, <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> pour créer des données et <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> pour modifier des données</p>
-<p>l”intérêt de ce langage c”est qu”on peut l”exécuter sans interface graphique (sans phpmyadmin donc), directement depuis le php ! donc on va être en mesure depuis notre site d”aller lire des infos en base, les modifier, les créer etc.</p>
-<p>:ordinateur: :tada: :gâteau: :informaticienne: :clavier: :homme_technologue:</p>
-<div class="section" id="projet-informatique">
-<h2>Projet informatique<a class="headerlink" href="#projet-informatique" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Ordre à suivre :</p>
-<ol class="simple">
-<li><p>recueil des besoins ! (cahier des charges, etc.)</p></li>
-<li><p>conception (MERISE, wireframes, use case, UI/UX)</p></li>
-<li><p>réalisation (back et front , dans l”ordre que vous voulez, mais le back est nécessaire au front, l”inverse non, donc probablement qu”il faudra commencer un peu + sur le back)</p></li>
-</ol>
-</div>
-<div class="section" id="merise">
-<h2>Merise<a class="headerlink" href="#merise" title="Lien permanent vers ce titre">¶</a></h2>
-<p>En terme de Merise, les rappels pour le MCD :</p>
-<ul class="simple">
-<li><p>on regroupe les données dans les rectangles (appelés Entité)</p></li>
-<li><p>on définit des relations entre les rectangles, qui sont des relations fonctionnelles (qui dépendent du cahier des charges  ! c”est la fonction de notre application quoi), représentées par des ovales</p></li>
-<li><p>on précise nos relations avec des cardinalités, pour indiquer combien d”éléments différents on peut relier les uns aux autres</p></li>
-</ul>
-<p>lors de la transformation en modèle physique , il faudra créer les fameuses contraintes, càd les colonnes qui vont contenir les clés primaires et étrangères</p>
-<p>et :danger:  : si la relation entre 2 entités est ManyToMany (ie : plusieurs entités de type A peuvent être liées à plusieurs entités de type B, ex: user et role) alors ces colonnes seront stockées dans une nouvelle table !!</p>
-<p>ceci étant comme tout est automatisé à partir du MCD dans looping / jmerise , ça peut être transparent pour vous. Mais sans logiciel vous seriez obligés de faire le MLD intermédiaire oui</p>
-</div>
-<div class="section" id="suite-sql">
-<h2>Suite SQL<a class="headerlink" href="#suite-sql" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">ma_table</span> <span class="k">WHERE</span> <span class="n">condition_pour_selectionner_mon_element_à_supprimer</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Exercice:</p>
-<p>Créer avec des requêtes SQL :</p>
-<ul class="simple">
-<li><p>au moins 4 articles : n”importe</p></li>
-<li><p>au moins 3 utilisateurs : « james bond », « sangoku kim » et n”importe</p></li>
-<li><p>au moins 2 roles (et les lier aux utilisateurs) : « admin » et « moderateur »</p></li>
-<li><p>au moins 2 catégories: « actualite », « covid »</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#1451 - Cannot delete or update a parent row: a foreign key constraint fails (`news1`.`user_role`, CONSTRAINT `user_role_user1_FK` FOREIGN KEY (`id`) REFERENCES `user1` (`id`))</span>
-</pre></div>
-</div>
-<p>c”est normal, tu essaies de supprimer une clé primaire, alors qu”elle est référencée par une clé étrangère qque part !</p>
-<p>=&gt; il faut supprimer dans l”ordre inverse des insertions qu”on a faites hier !!!</p>
-</div>
-<div class="section" id="reprise-du-tp2">
-<h2>Reprise du TP2<a class="headerlink" href="#reprise-du-tp2" title="Lien permanent vers ce titre">¶</a></h2>
-<ol class="simple">
-<li><p>connexion à la bdd avec le fichier <code class="docutils literal notranslate"><span class="pre">connexion.php</span></code></p></li>
-<li><p>requetage et affichage dans un tableau html dans <code class="docutils literal notranslate"><span class="pre">accueil.php</span></code></p></li>
-</ol>
-</div>
-</div>
-<div class="section" id="jeudi-2020-11-12">
-<h1>Jeudi 2020/11/12<a class="headerlink" href="#jeudi-2020-11-12" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="exercice-pour-comprendre-les-tableaux">
-<h2>Exercice pour comprendre les tableaux<a class="headerlink" href="#exercice-pour-comprendre-les-tableaux" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Ecrire une liste d”élèves dans un tableau javascript et l”écrire sous forme de liste html grâce à une boucle for.</p>
-<p>Puis ajouter un bouton qui trie la liste par ordre alphabétique et qui la réaffiche.</p>
-<p>Pour ne pas dupliquer le code on utilise une fonction !</p>
-</div>
-<div class="section" id="travail-sur-les-commentaires-dans-le-code">
-<h2>Travail sur les commentaires dans le code<a class="headerlink" href="#travail-sur-les-commentaires-dans-le-code" title="Lien permanent vers ce titre">¶</a></h2>
-</div>
-<div class="section" id="id1">
-<h2>Reprise du TP banque<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Adapter le code du formateur qui ne marche que pour le premier compte, pour qu”il marche pour les 2 comptes !</p>
-<p><strong>Sans faire de copier coller</strong></p>
-</div>
-</div>
-<div class="section" id="lundi-2020-11-23">
-<h1>Lundi 2020/11/23<a class="headerlink" href="#lundi-2020-11-23" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="decouverte-de-let-et-const">
-<h2>Decouverte de LET et CONST<a class="headerlink" href="#decouverte-de-let-et-const" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Var = on peut redeclarer et changer sa valeur
-Let = on ne peut pas redeclarer mais on peut changer sa valeur
-Const = on ne peut pas redeclarer mais on peut pas changer sa valeur</p>
-<p>Explications détaillées du TP, revue des concepts de la veille, notamment les appels de fonctions en paramètre d”autres fonctions.</p>
-</div>
-<div class="section" id="variable-let">
-<h2>Variable LET<a class="headerlink" href="#variable-let" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Example LET :</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">test</span> <span class="o">=</span> <span class="mf">5</span><span class="p">;</span>
-    <span class="nx">test</span> <span class="o">=</span> <span class="mf">18</span><span class="p">;</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mf">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// some statements</span>
-        <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#demoLet2&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#demoLet&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">test</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="variable-const">
-<h2>Variable CONST<a class="headerlink" href="#variable-const" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Example CONST :</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span> <span class="kd">const</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">20</span><span class="p">;</span>
-<span class="c1">//i = 10; erreur</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#const&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
-    <span class="kd">const</span> <span class="nx">monTest</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="nx">monTest</span><span class="p">();</span>
-
-    <span class="kd">const</span> <span class="nx">monObjet</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">a</span><span class="o">:</span> <span class="s2">&quot;paris&quot;</span><span class="p">,</span>
-        <span class="nx">b</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-            <span class="nx">aler</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="mardi-2020-11-17">
-<h1>Mardi 2020/11/17<a class="headerlink" href="#mardi-2020-11-17" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="id2">
-<h2>Javascript TP Boutique<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Nous avons continuer sur le projet BOUTIQUE en integrent le JS
-Creation des fonctions, les condition, les boucles et les tableaux et execution à partir du HTML</p>
-</div>
-<div class="section" id="javascript-objet">
-<h2>Javascript Objet<a class="headerlink" href="#javascript-objet" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Decouverte des Objet
-un objet contient des propriétés et des méthodes :</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">car</span> <span class="o">=</span> <span class="p">{</span> 
-  <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;Fiat&quot;</span><span class="p">,</span><span class="c1">// propriété : &quot;valeur&quot;</span>
-  <span class="nx">model</span><span class="o">:</span><span class="s2">&quot;500&quot;</span><span class="p">,</span> <span class="c1">// propriété : &quot;valeur&quot;</span>
-  <span class="nx">color</span><span class="o">:</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="c1">// propriété : &quot;valeur&quot;</span>
-  <span class="nx">nomComplet</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">model</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Methode</span>
-<span class="p">};</span>
-</pre></div>
-</div>
-<p>pour appeler un une propriété dans l”objet car on appel la variable suivie d”un point suivie du nom de propriété</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">car</span><span class="p">.</span><span class="nx">model</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="lundi-2020-11-16">
-<h1>Lundi 2020/11/16<a class="headerlink" href="#lundi-2020-11-16" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="id3">
-<h2>Javascript TP Boutique<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Nous avons continuer sur le projet BOUTIQUE en integrent le JS
-Creation des fonction et les tableau et execution à partir du HTML</p>
-</div>
-</div>
-<div class="section" id="jeudi-2021-01-21">
-<h1>Jeudi 2021/01/21<a class="headerlink" href="#jeudi-2021-01-21" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="mcd-contraintes-relations">
-<h2>MCD + Contraintes / Relations<a class="headerlink" href="#mcd-contraintes-relations" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Explications MCD / Merise, notamment la différence entre les relations (MCD) et leur traduction en MPD/SQL : les contraintes.</p>
-<p><img alt="MCD" src="img/2021-01-21_10-20-22.png" /></p>
-</div>
-<div class="section" id="php-pdo">
-<h2>PHP PDO<a class="headerlink" href="#php-pdo" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Explications fonctionnement requêtage de BDD avec PDO et php.</p>
-<ul class="simple">
-<li><p>requetes</p></li>
-<li><p>requetes préparées
-…</p></li>
-</ul>
-<p><img alt="pdo" src="img/2021_01_21_0j4_Kleki.png" />
-<img alt="pdo2" src="img/2021_01_21_0ju_Kleki.png" /></p>
-</div>
-<div class="section" id="poo-programmation-orientee-objet">
-<h2>POO : Programmation orientée objet<a class="headerlink" href="#poo-programmation-orientee-objet" title="Lien permanent vers ce titre">¶</a></h2>
-<p><img alt="poo" src="img/2021_01_21_0l3_Kleki.png" />
-<img alt="poo2" src="img/2021_01_21_0r6_Kleki.png" /></p>
-</div>
-</div>
-<div class="section" id="mercredi-2020-12-02">
-<h1>Mercredi 2020/12/02<a class="headerlink" href="#mercredi-2020-12-02" title="Lien permanent vers ce titre">¶</a></h1>
-<p>des exercices pour jquery : <a class="reference external" href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors1">w3schools</a></p>
-<p>=&gt; exercices : selectors , get, set, add, remove, hide and show (modifié)</p>
-<p>l”explication pour l”exercice 6 des selecteurs : https://api.jquery.com/odd-selector/ , c”est équivalent à « nth-child(odd) » d”habitude</p>
-<p>pour l”instant, il n”y a pas besoin d”aller lire cette page !! c”est la doc officielle jquery, mais elle n”est pas très accessible aux débutants</p>
-<p>à savoir : « GET » = récupération des données, donc il s”agit des méthodes jquery qui lisent les valeurs, comme $(“p”).text() ou $(« input#prenom »).val() -&gt; ça va lire le contenu du texte des balises <p> ou lire la valeur des input d”id=prenom !</p>
-<p>quant à « SET » = modification des données, donc on utilise les mêmes méthodes mais en donnant des paramètres qui vont remplacer la valeur actuelle, ex: $(“p”).text(« nouveau texte »)</p>
-<p>vous pouvez zapper les questions sur les « attributs »</p>
-<div class="section" id="premiere-presentation-de-ajax">
-<h2>Première présentation de AJAX<a class="headerlink" href="#premiere-presentation-de-ajax" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="version-avec-load">
-<h3>Version avec « load »<a class="headerlink" href="#version-avec-load" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section:first-child&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Je remplis ma section.&quot;</span><span class="p">);</span>
-
-<span class="kd">const</span> <span class="nx">urlChuckNorris</span> <span class="o">=</span> <span class="s2">&quot;https://api.icndb.com/jokes/random&quot;</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">urlPokemon</span> <span class="o">=</span> <span class="s2">&quot;https://pokeapi.co/api/v2/pokemon/&quot;</span><span class="p">;</span><span class="c1">// https://api.jquery.com/load/</span>
-
-<span class="cm">/**</span>
-<span class="cm"> * Affiche dans la balise pre&gt;p un chuck norris fact</span>
-<span class="cm"> */</span>
-<span class="kd">function</span> <span class="nx">afficheChuck</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;pre&gt;p&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="nx">urlChuckNorris</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="cm">/**</span>
-<span class="cm"> * Affiche les caractéristiques du pokemon demandé !</span>
-<span class="cm"> *</span>
-<span class="cm"> * @param {string} pokemon</span>
-<span class="cm"> */</span>
-<span class="kd">function</span> <span class="nx">affichePokemon</span><span class="p">(</span><span class="nx">pokemon</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">urlPokemon</span> <span class="o">+</span> <span class="nx">pokemon</span><span class="p">;</span> <span class="c1">// https://pokeapi.co/api/v2/pokemon/pikachu si pokemon = &#39;pikachu&#39;</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;pre&gt;p&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="version-avec-get">
-<h3>Version avec .get<a class="headerlink" href="#version-avec-get" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
-<span class="cm"> *</span>
-<span class="cm"> * @param {string} pokemon Nom du pokemon à afficher</span>
-<span class="cm"> */</span>
-<span class="kd">function</span> <span class="nx">affichePokemon</span><span class="p">(</span><span class="nx">pokemon</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">urlPokemon</span> <span class="o">+</span> <span class="nx">pokemon</span><span class="p">;</span>
-  <span class="nx">$</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resultat</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultat</span><span class="p">);</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;p&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">resultat</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;p&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span>
-      <span class="s2">&quot;&lt;img src=&#39;&quot;</span> <span class="o">+</span> <span class="nx">resultat</span><span class="p">.</span><span class="nx">sprites</span><span class="p">.</span><span class="nx">front_shiny</span> <span class="o">+</span> <span class="s2">&quot;&#39;&gt;&quot;</span>
-    <span class="p">);</span>
-  <span class="p">});</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="mardi-2021-01-12">
-<h1>Mardi 2021/01/12<a class="headerlink" href="#mardi-2021-01-12" title="Lien permanent vers ce titre">¶</a></h1>
-<p>phpmyadmin vs mysql vs sql</p>
-<div class="section" id="manipulation-de-phpmyadmin">
-<h2>Manipulation de phpmyadmin<a class="headerlink" href="#manipulation-de-phpmyadmin" title="Lien permanent vers ce titre">¶</a></h2>
-<ol class="simple">
-<li><p>Création des tables à partir du script SQL créé dans looping ou JMerise, la veille à partir du MCD.</p></li>
-<li><p>Affichage du résultat dans le concepteur de Phpmyadmin pour bien comprendre la différence
-entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si une ligne existe dans phpmyadmin</p></li>
-<li><p>Régler les pbs d”auto increment</p></li>
-<li><p>Remplir avec des données</p></li>
-</ol>
-</div>
-<div class="section" id="sql-mysql">
-<h2>SQL /Mysql<a class="headerlink" href="#sql-mysql" title="Lien permanent vers ce titre">¶</a></h2>
-<p>pour nommer les identifiants (clé primaires!), il y a plusieurs formalismes :</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">table_id</span></code> (en changeant “table” bien sûr)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tab_id</span></code> (on garde 3 lettres)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">id_table</span></code></p></li>
-</ul>
-<p>mais ça ne pose aucun pb quel que soit le choix</p>
-<p>Par contre tout ce qui n”est pas comme ça, est probablement un mauvais choix</p>
-</div>
-<div class="section" id="tables-de-jointures-reexpliquees">
-<h2>Tables de jointures réexpliquées<a class="headerlink" href="#tables-de-jointures-reexpliquees" title="Lien permanent vers ce titre">¶</a></h2>
-</div>
-<div class="section" id="ldd">
-<h2>LDD<a class="headerlink" href="#ldd" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">article</span><span class="p">(</span>
-   <span class="n">id</span> <span class="nb">INT</span>  <span class="n">AUTO_INCREMENT</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="p">,</span>
- <span class="p">....</span>
-<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="decouverte-des-requetes-lmd">
-<h2>Découverte des requêtes LMD<a class="headerlink" href="#decouverte-des-requetes-lmd" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Jusqu”à présent, on a utilisé du « LDD » (CREATE , ALTER …) pour donner les instructions à mysql sur comment créer la structure des données</p>
-<p>now il est temps d”utiliser le LMD !</p>
-<p>c”est la partie de SQL qui permet de manipuler les données</p>
-<p>=&gt; lire les données :
-<code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">.....</span> <span class="pre">FROM</span> <span class="pre">la_table;</span></code></p>
-<p>=&gt; <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">col1,</span> <span class="pre">col2</span> <span class="pre">...</span> <span class="pre">FROM</span> <span class="pre">ma_table;</span></code></p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="k">user</span><span class="p">;</span>  
-</pre></div>
-</div>
-<blockquote>
-<div><p>Petite recommandation : mettre en majuscule les mots clé SQL, et en minuscule le reste</p>
-</div></blockquote>
-<p>NB: les ` sont facultatifs</p>
-<p>si je veux toutes les colonnes : <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">ma_table;</span></code></p>
-<p>pour le <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> : conditions que les données que je veux récupérer doivent valider</p>
-<p>exemple : <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">utilisateur</span> <span class="pre">WHERE</span> <span class="pre">nom</span> <span class="pre">=</span> <span class="pre">'dusse';</span></code></p>
-<p>la ca veut dire : selectionner toutes les colonnes d”utilisateur où le nom est « dusse » ?</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">utilisateur</span> <span class="k">WHERE</span> <span class="n">nom</span> <span class="o">=</span> <span class="s1">&#39;dusse&#39;</span> <span class="k">AND</span> <span class="n">prenom</span> <span class="o">=</span> <span class="s1">&#39;jean-claude&#39;</span><span class="p">;</span>
-</pre></div>
-</div>
-<blockquote>
-<div><p>autant de AND qu”on veut</p>
-</div></blockquote>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">utilisateur</span> <span class="k">WHERE</span> <span class="n">nom</span> <span class="o">=</span> <span class="s1">&#39;dusse&#39;</span> <span class="k">OR</span> <span class="n">prenom</span> <span class="o">=</span> <span class="s1">&#39;jean-claude&#39;</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Ou Dusse ou les jean Claude?</p>
-<p>le OR n”est pas exclusif, donc ce sera tous les jean claude + les dusse</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">utilisateur</span> <span class="k">WHERE</span> <span class="n">nom</span> <span class="o">=</span> <span class="s1">&#39;dusse&#39;</span> <span class="k">OR</span> <span class="n">prenom</span> <span class="o">=</span> <span class="s1">&#39;jean-claude&#39;</span> <span class="k">AND</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>:danger:</p>
-<p>là c”est comme les « + » et les « x » qd vous étiez au collège : qui gagne ??!!</p>
-<p>une idée de réponse : <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">utilisateur</span> <span class="pre">WHERE</span> <span class="pre">(nom</span> <span class="pre">=</span> <span class="pre">'dusse'</span> <span class="pre">OR</span> <span class="pre">prenom</span> <span class="pre">=</span> <span class="pre">'jean-claude')</span> <span class="pre">AND</span> <span class="pre">age</span> <span class="pre">&gt;</span> <span class="pre">50;</span></code></p>
-<div class="section" id="insert">
-<h3>INSERT<a class="headerlink" href="#insert" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">ma_table</span> <span class="p">(</span><span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">,</span> <span class="p">...)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">,</span> <span class="p">...);</span>
-</pre></div>
-</div>
-<p>Ici l”ordre est important : val1 va dans col1, val2 va dans col2 …</p>
-<p><a class="reference external" href="https://www.w3schools.com/sql/sql_syntax.asp">w3schools sql</a> !</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">ma_table</span> <span class="k">SET</span> <span class="n">col1</span> <span class="o">=</span> <span class="n">val1</span><span class="p">,</span> <span class="n">col2</span><span class="o">=</span><span class="n">val2</span> <span class="k">WHERE</span> <span class="n">id</span><span class="o">=</span> <span class="n">xxx</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>ATTENTION à ne pas oublier le WHERE !!</p>
-<blockquote>
-<div><p>permet de modifier tous les enregistrements (les lignes quoi) qui correspondent à la condition du WHERE</p>
-</div></blockquote>
-</div>
-</div>
-</div>
-<div class="section" id="mercredi-2021-02-03">
-<h1>Mercredi 2021/02/03<a class="headerlink" href="#mercredi-2021-02-03" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Reprise des cours objet précédents</p>
-<div class="section" id="uml">
-<h2>UML<a class="headerlink" href="#uml" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Présentation</p>
-<ul class="simple">
-<li><p>MERISE : but créer une base de données</p></li>
-<li><p>UML : Langage de modélisation unifié : but représenter le fonctionnement de l”application</p></li>
-</ul>
-<p>=&gt; c”est un langage : utilisé pour communiquer entre différents métiers</p>
-<p>Il y a bcp de schémas différents en UML, + qu”en Merise (MCD, MLD …) !</p>
-<p>On va se concentrer sur 2 schémas en ce qui nous concerne : Diagramme de Cas d”Utilisation, et Diagramme de Classe</p>
-<div class="section" id="diagramme-de-cas-d-utilisation">
-<h3>Diagramme de cas d”utilisation<a class="headerlink" href="#diagramme-de-cas-d-utilisation" title="Lien permanent vers ce titre">¶</a></h3>
-<p>permet de voir qui agit sur le système (acteur), et ce qu”il peut faire (utilisations).</p>
-<p>on n”a pas le choix :</p>
-<ul class="simple">
-<li><p>à gauche les acteurs</p></li>
-<li><p>à droite un rectangle qui représente le système</p></li>
-<li><p>les actions autorisées sont représentées par des ovales</p></li>
-<li><p>les relations de dépendances entre les acteurs ou entre les actions sont matérialisées par des flèches</p></li>
-</ul>
-<p>FORMALISME obligatoire :
-meme les bonshommes moches sont dans la norme !</p>
-<p>NB : utile en phase de conception !</p>
-<p>include : buy book —-&gt; open account : le cas d”utilisation « open account » est « nécessaire » (« inclus ») dans le cas d”utilsation « acheter livre »</p>
-<p>extends : search——&gt; buy : il indique que « search » peut venir « compléter » le cas d”utilisation « buy »</p>
-<p>il faut garder le mot « extends » ou « inclide » à cote de la fleche sinon on ne peut pas les distinguer</p>
-<p>du point de vue de « buy » les 2 flches n”ont pas la même direction</p>
-</div>
-<div class="section" id="diagramme-de-classe">
-<h3>Diagramme de classe<a class="headerlink" href="#diagramme-de-classe" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------</span>
-<span class="o">|</span>      <span class="n">Ma_classe</span>                      <span class="o">|</span>
-<span class="o">---------------------------------------</span>
-<span class="o">|</span> <span class="o">-</span> <span class="n">propriétéPrivée</span> <span class="p">:</span> <span class="nb">type</span>            <span class="o">|</span>
-<span class="o">|</span> <span class="o">+</span> <span class="n">propriétéPublique</span> <span class="p">:</span> <span class="nb">type</span>          <span class="o">|</span>
-<span class="o">|</span> <span class="c1"># propriétéProtegée : type          |</span>
-<span class="o">---------------------------------------</span>
-<span class="o">|</span> <span class="o">+</span> <span class="n">méthodePublique</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span> <span class="p">:</span> <span class="nb">type</span> <span class="o">|</span>
-<span class="o">---------------------------------------</span>
-</pre></div>
-</div>
-<p>ATTENTION toujours diviser le rectangle en 3 !</p>
-<p>s”il n”y a pas de propriété ou de méthode, il faut mettre une division vide</p>
-<p>Un diagramme de classe, permet de représenter… des classes :tada:</p>
-<p>càd son nom, ses propriétés et ses méthodes + l”héritage et relations (par les flèches/traits)</p>
-<p>Donc un parent =&gt; plusieurs enfants, un enfant =&gt; un parent</p>
-<div class="section" id="void">
-<h4>void<a class="headerlink" href="#void" title="Lien permanent vers ce titre">¶</a></h4>
-<p>dans les types des propriétés, des arguments ou des retours, on trouve : « int », « string » etc.</p>
-<p>un des types « speciaux » c”est void : c”est pour un retour de fonction <em>QUI NE RETOURNE RIEN</em></p>
-<p>ex: supprimeProfil()</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function supprimeProfil(int $id): void</span>
-<span class="x">{</span>
-<span class="x">    $bdd-&gt;prepare(&quot;DELETE ......&quot;);</span>
-<span class="x">    // ...</span>
-<span class="x">    // PAS DE RETURN</span>
-<span class="x">}</span>
-</pre></div>
-</div>
-<p>si je fais <code class="docutils literal notranslate"><span class="pre">$return</span> <span class="pre">=</span> <span class="pre">supprimeProfil(1);</span></code> =&gt; dans $return il n”y a … rien (void)</p>
-</div>
-<div class="section" id="heritage">
-<h4>Héritage<a class="headerlink" href="#heritage" title="Lien permanent vers ce titre">¶</a></h4>
-<p>ATTENTION la fleche de l”héritage, est « blanche » !! (triangulaire) (modifié)</p>
-<p>c”est une comme ça –|&gt; et pas une comme ça —&gt;</p>
-<p>la flèche standard a une autre signification, donc à ne pas utiliser par erreur</p>
-</div>
-<div class="section" id="relations">
-<h4>Relations<a class="headerlink" href="#relations" title="Lien permanent vers ce titre">¶</a></h4>
-<p>on vient de voir les relations</p>
-<p>et les flèches « triangle » c”est l”héritage</p>
-<p>Pour la lecture des relations c”est l”inverse du MCD (la cardinalité est de l”autre coté du trait).</p>
-<p>NB: static = souligné, protected = #</p>
-<p>https://creately.com/blog/diagrams/class-diagram-relationships/</p>
-<p><img alt="résumé" src="img/Class-Diagram-Relationships.png" /></p>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="cours-tp-dwwm">
+  <div class="section" id="cours-tp-dwwm">
 <h1>Cours TP DWWM<a class="headerlink" href="#cours-tp-dwwm" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="mardi-2020-10-06">
 <h2>Mardi 2020/10/06<a class="headerlink" href="#mardi-2020-10-06" title="Lien permanent vers ce titre">¶</a></h2>
@@ -895,13 +91,13 @@ meme les bonshommes moches sont dans la norme !</p>
 <h2>Mardi 2020/10/13<a class="headerlink" href="#mardi-2020-10-13" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Poursuite du TP2 avec révision de flexbox, et des balises les plus courantes (ex: input avec placeholder).</p>
 <p>Notamment on appuyé sur comment faire des liens dans la page (et le rôle des « id »).</p>
-<div class="section" id="id4">
-<h3>flexbox<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="id1">
+<h3>flexbox<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Attention : un élément flexbox ne peut gérer que ses enfants directs, pas ses petits enfants ou arrière petits enfants. On a insisté sur ce point.</p>
 <p>Quitte, pour plus de mise en page, à ce que les enfants deviennent eux mêmes des éléments flexbox et qu”ils gèrent leurs propres enfants.</p>
 </div>
-<div class="section" id="id5">
-<h3>selecteurs CSS<a class="headerlink" href="#id5" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="id2">
+<h3>selecteurs CSS<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Révision de comment fonctionnent les selecteurs CSS, comment on les manipule, qu”il faut être le plus précis possible pour ne pas modifier des éléments qu”on ne veut pas modifier, et qu”il faut limiter le nombre d”id et de class, qui ne doivent servir qu”en dernier recours.</p>
 <p>En effet, il vaut mieux éviter d”avoir à changer le code html quand on veut changer un style, il vaut mieux changer juste le css. (exemple: rajouter un élément dans ma barre de nav, sans avoir à lui donner la bonne classe ! mon selecteur CSS est fait de manière à le prendre de toute façon ! au pire on met juste l”id sur le parent « nav »)</p>
 <p>En + : découverte des selecteurs</p>
@@ -922,8 +118,8 @@ meme les bonshommes moches sont dans la norme !</p>
 </ul>
 </li>
 </ul>
-<div class="section" id="id6">
-<h3>flexbox<a class="headerlink" href="#id6" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="id3">
+<h3>flexbox<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h3>
 <p>travail sur TPFlex, utilisation des display, flex-wrap, flex-direction.</p>
 </div>
 <div class="section" id="media">
@@ -950,8 +146,8 @@ meme les bonshommes moches sont dans la norme !</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">margin</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">border</span></code></p></li>
 </ul>
-<div class="section" id="id7">
-<h3>&#64;media<a class="headerlink" href="#id7" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="id4">
+<h3>&#64;media<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Poursuite du TPFlex en responsive</p>
 </div>
 <div class="section" id="positions">
@@ -1021,8 +217,8 @@ Photo mis sur SLACK</p>
 <p>Réalisation du site web pour le cv dont on avait fait le zoning, le wireframe et le mockup.</p>
 <p>Obligation d”utiliser un positionnement fixed ou sticky pour le menu, et obligation de faire un site responsive.</p>
 <p>Ceux qui ont eu le temps on essayé de faire une media query « print » que l”on peut voir en utilisant l”impression par chrome.</p>
-<div class="section" id="id8">
-<h3>Sélecteurs CSS<a class="headerlink" href="#id8" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="id5">
+<h3>Sélecteurs CSS<a class="headerlink" href="#id5" title="Lien permanent vers ce titre">¶</a></h3>
 <p>exo « inversé »: à partir du sélecteur CSS proposer une arborescence HTML qui convient.</p>
 <p>La subtilité s”est trouvée notamment dans le fait d”utiliser l”espace dans le sélecteur, et donc tous les enfants, petits enfants etc. se retrouvaient sélectionnés. Il fallait penser à ce cas là.</p>
 </div>
@@ -1102,6 +298,33 @@ Photo mis sur SLACK</p>
 </div>
 </div>
 </div>
+<div class="section" id="jeudi-2020-10-29">
+<h2>Jeudi 2020/10/29<a class="headerlink" href="#jeudi-2020-10-29" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="javascript-conditions-switch">
+<h3>Javascript conditions SWITCH<a class="headerlink" href="#javascript-conditions-switch" title="Lien permanent vers ce titre">¶</a></h3>
+<p>decouverte des conditions SWITCH et exercices
+la condition switch à pour parametre
+une valeur ou une variable entre les ()
+et elle fonctionne par des case (cas)
+le break; permet de stoper le cas si la
+valeur ce trouve das se cas</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="n">switch</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">case</span> <span class="s2">&quot;admin&quot;</span><span class="p">:</span>
+    <span class="n">alert</span><span class="p">(</span><span class="s2">&quot;switch votre role est admin&quot;</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="n">case</span> <span class="mi">5</span><span class="p">:</span>
+  <span class="n">case</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="n">alert</span><span class="p">(</span><span class="s2">&quot;switch la valeur est 5&quot;</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="n">default</span><span class="p">:</span>
+    <span class="n">alert</span><span class="p">(</span><span class="s2">&quot;switch rien&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="lundi-2020-11-02">
 <h2>Lundi 2020/11/02<a class="headerlink" href="#lundi-2020-11-02" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="javascript-boucle-for">
@@ -1117,10 +340,23 @@ c++ ancremante la variable i par 1</p>
 </div>
 </div>
 </div>
-<div class="section" id="lundi-2021-01-25">
-<h2>Lundi 2021/01/25<a class="headerlink" href="#lundi-2021-01-25" title="Lien permanent vers ce titre">¶</a></h2>
-<p>On continue la transformation du site de news en objet.</p>
-<p>On commence notamment à faire de l”objet même pour les classes « non entités ». On commence aussi à séparer les « Model » des « Vues ».</p>
+<div class="section" id="mardi-2020-11-03">
+<h2>Mardi 2020/11/03<a class="headerlink" href="#mardi-2020-11-03" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="javascript-boucle-while">
+<h3>Javascript boucle WHILE<a class="headerlink" href="#javascript-boucle-while" title="Lien permanent vers ce titre">¶</a></h3>
+<p>boucle WHILE et exercices</p>
+<p>je declare une variable var i=1 pour commance la boucle par 1
+je met comme parametre tant que i &lt;= 10 continue la boucle
+c++ ancremente la variable i par 1</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span>
+ 
+<span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;=</span> <span class="mf">10</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+  <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="lundi-2020-11-09">
 <h2>Lundi 2020/11/09<a class="headerlink" href="#lundi-2020-11-09" title="Lien permanent vers ce titre">¶</a></h2>
@@ -1140,112 +376,121 @@ les taleau fonction par « position » autrement appeler « clé », la prem
 </div>
 </div>
 </div>
-<div class="section" id="jeudi-2020-12-10">
-<h2>Jeudi 2020/12/10<a class="headerlink" href="#jeudi-2020-12-10" title="Lien permanent vers ce titre">¶</a></h2>
-<p>https://developer.mozilla.org/fr/docs/Web/HTTP/M%C3%A9thode</p>
-<blockquote>
-<div><p>HTTP définit un ensemble de méthodes de requête qui indiquent l”action que l”on souhaite réaliser sur la ressource indiquée. Bien qu”on rencontre également des noms (en anglais), ces méthodes sont souvent appelées verbes HTTP. Chacun d”eux implémente une sémantique différente mais certaines fonctionnalités courantes peuvent être partagées par différentes méthodes (e.g. une méthode de requête peut être sûre (safe), idempotente ou être mise en cache (cacheable)).</p>
-</div></blockquote>
-<p>HTTP = moyen que les gens qui ont inventé internet utilisent pour que les machines communiquent entre elles</p>
-<p>(ps : http:// ça vient de là ! et la version sécurisée : https://)</p>
-<p>il faut imaginer internet comme une ville : pour relier les maisons on a fait les routes (=les cables), les adresses postales (les IP), les lettres/sonnettes - dsl pour l”analogie bof- (http)</p>
-<p>et un protocole d”affichage (j”ai pas d”exemple pour la ville) le web</p>
-<p>les méthodes qui nous préoccupent GET / POST / DELETE</p>
-<p>GET = récupération de la page indiquée</p>
-<p>POST = envoi d”une information à l”adresse indiquée</p>
-<p>ex: formulaire !!</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;index.html&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nom&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;quel est le nom du pokemon ?&quot;</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>OK<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<div class="section" id="mardi-2020-11-10">
+<h2>Mardi 2020/11/10<a class="headerlink" href="#mardi-2020-11-10" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="javascript-tp-boutique">
+<h3>Javascript TP Boutique<a class="headerlink" href="#javascript-tp-boutique" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Nous avons crée un projet BOUTIQUE pour faire des exercices HTML,CSS et JS</p>
+<p>Le projet à pour but de mettre en place tous ce que nous avons fait depuis le debut des cours.</p>
+<ul class="simple">
+<li><p>HTML, creation en respectent de la structure HTML</p></li>
+<li><p>CSS, mise en place des styles dans tous le projet</p></li>
+<li><p>JS, creation des variable des fonctions, des tables, conditions et leurs utlisation,</p></li>
+</ul>
+<p>La structure HTML et CSS est realiser par tous le groupe le jour meme</p>
+</div>
+</div>
+<div class="section" id="jeudi-2020-11-12">
+<h2>Jeudi 2020/11/12<a class="headerlink" href="#jeudi-2020-11-12" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercice-pour-comprendre-les-tableaux">
+<h3>Exercice pour comprendre les tableaux<a class="headerlink" href="#exercice-pour-comprendre-les-tableaux" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Ecrire une liste d”élèves dans un tableau javascript et l”écrire sous forme de liste html grâce à une boucle for.</p>
+<p>Puis ajouter un bouton qui trie la liste par ordre alphabétique et qui la réaffiche.</p>
+<p>Pour ne pas dupliquer le code on utilise une fonction !</p>
+</div>
+<div class="section" id="travail-sur-les-commentaires-dans-le-code">
+<h3>Travail sur les commentaires dans le code<a class="headerlink" href="#travail-sur-les-commentaires-dans-le-code" title="Lien permanent vers ce titre">¶</a></h3>
+</div>
+<div class="section" id="reprise-du-tp-banque">
+<h3>Reprise du TP banque<a class="headerlink" href="#reprise-du-tp-banque" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Adapter le code du formateur qui ne marche que pour le premier compte, pour qu”il marche pour les 2 comptes !</p>
+<p><strong>Sans faire de copier coller</strong></p>
+</div>
+</div>
+<div class="section" id="vendredi-2020-11-13">
+<h2>Vendredi 2020/11/13<a class="headerlink" href="#vendredi-2020-11-13" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="id6">
+<h3>Reprise du TP banque<a class="headerlink" href="#id6" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Objectif: maîtriser les fonctions.</p>
+<p>On essaie de faire des fonctions qui marchent pour n”importe lequel des comptes bancaires html.</p>
+<p>Alors qu”avant la fonction ne modifiait que le premier compte qu”elle trouvait, il faut maintenant lui donner le compte qu”elle doit modifier.</p>
+</div>
+<div class="section" id="addendum-fonctions">
+<h3>Addendum fonctions :<a class="headerlink" href="#addendum-fonctions" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>Une fonction est une ACTION</strong>, donc on doit lui dire qui doit l”effectuer, et avec quoi etc.</p>
+<p>=&gt; les arguments sont <strong>indispensables</strong> !</p>
+</div>
+<div class="section" id="installation-git-github">
+<h3>Installation git + github<a class="headerlink" href="#installation-git-github" title="Lien permanent vers ce titre">¶</a></h3>
+<ol class="simple">
+<li><p>création du compte github</p></li>
+<li><p>installation de git sur les pc (pour windows par ex c”est ici :<a class="reference external" href="gitforwindows.org">git for windows</a>) (on accepte tous les paramètres par défaut)</p></li>
+<li><p>paramétrage de vscode pour utiliser git (il suffit de le relancer !!)</p></li>
+<li><p>mise à jour email et name de « git config »</p></li>
+<li><p>premier commit =&gt; autorisations github demandées et acceptées !</p></li>
+<li><p>modifier un fichier (créer un README par exemple) et le « commiter » et l”envoyer sur github</p></li>
+<li><p>on vérifie que tout est bien affiché sur github</p></li>
+<li><p>profit</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="lundi-2020-11-16">
+<h2>Lundi 2020/11/16<a class="headerlink" href="#lundi-2020-11-16" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="id7">
+<h3>Javascript TP Boutique<a class="headerlink" href="#id7" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Nous avons continuer sur le projet BOUTIQUE en integrent le JS
+Creation des fonction et les tableau et execution à partir du HTML</p>
+</div>
+</div>
+<div class="section" id="mardi-2020-11-17">
+<h2>Mardi 2020/11/17<a class="headerlink" href="#mardi-2020-11-17" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="id8">
+<h3>Javascript TP Boutique<a class="headerlink" href="#id8" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Nous avons continuer sur le projet BOUTIQUE en integrent le JS
+Creation des fonctions, les condition, les boucles et les tableaux et execution à partir du HTML</p>
+</div>
+<div class="section" id="javascript-objet">
+<h3>Javascript Objet<a class="headerlink" href="#javascript-objet" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Decouverte des Objet
+un objet contient des propriétés et des méthodes :</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">car</span> <span class="o">=</span> <span class="p">{</span> 
+  <span class="nx">type</span><span class="o">:</span><span class="s2">&quot;Fiat&quot;</span><span class="p">,</span><span class="c1">// propriété : &quot;valeur&quot;</span>
+  <span class="nx">model</span><span class="o">:</span><span class="s2">&quot;500&quot;</span><span class="p">,</span> <span class="c1">// propriété : &quot;valeur&quot;</span>
+  <span class="nx">color</span><span class="o">:</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="c1">// propriété : &quot;valeur&quot;</span>
+  <span class="nx">nomComplet</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">model</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Methode</span>
+<span class="p">};</span>
 </pre></div>
 </div>
-<p>DELETE = ??? à votre avis :sourire_narquois:</p>
-<p>https://api.jquery.com/jquery.ajax/</p>
-<p>sur la page https://api.jquery.com/jquery.get/ , pour la methode $.get, on voit que ça se base sur « $.ajax »</p>
-<p>il disent :</p>
-<blockquote>
-<div><p>This is a shorthand Ajax function, which is equivalent to:</p>
-</div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$.ajax({
-  url: url,
-  type: &quot;GET&quot;,
-  data: data,
-  success: success,
-  dataType: dataType
-});
+<p>pour appeler un une propriété dans l”objet car on appel la variable suivie d”un point suivie du nom de propriété</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">car</span><span class="p">.</span><span class="nx">model</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="section" id="id9">
-<h3>Exercice<a class="headerlink" href="#id9" title="Lien permanent vers ce titre">¶</a></h3>
-<p>sur la page que vous voulez, avec ajax vous allez faire un GET sur https://jsonplaceholder.typicode.com/users , et afficher le résultat dans un <pre> sans chichi</p>
-<p>si tu veux que ce soit plus joli tu peux mettre direct JSON.stringify(data)</p>
-<p>puis on va faire un « POST » sur la meme url</p>
-<p>par le biais d”un formulaire pour commencer</p>
-<p>SOLUTION : j”ai l”id 11 c”est bon</p>
 </div>
-<div class="section" id="post-jquery">
-<h3>POST jquery<a class="headerlink" href="#post-jquery" title="Lien permanent vers ce titre">¶</a></h3>
-<p>le formulaire vous « déplace » vers la cible de l”action, donc vous vous retrouvez sur le site https://jsonplaceholder.typicode.com/users</p>
-<p>avec la réponse id:11</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;https://jsonplaceholder.typicode.com/users&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nb">input</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span> <span class="n">placeholder</span><span class="o">=</span><span class="s2">&quot;Nom de l&#39;utilisateur&quot;</span> <span class="o">/&gt;</span>
-    <span class="o">&lt;</span><span class="n">button</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">&gt;</span><span class="n">Envoyer</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+</div>
+<div class="section" id="jeudi-2020-11-19">
+<h2>Jeudi 2020/11/19<a class="headerlink" href="#jeudi-2020-11-19" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="travail-sur-les-objets">
+<h3>Travail sur les objets<a class="headerlink" href="#travail-sur-les-objets" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Création d”un site web simple pour afficher une liste d”élèves.</p>
+<p>Les élèves sont des objets avec un nom, un prénom et un âge.</p>
+<p>Travail collaboratif sur glitch : https://glitch.com/edit/#!/different-boundless-break</p>
+<p>On a bien noté qu”il fallait utiliser la syntaxe « . » pour accéder à la propriété d”un objet.
+Mais on peut également y accéder en faisant <code class="docutils literal notranslate"><span class="pre">objet[&quot;string_propriete&quot;]</span></code> .
+Exemple : <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3][&quot;length&quot;]</span></code></p>
+</div>
+<div class="section" id="fonction-en-parametre-d-une-fonction">
+<h3>Fonction en paramètre d”une fonction<a class="headerlink" href="#fonction-en-parametre-d-une-fonction" title="Lien permanent vers ce titre">¶</a></h3>
+<p>On a essayé de trier la liste des objets. Mais javascript n”est pas capable de décider si un objet est oui ou non plus grand q”un autre !!</p>
+<p>Par exemple est-ce que l”objet <code class="docutils literal notranslate"><span class="pre">{nom:</span> <span class="pre">&quot;Rambo&quot;,</span> <span class="pre">prenom:</span> <span class="pre">&quot;John&quot;}</span></code> est plus grand que l”objet <code class="docutils literal notranslate"><span class="pre">{nom:</span> <span class="pre">&quot;Schwarzenegger&quot;,</span> <span class="pre">prenom:</span> <span class="pre">&quot;Arnold&quot;}</span></code> ?? puisqu”ils font parti tous les 2 de la liste <code class="docutils literal notranslate"><span class="pre">expandables</span></code>.</p>
+<p>Comme javascript ne peut pas le deviner, il nous demande de lui donner une fonction capable de comparer 2 éléments l”un par rapport à l”autre. Elle doit renvoyer 1 si le premier est plus grand, -1 sinon.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">comparerBourrin</span><span class="p">(</span><span class="nx">acteur1</span><span class="p">,</span> <span class="nx">acteur2</span><span class="p">){</span>
+   <span class="k">return</span> <span class="nx">acteur1</span><span class="p">.</span><span class="nx">nom</span> <span class="o">&gt;</span> <span class="nx">acteur2</span><span class="p">.</span><span class="nx">nom</span> <span class="o">?</span> <span class="mf">1</span> <span class="o">:</span> <span class="o">-</span><span class="mf">1</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>une des caractéristiques de la requête HTTP « POST » : c”est qu”elle peut transporter des informations supplémentaires</p>
-<p>donc ici les infos c”est <code class="docutils literal notranslate"><span class="pre">{name:</span> <span class="pre">CE_QUI_EST_ECRIT_DANS_L_INPUT}</span></code></p>
-<p>ici name est la valeur de l”attribut « name » dans la balise input</p>
-<p>donc si j”ai <code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">name=&quot;prenom&quot;</span> <span class="pre">/&gt;</span></code>  =&gt; quelles vont etre les infos POST-ées ?</p>
-<p>=&gt; {prenom: INPUT_VALUE}</p>
-<p>la version jquery POST</p>
-<p>$.post(url, data).done(function (response) …..</p>
-<p>la différence c”est « data »</p>
-<p>=&gt; les données supplémentaires que le POST peut envoyer</p>
-<p>sous la forme d”un objet js, exemple : <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">nom:</span> <span class="pre">&quot;kim&quot;,</span> <span class="pre">prenom:</span> <span class="pre">&quot;san</span> <span class="pre">goku&quot;</span> <span class="pre">}</span></code></p>
-<p>cf ici !</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
-      <span class="o">//</span> <span class="n">Si</span> <span class="n">la</span> <span class="n">requete</span> <span class="n">échoue</span><span class="p">,</span> <span class="n">c</span><span class="s1">&#39;est cette fonction anonyme là qui va être utilisée par jquery,</span>
-      <span class="o">//</span> <span class="n">et</span> <span class="n">pas</span> <span class="n">celle</span> <span class="n">de</span> <span class="s2">&quot;.done&quot;</span>
-      <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
-      <span class="o">//</span> <span class="n">J</span><span class="s1">&#39;affiche l&#39;</span><span class="n">erreur</span> <span class="n">dans</span> <span class="n">la</span> <span class="n">case</span> <span class="n">à</span> <span class="n">côté</span> <span class="p">:</span>
-      <span class="n">caseJquery</span>
-        <span class="o">.</span><span class="n">next</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">html</span><span class="p">(</span><span class="s2">&quot;&lt;span style=&#39;color: red;&#39;&gt; &quot;</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">responseText</span> <span class="o">+</span> <span class="s2">&quot; &lt;/span&gt;&quot;</span><span class="p">);</span>
-    <span class="p">})</span>
-</pre></div>
+<p>Et pour l”utiliser il faut la passer, <strong>sans l”appeler</strong> en argument de l”appel de <code class="docutils literal notranslate"><span class="pre">sort()</span></code>, c”est à dire dans notre cas : <code class="docutils literal notranslate"><span class="pre">expandables.sort(comparerBourrin)</span></code>.</p>
+<p>Puis on a essayé de faire une bascule pour se souvenir de l”état de tri (ascendant ou descendant) entre les clics.</p>
 </div>
-<p>Donc on pourrait écrire ça :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>const url = &quot;https://jsonplaceholder.typicode.com/users&quot;;
-const data = { nom: &quot;baggins&quot;, prenom: &quot;bilbo&quot; };$.post(url, data).done(function(reponse){
-   $(&#39;h1&#39;).text(&quot;SUCCESS !&quot;); // ou pourquoi pas $(&#39;..............&#39;).html(JSON.stringify(reponse))
-}).fail(function (reponse){
-  $(&#39;h1&#39;).text(&quot;ERROR &quot; + reponse.responseText);
-})
-</pre></div>
-</div>
-<p>BOOTSTRAP https://www.w3schools.com/bootstrap4/</p>
-<p>https://www.w3schools.com/bootstrap4/trybs_template1.htm</p>
-</div>
-</div>
-<div class="section" id="jeudi-2021-02-04">
-<h2>Jeudi 2021/02/04<a class="headerlink" href="#jeudi-2021-02-04" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="revisions-diagramme-de-classe">
-<h3>Révisions diagramme de classe<a class="headerlink" href="#revisions-diagramme-de-classe" title="Lien permanent vers ce titre">¶</a></h3>
-<p>En particulier approfondissement des notions d”héritage et des types de données.</p>
-</div>
-<div class="section" id="live-coding">
-<h3>Live coding<a class="headerlink" href="#live-coding" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Adapter le code du trombi pour les bonnes pratiques en terme d”objets et d”héritage.</p>
-<p>Premier aperçu des namespace.</p>
-</div>
-</div>
-<div class="section" id="jeudi-2020-11-26">
-<h2>Jeudi 2020/11/26<a class="headerlink" href="#jeudi-2020-11-26" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Correction en « live coding » de l”évaluation faite le mardi 24.</p>
-<p>cf <a class="reference external" href="https://github.com/dwwm93/2020/tree/master/evaluation/correction">https://github.com/dwwm93/2020/tree/master/evaluation/correction</a>.</p>
-<p>et sur <a class="reference external" href="https://glitch.com/edit/#%21/cypress-obtainable-spandex">glitch</a></p>
 </div>
 <div class="section" id="vendredi-2020-11-20">
 <h2>Vendredi 2020/11/20<a class="headerlink" href="#vendredi-2020-11-20" title="Lien permanent vers ce titre">¶</a></h2>
@@ -1295,52 +540,219 @@ const data = { nom: &quot;baggins&quot;, prenom: &quot;bilbo&quot; };$.post(url,
 <p>Fait tous ensemble collaborativement, reprise depuis les bases, via le tutoriel <a class="reference external" href="https://jgthms.com/javascript-in-14-minutes/">javascript en 14 minutes</a> ! (C”est mensonger, cela nous a pris 2h !!)</p>
 </div>
 </div>
-<div class="section" id="jeudi-2020-10-29">
-<h2>Jeudi 2020/10/29<a class="headerlink" href="#jeudi-2020-10-29" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="javascript-conditions-switch">
-<h3>Javascript conditions SWITCH<a class="headerlink" href="#javascript-conditions-switch" title="Lien permanent vers ce titre">¶</a></h3>
-<p>decouverte des conditions SWITCH et exercices
-la condition switch à pour parametre
-une valeur ou une variable entre les ()
-et elle fonctionne par des case (cas)
-le break; permet de stoper le cas si la
-valeur ce trouve das se cas</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<div class="section" id="lundi-2020-11-23">
+<h2>Lundi 2020/11/23<a class="headerlink" href="#lundi-2020-11-23" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="decouverte-de-let-et-const">
+<h3>Decouverte de LET et CONST<a class="headerlink" href="#decouverte-de-let-et-const" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Var = on peut redeclarer et changer sa valeur
+Let = on ne peut pas redeclarer mais on peut changer sa valeur
+Const = on ne peut pas redeclarer mais on peut pas changer sa valeur</p>
+<p>Explications détaillées du TP, revue des concepts de la veille, notamment les appels de fonctions en paramètre d”autres fonctions.</p>
+</div>
+<div class="section" id="variable-let">
+<h3>Variable LET<a class="headerlink" href="#variable-let" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Example LET :</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">test</span> <span class="o">=</span> <span class="mf">5</span><span class="p">;</span>
+    <span class="nx">test</span> <span class="o">=</span> <span class="mf">18</span><span class="p">;</span>
 
-<span class="n">switch</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">case</span> <span class="s2">&quot;admin&quot;</span><span class="p">:</span>
-    <span class="n">alert</span><span class="p">(</span><span class="s2">&quot;switch votre role est admin&quot;</span><span class="p">);</span>
-    <span class="k">break</span><span class="p">;</span>
-  <span class="n">case</span> <span class="mi">5</span><span class="p">:</span>
-  <span class="n">case</span> <span class="mi">6</span><span class="p">:</span>
-    <span class="n">alert</span><span class="p">(</span><span class="s2">&quot;switch la valeur est 5&quot;</span><span class="p">);</span>
-    <span class="k">break</span><span class="p">;</span>
-  <span class="n">default</span><span class="p">:</span>
-    <span class="n">alert</span><span class="p">(</span><span class="s2">&quot;switch rien&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mf">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// some statements</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#demoLet2&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#demoLet&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">test</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variable-const">
+<h3>Variable CONST<a class="headerlink" href="#variable-const" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Example CONST :</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span> <span class="kd">const</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">20</span><span class="p">;</span>
+<span class="c1">//i = 10; erreur</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#const&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">monTest</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">monTest</span><span class="p">();</span>
+
+    <span class="kd">const</span> <span class="nx">monObjet</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">a</span><span class="o">:</span> <span class="s2">&quot;paris&quot;</span><span class="p">,</span>
+        <span class="nx">b</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">aler</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="mardi-2021-01-26">
-<h2>Mardi 2021/01/26<a class="headerlink" href="#mardi-2021-01-26" title="Lien permanent vers ce titre">¶</a></h2>
-<p>À partir du code fait la veille, on détermine l”organisation utilisée, et on apprend le MVC.</p>
-<div class="section" id="mvc">
-<h3>MVC<a class="headerlink" href="#mvc" title="Lien permanent vers ce titre">¶</a></h3>
-<p><img alt="mvc" src="img/2021_01_26_0go_Kleki.png" /></p>
-<p>C”est un design pattern très pratique pour répartir les responsabilités.</p>
-<p>Il faut bien connaitre tout et ne pas oublier le Router.</p>
+<div class="section" id="mardi-2020-11-24">
+<h2>Mardi 2020/11/24<a class="headerlink" href="#mardi-2020-11-24" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="evaluation-html-css-et-javascript">
+<h3>EVALUATION HTML, CSS et JavaScript<a class="headerlink" href="#evaluation-html-css-et-javascript" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Création d’un site de profile de la Classe
+Nom du site DWWM 93</p>
+<p>L’objet de site est de présenter les étudiants du groupe DWWM MTE 93 2021 aux entreprises pour trouver leurs stages.
+Le site doit avoir le logo de GRETA MTE 93 et un menu (Accueil, Formation, Contact), le contenue, et un footer.</p>
 </div>
-<div class="section" id="application-au-projet-news">
-<h3>Application au projet « news »<a class="headerlink" href="#application-au-projet-news" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="header">
+<h3>Header<a class="headerlink" href="#header" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Logo du GRETA MTE 93 et menu (Accueil, Formation, Contact)</p>
+</div>
+<div class="section" id="contenue-au-centre-de-la-page-main">
+<h3>Contenue au centre de la page (main)<a class="headerlink" href="#contenue-au-centre-de-la-page-main" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="accueil">
+<h4>Accueil<a class="headerlink" href="#accueil" title="Lien permanent vers ce titre">¶</a></h4>
+<p>La page d’accueil doit porter une liste des étudiants du DWWM leurs noms, prénom, photos et un bouton pour afficher le profil de l’étudiant dans une fenêtre.
+Le profil doit être afficher dans une fenêtre qui comporte tous les informations de l’étudiants</p>
+<ul class="simple">
+<li><p>Nom</p></li>
+<li><p>Prénom</p></li>
+<li><p>Tel</p></li>
+<li><p>Email</p></li>
+<li><p>Photo</p></li>
+<li><p>Description (sur ses formation)</p></li>
+<li><p>Niveau sur HTML, CSS et JS (avec une barre de progression)</p></li>
+<li><p>Un lien vers son CV (lien fictive)</p></li>
+<li><p>Un formulaire de contact (les champs * obligatoire et contrôler)</p>
+<ul>
+<li><p>Nom*</p></li>
+<li><p>Prénom</p></li>
+<li><p>Tel*</p></li>
+<li><p>Email*</p></li>
+<li><p>Sujet*</p></li>
+<li><p>Message*</p></li>
+<li><p>Bouton d’envoie</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="formation-nouvelle-page">
+<h4>Formation (nouvelle page)<a class="headerlink" href="#formation-nouvelle-page" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Description de la formation DWWM et son révérenciel
+Contact (nouvelle page)
+Formulaire de contact général (les champs * obligatoire et contrôler)</p>
+<ul class="simple">
+<li><p>Nom*</p></li>
+<li><p>Prénom</p></li>
+<li><p>Tel*</p></li>
+<li><p>Email*</p></li>
+<li><p>Sujet*</p></li>
+<li><p>Message*</p></li>
+<li><p>Bouton d’envoie</p></li>
+</ul>
+</div>
+<div class="section" id="footer">
+<h4>Footer<a class="headerlink" href="#footer" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Le contenue en centre « DWWM 2020-2021 – votre prénom et nom»</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="realisation-du-projet-sur-100-points">
+<h3>Réalisation du projet sur 100 points<a class="headerlink" href="#realisation-du-projet-sur-100-points" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le menu doit être crée à partir d’un tableau JS
+Les informations des étudiants doivent venir un objet JS</p>
+<ul class="simple">
+<li><p>Créations des maquettes (zoning, wireframe), desktop et mobile 20 points</p></li>
+<li><p>Site responsive desktop et mobile 30 points</p></li>
+<li><p>HTML sur 10 points : bien propre (basiles ouvert et fermer, titre, h1, p, ect…)</p></li>
+<li><p>CSS sur 15 points:</p>
+<ul>
+<li><p>Media = 4 points</p></li>
+<li><p>Flex = 5 points,</p></li>
+<li><p>Sélecteurs (baliste = 2 points, id= 2 points, class = 2 points)</p></li>
+</ul>
+</li>
+<li><p>JS sur 25 points:</p>
+<ul>
+<li><p>Variables = 2 points</p></li>
+<li><p>Fonctions = 5 points</p></li>
+<li><p>Conditions = 5 points</p></li>
+<li><p>Boucles = 5 points</p></li>
+<li><p>Tableaux = 4 points</p></li>
+<li><p>Objets = 4 points</p></li>
+</ul>
+</li>
+</ul>
+<p>Les pages Accueil (index.html), Formation (formation.html) et Contact(contact.html) doit avoir le même design.</p>
+<p>À rendre le projet en .zip ou .rar et elle doit contenir tous les éléments (zoning, wireframe et code) avant 16h le 24/11/2020</p>
+</div>
+</div>
+<div class="section" id="mercredi-2020-11-25">
+<h2>Mercredi 2020/11/25<a class="headerlink" href="#mercredi-2020-11-25" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Découverte et inscription sur « codingwars.com ».</p>
+<p>Plusieurs exercices réalisés ensemble et corrigés ensemble.</p>
+</div>
+<div class="section" id="jeudi-2020-11-26">
+<h2>Jeudi 2020/11/26<a class="headerlink" href="#jeudi-2020-11-26" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Correction en « live coding » de l”évaluation faite le mardi 24.</p>
+<p>cf <a class="reference external" href="https://github.com/dwwm93/2020/tree/master/evaluation/correction">https://github.com/dwwm93/2020/tree/master/evaluation/correction</a>.</p>
+<p>et sur <a class="reference external" href="https://glitch.com/edit/#%21/cypress-obtainable-spandex">glitch</a></p>
+</div>
+<div class="section" id="mercredi-2020-12-02">
+<h2>Mercredi 2020/12/02<a class="headerlink" href="#mercredi-2020-12-02" title="Lien permanent vers ce titre">¶</a></h2>
+<p>des exercices pour jquery : <a class="reference external" href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors1">w3schools</a></p>
+<p>=&gt; exercices : selectors , get, set, add, remove, hide and show (modifié)</p>
+<p>l”explication pour l”exercice 6 des selecteurs : https://api.jquery.com/odd-selector/ , c”est équivalent à « nth-child(odd) » d”habitude</p>
+<p>pour l”instant, il n”y a pas besoin d”aller lire cette page !! c”est la doc officielle jquery, mais elle n”est pas très accessible aux débutants</p>
+<p>à savoir : « GET » = récupération des données, donc il s”agit des méthodes jquery qui lisent les valeurs, comme $(“p”).text() ou $(« input#prenom »).val() -&gt; ça va lire le contenu du texte des balises <p> ou lire la valeur des input d”id=prenom !</p>
+<p>quant à « SET » = modification des données, donc on utilise les mêmes méthodes mais en donnant des paramètres qui vont remplacer la valeur actuelle, ex: $(“p”).text(« nouveau texte »)</p>
+<p>vous pouvez zapper les questions sur les « attributs »</p>
+<div class="section" id="premiere-presentation-de-ajax">
+<h3>Première présentation de AJAX<a class="headerlink" href="#premiere-presentation-de-ajax" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="version-avec-load">
+<h4>Version avec « load »<a class="headerlink" href="#version-avec-load" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section:first-child&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Je remplis ma section.&quot;</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">urlChuckNorris</span> <span class="o">=</span> <span class="s2">&quot;https://api.icndb.com/jokes/random&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">urlPokemon</span> <span class="o">=</span> <span class="s2">&quot;https://pokeapi.co/api/v2/pokemon/&quot;</span><span class="p">;</span><span class="c1">// https://api.jquery.com/load/</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Affiche dans la balise pre&gt;p un chuck norris fact</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">afficheChuck</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;pre&gt;p&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="nx">urlChuckNorris</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Affiche les caractéristiques du pokemon demandé !</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param {string} pokemon</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">affichePokemon</span><span class="p">(</span><span class="nx">pokemon</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">urlPokemon</span> <span class="o">+</span> <span class="nx">pokemon</span><span class="p">;</span> <span class="c1">// https://pokeapi.co/api/v2/pokemon/pikachu si pokemon = &#39;pikachu&#39;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;pre&gt;p&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="version-avec-get">
+<h4>Version avec .get<a class="headerlink" href="#version-avec-get" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param {string} pokemon Nom du pokemon à afficher</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">affichePokemon</span><span class="p">(</span><span class="nx">pokemon</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">urlPokemon</span> <span class="o">+</span> <span class="nx">pokemon</span><span class="p">;</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resultat</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultat</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;p&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">resultat</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section&gt;p&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span>
+      <span class="s2">&quot;&lt;img src=&#39;&quot;</span> <span class="o">+</span> <span class="nx">resultat</span><span class="p">.</span><span class="nx">sprites</span><span class="p">.</span><span class="nx">front_shiny</span> <span class="o">+</span> <span class="s2">&quot;&#39;&gt;&quot;</span>
+    <span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="jeudi-2020-12-03">
 <h2>Jeudi 2020/12/03<a class="headerlink" href="#jeudi-2020-12-03" title="Lien permanent vers ce titre">¶</a></h2>
 <p>https://www.w3schools.com/jquery/exercise_jq.asp  aujourd”hui on va se mettre en jambe en faisant « cssClasse », « animate », « events » et « traversing »</p>
 <p>pour les events : https://www.w3schools.com/jquery/jquery_events.asp</p>
-<div class="section" id="id10">
-<h3>Exercice :<a class="headerlink" href="#id10" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="exercice">
+<h3>Exercice :<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>ajoutez plusieurs balises « p » avec un lorem dedans</p></li>
 <li><p>on click sur un « p », je voudrais changer la couleur de fond en rouge par ex, et je voudrais que cette fonction soit anonyme</p></li>
@@ -1460,81 +872,695 @@ caseJquery
 });
 });</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-## Mardi 2020/11/24
-
-### EVALUATION HTML, CSS et JavaScript
-Création d’un site de profile de la Classe 
-Nom du site DWWM 93
+## Jeudi 2020/12/10
 
 
-L’objet de site est de présenter les étudiants du groupe DWWM MTE 93 2021 aux entreprises pour trouver leurs stages.
-Le site doit avoir le logo de GRETA MTE 93 et un menu (Accueil, Formation, Contact), le contenue, et un footer.
+https://developer.mozilla.org/fr/docs/Web/HTTP/M%C3%A9thode
 
-### Header
-Logo du GRETA MTE 93 et menu (Accueil, Formation, Contact)
+&gt; HTTP définit un ensemble de méthodes de requête qui indiquent l&#39;action que l&#39;on souhaite réaliser sur la ressource indiquée. Bien qu&#39;on rencontre également des noms (en anglais), ces méthodes sont souvent appelées verbes HTTP. Chacun d&#39;eux implémente une sémantique différente mais certaines fonctionnalités courantes peuvent être partagées par différentes méthodes (e.g. une méthode de requête peut être sûre (safe), idempotente ou être mise en cache (cacheable)).
 
-### Contenue au centre de la page (main)
-#### Accueil
-La page d’accueil doit porter une liste des étudiants du DWWM leurs noms, prénom, photos et un bouton pour afficher le profil de l’étudiant dans une fenêtre.
-Le profil doit être afficher dans une fenêtre qui comporte tous les informations de l’étudiants
-* Nom
-* Prénom
-* Tel
-* Email
-* Photo
-* Description (sur ses formation)
-* Niveau sur HTML, CSS et JS (avec une barre de progression)
-* Un lien vers son CV (lien fictive)
-* Un formulaire de contact (les champs * obligatoire et contrôler)
-    * Nom*
-    * Prénom
-    * Tel*
-    * Email*
-    * Sujet*
-    * Message*
-    * Bouton d’envoie
+HTTP = moyen que les gens qui ont inventé internet utilisent pour que les machines communiquent entre elles
 
+(ps : http:// ça vient de là ! et la version sécurisée : https://)
 
+il faut imaginer internet comme une ville : pour relier les maisons on a fait les routes (=les cables), les adresses postales (les IP), les lettres/sonnettes - dsl pour l&#39;analogie bof- (http)
 
-#### Formation (nouvelle page)
-Description de la formation DWWM et son révérenciel
-Contact (nouvelle page)
-Formulaire de contact général (les champs * obligatoire et contrôler)
-* Nom*
-* Prénom
-* Tel*
-* Email*
-* Sujet*
-* Message*
-* Bouton d’envoie
-#### Footer
-Le contenue en centre « DWWM 2020-2021 – votre prénom et nom»
+et un protocole d&#39;affichage (j&#39;ai pas d&#39;exemple pour la ville) le web
 
- 
-### Réalisation du projet sur 100 points
+les méthodes qui nous préoccupent GET / POST / DELETE
 
-Le menu doit être crée à partir d’un tableau JS
-Les informations des étudiants doivent venir un objet JS
-* Créations des maquettes (zoning, wireframe), desktop et mobile 20 points
-* Site responsive desktop et mobile 30 points
-* HTML sur 10 points : bien propre (basiles ouvert et fermer, titre, h1, p, ect…) 
-* CSS sur 15 points: 
-    * Media = 4 points
-    * Flex = 5 points, 
-    * Sélecteurs (baliste = 2 points, id= 2 points, class = 2 points)
-* JS sur 25 points: 
-    * Variables = 2 points
-    * Fonctions = 5 points
-    * Conditions = 5 points
-    * Boucles = 5 points
-    * Tableaux = 4 points 
-    * Objets = 4 points
+GET = récupération de la page indiquée
 
-Les pages Accueil (index.html), Formation (formation.html) et Contact(contact.html) doit avoir le même design.
+POST = envoi d&#39;une information à l&#39;adresse indiquée
 
-À rendre le projet en .zip ou .rar et elle doit contenir tous les éléments (zoning, wireframe et code) avant 16h le 24/11/2020
+ex: formulaire !!
+
+```html
+&lt;form action=&quot;index.html&quot; method=&quot;post&quot;&gt;
+    &lt;input name=&quot;nom&quot; placeholder=&quot;quel est le nom du pokemon ?&quot; /&gt;
+    &lt;button type=&quot;submit&quot;&gt;OK&lt;/button&gt;
+&lt;/form&gt;
 </pre></div>
 </div>
+<p>DELETE = ??? à votre avis :sourire_narquois:</p>
+<p>https://api.jquery.com/jquery.ajax/</p>
+<p>sur la page https://api.jquery.com/jquery.get/ , pour la methode $.get, on voit que ça se base sur « $.ajax »</p>
+<p>il disent :</p>
+<blockquote>
+<div><p>This is a shorthand Ajax function, which is equivalent to:</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$.ajax({
+  url: url,
+  type: &quot;GET&quot;,
+  data: data,
+  success: success,
+  dataType: dataType
+});
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>Exercice<a class="headerlink" href="#id9" title="Lien permanent vers ce titre">¶</a></h3>
+<p>sur la page que vous voulez, avec ajax vous allez faire un GET sur https://jsonplaceholder.typicode.com/users , et afficher le résultat dans un <pre> sans chichi</p>
+<p>si tu veux que ce soit plus joli tu peux mettre direct JSON.stringify(data)</p>
+<p>puis on va faire un « POST » sur la meme url</p>
+<p>par le biais d”un formulaire pour commencer</p>
+<p>SOLUTION : j”ai l”id 11 c”est bon</p>
+</div>
+<div class="section" id="post-jquery">
+<h3>POST jquery<a class="headerlink" href="#post-jquery" title="Lien permanent vers ce titre">¶</a></h3>
+<p>le formulaire vous « déplace » vers la cible de l”action, donc vous vous retrouvez sur le site https://jsonplaceholder.typicode.com/users</p>
+<p>avec la réponse id:11</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;https://jsonplaceholder.typicode.com/users&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nb">input</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span> <span class="n">placeholder</span><span class="o">=</span><span class="s2">&quot;Nom de l&#39;utilisateur&quot;</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="n">button</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">&gt;</span><span class="n">Envoyer</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>une des caractéristiques de la requête HTTP « POST » : c”est qu”elle peut transporter des informations supplémentaires</p>
+<p>donc ici les infos c”est <code class="docutils literal notranslate"><span class="pre">{name:</span> <span class="pre">CE_QUI_EST_ECRIT_DANS_L_INPUT}</span></code></p>
+<p>ici name est la valeur de l”attribut « name » dans la balise input</p>
+<p>donc si j”ai <code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">name=&quot;prenom&quot;</span> <span class="pre">/&gt;</span></code>  =&gt; quelles vont etre les infos POST-ées ?</p>
+<p>=&gt; {prenom: INPUT_VALUE}</p>
+<p>la version jquery POST</p>
+<p>$.post(url, data).done(function (response) …..</p>
+<p>la différence c”est « data »</p>
+<p>=&gt; les données supplémentaires que le POST peut envoyer</p>
+<p>sous la forme d”un objet js, exemple : <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">nom:</span> <span class="pre">&quot;kim&quot;,</span> <span class="pre">prenom:</span> <span class="pre">&quot;san</span> <span class="pre">goku&quot;</span> <span class="pre">}</span></code></p>
+<p>cf ici !</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="o">//</span> <span class="n">Si</span> <span class="n">la</span> <span class="n">requete</span> <span class="n">échoue</span><span class="p">,</span> <span class="n">c</span><span class="s1">&#39;est cette fonction anonyme là qui va être utilisée par jquery,</span>
+      <span class="o">//</span> <span class="n">et</span> <span class="n">pas</span> <span class="n">celle</span> <span class="n">de</span> <span class="s2">&quot;.done&quot;</span>
+      <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+      <span class="o">//</span> <span class="n">J</span><span class="s1">&#39;affiche l&#39;</span><span class="n">erreur</span> <span class="n">dans</span> <span class="n">la</span> <span class="n">case</span> <span class="n">à</span> <span class="n">côté</span> <span class="p">:</span>
+      <span class="n">caseJquery</span>
+        <span class="o">.</span><span class="n">next</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">html</span><span class="p">(</span><span class="s2">&quot;&lt;span style=&#39;color: red;&#39;&gt; &quot;</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">responseText</span> <span class="o">+</span> <span class="s2">&quot; &lt;/span&gt;&quot;</span><span class="p">);</span>
+    <span class="p">})</span>
+</pre></div>
+</div>
+<p>Donc on pourrait écrire ça :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>const url = &quot;https://jsonplaceholder.typicode.com/users&quot;;
+const data = { nom: &quot;baggins&quot;, prenom: &quot;bilbo&quot; };$.post(url, data).done(function(reponse){
+   $(&#39;h1&#39;).text(&quot;SUCCESS !&quot;); // ou pourquoi pas $(&#39;..............&#39;).html(JSON.stringify(reponse))
+}).fail(function (reponse){
+  $(&#39;h1&#39;).text(&quot;ERROR &quot; + reponse.responseText);
+})
+</pre></div>
+</div>
+<p>BOOTSTRAP https://www.w3schools.com/bootstrap4/</p>
+<p>https://www.w3schools.com/bootstrap4/trybs_template1.htm</p>
+</div>
+</div>
+<div class="section" id="vendredi-2020-12-11">
+<h2>Vendredi 2020/12/11<a class="headerlink" href="#vendredi-2020-12-11" title="Lien permanent vers ce titre">¶</a></h2>
+<p>bon, on se met en jambes en faisant l”exercice d”hier soir ?</p>
+<p>on essaie de déclencher le $.post en cliquant sur le bouton submit</p>
+<p>ca marche</p>
+<p>Pour l”exercice :</p>
+<ul class="simple">
+<li><p>est-ce que ça marchait bien pour vous sans changer de page avec le $.post hier ?</p></li>
+<li><p>est-ce que vous arrivez à lire les valeurs de l”input du form et à les envoyer via le $.post ainsi que la valeur de l”attribut action du form pour remplir l”url du $.post ?</p></li>
+<li><p>est-ce que vous arrivez à déclencher le $.post à partir du bouton submit ?</p></li>
+<li><p>est-ce que vous arrivez à supprimer le submit par défaut du formulaire pour éviter de vous rendre sur la page indiquée dans <code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">action=&quot;xxxx&quot;</span></code></p></li>
+</ul>
+<p>vous ete sur discord??</p>
+<p>oui</p>
+<p>oui</p>
+<p>:croissant:</p>
+<p>:croissant:</p>
+<p>je peut avoir un lien svp!</p>
+<p>moi j’ arive pas</p>
+<p>en fait perso j”ai téléchargé l”appli</p>
+<p>https://discord.com/channels/783391372169183265/783391372169183268
+DiscordDiscord
+Discord - A New Way to Chat with Friends &amp; Communities
+Discord is the easiest way to communicate over voice, video, and text. Chat, hang out, and stay close with your friends and communities. (62 ko)
+https://discord.com/assets/ee7c382d9257652a88c8f7b7f22a994d.png</p>
+<p>Thank”s Rathak</p>
+<p>merci</p>
+<p>derien</p>
+<p>https://stackoverflow.com/a/1357151/8721626 je pose ça là …
+Stack OverflowStack Overflow
+event.preventDefault() vs. return false
+When I want to prevent other event handlers from executing after a certain event is fired, I can use one of two techniques. I”ll use jQuery in the examples, but this applies to plain-JS as well: 1.</p>
+<p>il y a une différence entre le « event » du formulaire normal, et le « event » de jquery</p>
+<p>ce n”est pas le même « event » !</p>
+<p>celui de jquery il est redispatché à tous les autres (parce que je peux créer plusieurs $(“xxx”).on(“click”,</p>
+<form ...>
+  <button onclick='mafunc()' >clic
+...function mafunc(event){
+  event.preventDefault()
+}<p>Ici c”est l”event du navigateur</p>
+<p>Par contre si on utilise jquery !</p>
+<p>on va avoir un bouton sans « onclick », et à la place on aura :</p>
+<p>$(“button”).on(“click”, function (event) {..</p>
+<p>ici l”event est un evenment JQUERY pas celui du navigateur, parce que je peux déclarer plusieurs on(“click”, … sur le meme bouton</p>
+<p>donc pour un event jquery il faut :</p>
+<p>event.preventDefault()</p>
+<p>et</p>
+<p>event.stopPropagation()</p>
+<p>pour pas que l”event passe au formulaire quand même</p>
+<p>3ème solution, celle d”Esat : <code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">onSubmit=&quot;return</span> <span class="pre">false&quot;</span></code></p>
+<p><a class="reference external" href="https://apical.xyz/fiches/la_validation_d_un_formulaire_web_002/event_preventDefault_vs_event_stopPropagation">preventDefault apical.xyzapical.xyz</a></p>
+<p>ah merci !</p>
+<p>Sympa le lien ! Merci !</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_colors.asp
+w3schools.comw3schools.com
+Bootstrap 4 Colors
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_containers.asp
+w3schools.comw3schools.com
+Bootstrap 4 Containers
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_typography.asp
+w3schools.comw3schools.com
+Bootstrap 4 Text/Typography
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_grid_basic.asp
+w3schools.comw3schools.com
+Bootstrap 4 Grid Basic
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
+<p>! important !!</p>
+<div class="section" id="id10">
+<h3>Exercice<a class="headerlink" href="#id10" title="Lien permanent vers ce titre">¶</a></h3>
+<p>2/12 sur la premiere et les 2 autres se répartissent le reste pour la page d”exemple,
+avec 3 colonnes</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp
+https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_cards.asp</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_carousel.asp</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_forms.asp</p>
+<p>https://www.w3schools.com/bootstrap4/bootstrap_modal.asp</p>
+<p>https://bootswatch.com/</p>
+<p>puis ajouter une modale qui contient un form, et essayer de mettre le $.post de ce matin</p>
+</div>
+</div>
+<div class="section" id="jeudi-2020-12-17">
+<h2>Jeudi 2020/12/17<a class="headerlink" href="#jeudi-2020-12-17" title="Lien permanent vers ce titre">¶</a></h2>
+<p>NB: Pendant ce temps les élèves avaient les réunions pédagogiques.</p>
+<p>On continue le projet de fin d”année avec des conseils sur la mise en page et le code.</p>
+<div class="section" id="mise-en-page-footer">
+<h3>Mise en page Footer<a class="headerlink" href="#mise-en-page-footer" title="Lien permanent vers ce titre">¶</a></h3>
+<p><a class="reference external" href="https://www.alioze.com/footer">ressource alioze.com</a></p>
+<blockquote>
+<div><p>Tout d’abord, votre pied de page doit être divisé en une section différente pour chacun des éléments : menu de navigation, mentions légales et CGU, appel à l’action (CTA), icônes de réseaux sociaux, etc. Les éléments les plus importants (souvent les informations de contact ou les appels à l’action) doivent être mis en avant.</p>
+</div></blockquote>
+</div>
+<div class="section" id="cta">
+<h3>CTA<a class="headerlink" href="#cta" title="Lien permanent vers ce titre">¶</a></h3>
+<blockquote>
+<div><p>CTA = call to action =&gt; « Un call to action - aussi appelé CTA - est un élément cliquable positionné sur une page de site internet, un blog ou un email qui incite vos visiteurs à effectuer une action précise, mais une action utile qui les font avancer dans leur parcours d’achat.
+Il peut prendre la forme d’une image, d’un lien, d’un bouton voire d’un bot et doit être utilisé à toutes les étapes du parcours d’achat. «  (source : https://www.ideagency.fr/blog/call-to-action )</p>
+</div></blockquote>
+</div>
+<div class="section" id="json">
+<h3>JSON<a class="headerlink" href="#json" title="Lien permanent vers ce titre">¶</a></h3>
+<p>pour rappel : JSON = chaine de caractère (c”est du texte) qui représente un « objet » javascript</p>
+<p>On peut transformer un objet js en json et vice versa grâce à :</p>
+<p><code class="docutils literal notranslate"><span class="pre">JSON.stringify(objet_js)</span></code> : js =&gt; json</p>
+<p><code class="docutils literal notranslate"><span class="pre">JSON.parse(chaine_json)</span></code> : json =&gt; js</p>
+</div>
+<div class="section" id="chaining">
+<h3>Chaining<a class="headerlink" href="#chaining" title="Lien permanent vers ce titre">¶</a></h3>
+<p>:danger:  si vous faites plusieurs « . » en jquery d”affilée (genre $(“#id1”).append(« … »).append(« xx »).on(« click »… , vous etes en train de faire ça : https://www.w3schools.com/JQuery/jquery_chaining.asp</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>exemple :
+
+let elem = $(&#39;#id1&#39;);
+let res = elem.append(&quot;&lt;p&gt;texte&lt;/p&gt;&quot;);
+</pre></div>
+</div>
+<p>=&gt; qu”y a til dans « res » ?? la balise « p » ou la balise « #id1 » ?</p>
+<p>donc si on fait <code class="docutils literal notranslate"><span class="pre">res.on(&quot;click&quot;</span> <span class="pre">,</span> <span class="pre">function</span> <span class="pre">(....</span></code> =&gt; quel est l”élément qui déclenche le clic ? le clic sur le p ou le clic sur le “#id1” ? !</p>
+</div>
+<div class="section" id="jquery-each">
+<h3>Jquery each<a class="headerlink" href="#jquery-each" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">key</span> <span class="o">&lt;</span> <span class="nx">tableau</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">key</span><span class="o">++</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">tableau</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
+    <span class="c1">// traitement</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>c”est similaire à</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">tableau</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// traitement</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>c”est jquery qui te fournit key et val à ta place</p>
+</div>
+</div>
+<div class="section" id="vendredi-2020-12-18">
+<h2>Vendredi 2020/12/18<a class="headerlink" href="#vendredi-2020-12-18" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dernière ligne droite pour le projet.</p>
+<p>On fait bien attention :</p>
+<ol class="simple">
+<li><p>à faire des fonctions génériques - boîtes noires -, qui prennent des arguments en entrée, et pas des fonctions qui vont modifier / utiliser des variables qui ne leur appartiennent pas</p></li>
+<li><p>à écrire des commentaires de qualité qui expliquent fonctionnellement ce que font les bouts de codes ( syntaxe :</p></li>
+</ol>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Commentaire de ma fonction</span>
+<span class="cm"> * @param {string} paramString blablabla</span>
+<span class="cm"> */</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>à l”ordre de déclenchement des instructions, car quand on utilise $.get ou autres fonctions « ajax » (= asynchrone !!), l”ordre d”exécution n”est pas linéaire</p></li>
+</ol>
+<div class="section" id="revisions-jquery-bootstrap">
+<h3>Révisions jquery / bootstrap<a class="headerlink" href="#revisions-jquery-bootstrap" title="Lien permanent vers ce titre">¶</a></h3>
+</div>
+</div>
+<div class="section" id="lundi-2021-01-04">
+<h2>Lundi 2021/01/04<a class="headerlink" href="#lundi-2021-01-04" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Début du php !!</p>
+<div class="section" id="presentation">
+<h3>Présentation<a class="headerlink" href="#presentation" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>PHP = logiciel ET un langage</p></li>
+<li><p>par ex sur windows : le logiciel est php.exe</p></li>
+<li><p>le langage reste « PHP »</p></li>
+</ul>
+<p>au départ ça voulait dire Personal Home Page le but c”était de générer du HTML
+exactement le meme but que lorsqu”on créait des innerHTML en javascript</p>
+<p>On crée un fichier « index.php » !</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+  <span class="k">echo</span> <span class="s2">&quot;premier code php&quot;</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h3>
+<ol class="simple">
+<li><p>Ouvrir le terminal intégré dans vscode</p></li>
+<li><p>Taper <code class="docutils literal notranslate"><span class="pre">php</span> <span class="pre">-v</span></code>  (le v est en minuscule, et notez l”espace)</p></li>
+</ol>
+<p>pour ceux qui ont des windows, ça ne devrait pas marcher, pour les autres (mac, linux…) ça devrait le faire</p>
+<p>comment faire pour les windowsiens ?</p>
+<p>=&gt; https://getcomposer.org/doc/00-intro.md#using-the-installer
+getcomposer.orggetcomposer.org
+Introduction - Composer
+A Dependency Manager for PHP</p>
+<p>on va installer « composer » (on s”en servira plus tard), et il va nous rendre php accessible partout</p>
+<p><img alt="install composer" src="img/composer-install-php.png" /></p>
+<p>options par défaut, sauf le « PATH » de php</p>
+<p>exemple de chemin vers php pour les windows : C:/wamp64/bin/php7.2/php.exe</p>
+<p>ensuite fermer vscode et le rouvrir, puis refaire php -v</p>
+<p>https://www.wampserver.com/</p>
+<div class="section" id="intelephense">
+<h4>Intelephense<a class="headerlink" href="#intelephense" title="Lien permanent vers ce titre">¶</a></h4>
+</div>
+</div>
+<div class="section" id="code">
+<h3>Code<a class="headerlink" href="#code" title="Lien permanent vers ce titre">¶</a></h3>
+<p>plusieurs choses :</p>
+<ol class="simple">
+<li><p>les variables commencent par des « $ » en php (ici en js on aurait : let var = « texte »;</p></li>
+<li><p>les instructions se terminent par un « ; » !!!!!!!</p></li>
+<li><p>en js on aurait : <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">bonjour</span> <span class="pre">=</span> <span class="pre">&quot;Bonjour</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">nom;</span></code> donc la concaténation des chaines de caractères en php se fait avec le « . »</p></li>
+</ol>
+<p>Exécution :</p>
+<p><code class="docutils literal notranslate"><span class="pre">php</span> <span class="pre">le_nom_du_script.php</span></code></p>
+<p>avec un espace entre php et <code class="docutils literal notranslate"><span class="pre">le_nom_du_script.php</span></code>.</p>
+<p>Vu :</p>
+<ul class="simple">
+<li><p>tableaux</p></li>
+<li><p>boucles</p></li>
+<li><p>conditions</p></li>
+<li><p>tableaux associatifs</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="mardi-2021-01-05">
+<h2>Mardi 2021/01/05<a class="headerlink" href="#mardi-2021-01-05" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="exercice-pour-s-entrainer-pour-les-fonctions">
+<h3>Exercice pour s”entraîner pour les fonctions<a class="headerlink" href="#exercice-pour-s-entrainer-pour-les-fonctions" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Afficher un tableau sous forme de texte.</p>
+<p>But : utiliser uniquement les fonctions que je fournissais</p>
+</div>
+<div class="section" id="correction-voir-fichiers-associes">
+<h3>Correction ? (voir fichiers associés)<a class="headerlink" href="#correction-voir-fichiers-associes" title="Lien permanent vers ce titre">¶</a></h3>
+<p>en js on faisait <code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">+=</span> <span class="pre">&quot;toto&quot;</span></code> pour concaténer 2 strings, ici on fait <code class="docutils literal notranslate"><span class="pre">$res</span> <span class="pre">.=</span> <span class="pre">&quot;toto&quot;;</span></code></p>
+<p>c”est égal à <code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">=</span> <span class="pre">res</span> <span class="pre">+</span> <span class="pre">&quot;toto&quot;</span></code>, et <code class="docutils literal notranslate"><span class="pre">&quot;$res</span> <span class="pre">=</span> <span class="pre">$res</span> <span class="pre">.</span> <span class="pre">&quot;toto&quot;;</span></code></p>
+<p>étape 1 du déroulement du code :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(genCol(majuscule($eleve[&quot;nom&quot;])) . genCol(minuscule($eleve[&quot;prenom&quot;])));</span>
+</pre></div>
+</div>
+<p>étape 2 du déroulement :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(genCol(majuscule(&quot;kim&quot;)) . genCol(minuscule(&quot;sangoku&quot;)));</span>
+</pre></div>
+</div>
+<p>étape 3 :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(genCol(&quot;KIM&quot;) . genCol(&quot;sangoku&quot;));</span>
+</pre></div>
+</div>
+<p>étape 4 :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(&quot;KIM|&quot; . &quot;sangoku|&quot;);</span>
+</pre></div>
+</div>
+<p>étape 5 :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(&quot;KIM|sangoku|&quot;);</span>
+</pre></div>
+</div>
+<p>étape 6 :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= &quot;KIM|sangoku|\n&quot;;</span>
+</pre></div>
+</div>
+<p>étape 7 :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl = $tbl . &quot;KIM|sangoku|\n&quot;;</span>
+</pre></div>
+</div>
+<p>alors</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">// si $tbl = &quot;==========\n&quot;;</span>
+<span class="x">// alors</span>
+<span class="x">// =&gt; donc $tbl est égal à &quot;==========\nKIM|sangoku|\n&quot;</span>
+</pre></div>
+</div>
+<p>si je fais ensuite</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">echo $tbl;</span>
+</pre></div>
+</div>
+<p>alors ça affiche :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==========</span>
+<span class="n">KIM</span><span class="o">|</span><span class="n">sangoku</span><span class="o">|</span>
+</pre></div>
+</div>
+<p>si je vous mets la meme chose formatée un peu mieux :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$tbl .= ajouteSautDeLigne(</span>
+<span class="x">            genCol(</span>
+<span class="x">                majuscule(</span>
+<span class="x">                    $eleve[</span>
+<span class="x">                        $colonnes[0]</span>
+<span class="x">                    ]</span>
+<span class="x">                )</span>
+<span class="x">            ) . genCol(</span>
+<span class="x">                minuscule(</span>
+<span class="x">                    $eleve[</span>
+<span class="x">                        $colonnes[1]</span>
+<span class="x">                    ]</span>
+<span class="x">                )</span>
+<span class="x">            )</span>
+<span class="x">        );</span>
+</pre></div>
+</div>
+<p>il reste à faire</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">afficheDansLeTerminal($tbl);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mardi-2021-01-12">
+<h2>Mardi 2021/01/12<a class="headerlink" href="#mardi-2021-01-12" title="Lien permanent vers ce titre">¶</a></h2>
+<p>phpmyadmin vs mysql vs sql</p>
+<div class="section" id="manipulation-de-phpmyadmin">
+<h3>Manipulation de phpmyadmin<a class="headerlink" href="#manipulation-de-phpmyadmin" title="Lien permanent vers ce titre">¶</a></h3>
+<ol class="simple">
+<li><p>Création des tables à partir du script SQL créé dans looping ou JMerise, la veille à partir du MCD.</p></li>
+<li><p>Affichage du résultat dans le concepteur de Phpmyadmin pour bien comprendre la différence
+entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si une ligne existe dans phpmyadmin</p></li>
+<li><p>Régler les pbs d”auto increment</p></li>
+<li><p>Remplir avec des données</p></li>
+</ol>
+</div>
+<div class="section" id="sql-mysql">
+<h3>SQL /Mysql<a class="headerlink" href="#sql-mysql" title="Lien permanent vers ce titre">¶</a></h3>
+<p>pour nommer les identifiants (clé primaires!), il y a plusieurs formalismes :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">table_id</span></code> (en changeant “table” bien sûr)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tab_id</span></code> (on garde 3 lettres)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id_table</span></code></p></li>
+</ul>
+<p>mais ça ne pose aucun pb quel que soit le choix</p>
+<p>Par contre tout ce qui n”est pas comme ça, est probablement un mauvais choix</p>
+</div>
+<div class="section" id="tables-de-jointures-reexpliquees">
+<h3>Tables de jointures réexpliquées<a class="headerlink" href="#tables-de-jointures-reexpliquees" title="Lien permanent vers ce titre">¶</a></h3>
+</div>
+<div class="section" id="ldd">
+<h3>LDD<a class="headerlink" href="#ldd" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">article</span><span class="p">(</span>
+   <span class="n">id</span> <span class="nb">INT</span>  <span class="n">AUTO_INCREMENT</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="p">,</span>
+ <span class="p">....</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="decouverte-des-requetes-lmd">
+<h3>Découverte des requêtes LMD<a class="headerlink" href="#decouverte-des-requetes-lmd" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Jusqu”à présent, on a utilisé du « LDD » (CREATE , ALTER …) pour donner les instructions à mysql sur comment créer la structure des données</p>
+<p>now il est temps d”utiliser le LMD !</p>
+<p>c”est la partie de SQL qui permet de manipuler les données</p>
+<p>=&gt; lire les données :
+<code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">.....</span> <span class="pre">FROM</span> <span class="pre">la_table;</span></code></p>
+<p>=&gt; <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">col1,</span> <span class="pre">col2</span> <span class="pre">...</span> <span class="pre">FROM</span> <span class="pre">ma_table;</span></code></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="k">user</span><span class="p">;</span>  
+</pre></div>
+</div>
+<blockquote>
+<div><p>Petite recommandation : mettre en majuscule les mots clé SQL, et en minuscule le reste</p>
+</div></blockquote>
+<p>NB: les ` sont facultatifs</p>
+<p>si je veux toutes les colonnes : <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">ma_table;</span></code></p>
+<p>pour le <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> : conditions que les données que je veux récupérer doivent valider</p>
+<p>exemple : <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">utilisateur</span> <span class="pre">WHERE</span> <span class="pre">nom</span> <span class="pre">=</span> <span class="pre">'dusse';</span></code></p>
+<p>la ca veut dire : selectionner toutes les colonnes d”utilisateur où le nom est « dusse » ?</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">utilisateur</span> <span class="k">WHERE</span> <span class="n">nom</span> <span class="o">=</span> <span class="s1">&#39;dusse&#39;</span> <span class="k">AND</span> <span class="n">prenom</span> <span class="o">=</span> <span class="s1">&#39;jean-claude&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>autant de AND qu”on veut</p>
+</div></blockquote>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">utilisateur</span> <span class="k">WHERE</span> <span class="n">nom</span> <span class="o">=</span> <span class="s1">&#39;dusse&#39;</span> <span class="k">OR</span> <span class="n">prenom</span> <span class="o">=</span> <span class="s1">&#39;jean-claude&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Ou Dusse ou les jean Claude?</p>
+<p>le OR n”est pas exclusif, donc ce sera tous les jean claude + les dusse</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">utilisateur</span> <span class="k">WHERE</span> <span class="n">nom</span> <span class="o">=</span> <span class="s1">&#39;dusse&#39;</span> <span class="k">OR</span> <span class="n">prenom</span> <span class="o">=</span> <span class="s1">&#39;jean-claude&#39;</span> <span class="k">AND</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>:danger:</p>
+<p>là c”est comme les « + » et les « x » qd vous étiez au collège : qui gagne ??!!</p>
+<p>une idée de réponse : <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">utilisateur</span> <span class="pre">WHERE</span> <span class="pre">(nom</span> <span class="pre">=</span> <span class="pre">'dusse'</span> <span class="pre">OR</span> <span class="pre">prenom</span> <span class="pre">=</span> <span class="pre">'jean-claude')</span> <span class="pre">AND</span> <span class="pre">age</span> <span class="pre">&gt;</span> <span class="pre">50;</span></code></p>
+<div class="section" id="insert">
+<h4>INSERT<a class="headerlink" href="#insert" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">ma_table</span> <span class="p">(</span><span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">,</span> <span class="p">...)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">,</span> <span class="p">...);</span>
+</pre></div>
+</div>
+<p>Ici l”ordre est important : val1 va dans col1, val2 va dans col2 …</p>
+<p><a class="reference external" href="https://www.w3schools.com/sql/sql_syntax.asp">w3schools sql</a> !</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">ma_table</span> <span class="k">SET</span> <span class="n">col1</span> <span class="o">=</span> <span class="n">val1</span><span class="p">,</span> <span class="n">col2</span><span class="o">=</span><span class="n">val2</span> <span class="k">WHERE</span> <span class="n">id</span><span class="o">=</span> <span class="n">xxx</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>ATTENTION à ne pas oublier le WHERE !!</p>
+<blockquote>
+<div><p>permet de modifier tous les enregistrements (les lignes quoi) qui correspondent à la condition du WHERE</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="mercredi-2021-01-13">
+<h2>Mercredi 2021/01/13<a class="headerlink" href="#mercredi-2021-01-13" title="Lien permanent vers ce titre">¶</a></h2>
+<p>finalement on a vu quoi : on peut représenter ses données sous forme d”entités et de relations dans un MCD, en fonction des buts de l”application</p>
+<p>ça nous permet de manière automatique de transformer ce modèle « théorique » ,  en modèle physique interprétable directement par les logiciels de base de données</p>
+<p>dans notre cas on utilise des BDD relationnelles , donc qui permettent d”avoir des « relations » entre les tables, par le biais des clés primaires et clé étrangères ! (il n”y a donc pas de « lien » entre les tables, mais bien des « contraintes » entre les colonnes qui contiennent les clés primaires et celles qui contiennent les clés étrangères). Un base non relationnelle ne dispose pas de ces contraintes</p>
+<p>dans notre cas bis, on utilise des BDD SQL , donc qui demandent du langage SQL pour savoir comment :</p>
+<ol class="simple">
+<li><p>structurer les données que la BDD va stocker (LDD)</p></li>
+<li><p>manipuler les données une fois stockées (LMD)</p></li>
+</ol>
+<p>Pour le LDD on a vu déjà les requêtes SQL : <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">DATABASE</span> <span class="pre">ma_database;</span></code> et <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span> <span class="pre">ma_table</span> <span class="pre">(col1</span> <span class="pre">INT</span> <span class="pre">...)</span> <span class="pre">ENGINE=InnoDB;</span></code>, ainsi que vite fait <code class="docutils literal notranslate"><span class="pre">ALTER</span> <span class="pre">TABLE</span> <span class="pre">ma_table</span> <span class="pre">...;</span></code></p>
+<p>et pour le LMD on a vu <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> pour lire les données, <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> pour créer des données et <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> pour modifier des données</p>
+<p>l”intérêt de ce langage c”est qu”on peut l”exécuter sans interface graphique (sans phpmyadmin donc), directement depuis le php ! donc on va être en mesure depuis notre site d”aller lire des infos en base, les modifier, les créer etc.</p>
+<p>:ordinateur: :tada: :gâteau: :informaticienne: :clavier: :homme_technologue:</p>
+<div class="section" id="projet-informatique">
+<h3>Projet informatique<a class="headerlink" href="#projet-informatique" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Ordre à suivre :</p>
+<ol class="simple">
+<li><p>recueil des besoins ! (cahier des charges, etc.)</p></li>
+<li><p>conception (MERISE, wireframes, use case, UI/UX)</p></li>
+<li><p>réalisation (back et front , dans l”ordre que vous voulez, mais le back est nécessaire au front, l”inverse non, donc probablement qu”il faudra commencer un peu + sur le back)</p></li>
+</ol>
+</div>
+<div class="section" id="merise">
+<h3>Merise<a class="headerlink" href="#merise" title="Lien permanent vers ce titre">¶</a></h3>
+<p>En terme de Merise, les rappels pour le MCD :</p>
+<ul class="simple">
+<li><p>on regroupe les données dans les rectangles (appelés Entité)</p></li>
+<li><p>on définit des relations entre les rectangles, qui sont des relations fonctionnelles (qui dépendent du cahier des charges  ! c”est la fonction de notre application quoi), représentées par des ovales</p></li>
+<li><p>on précise nos relations avec des cardinalités, pour indiquer combien d”éléments différents on peut relier les uns aux autres</p></li>
+</ul>
+<p>lors de la transformation en modèle physique , il faudra créer les fameuses contraintes, càd les colonnes qui vont contenir les clés primaires et étrangères</p>
+<p>et :danger:  : si la relation entre 2 entités est ManyToMany (ie : plusieurs entités de type A peuvent être liées à plusieurs entités de type B, ex: user et role) alors ces colonnes seront stockées dans une nouvelle table !!</p>
+<p>ceci étant comme tout est automatisé à partir du MCD dans looping / jmerise , ça peut être transparent pour vous. Mais sans logiciel vous seriez obligés de faire le MLD intermédiaire oui</p>
+</div>
+<div class="section" id="suite-sql">
+<h3>Suite SQL<a class="headerlink" href="#suite-sql" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">ma_table</span> <span class="k">WHERE</span> <span class="n">condition_pour_selectionner_mon_element_à_supprimer</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Exercice:</p>
+<p>Créer avec des requêtes SQL :</p>
+<ul class="simple">
+<li><p>au moins 4 articles : n”importe</p></li>
+<li><p>au moins 3 utilisateurs : « james bond », « sangoku kim » et n”importe</p></li>
+<li><p>au moins 2 roles (et les lier aux utilisateurs) : « admin » et « moderateur »</p></li>
+<li><p>au moins 2 catégories: « actualite », « covid »</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#1451 - Cannot delete or update a parent row: a foreign key constraint fails (`news1`.`user_role`, CONSTRAINT `user_role_user1_FK` FOREIGN KEY (`id`) REFERENCES `user1` (`id`))</span>
+</pre></div>
+</div>
+<p>c”est normal, tu essaies de supprimer une clé primaire, alors qu”elle est référencée par une clé étrangère qque part !</p>
+<p>=&gt; il faut supprimer dans l”ordre inverse des insertions qu”on a faites hier !!!</p>
+</div>
+<div class="section" id="reprise-du-tp2">
+<h3>Reprise du TP2<a class="headerlink" href="#reprise-du-tp2" title="Lien permanent vers ce titre">¶</a></h3>
+<ol class="simple">
+<li><p>connexion à la bdd avec le fichier <code class="docutils literal notranslate"><span class="pre">connexion.php</span></code></p></li>
+<li><p>requetage et affichage dans un tableau html dans <code class="docutils literal notranslate"><span class="pre">accueil.php</span></code></p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="jeudi-2021-01-21">
+<h2>Jeudi 2021/01/21<a class="headerlink" href="#jeudi-2021-01-21" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="mcd-contraintes-relations">
+<h3>MCD + Contraintes / Relations<a class="headerlink" href="#mcd-contraintes-relations" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Explications MCD / Merise, notamment la différence entre les relations (MCD) et leur traduction en MPD/SQL : les contraintes.</p>
+<p><img alt="MCD" src="img/2021-01-21_10-20-22.png" /></p>
+</div>
+<div class="section" id="php-pdo">
+<h3>PHP PDO<a class="headerlink" href="#php-pdo" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Explications fonctionnement requêtage de BDD avec PDO et php.</p>
+<ul class="simple">
+<li><p>requetes</p></li>
+<li><p>requetes préparées
+…</p></li>
+</ul>
+<p><img alt="pdo" src="img/2021_01_21_0j4_Kleki.png" />
+<img alt="pdo2" src="img/2021_01_21_0ju_Kleki.png" /></p>
+</div>
+<div class="section" id="poo-programmation-orientee-objet">
+<h3>POO : Programmation orientée objet<a class="headerlink" href="#poo-programmation-orientee-objet" title="Lien permanent vers ce titre">¶</a></h3>
+<p><img alt="poo" src="img/2021_01_21_0l3_Kleki.png" />
+<img alt="poo2" src="img/2021_01_21_0r6_Kleki.png" /></p>
+</div>
+</div>
+<div class="section" id="vendredi-2021-01-22">
+<h2>Vendredi 2021/01/22<a class="headerlink" href="#vendredi-2021-01-22" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Mise en pratique POO sur le projet de news</p>
+<p>Voir le code <a class="reference external" href="https://github.com/dwwm93/2020/2021-01-22-news">ici</a></p>
+</div>
+<div class="section" id="lundi-2021-01-25">
+<h2>Lundi 2021/01/25<a class="headerlink" href="#lundi-2021-01-25" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On continue la transformation du site de news en objet.</p>
+<p>On commence notamment à faire de l”objet même pour les classes « non entités ». On commence aussi à séparer les « Model » des « Vues ».</p>
+</div>
+<div class="section" id="mardi-2021-01-26">
+<h2>Mardi 2021/01/26<a class="headerlink" href="#mardi-2021-01-26" title="Lien permanent vers ce titre">¶</a></h2>
+<p>À partir du code fait la veille, on détermine l”organisation utilisée, et on apprend le MVC.</p>
+<div class="section" id="mvc">
+<h3>MVC<a class="headerlink" href="#mvc" title="Lien permanent vers ce titre">¶</a></h3>
+<p><img alt="mvc" src="img/2021_01_26_0go_Kleki.png" /></p>
+<p>C”est un design pattern très pratique pour répartir les responsabilités.</p>
+<p>Il faut bien connaitre tout et ne pas oublier le Router.</p>
+</div>
+<div class="section" id="application-au-projet-news">
+<h3>Application au projet « news »<a class="headerlink" href="#application-au-projet-news" title="Lien permanent vers ce titre">¶</a></h3>
+</div>
+</div>
+<div class="section" id="mercredi-2021-02-03">
+<h2>Mercredi 2021/02/03<a class="headerlink" href="#mercredi-2021-02-03" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Reprise des cours objet précédents</p>
+<div class="section" id="uml">
+<h3>UML<a class="headerlink" href="#uml" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Présentation</p>
+<ul class="simple">
+<li><p>MERISE : but créer une base de données</p></li>
+<li><p>UML : Langage de modélisation unifié : but représenter le fonctionnement de l”application</p></li>
+</ul>
+<p>=&gt; c”est un langage : utilisé pour communiquer entre différents métiers</p>
+<p>Il y a bcp de schémas différents en UML, + qu”en Merise (MCD, MLD …) !</p>
+<p>On va se concentrer sur 2 schémas en ce qui nous concerne : Diagramme de Cas d”Utilisation, et Diagramme de Classe</p>
+<div class="section" id="diagramme-de-cas-d-utilisation">
+<h4>Diagramme de cas d”utilisation<a class="headerlink" href="#diagramme-de-cas-d-utilisation" title="Lien permanent vers ce titre">¶</a></h4>
+<p>permet de voir qui agit sur le système (acteur), et ce qu”il peut faire (utilisations).</p>
+<p>on n”a pas le choix :</p>
+<ul class="simple">
+<li><p>à gauche les acteurs</p></li>
+<li><p>à droite un rectangle qui représente le système</p></li>
+<li><p>les actions autorisées sont représentées par des ovales</p></li>
+<li><p>les relations de dépendances entre les acteurs ou entre les actions sont matérialisées par des flèches</p></li>
+</ul>
+<p>FORMALISME obligatoire :
+meme les bonshommes moches sont dans la norme !</p>
+<p>NB : utile en phase de conception !</p>
+<p>include : buy book —-&gt; open account : le cas d”utilisation « open account » est « nécessaire » (« inclus ») dans le cas d”utilsation « acheter livre »</p>
+<p>extends : search——&gt; buy : il indique que « search » peut venir « compléter » le cas d”utilisation « buy »</p>
+<p>il faut garder le mot « extends » ou « inclide » à cote de la fleche sinon on ne peut pas les distinguer</p>
+<p>du point de vue de « buy » les 2 flches n”ont pas la même direction</p>
+</div>
+<div class="section" id="diagramme-de-classe">
+<h4>Diagramme de classe<a class="headerlink" href="#diagramme-de-classe" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------</span>
+<span class="o">|</span>      <span class="n">Ma_classe</span>                      <span class="o">|</span>
+<span class="o">---------------------------------------</span>
+<span class="o">|</span> <span class="o">-</span> <span class="n">propriétéPrivée</span> <span class="p">:</span> <span class="nb">type</span>            <span class="o">|</span>
+<span class="o">|</span> <span class="o">+</span> <span class="n">propriétéPublique</span> <span class="p">:</span> <span class="nb">type</span>          <span class="o">|</span>
+<span class="o">|</span> <span class="c1"># propriétéProtegée : type          |</span>
+<span class="o">---------------------------------------</span>
+<span class="o">|</span> <span class="o">+</span> <span class="n">méthodePublique</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span> <span class="p">:</span> <span class="nb">type</span> <span class="o">|</span>
+<span class="o">---------------------------------------</span>
+</pre></div>
+</div>
+<p>ATTENTION toujours diviser le rectangle en 3 !</p>
+<p>s”il n”y a pas de propriété ou de méthode, il faut mettre une division vide</p>
+<p>Un diagramme de classe, permet de représenter… des classes :tada:</p>
+<p>càd son nom, ses propriétés et ses méthodes + l”héritage et relations (par les flèches/traits)</p>
+<p>Donc un parent =&gt; plusieurs enfants, un enfant =&gt; un parent</p>
+<div class="section" id="void">
+<h5>void<a class="headerlink" href="#void" title="Lien permanent vers ce titre">¶</a></h5>
+<p>dans les types des propriétés, des arguments ou des retours, on trouve : « int », « string » etc.</p>
+<p>un des types « speciaux » c”est void : c”est pour un retour de fonction <em>QUI NE RETOURNE RIEN</em></p>
+<p>ex: supprimeProfil()</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function supprimeProfil(int $id): void</span>
+<span class="x">{</span>
+<span class="x">    $bdd-&gt;prepare(&quot;DELETE ......&quot;);</span>
+<span class="x">    // ...</span>
+<span class="x">    // PAS DE RETURN</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>si je fais <code class="docutils literal notranslate"><span class="pre">$return</span> <span class="pre">=</span> <span class="pre">supprimeProfil(1);</span></code> =&gt; dans $return il n”y a … rien (void)</p>
+</div>
+<div class="section" id="heritage">
+<h5>Héritage<a class="headerlink" href="#heritage" title="Lien permanent vers ce titre">¶</a></h5>
+<p>ATTENTION la fleche de l”héritage, est « blanche » !! (triangulaire) (modifié)</p>
+<p>c”est une comme ça –|&gt; et pas une comme ça —&gt;</p>
+<p>la flèche standard a une autre signification, donc à ne pas utiliser par erreur</p>
+</div>
+<div class="section" id="relations">
+<h5>Relations<a class="headerlink" href="#relations" title="Lien permanent vers ce titre">¶</a></h5>
+<p>on vient de voir les relations</p>
+<p>et les flèches « triangle » c”est l”héritage</p>
+<p>Pour la lecture des relations c”est l”inverse du MCD (la cardinalité est de l”autre coté du trait).</p>
+<p>NB: static = souligné, protected = #</p>
+<p>https://creately.com/blog/diagrams/class-diagram-relationships/</p>
+<p><img alt="résumé" src="img/Class-Diagram-Relationships.png" /></p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="jeudi-2021-02-04">
+<h2>Jeudi 2021/02/04<a class="headerlink" href="#jeudi-2021-02-04" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="revisions-diagramme-de-classe">
+<h3>Révisions diagramme de classe<a class="headerlink" href="#revisions-diagramme-de-classe" title="Lien permanent vers ce titre">¶</a></h3>
+<p>En particulier approfondissement des notions d”héritage et des types de données.</p>
+</div>
+<div class="section" id="live-coding">
+<h3>Live coding<a class="headerlink" href="#live-coding" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Adapter le code du trombi pour les bonnes pratiques en terme d”objets et d”héritage.</p>
+<p>Premier aperçu des namespace.</p>
 </div>
 </div>
 </div>
@@ -1558,105 +1584,7 @@ Les pages Accueil (index.html), Formation (formation.html) et Contact(contact.ht
 <h3>Navigation</h3>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Vendredi 2020/11/13</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#reprise-du-tp-banque">Reprise du TP banque</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#addendum-fonctions">Addendum fonctions :</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installation-git-github">Installation git + github</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#jeudi-2020-11-19">Jeudi 2020/11/19</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#travail-sur-les-objets">Travail sur les objets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fonction-en-parametre-d-une-fonction">Fonction en paramètre d”une fonction</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#lundi-2021-01-04">Lundi 2021/01/04</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#presentation">Présentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#code">Code</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#mardi-2021-01-05">Mardi 2021/01/05</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#exercice-pour-s-entrainer-pour-les-fonctions">Exercice pour s”entraîner pour les fonctions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#correction-voir-fichiers-associes">Correction ? (voir fichiers associés)</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#vendredi-2021-01-22">Vendredi 2021/01/22</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#vendredi-2020-12-18">Vendredi 2020/12/18</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#revisions-jquery-bootstrap">Révisions jquery / bootstrap</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#vendredi-2020-12-11">Vendredi 2020/12/11</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#exercice">Exercice</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#jeudi-2020-12-17">Jeudi 2020/12/17</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#mise-en-page-footer">Mise en page Footer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cta">CTA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#json">JSON</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#chaining">Chaining</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#jquery-each">Jquery each</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#mardi-2020-11-03">Mardi 2020/11/03</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#javascript-boucle-while">Javascript boucle WHILE</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#mardi-2020-11-10">Mardi 2020/11/10</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#javascript-tp-boutique">Javascript TP Boutique</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#mercredi-2020-11-25">Mercredi 2020/11/25</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#mercredi-2021-01-13">Mercredi 2021/01/13</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#projet-informatique">Projet informatique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#merise">Merise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#suite-sql">Suite SQL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#reprise-du-tp2">Reprise du TP2</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#jeudi-2020-11-12">Jeudi 2020/11/12</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#exercice-pour-comprendre-les-tableaux">Exercice pour comprendre les tableaux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#travail-sur-les-commentaires-dans-le-code">Travail sur les commentaires dans le code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Reprise du TP banque</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#lundi-2020-11-23">Lundi 2020/11/23</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#decouverte-de-let-et-const">Decouverte de LET et CONST</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#variable-let">Variable LET</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#variable-const">Variable CONST</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#mardi-2020-11-17">Mardi 2020/11/17</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Javascript TP Boutique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#javascript-objet">Javascript Objet</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#lundi-2020-11-16">Lundi 2020/11/16</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id3">Javascript TP Boutique</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#jeudi-2021-01-21">Jeudi 2021/01/21</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#mcd-contraintes-relations">MCD + Contraintes / Relations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#php-pdo">PHP PDO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#poo-programmation-orientee-objet">POO : Programmation orientée objet</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#mercredi-2020-12-02">Mercredi 2020/12/02</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#premiere-presentation-de-ajax">Première présentation de AJAX</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#mardi-2021-01-12">Mardi 2021/01/12</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#manipulation-de-phpmyadmin">Manipulation de phpmyadmin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sql-mysql">SQL /Mysql</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tables-de-jointures-reexpliquees">Tables de jointures réexpliquées</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ldd">LDD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#decouverte-des-requetes-lmd">Découverte des requêtes LMD</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#mercredi-2021-02-03">Mercredi 2021/02/03</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#uml">UML</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#cours-tp-dwwm">Cours TP DWWM</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cours TP DWWM</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#mardi-2020-10-06">Mardi 2020/10/06</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lundi-2020-10-12">Lundi 2020/10/12</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mardi-2020-10-13">Mardi 2020/10/13</a></li>
@@ -1669,16 +1597,36 @@ Les pages Accueil (index.html), Formation (formation.html) et Contact(contact.ht
 <li class="toctree-l2"><a class="reference internal" href="#lundi-2020-10-26">Lundi 2020/10/26</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mardi-2020-10-27">Mardi 2020/10/27</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mercredi-2020-10-28">Mercredi 2020/10/28</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lundi-2020-11-02">Lundi 2020/11/02</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lundi-2021-01-25">Lundi 2021/01/25</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lundi-2020-11-09">Lundi 2020/11/09</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#jeudi-2020-12-10">Jeudi 2020/12/10</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#jeudi-2021-02-04">Jeudi 2021/02/04</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#jeudi-2020-11-26">Jeudi 2020/11/26</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#vendredi-2020-11-20">Vendredi 2020/11/20</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#jeudi-2020-10-29">Jeudi 2020/10/29</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mardi-2021-01-26">Mardi 2021/01/26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lundi-2020-11-02">Lundi 2020/11/02</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mardi-2020-11-03">Mardi 2020/11/03</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lundi-2020-11-09">Lundi 2020/11/09</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mardi-2020-11-10">Mardi 2020/11/10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jeudi-2020-11-12">Jeudi 2020/11/12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vendredi-2020-11-13">Vendredi 2020/11/13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lundi-2020-11-16">Lundi 2020/11/16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mardi-2020-11-17">Mardi 2020/11/17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jeudi-2020-11-19">Jeudi 2020/11/19</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vendredi-2020-11-20">Vendredi 2020/11/20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lundi-2020-11-23">Lundi 2020/11/23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mardi-2020-11-24">Mardi 2020/11/24</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mercredi-2020-11-25">Mercredi 2020/11/25</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jeudi-2020-11-26">Jeudi 2020/11/26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mercredi-2020-12-02">Mercredi 2020/12/02</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#jeudi-2020-12-03">Jeudi 2020/12/03</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vendredi-2020-12-11">Vendredi 2020/12/11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jeudi-2020-12-17">Jeudi 2020/12/17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vendredi-2020-12-18">Vendredi 2020/12/18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lundi-2021-01-04">Lundi 2021/01/04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mardi-2021-01-05">Mardi 2021/01/05</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mardi-2021-01-12">Mardi 2021/01/12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mercredi-2021-01-13">Mercredi 2021/01/13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jeudi-2021-01-21">Jeudi 2021/01/21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vendredi-2021-01-22">Vendredi 2021/01/22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lundi-2021-01-25">Lundi 2021/01/25</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mardi-2021-01-26">Mardi 2021/01/26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mercredi-2021-02-03">Mercredi 2021/02/03</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jeudi-2021-02-04">Jeudi 2021/02/04</a></li>
 </ul>
 </li>
 </ul>

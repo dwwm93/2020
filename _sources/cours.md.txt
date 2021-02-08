@@ -1,976 +1,3 @@
-## Vendredi 2020/11/13
-
-### Reprise du TP banque
-
-Objectif: maîtriser les fonctions.
-
-On essaie de faire des fonctions qui marchent pour n'importe lequel des comptes bancaires html.
-
-Alors qu'avant la fonction ne modifiait que le premier compte qu'elle trouvait, il faut maintenant lui donner le compte qu'elle doit modifier.
-
-### Addendum fonctions :
-
-**Une fonction est une ACTION**, donc on doit lui dire qui doit l'effectuer, et avec quoi etc.
-
-=> les arguments sont **indispensables** !
-
-### Installation git + github
-
-1. création du compte github
-2. installation de git sur les pc (pour windows par ex c'est ici :[git for windows](gitforwindows.org)) (on accepte tous les paramètres par défaut)
-3. paramétrage de vscode pour utiliser git (il suffit de le relancer !!)
-4. mise à jour email et name de "git config"
-5. premier commit => autorisations github demandées et acceptées !
-6. modifier un fichier (créer un README par exemple) et le "commiter" et l'envoyer sur github
-7. on vérifie que tout est bien affiché sur github
-8. profit
-
-## Jeudi 2020/11/19
-
-### Travail sur les objets
-
-Création d'un site web simple pour afficher une liste d'élèves.
-
-Les élèves sont des objets avec un nom, un prénom et un âge.
-
-Travail collaboratif sur glitch : https://glitch.com/edit/#!/different-boundless-break
-
-On a bien noté qu'il fallait utiliser la syntaxe "." pour accéder à la propriété d'un objet. 
-Mais on peut également y accéder en faisant `objet["string_propriete"]` . 
-Exemple : `[1, 2, 3]["length"]` 
-
-### Fonction en paramètre d'une fonction
-
-On a essayé de trier la liste des objets. Mais javascript n'est pas capable de décider si un objet est oui ou non plus grand q'un autre !!
-
-Par exemple est-ce que l'objet `{nom: "Rambo", prenom: "John"}` est plus grand que l'objet `{nom: "Schwarzenegger", prenom: "Arnold"}` ?? puisqu'ils font parti tous les 2 de la liste `expandables`.
-
-Comme javascript ne peut pas le deviner, il nous demande de lui donner une fonction capable de comparer 2 éléments l'un par rapport à l'autre. Elle doit renvoyer 1 si le premier est plus grand, -1 sinon.
-
-```javascript
-function comparerBourrin(acteur1, acteur2){
-   return acteur1.nom > acteur2.nom ? 1 : -1;
-}
-```
-
-Et pour l'utiliser il faut la passer, **sans l'appeler** en argument de l'appel de `sort()`, c'est à dire dans notre cas : `expandables.sort(comparerBourrin)`.
-
-Puis on a essayé de faire une bascule pour se souvenir de l'état de tri (ascendant ou descendant) entre les clics.
-
-## Lundi 2021/01/04
-
-Début du php !!
-
-### Présentation 
-
-* PHP = logiciel ET un langage
-* par ex sur windows : le logiciel est php.exe
-* le langage reste "PHP"
-
-au départ ça voulait dire Personal Home Page le but c'était de générer du HTML
-exactement le meme but que lorsqu'on créait des innerHTML en javascript
-
-On crée un fichier "index.php" !
-
-```php
-<?php
-  echo "premier code php";
-?>
-```
-### Installation
-
-1. Ouvrir le terminal intégré dans vscode
-2. Taper `php -v`  (le v est en minuscule, et notez l'espace) 
-
-pour ceux qui ont des windows, ça ne devrait pas marcher, pour les autres (mac, linux...) ça devrait le faire
-
-comment faire pour les windowsiens ?
-
-=> https://getcomposer.org/doc/00-intro.md#using-the-installer
-getcomposer.orggetcomposer.org
-Introduction - Composer
-A Dependency Manager for PHP
-
-on va installer "composer" (on s'en servira plus tard), et il va nous rendre php accessible partout
-
-![install composer](img/composer-install-php.png)
-
-options par défaut, sauf le "PATH" de php
-
-exemple de chemin vers php pour les windows : C:/wamp64/bin/php7.2/php.exe
-
-ensuite fermer vscode et le rouvrir, puis refaire php -v
-
-https://www.wampserver.com/
-
-#### Intelephense
-
-
-
-### Code
-
-plusieurs choses :
-
-1. les variables commencent par des "$" en php (ici en js on aurait : let var = "texte";
-2. les instructions se terminent par un ";" !!!!!!!
-3. en js on aurait : `let bonjour = "Bonjour " + nom;` donc la concaténation des chaines de caractères en php se fait avec le "."
-
-Exécution :
-
-`php le_nom_du_script.php`
-
-avec un espace entre php et `le_nom_du_script.php`.
-
-Vu :
-
-* tableaux
-* boucles
-* conditions
-* tableaux associatifs
-
-## Mardi 2021/01/05
-
-### Exercice pour s'entraîner pour les fonctions
-
-Afficher un tableau sous forme de texte.
-
-But : utiliser uniquement les fonctions que je fournissais
-
-### Correction ? (voir fichiers associés)
-
-en js on faisait `res += "toto"` pour concaténer 2 strings, ici on fait `$res .= "toto";`
-
-c'est égal à `res = res + "toto"`, et `"$res = $res . "toto";`
-
-étape 1 du déroulement du code :
-
-```php
-$tbl .= ajouteSautDeLigne(genCol(majuscule($eleve["nom"])) . genCol(minuscule($eleve["prenom"])));
-```
-
-étape 2 du déroulement :
-
-```php
-$tbl .= ajouteSautDeLigne(genCol(majuscule("kim")) . genCol(minuscule("sangoku")));
-```
-
-étape 3 :
-
-```php
-$tbl .= ajouteSautDeLigne(genCol("KIM") . genCol("sangoku"));
-```
-
-étape 4 :
-
-```php
-$tbl .= ajouteSautDeLigne("KIM|" . "sangoku|");
-```
-
-étape 5 :
-
-```php
-$tbl .= ajouteSautDeLigne("KIM|sangoku|");
-```
-
-étape 6 :
-
-```php
-$tbl .= "KIM|sangoku|\n";
-```
-
-étape 7 :
-
-```php
-$tbl = $tbl . "KIM|sangoku|\n";
-```
-
-alors
-
-```php
-// si $tbl = "==========\n";
-// alors
-// => donc $tbl est égal à "==========\nKIM|sangoku|\n"
-```
-
-si je fais ensuite
-
-```php
-echo $tbl;
-```
-
-alors ça affiche :
-
-```
-==========
-KIM|sangoku|
-```
-
-si je vous mets la meme chose formatée un peu mieux :
-
-```php
-$tbl .= ajouteSautDeLigne(
-            genCol(
-                majuscule(
-                    $eleve[
-                        $colonnes[0]
-                    ]
-                )
-            ) . genCol(
-                minuscule(
-                    $eleve[
-                        $colonnes[1]
-                    ]
-                )
-            )
-        );
-```
-
-il reste à faire
-
-```php
-afficheDansLeTerminal($tbl);
-```
-
-## Vendredi 2021/01/22
-
-Mise en pratique POO sur le projet de news
-
-Voir le code [ici](https://github.com/dwwm93/2020/2021-01-22-news)
-
-## Vendredi 2020/12/18
-
-Dernière ligne droite pour le projet.
-
-On fait bien attention :
-
-1. à faire des fonctions génériques - boîtes noires -, qui prennent des arguments en entrée, et pas des fonctions qui vont modifier / utiliser des variables qui ne leur appartiennent pas
-
-2. à écrire des commentaires de qualité qui expliquent fonctionnellement ce que font les bouts de codes ( syntaxe : 
-
-```js
-/**
- * Commentaire de ma fonction
- * @param {string} paramString blablabla
- */
-```
-
-3. à l'ordre de déclenchement des instructions, car quand on utilise $.get ou autres fonctions "ajax" (= asynchrone !!), l'ordre d'exécution n'est pas linéaire
-
-### Révisions jquery / bootstrap
-
-## Vendredi 2020/12/11
-
-bon, on se met en jambes en faisant l'exercice d'hier soir ?
-
-on essaie de déclencher le $.post en cliquant sur le bouton submit
-
-ca marche
-
-Pour l'exercice :
-
-*   est-ce que ça marchait bien pour vous sans changer de page avec le $.post hier ?
-*   est-ce que vous arrivez à lire les valeurs de l'input du form et à les envoyer via le $.post ainsi que la valeur de l'attribut action du form pour remplir l'url du $.post ?
-*   est-ce que vous arrivez à déclencher le $.post à partir du bouton submit ?
-*   est-ce que vous arrivez à supprimer le submit par défaut du formulaire pour éviter de vous rendre sur la page indiquée dans `<form action="xxxx"`
-
-
-
-vous ete sur discord??
-
-oui
-
-oui
-
-:croissant:
-
-:croissant:
-
-je peut avoir un lien svp!
-
-moi j’ arive pas
-
-en fait perso j'ai téléchargé l'appli  
-
-https://discord.com/channels/783391372169183265/783391372169183268
-DiscordDiscord
-Discord - A New Way to Chat with Friends & Communities
-Discord is the easiest way to communicate over voice, video, and text. Chat, hang out, and stay close with your friends and communities. (62 ko)
-https://discord.com/assets/ee7c382d9257652a88c8f7b7f22a994d.png
-
-Thank's Rathak
-
-merci
-
-derien
-
-https://stackoverflow.com/a/1357151/8721626 je pose ça là ...
-Stack OverflowStack Overflow
-event.preventDefault() vs. return false
-When I want to prevent other event handlers from executing after a certain event is fired, I can use one of two techniques. I'll use jQuery in the examples, but this applies to plain-JS as well: 1.
-
-il y a une différence entre le "event" du formulaire normal, et le "event" de jquery
-
-ce n'est pas le même "event" !
-
-celui de jquery il est redispatché à tous les autres (parce que je peux créer plusieurs $('xxx').on('click',  
-
-
-<form ...>
-  <button onclick='mafunc()' >clic
-...function mafunc(event){
-  event.preventDefault()
-}
-
-Ici c'est l'event du navigateur
-
-Par contre si on utilise jquery !
-
-on va avoir un bouton sans "onclick", et à la place on aura :
-
-$('button').on('click', function (event) {..
-
-
-ici l'event est un evenment JQUERY pas celui du navigateur, parce que je peux déclarer plusieurs on('click', ... sur le meme bouton  
-
-donc pour un event jquery il faut :
-
-event.preventDefault()
-
-
-et
-
-event.stopPropagation()
-
-
-pour pas que l'event passe au formulaire quand même
-
-3ème solution, celle d'Esat : `<form onSubmit="return false"`  
-
-[preventDefault apical.xyzapical.xyz](https://apical.xyz/fiches/la_validation_d_un_formulaire_web_002/event_preventDefault_vs_event_stopPropagation)
-
-ah merci !
-
-Sympa le lien ! Merci !
-
-https://www.w3schools.com/bootstrap4/bootstrap_colors.asp
-w3schools.comw3schools.com
-Bootstrap 4 Colors
-Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.
-
-https://www.w3schools.com/bootstrap4/bootstrap_containers.asp
-w3schools.comw3schools.com
-Bootstrap 4 Containers
-Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.
-
-https://www.w3schools.com/bootstrap4/bootstrap_typography.asp
-w3schools.comw3schools.com
-Bootstrap 4 Text/Typography
-Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.
-
-https://www.w3schools.com/bootstrap4/bootstrap_grid_basic.asp
-w3schools.comw3schools.com
-Bootstrap 4 Grid Basic
-Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.
-
-! important !!
-
-### Exercice
-
-2/12 sur la premiere et les 2 autres se répartissent le reste pour la page d'exemple, 
-avec 3 colonnes
-
-https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp
-https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp
-
-https://www.w3schools.com/bootstrap4/bootstrap_cards.asp
-
-https://www.w3schools.com/bootstrap4/bootstrap_carousel.asp
-
-https://www.w3schools.com/bootstrap4/bootstrap_forms.asp
-
-https://www.w3schools.com/bootstrap4/bootstrap_modal.asp
-
-https://bootswatch.com/
-
-puis ajouter une modale qui contient un form, et essayer de mettre le $.post de ce matin
-
-## Jeudi 2020/12/17
-
-NB: Pendant ce temps les élèves avaient les réunions pédagogiques.
-
-On continue le projet de fin d'année avec des conseils sur la mise en page et le code.
-
-### Mise en page Footer
-
-[ressource alioze.com](https://www.alioze.com/footer)
-
-> Tout d’abord, votre pied de page doit être divisé en une section différente pour chacun des éléments : menu de navigation, mentions légales et CGU, appel à l’action (CTA), icônes de réseaux sociaux, etc. Les éléments les plus importants (souvent les informations de contact ou les appels à l’action) doivent être mis en avant.
-
-### CTA
-
-> CTA = call to action => "Un call to action - aussi appelé CTA - est un élément cliquable positionné sur une page de site internet, un blog ou un email qui incite vos visiteurs à effectuer une action précise, mais une action utile qui les font avancer dans leur parcours d’achat. 
-> Il peut prendre la forme d’une image, d’un lien, d’un bouton voire d’un bot et doit être utilisé à toutes les étapes du parcours d’achat. " (source : https://www.ideagency.fr/blog/call-to-action )
-
-### JSON
-
-pour rappel : JSON = chaine de caractère (c'est du texte) qui représente un "objet" javascript
-
-On peut transformer un objet js en json et vice versa grâce à :
-
-`JSON.stringify(objet_js)` : js => json
-
-`JSON.parse(chaine_json)` : json => js
-
-### Chaining
-
-:danger:  si vous faites plusieurs "." en jquery d'affilée (genre $('#id1').append("...").append("xx").on("click"... , vous etes en train de faire ça : https://www.w3schools.com/JQuery/jquery_chaining.asp
-
-    exemple :
-
-    let elem = $('#id1');
-    let res = elem.append("<p>texte</p>");
-
-=> qu'y a til dans "res" ?? la balise "p" ou la balise "#id1" ?
-
-donc si on fait `res.on("click" , function (....` => quel est l'élément qui déclenche le clic ? le clic sur le p ou le clic sur le '#id1' ? ! 
-
-### Jquery each
-
-```js
-for (let key = 0; key < tableau.length; key++){
-    let val = tableau[key]
-    // traitement
-}
-```
-
-c'est similaire à
-
-```js
-$.each(tableau, function (key, val) {
-  // traitement
-})
-```
-
-c'est jquery qui te fournit key et val à ta place
-
-
-## Mardi 2020/11/03
-
-### Javascript boucle WHILE
-
-boucle WHILE et exercices
-
-je declare une variable var i=1 pour commance la boucle par 1
-je met comme parametre tant que i <= 10 continue la boucle
-c++ ancremente la variable i par 1  
-
-```javascript
-var i = 1;
- 
-while (i <= 10) {
-  console.log(i);
-  i++;
-}
-```
-
-## Mardi 2020/11/10
-
-### Javascript TP Boutique
-
-Nous avons crée un projet BOUTIQUE pour faire des exercices HTML,CSS et JS
-
-Le projet à pour but de mettre en place tous ce que nous avons fait depuis le debut des cours.
-
-* HTML, creation en respectent de la structure HTML
-* CSS, mise en place des styles dans tous le projet
-* JS, creation des variable des fonctions, des tables, conditions et leurs utlisation, 
-
-La structure HTML et CSS est realiser par tous le groupe le jour meme
-
-## Mercredi 2020/11/25
-
-Découverte et inscription sur "codingwars.com".
-
-Plusieurs exercices réalisés ensemble et corrigés ensemble.
-
-## Mercredi 2021/01/13
-
-finalement on a vu quoi : on peut représenter ses données sous forme d'entités et de relations dans un MCD, en fonction des buts de l'application
-
-
-ça nous permet de manière automatique de transformer ce modèle "théorique" ,  en modèle physique interprétable directement par les logiciels de base de données
-
-
-dans notre cas on utilise des BDD relationnelles , donc qui permettent d'avoir des "relations" entre les tables, par le biais des clés primaires et clé étrangères ! (il n'y a donc pas de "lien" entre les tables, mais bien des "contraintes" entre les colonnes qui contiennent les clés primaires et celles qui contiennent les clés étrangères). Un base non relationnelle ne dispose pas de ces contraintes
-
-dans notre cas bis, on utilise des BDD SQL , donc qui demandent du langage SQL pour savoir comment :
-
-1. structurer les données que la BDD va stocker (LDD)
-2. manipuler les données une fois stockées (LMD)
-
-Pour le LDD on a vu déjà les requêtes SQL : `CREATE DATABASE ma_database;` et `CREATE TABLE ma_table (col1 INT ...) ENGINE=InnoDB;`, ainsi que vite fait `ALTER TABLE ma_table ...;`
-
-
-et pour le LMD on a vu `SELECT` pour lire les données, `INSERT` pour créer des données et `UPDATE` pour modifier des données
-
-
-l'intérêt de ce langage c'est qu'on peut l'exécuter sans interface graphique (sans phpmyadmin donc), directement depuis le php ! donc on va être en mesure depuis notre site d'aller lire des infos en base, les modifier, les créer etc.
-
-:ordinateur: :tada: :gâteau: :informaticienne: :clavier: :homme_technologue:
-
-
-### Projet informatique
-
-Ordre à suivre :
-
-1. recueil des besoins ! (cahier des charges, etc.)
-2. conception (MERISE, wireframes, use case, UI/UX)
-3. réalisation (back et front , dans l'ordre que vous voulez, mais le back est nécessaire au front, l'inverse non, donc probablement qu'il faudra commencer un peu + sur le back)
-
-### Merise
-
-En terme de Merise, les rappels pour le MCD :
-
-* on regroupe les données dans les rectangles (appelés Entité)
-* on définit des relations entre les rectangles, qui sont des relations fonctionnelles (qui dépendent du cahier des charges  ! c'est la fonction de notre application quoi), représentées par des ovales
-* on précise nos relations avec des cardinalités, pour indiquer combien d'éléments différents on peut relier les uns aux autres
-
-lors de la transformation en modèle physique , il faudra créer les fameuses contraintes, càd les colonnes qui vont contenir les clés primaires et étrangères
-
-
-et :danger:  : si la relation entre 2 entités est ManyToMany (ie : plusieurs entités de type A peuvent être liées à plusieurs entités de type B, ex: user et role) alors ces colonnes seront stockées dans une nouvelle table !!
-
-ceci étant comme tout est automatisé à partir du MCD dans looping / jmerise , ça peut être transparent pour vous. Mais sans logiciel vous seriez obligés de faire le MLD intermédiaire oui
-
-### Suite SQL
-
-```sql
-DELETE FROM ma_table WHERE condition_pour_selectionner_mon_element_à_supprimer;
-```
-
-Exercice: 
-
-Créer avec des requêtes SQL :
-
-*    au moins 4 articles : n'importe
-*    au moins 3 utilisateurs : "james bond", "sangoku kim" et n'importe
-*    au moins 2 roles (et les lier aux utilisateurs) : "admin" et "moderateur"
-*    au moins 2 catégories: "actualite", "covid"
-
-
-    #1451 - Cannot delete or update a parent row: a foreign key constraint fails (`news1`.`user_role`, CONSTRAINT `user_role_user1_FK` FOREIGN KEY (`id`) REFERENCES `user1` (`id`))
-
-c'est normal, tu essaies de supprimer une clé primaire, alors qu'elle est référencée par une clé étrangère qque part !
-
-=> il faut supprimer dans l'ordre inverse des insertions qu'on a faites hier !!!
-
-### Reprise du TP2
-
-1. connexion à la bdd avec le fichier `connexion.php`
-2. requetage et affichage dans un tableau html dans `accueil.php`
-
-## Jeudi 2020/11/12
-
-### Exercice pour comprendre les tableaux
-
-Ecrire une liste d'élèves dans un tableau javascript et l'écrire sous forme de liste html grâce à une boucle for.
-
-Puis ajouter un bouton qui trie la liste par ordre alphabétique et qui la réaffiche.
-
-Pour ne pas dupliquer le code on utilise une fonction !
-
-### Travail sur les commentaires dans le code
-
-### Reprise du TP banque
-
-Adapter le code du formateur qui ne marche que pour le premier compte, pour qu'il marche pour les 2 comptes !
-
-**Sans faire de copier coller**
-
-## Lundi 2020/11/23
-
-### Decouverte de LET et CONST
-
-Var = on peut redeclarer et changer sa valeur 
-Let = on ne peut pas redeclarer mais on peut changer sa valeur
-Const = on ne peut pas redeclarer mais on peut pas changer sa valeur
-
-Explications détaillées du TP, revue des concepts de la veille, notamment les appels de fonctions en paramètre d'autres fonctions.
-
-### Variable LET
-
-Example LET :
-
-```javascript
-let test = 5;
-    test = 18;
-
-    for (let i = 0; i < 10; i++) {
-        // some statements
-        document.querySelector("#demoLet2").innerHTML += i;
-    }
-
-    document.querySelector("#demoLet").innerHTML = test;
-```
-
-
-### Variable CONST
-
-Example CONST :
-
-```javascript
- const i = 20;
-//i = 10; erreur
-    document.querySelector("#const").innerHTML = i;
-    const monTest = function() {
-        alert("hello");
-    }
-    monTest();
-
-    const monObjet = {
-        a: "paris",
-        b: function() {
-            aler("test");
-        }
-    }
-
-```
-
-## Mardi 2020/11/17
-
-### Javascript TP Boutique
-
-Nous avons continuer sur le projet BOUTIQUE en integrent le JS
-Creation des fonctions, les condition, les boucles et les tableaux et execution à partir du HTML
-
-### Javascript Objet
-
-Decouverte des Objet
-un objet contient des propriétés et des méthodes :
-
-```javascript
-var car = { 
-  type:"Fiat",// propriété : "valeur"
-  model:"500", // propriété : "valeur"
-  color:"white",// propriété : "valeur"
-  nomComplet : function() { return this.type + " " + this.model; } // Methode
-};
-```
-
-pour appeler un une propriété dans l'objet car on appel la variable suivie d'un point suivie du nom de propriété
-
-```javascript
-car.model;
-```
-
-## Lundi 2020/11/16
-
-### Javascript TP Boutique
-
-Nous avons continuer sur le projet BOUTIQUE en integrent le JS
-Creation des fonction et les tableau et execution à partir du HTML
-
-## Jeudi 2021/01/21
-
-### MCD + Contraintes / Relations
-
-Explications MCD / Merise, notamment la différence entre les relations (MCD) et leur traduction en MPD/SQL : les contraintes.
-
-![MCD](img/2021-01-21_10-20-22.png)
-
-### PHP PDO
-
-Explications fonctionnement requêtage de BDD avec PDO et php.
-
-* requetes
-* requetes préparées
-...
-
-![pdo](img/2021_01_21_0j4_Kleki.png)
-![pdo2](img/2021_01_21_0ju_Kleki.png)
-
-### POO : Programmation orientée objet
-
-![poo](img/2021_01_21_0l3_Kleki.png)
-![poo2](img/2021_01_21_0r6_Kleki.png)
-
-
-## Mercredi 2020/12/02
-
-des exercices pour jquery : [w3schools](https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors1)
-
-=> exercices : selectors , get, set, add, remove, hide and show (modifié) 
-
-l'explication pour l'exercice 6 des selecteurs : https://api.jquery.com/odd-selector/ , c'est équivalent à "nth-child(odd)" d'habitude
-
-pour l'instant, il n'y a pas besoin d'aller lire cette page !! c'est la doc officielle jquery, mais elle n'est pas très accessible aux débutants
-
-à savoir : "GET" = récupération des données, donc il s'agit des méthodes jquery qui lisent les valeurs, comme $('p').text() ou $("input#prenom").val() -> ça va lire le contenu du texte des balises <p> ou lire la valeur des input d'id=prenom !
-
-quant à "SET" = modification des données, donc on utilise les mêmes méthodes mais en donnant des paramètres qui vont remplacer la valeur actuelle, ex: $('p').text("nouveau texte") 
-
-vous pouvez zapper les questions sur les "attributs"
-
-### Première présentation de AJAX
-
-#### Version avec "load"
-
-```javascript
-$("article#infos>section:first-child").text("Je remplis ma section.");
-
-const urlChuckNorris = "https://api.icndb.com/jokes/random";
-
-const urlPokemon = "https://pokeapi.co/api/v2/pokemon/";// https://api.jquery.com/load/
-
-/**
- * Affiche dans la balise pre>p un chuck norris fact
- */
-function afficheChuck() {
-  $("article#infos>section>pre>p").load(urlChuckNorris);
-}
-
-/**
- * Affiche les caractéristiques du pokemon demandé !
- *
- * @param {string} pokemon
- */
-function affichePokemon(pokemon) {
-  const url = urlPokemon + pokemon; // https://pokeapi.co/api/v2/pokemon/pikachu si pokemon = 'pikachu'
-  $("article#infos>section>pre>p").load(url);
-}
-```
-
-#### Version avec .get
-
-```javascript
-/**
- *
- * @param {string} pokemon Nom du pokemon à afficher
- */
-function affichePokemon(pokemon) {
-  let url = urlPokemon + pokemon;
-  $.get(url).done(function (resultat) {
-    console.log(resultat);
-    $("article#infos>section>p").text(resultat.name);
-    $("article#infos>section>p").append(
-      "<img src='" + resultat.sprites.front_shiny + "'>"
-    );
-  });
-}
-```
-
-## Mardi 2021/01/12
-
-phpmyadmin vs mysql vs sql 
-
-### Manipulation de phpmyadmin
-
-1. Création des tables à partir du script SQL créé dans looping ou JMerise, la veille à partir du MCD.
-2. Affichage du résultat dans le concepteur de Phpmyadmin pour bien comprendre la différence
-   entre le MCD et le MLD, et l'absence de "relation" dans le MLD, même si une ligne existe dans phpmyadmin
-3. Régler les pbs d'auto increment
-4. Remplir avec des données
-
-### SQL /Mysql
-
-pour nommer les identifiants (clé primaires!), il y a plusieurs formalismes :
-
-* `id`
-* `table_id` (en changeant 'table' bien sûr)
-* `tab_id` (on garde 3 lettres)
-* `id_table`
-
-mais ça ne pose aucun pb quel que soit le choix
-
-Par contre tout ce qui n'est pas comme ça, est probablement un mauvais choix
-
-### Tables de jointures réexpliquées
-
-### LDD
-
-```sql
-CREATE TABLE article(
-   id INT  AUTO_INCREMENT NOT NULL ,
- ....
-) ENGINE=InnoDB;
-```
-
-### Découverte des requêtes LMD
-
-Jusqu'à présent, on a utilisé du "LDD" (CREATE , ALTER ...) pour donner les instructions à mysql sur comment créer la structure des données  
-
-now il est temps d'utiliser le LMD !
-
-c'est la partie de SQL qui permet de manipuler les données
-
-=> lire les données :
-`SELECT ..... FROM la_table;`
-
-=> `SELECT col1, col2 ... FROM ma_table;`
-
-```sql
-SELECT name FROM user;  
-```
-
-> Petite recommandation : mettre en majuscule les mots clé SQL, et en minuscule le reste
-
-NB: les ` sont facultatifs
-
-si je veux toutes les colonnes : `SELECT * FROM ma_table;`
-
-pour le `WHERE` : conditions que les données que je veux récupérer doivent valider
-
-exemple : `SELECT * FROM utilisateur WHERE nom = 'dusse';`
-
-la ca veut dire : selectionner toutes les colonnes d'utilisateur où le nom est "dusse" ?
-
-```sql
-SELECT * FROM utilisateur WHERE nom = 'dusse' AND prenom = 'jean-claude';
-```
-
-> autant de AND qu'on veut
-
-```sql
-SELECT * FROM utilisateur WHERE nom = 'dusse' OR prenom = 'jean-claude';
-```
-
-Ou Dusse ou les jean Claude?
-
-le OR n'est pas exclusif, donc ce sera tous les jean claude + les dusse
-
-```sql
-SELECT * FROM utilisateur WHERE nom = 'dusse' OR prenom = 'jean-claude' AND age > 50;
-```
-
-:danger:
-
-là c'est comme les "+" et les "x" qd vous étiez au collège : qui gagne ??!!
-
-une idée de réponse : `SELECT * FROM utilisateur WHERE (nom = 'dusse' OR prenom = 'jean-claude') AND age > 50;`
-
-#### INSERT
-
-```sql
-INSERT INTO ma_table (col1, col2, ...) VALUES (val1, val2, ...);
-```
-
-Ici l'ordre est important : val1 va dans col1, val2 va dans col2 ...
-
-[w3schools sql](https://www.w3schools.com/sql/sql_syntax.asp) !
-
-```sql
-UPDATE ma_table SET col1 = val1, col2=val2 WHERE id= xxx;
-```
-
-ATTENTION à ne pas oublier le WHERE !!  
-
-> permet de modifier tous les enregistrements (les lignes quoi) qui correspondent à la condition du WHERE
-
-## Mercredi 2021/02/03
-
-Reprise des cours objet précédents
-
-### UML
-
-Présentation
-
-* MERISE : but créer une base de données
-* UML : Langage de modélisation unifié : but représenter le fonctionnement de l'application
-
-=> c'est un langage : utilisé pour communiquer entre différents métiers
-
-Il y a bcp de schémas différents en UML, + qu'en Merise (MCD, MLD ...) !
-
-On va se concentrer sur 2 schémas en ce qui nous concerne : Diagramme de Cas d'Utilisation, et Diagramme de Classe
-
-#### Diagramme de cas d'utilisation
-
-permet de voir qui agit sur le système (acteur), et ce qu'il peut faire (utilisations).
-
-on n'a pas le choix :
-
-* à gauche les acteurs
-* à droite un rectangle qui représente le système
-* les actions autorisées sont représentées par des ovales
-* les relations de dépendances entre les acteurs ou entre les actions sont matérialisées par des flèches
-
-FORMALISME obligatoire :
-meme les bonshommes moches sont dans la norme !
-
-NB : utile en phase de conception !
-
-include : buy book ----> open account : le cas d'utilisation "open account" est "nécessaire" ("inclus") dans le cas d'utilsation "acheter livre"
-
-extends : search------> buy : il indique que "search" peut venir "compléter" le cas d'utilisation "buy"
-
-il faut garder le mot "extends" ou "inclide" à cote de la fleche sinon on ne peut pas les distinguer
-
-du point de vue de "buy" les 2 flches n'ont pas la même direction
-
-#### Diagramme de classe
-
-
-    ---------------------------------------
-    |      Ma_classe                      |
-    ---------------------------------------
-    | - propriétéPrivée : type            |
-    | + propriétéPublique : type          |
-    | # propriétéProtegée : type          |
-    ---------------------------------------
-    | + méthodePublique(arguments) : type |
-    ---------------------------------------
-
-ATTENTION toujours diviser le rectangle en 3 !
-
-s'il n'y a pas de propriété ou de méthode, il faut mettre une division vide
-
-Un diagramme de classe, permet de représenter... des classes :tada:
-
-càd son nom, ses propriétés et ses méthodes + l'héritage et relations (par les flèches/traits)
-
-Donc un parent => plusieurs enfants, un enfant => un parent
-
-##### void
-
-dans les types des propriétés, des arguments ou des retours, on trouve : "int", "string" etc.
-
-un des types "speciaux" c'est void : c'est pour un retour de fonction *QUI NE RETOURNE RIEN*
-
-ex: supprimeProfil()
-
-```php
-public function supprimeProfil(int $id): void
-{
-    $bdd->prepare("DELETE ......");
-    // ...
-    // PAS DE RETURN
-}
-```
-
-si je fais `$return = supprimeProfil(1);` => dans $return il n'y a ... rien (void)
-
-##### Héritage
-
-ATTENTION la fleche de l'héritage, est "blanche" !! (triangulaire) (modifié) 
-
-c'est une comme ça --|> et pas une comme ça --->
-
-la flèche standard a une autre signification, donc à ne pas utiliser par erreur
-
-##### Relations
-
-on vient de voir les relations
-
-et les flèches "triangle" c'est l'héritage
-
-Pour la lecture des relations c'est l'inverse du MCD (la cardinalité est de l'autre coté du trait).
-
-NB: static = souligné, protected = #
-
-https://creately.com/blog/diagrams/class-diagram-relationships/
-
-![résumé](img/Class-Diagram-Relationships.png)
-	
 # Cours TP DWWM
 
 ## Mardi 2020/10/06
@@ -1219,6 +246,33 @@ if (a == b) {
 }
 ```
 
+## Jeudi 2020/10/29
+
+### Javascript conditions SWITCH
+
+decouverte des conditions SWITCH et exercices
+la condition switch à pour parametre 
+une valeur ou une variable entre les () 
+et elle fonctionne par des case (cas)
+le break; permet de stoper le cas si la
+valeur ce trouve das se cas 
+
+```
+var a = 5;
+
+switch (a) {
+  case "admin":
+    alert("switch votre role est admin");
+    break;
+  case 5:
+  case 6:
+    alert("switch la valeur est 5");
+    break;
+  default:
+    alert("switch rien");
+}
+```
+
 ## Lundi 2020/11/02
 
 ### Javascript boucle FOR
@@ -1235,11 +289,24 @@ for (i = 1; i <= 10; i++) {
 }
 ```
 
-## Lundi 2021/01/25
+## Mardi 2020/11/03
 
-On continue la transformation du site de news en objet.
+### Javascript boucle WHILE
 
-On commence notamment à faire de l'objet même pour les classes "non entités". On commence aussi à séparer les "Model" des "Vues".
+boucle WHILE et exercices
+
+je declare une variable var i=1 pour commance la boucle par 1
+je met comme parametre tant que i <= 10 continue la boucle
+c++ ancremente la variable i par 1  
+
+```javascript
+var i = 1;
+ 
+while (i <= 10) {
+  console.log(i);
+  i++;
+}
+```
 
 ## Lundi 2020/11/09
 
@@ -1260,149 +327,130 @@ for (i = 0; i < cars.length; i++) {
 }
 ```
 
-## Jeudi 2020/12/10
+## Mardi 2020/11/10
 
+### Javascript TP Boutique
 
-https://developer.mozilla.org/fr/docs/Web/HTTP/M%C3%A9thode
+Nous avons crée un projet BOUTIQUE pour faire des exercices HTML,CSS et JS
 
-> HTTP définit un ensemble de méthodes de requête qui indiquent l'action que l'on souhaite réaliser sur la ressource indiquée. Bien qu'on rencontre également des noms (en anglais), ces méthodes sont souvent appelées verbes HTTP. Chacun d'eux implémente une sémantique différente mais certaines fonctionnalités courantes peuvent être partagées par différentes méthodes (e.g. une méthode de requête peut être sûre (safe), idempotente ou être mise en cache (cacheable)).
+Le projet à pour but de mettre en place tous ce que nous avons fait depuis le debut des cours.
 
-HTTP = moyen que les gens qui ont inventé internet utilisent pour que les machines communiquent entre elles
+* HTML, creation en respectent de la structure HTML
+* CSS, mise en place des styles dans tous le projet
+* JS, creation des variable des fonctions, des tables, conditions et leurs utlisation, 
 
-(ps : http:// ça vient de là ! et la version sécurisée : https://)
+La structure HTML et CSS est realiser par tous le groupe le jour meme
 
-il faut imaginer internet comme une ville : pour relier les maisons on a fait les routes (=les cables), les adresses postales (les IP), les lettres/sonnettes - dsl pour l'analogie bof- (http)
+## Jeudi 2020/11/12
 
-et un protocole d'affichage (j'ai pas d'exemple pour la ville) le web
+### Exercice pour comprendre les tableaux
 
-les méthodes qui nous préoccupent GET / POST / DELETE
+Ecrire une liste d'élèves dans un tableau javascript et l'écrire sous forme de liste html grâce à une boucle for.
 
-GET = récupération de la page indiquée
+Puis ajouter un bouton qui trie la liste par ordre alphabétique et qui la réaffiche.
 
-POST = envoi d'une information à l'adresse indiquée
+Pour ne pas dupliquer le code on utilise une fonction !
 
-ex: formulaire !!
+### Travail sur les commentaires dans le code
 
-```html
-<form action="index.html" method="post">
-    <input name="nom" placeholder="quel est le nom du pokemon ?" />
-    <button type="submit">OK</button>
-</form>
+### Reprise du TP banque
+
+Adapter le code du formateur qui ne marche que pour le premier compte, pour qu'il marche pour les 2 comptes !
+
+**Sans faire de copier coller**
+
+## Vendredi 2020/11/13
+
+### Reprise du TP banque
+
+Objectif: maîtriser les fonctions.
+
+On essaie de faire des fonctions qui marchent pour n'importe lequel des comptes bancaires html.
+
+Alors qu'avant la fonction ne modifiait que le premier compte qu'elle trouvait, il faut maintenant lui donner le compte qu'elle doit modifier.
+
+### Addendum fonctions :
+
+**Une fonction est une ACTION**, donc on doit lui dire qui doit l'effectuer, et avec quoi etc.
+
+=> les arguments sont **indispensables** !
+
+### Installation git + github
+
+1. création du compte github
+2. installation de git sur les pc (pour windows par ex c'est ici :[git for windows](gitforwindows.org)) (on accepte tous les paramètres par défaut)
+3. paramétrage de vscode pour utiliser git (il suffit de le relancer !!)
+4. mise à jour email et name de "git config"
+5. premier commit => autorisations github demandées et acceptées !
+6. modifier un fichier (créer un README par exemple) et le "commiter" et l'envoyer sur github
+7. on vérifie que tout est bien affiché sur github
+8. profit
+
+## Lundi 2020/11/16
+
+### Javascript TP Boutique
+
+Nous avons continuer sur le projet BOUTIQUE en integrent le JS
+Creation des fonction et les tableau et execution à partir du HTML
+
+## Mardi 2020/11/17
+
+### Javascript TP Boutique
+
+Nous avons continuer sur le projet BOUTIQUE en integrent le JS
+Creation des fonctions, les condition, les boucles et les tableaux et execution à partir du HTML
+
+### Javascript Objet
+
+Decouverte des Objet
+un objet contient des propriétés et des méthodes :
+
+```javascript
+var car = { 
+  type:"Fiat",// propriété : "valeur"
+  model:"500", // propriété : "valeur"
+  color:"white",// propriété : "valeur"
+  nomComplet : function() { return this.type + " " + this.model; } // Methode
+};
 ```
 
-DELETE = ??? à votre avis :sourire_narquois:
+pour appeler un une propriété dans l'objet car on appel la variable suivie d'un point suivie du nom de propriété
 
-https://api.jquery.com/jquery.ajax/
-
-sur la page https://api.jquery.com/jquery.get/ , pour la methode $.get, on voit que ça se base sur "$.ajax"
-
-il disent : 
-
-> This is a shorthand Ajax function, which is equivalent to:
-
-```
-$.ajax({
-  url: url,
-  type: "GET",
-  data: data,
-  success: success,
-  dataType: dataType
-});
+```javascript
+car.model;
 ```
 
-### Exercice
+## Jeudi 2020/11/19
 
-sur la page que vous voulez, avec ajax vous allez faire un GET sur https://jsonplaceholder.typicode.com/users , et afficher le résultat dans un <pre> sans chichi
+### Travail sur les objets
 
-si tu veux que ce soit plus joli tu peux mettre direct JSON.stringify(data)
+Création d'un site web simple pour afficher une liste d'élèves.
 
-puis on va faire un "POST" sur la meme url
+Les élèves sont des objets avec un nom, un prénom et un âge.
 
-par le biais d'un formulaire pour commencer
+Travail collaboratif sur glitch : https://glitch.com/edit/#!/different-boundless-break
 
-SOLUTION : j'ai l'id 11 c'est bon
+On a bien noté qu'il fallait utiliser la syntaxe "." pour accéder à la propriété d'un objet. 
+Mais on peut également y accéder en faisant `objet["string_propriete"]` . 
+Exemple : `[1, 2, 3]["length"]` 
 
-### POST jquery
+### Fonction en paramètre d'une fonction
 
-le formulaire vous "déplace" vers la cible de l'action, donc vous vous retrouvez sur le site https://jsonplaceholder.typicode.com/users
+On a essayé de trier la liste des objets. Mais javascript n'est pas capable de décider si un objet est oui ou non plus grand q'un autre !!
 
-avec la réponse id:11 
+Par exemple est-ce que l'objet `{nom: "Rambo", prenom: "John"}` est plus grand que l'objet `{nom: "Schwarzenegger", prenom: "Arnold"}` ?? puisqu'ils font parti tous les 2 de la liste `expandables`.
 
-```
-<form action="https://jsonplaceholder.typicode.com/users" method="POST">
-    <input name="name" placeholder="Nom de l'utilisateur" />
-    <button type="submit">Envoyer</button>
-</form>
-```
+Comme javascript ne peut pas le deviner, il nous demande de lui donner une fonction capable de comparer 2 éléments l'un par rapport à l'autre. Elle doit renvoyer 1 si le premier est plus grand, -1 sinon.
 
-une des caractéristiques de la requête HTTP "POST" : c'est qu'elle peut transporter des informations supplémentaires
-
-donc ici les infos c'est `{name: CE_QUI_EST_ECRIT_DANS_L_INPUT}`
-
-ici name est la valeur de l'attribut "name" dans la balise input
-
-donc si j'ai `<input name="prenom" />`  => quelles vont etre les infos POST-ées ?
-
-=> {prenom: INPUT_VALUE}
-
-la version jquery POST
-
-$.post(url, data).done(function (response) .....
-
-la différence c'est "data"
-
-=> les données supplémentaires que le POST peut envoyer
-
-sous la forme d'un objet js, exemple : `{ nom: "kim", prenom: "san goku" }` 
-
-cf ici !
-
-```
-    .fail(function (data) {
-      // Si la requete échoue, c'est cette fonction anonyme là qui va être utilisée par jquery,
-      // et pas celle de ".done"
-      console.log(data);
-      // J'affiche l'erreur dans la case à côté :
-      caseJquery
-        .next()
-        .html("<span style='color: red;'> " + data.responseText + " </span>");
-    })
+```javascript
+function comparerBourrin(acteur1, acteur2){
+   return acteur1.nom > acteur2.nom ? 1 : -1;
+}
 ```
 
-Donc on pourrait écrire ça :
+Et pour l'utiliser il faut la passer, **sans l'appeler** en argument de l'appel de `sort()`, c'est à dire dans notre cas : `expandables.sort(comparerBourrin)`.
 
-```
-const url = "https://jsonplaceholder.typicode.com/users";
-const data = { nom: "baggins", prenom: "bilbo" };$.post(url, data).done(function(reponse){
-   $('h1').text("SUCCESS !"); // ou pourquoi pas $('..............').html(JSON.stringify(reponse))
-}).fail(function (reponse){
-  $('h1').text("ERROR " + reponse.responseText);
-})
-```
-
-BOOTSTRAP https://www.w3schools.com/bootstrap4/
-
-https://www.w3schools.com/bootstrap4/trybs_template1.htm
-
-## Jeudi 2021/02/04
-
-### Révisions diagramme de classe
-
-En particulier approfondissement des notions d'héritage et des types de données.
-
-### Live coding
-
-Adapter le code du trombi pour les bonnes pratiques en terme d'objets et d'héritage.
-
-Premier aperçu des namespace.
-
-## Jeudi 2020/11/26
-
-Correction en "live coding" de l'évaluation faite le mardi 24.
-
-cf [https://github.com/dwwm93/2020/tree/master/evaluation/correction](https://github.com/dwwm93/2020/tree/master/evaluation/correction).
-
-et sur [glitch](https://glitch.com/edit/#!/cypress-obtainable-spandex)
+Puis on a essayé de faire une bascule pour se souvenir de l'état de tri (ascendant ou descendant) entre les clics.
 
 ## Vendredi 2020/11/20
 
@@ -1461,46 +509,205 @@ Pour se remettre de ces émotions, petite révision HTML grâce au site [webdesi
 
 Fait tous ensemble collaborativement, reprise depuis les bases, via le tutoriel [javascript en 14 minutes](https://jgthms.com/javascript-in-14-minutes/) ! (C'est mensonger, cela nous a pris 2h !!)
 
-## Jeudi 2020/10/29
+## Lundi 2020/11/23
 
-### Javascript conditions SWITCH
+### Decouverte de LET et CONST
 
-decouverte des conditions SWITCH et exercices
-la condition switch à pour parametre 
-une valeur ou une variable entre les () 
-et elle fonctionne par des case (cas)
-le break; permet de stoper le cas si la
-valeur ce trouve das se cas 
+Var = on peut redeclarer et changer sa valeur 
+Let = on ne peut pas redeclarer mais on peut changer sa valeur
+Const = on ne peut pas redeclarer mais on peut pas changer sa valeur
+
+Explications détaillées du TP, revue des concepts de la veille, notamment les appels de fonctions en paramètre d'autres fonctions.
+
+### Variable LET
+
+Example LET :
+
+```javascript
+let test = 5;
+    test = 18;
+
+    for (let i = 0; i < 10; i++) {
+        // some statements
+        document.querySelector("#demoLet2").innerHTML += i;
+    }
+
+    document.querySelector("#demoLet").innerHTML = test;
+```
+
+
+### Variable CONST
+
+Example CONST :
+
+```javascript
+ const i = 20;
+//i = 10; erreur
+    document.querySelector("#const").innerHTML = i;
+    const monTest = function() {
+        alert("hello");
+    }
+    monTest();
+
+    const monObjet = {
+        a: "paris",
+        b: function() {
+            aler("test");
+        }
+    }
 
 ```
-var a = 5;
 
-switch (a) {
-  case "admin":
-    alert("switch votre role est admin");
-    break;
-  case 5:
-  case 6:
-    alert("switch la valeur est 5");
-    break;
-  default:
-    alert("switch rien");
+## Mardi 2020/11/24
+
+### EVALUATION HTML, CSS et JavaScript
+Création d’un site de profile de la Classe 
+Nom du site DWWM 93
+
+
+L’objet de site est de présenter les étudiants du groupe DWWM MTE 93 2021 aux entreprises pour trouver leurs stages.
+Le site doit avoir le logo de GRETA MTE 93 et un menu (Accueil, Formation, Contact), le contenue, et un footer.
+
+### Header
+Logo du GRETA MTE 93 et menu (Accueil, Formation, Contact)
+
+### Contenue au centre de la page (main)
+#### Accueil
+La page d’accueil doit porter une liste des étudiants du DWWM leurs noms, prénom, photos et un bouton pour afficher le profil de l’étudiant dans une fenêtre.
+Le profil doit être afficher dans une fenêtre qui comporte tous les informations de l’étudiants
+* Nom
+* Prénom
+* Tel
+* Email
+* Photo
+* Description (sur ses formation)
+* Niveau sur HTML, CSS et JS (avec une barre de progression)
+* Un lien vers son CV (lien fictive)
+* Un formulaire de contact (les champs * obligatoire et contrôler)
+    * Nom*
+    * Prénom
+    * Tel*
+    * Email*
+    * Sujet*
+    * Message*
+    * Bouton d’envoie
+
+
+
+#### Formation (nouvelle page)
+Description de la formation DWWM et son révérenciel
+Contact (nouvelle page)
+Formulaire de contact général (les champs * obligatoire et contrôler)
+* Nom*
+* Prénom
+* Tel*
+* Email*
+* Sujet*
+* Message*
+* Bouton d’envoie
+#### Footer
+Le contenue en centre « DWWM 2020-2021 – votre prénom et nom»
+
+ 
+### Réalisation du projet sur 100 points
+
+Le menu doit être crée à partir d’un tableau JS
+Les informations des étudiants doivent venir un objet JS
+* Créations des maquettes (zoning, wireframe), desktop et mobile 20 points
+* Site responsive desktop et mobile 30 points
+* HTML sur 10 points : bien propre (basiles ouvert et fermer, titre, h1, p, ect…) 
+* CSS sur 15 points: 
+    * Media = 4 points
+    * Flex = 5 points, 
+    * Sélecteurs (baliste = 2 points, id= 2 points, class = 2 points)
+* JS sur 25 points: 
+    * Variables = 2 points
+    * Fonctions = 5 points
+    * Conditions = 5 points
+    * Boucles = 5 points
+    * Tableaux = 4 points 
+    * Objets = 4 points
+
+Les pages Accueil (index.html), Formation (formation.html) et Contact(contact.html) doit avoir le même design.
+
+À rendre le projet en .zip ou .rar et elle doit contenir tous les éléments (zoning, wireframe et code) avant 16h le 24/11/2020
+## Mercredi 2020/11/25
+
+Découverte et inscription sur "codingwars.com".
+
+Plusieurs exercices réalisés ensemble et corrigés ensemble.
+
+## Jeudi 2020/11/26
+
+Correction en "live coding" de l'évaluation faite le mardi 24.
+
+cf [https://github.com/dwwm93/2020/tree/master/evaluation/correction](https://github.com/dwwm93/2020/tree/master/evaluation/correction).
+
+et sur [glitch](https://glitch.com/edit/#!/cypress-obtainable-spandex)
+
+## Mercredi 2020/12/02
+
+des exercices pour jquery : [w3schools](https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors1)
+
+=> exercices : selectors , get, set, add, remove, hide and show (modifié) 
+
+l'explication pour l'exercice 6 des selecteurs : https://api.jquery.com/odd-selector/ , c'est équivalent à "nth-child(odd)" d'habitude
+
+pour l'instant, il n'y a pas besoin d'aller lire cette page !! c'est la doc officielle jquery, mais elle n'est pas très accessible aux débutants
+
+à savoir : "GET" = récupération des données, donc il s'agit des méthodes jquery qui lisent les valeurs, comme $('p').text() ou $("input#prenom").val() -> ça va lire le contenu du texte des balises <p> ou lire la valeur des input d'id=prenom !
+
+quant à "SET" = modification des données, donc on utilise les mêmes méthodes mais en donnant des paramètres qui vont remplacer la valeur actuelle, ex: $('p').text("nouveau texte") 
+
+vous pouvez zapper les questions sur les "attributs"
+
+### Première présentation de AJAX
+
+#### Version avec "load"
+
+```javascript
+$("article#infos>section:first-child").text("Je remplis ma section.");
+
+const urlChuckNorris = "https://api.icndb.com/jokes/random";
+
+const urlPokemon = "https://pokeapi.co/api/v2/pokemon/";// https://api.jquery.com/load/
+
+/**
+ * Affiche dans la balise pre>p un chuck norris fact
+ */
+function afficheChuck() {
+  $("article#infos>section>pre>p").load(urlChuckNorris);
+}
+
+/**
+ * Affiche les caractéristiques du pokemon demandé !
+ *
+ * @param {string} pokemon
+ */
+function affichePokemon(pokemon) {
+  const url = urlPokemon + pokemon; // https://pokeapi.co/api/v2/pokemon/pikachu si pokemon = 'pikachu'
+  $("article#infos>section>pre>p").load(url);
 }
 ```
 
-## Mardi 2021/01/26
+#### Version avec .get
 
-À partir du code fait la veille, on détermine l'organisation utilisée, et on apprend le MVC.
-
-### MVC
-
-![mvc](img/2021_01_26_0go_Kleki.png)
-
-C'est un design pattern très pratique pour répartir les responsabilités.
-
-Il faut bien connaitre tout et ne pas oublier le Router.
-
-### Application au projet "news"
+```javascript
+/**
+ *
+ * @param {string} pokemon Nom du pokemon à afficher
+ */
+function affichePokemon(pokemon) {
+  let url = urlPokemon + pokemon;
+  $.get(url).done(function (resultat) {
+    console.log(resultat);
+    $("article#infos>section>p").text(resultat.name);
+    $("article#infos>section>p").append(
+      "<img src='" + resultat.sprites.front_shiny + "'>"
+    );
+  });
+}
+```
 
 ## Jeudi 2020/12/03
 
@@ -1632,76 +839,869 @@ $("article#tableau>table td.nom").on("click", function () {
 });
 ```
 
-## Mardi 2020/11/24
-
-### EVALUATION HTML, CSS et JavaScript
-Création d’un site de profile de la Classe 
-Nom du site DWWM 93
+## Jeudi 2020/12/10
 
 
-L’objet de site est de présenter les étudiants du groupe DWWM MTE 93 2021 aux entreprises pour trouver leurs stages.
-Le site doit avoir le logo de GRETA MTE 93 et un menu (Accueil, Formation, Contact), le contenue, et un footer.
+https://developer.mozilla.org/fr/docs/Web/HTTP/M%C3%A9thode
 
-### Header
-Logo du GRETA MTE 93 et menu (Accueil, Formation, Contact)
+> HTTP définit un ensemble de méthodes de requête qui indiquent l'action que l'on souhaite réaliser sur la ressource indiquée. Bien qu'on rencontre également des noms (en anglais), ces méthodes sont souvent appelées verbes HTTP. Chacun d'eux implémente une sémantique différente mais certaines fonctionnalités courantes peuvent être partagées par différentes méthodes (e.g. une méthode de requête peut être sûre (safe), idempotente ou être mise en cache (cacheable)).
 
-### Contenue au centre de la page (main)
-#### Accueil
-La page d’accueil doit porter une liste des étudiants du DWWM leurs noms, prénom, photos et un bouton pour afficher le profil de l’étudiant dans une fenêtre.
-Le profil doit être afficher dans une fenêtre qui comporte tous les informations de l’étudiants
-* Nom
-* Prénom
-* Tel
-* Email
-* Photo
-* Description (sur ses formation)
-* Niveau sur HTML, CSS et JS (avec une barre de progression)
-* Un lien vers son CV (lien fictive)
-* Un formulaire de contact (les champs * obligatoire et contrôler)
-    * Nom*
-    * Prénom
-    * Tel*
-    * Email*
-    * Sujet*
-    * Message*
-    * Bouton d’envoie
+HTTP = moyen que les gens qui ont inventé internet utilisent pour que les machines communiquent entre elles
+
+(ps : http:// ça vient de là ! et la version sécurisée : https://)
+
+il faut imaginer internet comme une ville : pour relier les maisons on a fait les routes (=les cables), les adresses postales (les IP), les lettres/sonnettes - dsl pour l'analogie bof- (http)
+
+et un protocole d'affichage (j'ai pas d'exemple pour la ville) le web
+
+les méthodes qui nous préoccupent GET / POST / DELETE
+
+GET = récupération de la page indiquée
+
+POST = envoi d'une information à l'adresse indiquée
+
+ex: formulaire !!
+
+```html
+<form action="index.html" method="post">
+    <input name="nom" placeholder="quel est le nom du pokemon ?" />
+    <button type="submit">OK</button>
+</form>
+```
+
+DELETE = ??? à votre avis :sourire_narquois:
+
+https://api.jquery.com/jquery.ajax/
+
+sur la page https://api.jquery.com/jquery.get/ , pour la methode $.get, on voit que ça se base sur "$.ajax"
+
+il disent : 
+
+> This is a shorthand Ajax function, which is equivalent to:
+
+```
+$.ajax({
+  url: url,
+  type: "GET",
+  data: data,
+  success: success,
+  dataType: dataType
+});
+```
+
+### Exercice
+
+sur la page que vous voulez, avec ajax vous allez faire un GET sur https://jsonplaceholder.typicode.com/users , et afficher le résultat dans un <pre> sans chichi
+
+si tu veux que ce soit plus joli tu peux mettre direct JSON.stringify(data)
+
+puis on va faire un "POST" sur la meme url
+
+par le biais d'un formulaire pour commencer
+
+SOLUTION : j'ai l'id 11 c'est bon
+
+### POST jquery
+
+le formulaire vous "déplace" vers la cible de l'action, donc vous vous retrouvez sur le site https://jsonplaceholder.typicode.com/users
+
+avec la réponse id:11 
+
+```
+<form action="https://jsonplaceholder.typicode.com/users" method="POST">
+    <input name="name" placeholder="Nom de l'utilisateur" />
+    <button type="submit">Envoyer</button>
+</form>
+```
+
+une des caractéristiques de la requête HTTP "POST" : c'est qu'elle peut transporter des informations supplémentaires
+
+donc ici les infos c'est `{name: CE_QUI_EST_ECRIT_DANS_L_INPUT}`
+
+ici name est la valeur de l'attribut "name" dans la balise input
+
+donc si j'ai `<input name="prenom" />`  => quelles vont etre les infos POST-ées ?
+
+=> {prenom: INPUT_VALUE}
+
+la version jquery POST
+
+$.post(url, data).done(function (response) .....
+
+la différence c'est "data"
+
+=> les données supplémentaires que le POST peut envoyer
+
+sous la forme d'un objet js, exemple : `{ nom: "kim", prenom: "san goku" }` 
+
+cf ici !
+
+```
+    .fail(function (data) {
+      // Si la requete échoue, c'est cette fonction anonyme là qui va être utilisée par jquery,
+      // et pas celle de ".done"
+      console.log(data);
+      // J'affiche l'erreur dans la case à côté :
+      caseJquery
+        .next()
+        .html("<span style='color: red;'> " + data.responseText + " </span>");
+    })
+```
+
+Donc on pourrait écrire ça :
+
+```
+const url = "https://jsonplaceholder.typicode.com/users";
+const data = { nom: "baggins", prenom: "bilbo" };$.post(url, data).done(function(reponse){
+   $('h1').text("SUCCESS !"); // ou pourquoi pas $('..............').html(JSON.stringify(reponse))
+}).fail(function (reponse){
+  $('h1').text("ERROR " + reponse.responseText);
+})
+```
+
+BOOTSTRAP https://www.w3schools.com/bootstrap4/
+
+https://www.w3schools.com/bootstrap4/trybs_template1.htm
+
+## Vendredi 2020/12/11
+
+bon, on se met en jambes en faisant l'exercice d'hier soir ?
+
+on essaie de déclencher le $.post en cliquant sur le bouton submit
+
+ca marche
+
+Pour l'exercice :
+
+*   est-ce que ça marchait bien pour vous sans changer de page avec le $.post hier ?
+*   est-ce que vous arrivez à lire les valeurs de l'input du form et à les envoyer via le $.post ainsi que la valeur de l'attribut action du form pour remplir l'url du $.post ?
+*   est-ce que vous arrivez à déclencher le $.post à partir du bouton submit ?
+*   est-ce que vous arrivez à supprimer le submit par défaut du formulaire pour éviter de vous rendre sur la page indiquée dans `<form action="xxxx"`
 
 
 
-#### Formation (nouvelle page)
-Description de la formation DWWM et son révérenciel
-Contact (nouvelle page)
-Formulaire de contact général (les champs * obligatoire et contrôler)
-* Nom*
-* Prénom
-* Tel*
-* Email*
-* Sujet*
-* Message*
-* Bouton d’envoie
-#### Footer
-Le contenue en centre « DWWM 2020-2021 – votre prénom et nom»
+vous ete sur discord??
 
- 
-### Réalisation du projet sur 100 points
+oui
 
-Le menu doit être crée à partir d’un tableau JS
-Les informations des étudiants doivent venir un objet JS
-* Créations des maquettes (zoning, wireframe), desktop et mobile 20 points
-* Site responsive desktop et mobile 30 points
-* HTML sur 10 points : bien propre (basiles ouvert et fermer, titre, h1, p, ect…) 
-* CSS sur 15 points: 
-    * Media = 4 points
-    * Flex = 5 points, 
-    * Sélecteurs (baliste = 2 points, id= 2 points, class = 2 points)
-* JS sur 25 points: 
-    * Variables = 2 points
-    * Fonctions = 5 points
-    * Conditions = 5 points
-    * Boucles = 5 points
-    * Tableaux = 4 points 
-    * Objets = 4 points
+oui
 
-Les pages Accueil (index.html), Formation (formation.html) et Contact(contact.html) doit avoir le même design.
+:croissant:
 
-À rendre le projet en .zip ou .rar et elle doit contenir tous les éléments (zoning, wireframe et code) avant 16h le 24/11/2020
+:croissant:
+
+je peut avoir un lien svp!
+
+moi j’ arive pas
+
+en fait perso j'ai téléchargé l'appli  
+
+https://discord.com/channels/783391372169183265/783391372169183268
+DiscordDiscord
+Discord - A New Way to Chat with Friends & Communities
+Discord is the easiest way to communicate over voice, video, and text. Chat, hang out, and stay close with your friends and communities. (62 ko)
+https://discord.com/assets/ee7c382d9257652a88c8f7b7f22a994d.png
+
+Thank's Rathak
+
+merci
+
+derien
+
+https://stackoverflow.com/a/1357151/8721626 je pose ça là ...
+Stack OverflowStack Overflow
+event.preventDefault() vs. return false
+When I want to prevent other event handlers from executing after a certain event is fired, I can use one of two techniques. I'll use jQuery in the examples, but this applies to plain-JS as well: 1.
+
+il y a une différence entre le "event" du formulaire normal, et le "event" de jquery
+
+ce n'est pas le même "event" !
+
+celui de jquery il est redispatché à tous les autres (parce que je peux créer plusieurs $('xxx').on('click',  
+
+
+<form ...>
+  <button onclick='mafunc()' >clic
+...function mafunc(event){
+  event.preventDefault()
+}
+
+Ici c'est l'event du navigateur
+
+Par contre si on utilise jquery !
+
+on va avoir un bouton sans "onclick", et à la place on aura :
+
+$('button').on('click', function (event) {..
+
+
+ici l'event est un evenment JQUERY pas celui du navigateur, parce que je peux déclarer plusieurs on('click', ... sur le meme bouton  
+
+donc pour un event jquery il faut :
+
+event.preventDefault()
+
+
+et
+
+event.stopPropagation()
+
+
+pour pas que l'event passe au formulaire quand même
+
+3ème solution, celle d'Esat : `<form onSubmit="return false"`  
+
+[preventDefault apical.xyzapical.xyz](https://apical.xyz/fiches/la_validation_d_un_formulaire_web_002/event_preventDefault_vs_event_stopPropagation)
+
+ah merci !
+
+Sympa le lien ! Merci !
+
+https://www.w3schools.com/bootstrap4/bootstrap_colors.asp
+w3schools.comw3schools.com
+Bootstrap 4 Colors
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.
+
+https://www.w3schools.com/bootstrap4/bootstrap_containers.asp
+w3schools.comw3schools.com
+Bootstrap 4 Containers
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.
+
+https://www.w3schools.com/bootstrap4/bootstrap_typography.asp
+w3schools.comw3schools.com
+Bootstrap 4 Text/Typography
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.
+
+https://www.w3schools.com/bootstrap4/bootstrap_grid_basic.asp
+w3schools.comw3schools.com
+Bootstrap 4 Grid Basic
+Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.
+
+! important !!
+
+### Exercice
+
+2/12 sur la premiere et les 2 autres se répartissent le reste pour la page d'exemple, 
+avec 3 colonnes
+
+https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp
+https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp
+
+https://www.w3schools.com/bootstrap4/bootstrap_cards.asp
+
+https://www.w3schools.com/bootstrap4/bootstrap_carousel.asp
+
+https://www.w3schools.com/bootstrap4/bootstrap_forms.asp
+
+https://www.w3schools.com/bootstrap4/bootstrap_modal.asp
+
+https://bootswatch.com/
+
+puis ajouter une modale qui contient un form, et essayer de mettre le $.post de ce matin
+
+## Jeudi 2020/12/17
+
+NB: Pendant ce temps les élèves avaient les réunions pédagogiques.
+
+On continue le projet de fin d'année avec des conseils sur la mise en page et le code.
+
+### Mise en page Footer
+
+[ressource alioze.com](https://www.alioze.com/footer)
+
+> Tout d’abord, votre pied de page doit être divisé en une section différente pour chacun des éléments : menu de navigation, mentions légales et CGU, appel à l’action (CTA), icônes de réseaux sociaux, etc. Les éléments les plus importants (souvent les informations de contact ou les appels à l’action) doivent être mis en avant.
+
+### CTA
+
+> CTA = call to action => "Un call to action - aussi appelé CTA - est un élément cliquable positionné sur une page de site internet, un blog ou un email qui incite vos visiteurs à effectuer une action précise, mais une action utile qui les font avancer dans leur parcours d’achat. 
+> Il peut prendre la forme d’une image, d’un lien, d’un bouton voire d’un bot et doit être utilisé à toutes les étapes du parcours d’achat. " (source : https://www.ideagency.fr/blog/call-to-action )
+
+### JSON
+
+pour rappel : JSON = chaine de caractère (c'est du texte) qui représente un "objet" javascript
+
+On peut transformer un objet js en json et vice versa grâce à :
+
+`JSON.stringify(objet_js)` : js => json
+
+`JSON.parse(chaine_json)` : json => js
+
+### Chaining
+
+:danger:  si vous faites plusieurs "." en jquery d'affilée (genre $('#id1').append("...").append("xx").on("click"... , vous etes en train de faire ça : https://www.w3schools.com/JQuery/jquery_chaining.asp
+
+    exemple :
+
+    let elem = $('#id1');
+    let res = elem.append("<p>texte</p>");
+
+=> qu'y a til dans "res" ?? la balise "p" ou la balise "#id1" ?
+
+donc si on fait `res.on("click" , function (....` => quel est l'élément qui déclenche le clic ? le clic sur le p ou le clic sur le '#id1' ? ! 
+
+### Jquery each
+
+```js
+for (let key = 0; key < tableau.length; key++){
+    let val = tableau[key]
+    // traitement
+}
+```
+
+c'est similaire à
+
+```js
+$.each(tableau, function (key, val) {
+  // traitement
+})
+```
+
+c'est jquery qui te fournit key et val à ta place
+
+
+## Vendredi 2020/12/18
+
+Dernière ligne droite pour le projet.
+
+On fait bien attention :
+
+1. à faire des fonctions génériques - boîtes noires -, qui prennent des arguments en entrée, et pas des fonctions qui vont modifier / utiliser des variables qui ne leur appartiennent pas
+
+2. à écrire des commentaires de qualité qui expliquent fonctionnellement ce que font les bouts de codes ( syntaxe : 
+
+```js
+/**
+ * Commentaire de ma fonction
+ * @param {string} paramString blablabla
+ */
+```
+
+3. à l'ordre de déclenchement des instructions, car quand on utilise $.get ou autres fonctions "ajax" (= asynchrone !!), l'ordre d'exécution n'est pas linéaire
+
+### Révisions jquery / bootstrap
+
+## Lundi 2021/01/04
+
+Début du php !!
+
+### Présentation 
+
+* PHP = logiciel ET un langage
+* par ex sur windows : le logiciel est php.exe
+* le langage reste "PHP"
+
+au départ ça voulait dire Personal Home Page le but c'était de générer du HTML
+exactement le meme but que lorsqu'on créait des innerHTML en javascript
+
+On crée un fichier "index.php" !
+
+```php
+<?php
+  echo "premier code php";
+?>
+```
+### Installation
+
+1. Ouvrir le terminal intégré dans vscode
+2. Taper `php -v`  (le v est en minuscule, et notez l'espace) 
+
+pour ceux qui ont des windows, ça ne devrait pas marcher, pour les autres (mac, linux...) ça devrait le faire
+
+comment faire pour les windowsiens ?
+
+=> https://getcomposer.org/doc/00-intro.md#using-the-installer
+getcomposer.orggetcomposer.org
+Introduction - Composer
+A Dependency Manager for PHP
+
+on va installer "composer" (on s'en servira plus tard), et il va nous rendre php accessible partout
+
+![install composer](img/composer-install-php.png)
+
+options par défaut, sauf le "PATH" de php
+
+exemple de chemin vers php pour les windows : C:/wamp64/bin/php7.2/php.exe
+
+ensuite fermer vscode et le rouvrir, puis refaire php -v
+
+https://www.wampserver.com/
+
+#### Intelephense
+
+
+
+### Code
+
+plusieurs choses :
+
+1. les variables commencent par des "$" en php (ici en js on aurait : let var = "texte";
+2. les instructions se terminent par un ";" !!!!!!!
+3. en js on aurait : `let bonjour = "Bonjour " + nom;` donc la concaténation des chaines de caractères en php se fait avec le "."
+
+Exécution :
+
+`php le_nom_du_script.php`
+
+avec un espace entre php et `le_nom_du_script.php`.
+
+Vu :
+
+* tableaux
+* boucles
+* conditions
+* tableaux associatifs
+
+## Mardi 2021/01/05
+
+### Exercice pour s'entraîner pour les fonctions
+
+Afficher un tableau sous forme de texte.
+
+But : utiliser uniquement les fonctions que je fournissais
+
+### Correction ? (voir fichiers associés)
+
+en js on faisait `res += "toto"` pour concaténer 2 strings, ici on fait `$res .= "toto";`
+
+c'est égal à `res = res + "toto"`, et `"$res = $res . "toto";`
+
+étape 1 du déroulement du code :
+
+```php
+$tbl .= ajouteSautDeLigne(genCol(majuscule($eleve["nom"])) . genCol(minuscule($eleve["prenom"])));
+```
+
+étape 2 du déroulement :
+
+```php
+$tbl .= ajouteSautDeLigne(genCol(majuscule("kim")) . genCol(minuscule("sangoku")));
+```
+
+étape 3 :
+
+```php
+$tbl .= ajouteSautDeLigne(genCol("KIM") . genCol("sangoku"));
+```
+
+étape 4 :
+
+```php
+$tbl .= ajouteSautDeLigne("KIM|" . "sangoku|");
+```
+
+étape 5 :
+
+```php
+$tbl .= ajouteSautDeLigne("KIM|sangoku|");
+```
+
+étape 6 :
+
+```php
+$tbl .= "KIM|sangoku|\n";
+```
+
+étape 7 :
+
+```php
+$tbl = $tbl . "KIM|sangoku|\n";
+```
+
+alors
+
+```php
+// si $tbl = "==========\n";
+// alors
+// => donc $tbl est égal à "==========\nKIM|sangoku|\n"
+```
+
+si je fais ensuite
+
+```php
+echo $tbl;
+```
+
+alors ça affiche :
+
+```
+==========
+KIM|sangoku|
+```
+
+si je vous mets la meme chose formatée un peu mieux :
+
+```php
+$tbl .= ajouteSautDeLigne(
+            genCol(
+                majuscule(
+                    $eleve[
+                        $colonnes[0]
+                    ]
+                )
+            ) . genCol(
+                minuscule(
+                    $eleve[
+                        $colonnes[1]
+                    ]
+                )
+            )
+        );
+```
+
+il reste à faire
+
+```php
+afficheDansLeTerminal($tbl);
+```
+
+## Mardi 2021/01/12
+
+phpmyadmin vs mysql vs sql 
+
+### Manipulation de phpmyadmin
+
+1. Création des tables à partir du script SQL créé dans looping ou JMerise, la veille à partir du MCD.
+2. Affichage du résultat dans le concepteur de Phpmyadmin pour bien comprendre la différence
+   entre le MCD et le MLD, et l'absence de "relation" dans le MLD, même si une ligne existe dans phpmyadmin
+3. Régler les pbs d'auto increment
+4. Remplir avec des données
+
+### SQL /Mysql
+
+pour nommer les identifiants (clé primaires!), il y a plusieurs formalismes :
+
+* `id`
+* `table_id` (en changeant 'table' bien sûr)
+* `tab_id` (on garde 3 lettres)
+* `id_table`
+
+mais ça ne pose aucun pb quel que soit le choix
+
+Par contre tout ce qui n'est pas comme ça, est probablement un mauvais choix
+
+### Tables de jointures réexpliquées
+
+### LDD
+
+```sql
+CREATE TABLE article(
+   id INT  AUTO_INCREMENT NOT NULL ,
+ ....
+) ENGINE=InnoDB;
+```
+
+### Découverte des requêtes LMD
+
+Jusqu'à présent, on a utilisé du "LDD" (CREATE , ALTER ...) pour donner les instructions à mysql sur comment créer la structure des données  
+
+now il est temps d'utiliser le LMD !
+
+c'est la partie de SQL qui permet de manipuler les données
+
+=> lire les données :
+`SELECT ..... FROM la_table;`
+
+=> `SELECT col1, col2 ... FROM ma_table;`
+
+```sql
+SELECT name FROM user;  
+```
+
+> Petite recommandation : mettre en majuscule les mots clé SQL, et en minuscule le reste
+
+NB: les ` sont facultatifs
+
+si je veux toutes les colonnes : `SELECT * FROM ma_table;`
+
+pour le `WHERE` : conditions que les données que je veux récupérer doivent valider
+
+exemple : `SELECT * FROM utilisateur WHERE nom = 'dusse';`
+
+la ca veut dire : selectionner toutes les colonnes d'utilisateur où le nom est "dusse" ?
+
+```sql
+SELECT * FROM utilisateur WHERE nom = 'dusse' AND prenom = 'jean-claude';
+```
+
+> autant de AND qu'on veut
+
+```sql
+SELECT * FROM utilisateur WHERE nom = 'dusse' OR prenom = 'jean-claude';
+```
+
+Ou Dusse ou les jean Claude?
+
+le OR n'est pas exclusif, donc ce sera tous les jean claude + les dusse
+
+```sql
+SELECT * FROM utilisateur WHERE nom = 'dusse' OR prenom = 'jean-claude' AND age > 50;
+```
+
+:danger:
+
+là c'est comme les "+" et les "x" qd vous étiez au collège : qui gagne ??!!
+
+une idée de réponse : `SELECT * FROM utilisateur WHERE (nom = 'dusse' OR prenom = 'jean-claude') AND age > 50;`
+
+#### INSERT
+
+```sql
+INSERT INTO ma_table (col1, col2, ...) VALUES (val1, val2, ...);
+```
+
+Ici l'ordre est important : val1 va dans col1, val2 va dans col2 ...
+
+[w3schools sql](https://www.w3schools.com/sql/sql_syntax.asp) !
+
+```sql
+UPDATE ma_table SET col1 = val1, col2=val2 WHERE id= xxx;
+```
+
+ATTENTION à ne pas oublier le WHERE !!  
+
+> permet de modifier tous les enregistrements (les lignes quoi) qui correspondent à la condition du WHERE
+
+## Mercredi 2021/01/13
+
+finalement on a vu quoi : on peut représenter ses données sous forme d'entités et de relations dans un MCD, en fonction des buts de l'application
+
+
+ça nous permet de manière automatique de transformer ce modèle "théorique" ,  en modèle physique interprétable directement par les logiciels de base de données
+
+
+dans notre cas on utilise des BDD relationnelles , donc qui permettent d'avoir des "relations" entre les tables, par le biais des clés primaires et clé étrangères ! (il n'y a donc pas de "lien" entre les tables, mais bien des "contraintes" entre les colonnes qui contiennent les clés primaires et celles qui contiennent les clés étrangères). Un base non relationnelle ne dispose pas de ces contraintes
+
+dans notre cas bis, on utilise des BDD SQL , donc qui demandent du langage SQL pour savoir comment :
+
+1. structurer les données que la BDD va stocker (LDD)
+2. manipuler les données une fois stockées (LMD)
+
+Pour le LDD on a vu déjà les requêtes SQL : `CREATE DATABASE ma_database;` et `CREATE TABLE ma_table (col1 INT ...) ENGINE=InnoDB;`, ainsi que vite fait `ALTER TABLE ma_table ...;`
+
+
+et pour le LMD on a vu `SELECT` pour lire les données, `INSERT` pour créer des données et `UPDATE` pour modifier des données
+
+
+l'intérêt de ce langage c'est qu'on peut l'exécuter sans interface graphique (sans phpmyadmin donc), directement depuis le php ! donc on va être en mesure depuis notre site d'aller lire des infos en base, les modifier, les créer etc.
+
+:ordinateur: :tada: :gâteau: :informaticienne: :clavier: :homme_technologue:
+
+
+### Projet informatique
+
+Ordre à suivre :
+
+1. recueil des besoins ! (cahier des charges, etc.)
+2. conception (MERISE, wireframes, use case, UI/UX)
+3. réalisation (back et front , dans l'ordre que vous voulez, mais le back est nécessaire au front, l'inverse non, donc probablement qu'il faudra commencer un peu + sur le back)
+
+### Merise
+
+En terme de Merise, les rappels pour le MCD :
+
+* on regroupe les données dans les rectangles (appelés Entité)
+* on définit des relations entre les rectangles, qui sont des relations fonctionnelles (qui dépendent du cahier des charges  ! c'est la fonction de notre application quoi), représentées par des ovales
+* on précise nos relations avec des cardinalités, pour indiquer combien d'éléments différents on peut relier les uns aux autres
+
+lors de la transformation en modèle physique , il faudra créer les fameuses contraintes, càd les colonnes qui vont contenir les clés primaires et étrangères
+
+
+et :danger:  : si la relation entre 2 entités est ManyToMany (ie : plusieurs entités de type A peuvent être liées à plusieurs entités de type B, ex: user et role) alors ces colonnes seront stockées dans une nouvelle table !!
+
+ceci étant comme tout est automatisé à partir du MCD dans looping / jmerise , ça peut être transparent pour vous. Mais sans logiciel vous seriez obligés de faire le MLD intermédiaire oui
+
+### Suite SQL
+
+```sql
+DELETE FROM ma_table WHERE condition_pour_selectionner_mon_element_à_supprimer;
+```
+
+Exercice: 
+
+Créer avec des requêtes SQL :
+
+*    au moins 4 articles : n'importe
+*    au moins 3 utilisateurs : "james bond", "sangoku kim" et n'importe
+*    au moins 2 roles (et les lier aux utilisateurs) : "admin" et "moderateur"
+*    au moins 2 catégories: "actualite", "covid"
+
+
+    #1451 - Cannot delete or update a parent row: a foreign key constraint fails (`news1`.`user_role`, CONSTRAINT `user_role_user1_FK` FOREIGN KEY (`id`) REFERENCES `user1` (`id`))
+
+c'est normal, tu essaies de supprimer une clé primaire, alors qu'elle est référencée par une clé étrangère qque part !
+
+=> il faut supprimer dans l'ordre inverse des insertions qu'on a faites hier !!!
+
+### Reprise du TP2
+
+1. connexion à la bdd avec le fichier `connexion.php`
+2. requetage et affichage dans un tableau html dans `accueil.php`
+
+## Jeudi 2021/01/21
+
+### MCD + Contraintes / Relations
+
+Explications MCD / Merise, notamment la différence entre les relations (MCD) et leur traduction en MPD/SQL : les contraintes.
+
+![MCD](img/2021-01-21_10-20-22.png)
+
+### PHP PDO
+
+Explications fonctionnement requêtage de BDD avec PDO et php.
+
+* requetes
+* requetes préparées
+...
+
+![pdo](img/2021_01_21_0j4_Kleki.png)
+![pdo2](img/2021_01_21_0ju_Kleki.png)
+
+### POO : Programmation orientée objet
+
+![poo](img/2021_01_21_0l3_Kleki.png)
+![poo2](img/2021_01_21_0r6_Kleki.png)
+
+
+## Vendredi 2021/01/22
+
+Mise en pratique POO sur le projet de news
+
+Voir le code [ici](https://github.com/dwwm93/2020/2021-01-22-news)
+
+## Lundi 2021/01/25
+
+On continue la transformation du site de news en objet.
+
+On commence notamment à faire de l'objet même pour les classes "non entités". On commence aussi à séparer les "Model" des "Vues".
+
+## Mardi 2021/01/26
+
+À partir du code fait la veille, on détermine l'organisation utilisée, et on apprend le MVC.
+
+### MVC
+
+![mvc](img/2021_01_26_0go_Kleki.png)
+
+C'est un design pattern très pratique pour répartir les responsabilités.
+
+Il faut bien connaitre tout et ne pas oublier le Router.
+
+### Application au projet "news"
+
+## Mercredi 2021/02/03
+
+Reprise des cours objet précédents
+
+### UML
+
+Présentation
+
+* MERISE : but créer une base de données
+* UML : Langage de modélisation unifié : but représenter le fonctionnement de l'application
+
+=> c'est un langage : utilisé pour communiquer entre différents métiers
+
+Il y a bcp de schémas différents en UML, + qu'en Merise (MCD, MLD ...) !
+
+On va se concentrer sur 2 schémas en ce qui nous concerne : Diagramme de Cas d'Utilisation, et Diagramme de Classe
+
+#### Diagramme de cas d'utilisation
+
+permet de voir qui agit sur le système (acteur), et ce qu'il peut faire (utilisations).
+
+on n'a pas le choix :
+
+* à gauche les acteurs
+* à droite un rectangle qui représente le système
+* les actions autorisées sont représentées par des ovales
+* les relations de dépendances entre les acteurs ou entre les actions sont matérialisées par des flèches
+
+FORMALISME obligatoire :
+meme les bonshommes moches sont dans la norme !
+
+NB : utile en phase de conception !
+
+include : buy book ----> open account : le cas d'utilisation "open account" est "nécessaire" ("inclus") dans le cas d'utilsation "acheter livre"
+
+extends : search------> buy : il indique que "search" peut venir "compléter" le cas d'utilisation "buy"
+
+il faut garder le mot "extends" ou "inclide" à cote de la fleche sinon on ne peut pas les distinguer
+
+du point de vue de "buy" les 2 flches n'ont pas la même direction
+
+#### Diagramme de classe
+
+
+    ---------------------------------------
+    |      Ma_classe                      |
+    ---------------------------------------
+    | - propriétéPrivée : type            |
+    | + propriétéPublique : type          |
+    | # propriétéProtegée : type          |
+    ---------------------------------------
+    | + méthodePublique(arguments) : type |
+    ---------------------------------------
+
+ATTENTION toujours diviser le rectangle en 3 !
+
+s'il n'y a pas de propriété ou de méthode, il faut mettre une division vide
+
+Un diagramme de classe, permet de représenter... des classes :tada:
+
+càd son nom, ses propriétés et ses méthodes + l'héritage et relations (par les flèches/traits)
+
+Donc un parent => plusieurs enfants, un enfant => un parent
+
+##### void
+
+dans les types des propriétés, des arguments ou des retours, on trouve : "int", "string" etc.
+
+un des types "speciaux" c'est void : c'est pour un retour de fonction *QUI NE RETOURNE RIEN*
+
+ex: supprimeProfil()
+
+```php
+public function supprimeProfil(int $id): void
+{
+    $bdd->prepare("DELETE ......");
+    // ...
+    // PAS DE RETURN
+}
+```
+
+si je fais `$return = supprimeProfil(1);` => dans $return il n'y a ... rien (void)
+
+##### Héritage
+
+ATTENTION la fleche de l'héritage, est "blanche" !! (triangulaire) (modifié) 
+
+c'est une comme ça --|> et pas une comme ça --->
+
+la flèche standard a une autre signification, donc à ne pas utiliser par erreur
+
+##### Relations
+
+on vient de voir les relations
+
+et les flèches "triangle" c'est l'héritage
+
+Pour la lecture des relations c'est l'inverse du MCD (la cardinalité est de l'autre coté du trait).
+
+NB: static = souligné, protected = #
+
+https://creately.com/blog/diagrams/class-diagram-relationships/
+
+![résumé](img/Class-Diagram-Relationships.png)
+	
+## Jeudi 2021/02/04
+
+### Révisions diagramme de classe
+
+En particulier approfondissement des notions d'héritage et des types de données.
+
+### Live coding
+
+Adapter le code du trombi pour les bonnes pratiques en terme d'objets et d'héritage.
+
+Premier aperçu des namespace.
+
