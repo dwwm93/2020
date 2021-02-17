@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MetierController!
+{% endblock %}
+
+{% block body %}
+	<h1>Métiers</h1>
+
+	<ul>
+		{% for m in metiers %}
+			<li><a href="{{ path('metier_show', {'id': m.id}) }}">{{ m.libelle }}</a> </li>
+		{% endfor %}
+	</ul>
+{% endblock %}

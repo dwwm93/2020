@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page profil
+{% endblock %}
+
+{% block body %}
+	<div class="card" style="width:400px">
+		<img class="card-img-top" src="{{ p.avatar }}" alt="Card image"/>
+		<div class="card-body">
+			<h4 class="card-title">{{ p.fullname }}</h4>
+			<p class="card-text">{{ p.dateNaissance | date('Y/m/d') }}</p>
+		</div>
+	</div>
+{% endblock %}
