@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form(formulaire) }}{# 
+    il ajoute un input caché "CSRF" pour la sécurité 
+    Cross Site Request Forgery => éviter qu'un formulaire 
+    sur la page "hacker.com" soit envoyé à symfony avec
+    votre cookie de session = à votre place car vous êtes 
+    connectés !!
+    <input type="hidden" ...>
+    #}
+{% endblock %}
