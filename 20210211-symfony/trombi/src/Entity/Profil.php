@@ -37,6 +37,11 @@ class Profil
      */
     private $avatar;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Metier::class, inversedBy="profils")
+     */
+    private $metier;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -91,6 +96,18 @@ class Profil
     public function setAvatar(?string $avatar): self
     {
         $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    public function getMetier(): ?Metier
+    {
+        return $this->metier;
+    }
+
+    public function setMetier(?Metier $metier): self
+    {
+        $this->metier = $metier;
 
         return $this;
     }
