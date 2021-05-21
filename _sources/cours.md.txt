@@ -1723,7 +1723,9 @@ vendor/
 ```
 
 ![](./img/git_github.png)
-# API
+## Vendredi 21/05/2021
+
+### API
 
 > Application Programing Interface
 
@@ -1732,7 +1734,7 @@ vendor/
 1. exposer une API (la développer vous-même)
 1. utiliser l'API de quelqu'un d'autre
 
-## Créer une API **REST**
+### Créer une API **REST**
 
 Il existe plein de protocoles pour faire ça. Nous on verra juste les __API REST__.
 
@@ -1740,7 +1742,7 @@ Je zappe l'historique et les raisons de leur existence.
 
 > A noter juste que les urls et les verbes HTTP qu'on verra après sont préexistants (de + de 20 ans) aux API REST. C'est juste une façon maline de les utiliser dans un cadre d'API.
 
-### Comment ?
+#### Comment ?
 
 1. utiliser les "url" (`iri`) pour représenter des "ressources" (_ex: `https://api.pokemon.com/pokemons/bulbizarre`_, ou _`https://coin.com/bitcoin/price`_ ...) => dans mon url, je peux _"lire"_ l'élément que je vais manipuler
 1. utiliser les "verbes" HTTP pour décrire les actions réalisées : `GET`, `POST`, `PUT`, `DELETE` etc.
@@ -1748,7 +1750,7 @@ Je zappe l'historique et les raisons de leur existence.
 
 > Indépendant du langage utilisé !! c'est une norme "HTTP", donc au niveau de la requête ! càd de la communication entre le client et le serveur !! Pas au niveau du code !
 
-### Ressources
+#### Ressources
 
 C'est à vous (développeur) de déterminer les urls(/iri) des ressources pour que ce soit clair.
 
@@ -1764,7 +1766,7 @@ Standard :
 
 > NB : si mon url est du genre `csstc.com/index.php?resource=users&id=1` c'est pareil, mais c'est moche ! et on comprend moins !
 
-### Verbes HTTP
+#### Verbes HTTP
 
 Ils servent à indiquer le type d'action effectuée sur la ressource ciblée par l'url.
 
@@ -1775,7 +1777,7 @@ Ils servent à indiquer le type d'action effectuée sur la ressource ciblée par
 * `DELETE`: sert à "supprimer" la ressource ciblée (ex: DELETE `https://mangatech.lol/mangas/naruto`)
 * `PUT`: sert à "mettre à jour" la ressource. (ex: PUT `https://mangatech.lol/mangas/berserk` + `{'title': 'berserk', 'date': '1991-05-21'}` => update l'entité "berserk" avec une nouvelle date)
 
-### Données renvoyées dans un format "brut"
+#### Données renvoyées dans un format "brut"
 
 Le plus souvent on renvoie les données sous la forme d'un JSON **et non pas une page html** !!
 
@@ -1801,7 +1803,113 @@ class RestaurantController
 
 => MAIS ALORS ? COMMENT J'AFFICHE UNE JOLIE PAGE ???
 
-#### Réponse
+##### Réponse
 
 1. Modifier ses urls pour l'api et les appeler `baseUrl.com/api/restaurants/:id` : ne renvoie que des données alors que sans `api/` on renvoie la version avec "vue"
 2. **ou** créer un front en pur javascript et les vues sont gérées par le front (et on utilise par exemple jquery pour aller chercher les infos dans le back : `$.post('api/restaurants', {name: "mcdo", adresse: "1 rue du greta, Noisy"})`)
+# Sécurité
+
+Mega important
+
+1. prepare sql - injection sql
+1. validation formulaire front (expression rationnelles, type input...)
+1. validation formulaire back (expressions rationnelles, escapespecialchars, contrôle des types, type des fichiers acceptés ...)
+1. .env / constantes config pour ne pas commiter d'infos secrètes
+1. paramétrer serveur web pour limiter les accès à certains fichiers
+1. upload fichier : utiliser les mime/type pour vérifier le fichier => changer l'extension , changer le nom (uniqid) du fichier pour éviter un accès illégitime (ex : facebook `photos/ghuierg/iurhiure/frehrehreiheirghirehg.jpg`)
+1. hashage de mot de passe (=> non hashé => **prison**)
+1. code de qualité pour éviter les bugs (tests unitaires, tests de bout en bout ...)
+1. Veille technologique, validation/tests de la qualité des urls/partenaires tierces (cf RGPD : responsabilité des fournisseurs _et_ des clients parfois)
+1. RGPD : un DPO, un référentiel des traitements de données, la possibilité de fournir à un utilisateur toutes ses données (et comment on les utilise), supprimer ses données s'il le demande ou les exporter s'il le demande
+1. https !
+1. chiffrement des données
+1. csrf : cross site request forgery
+1. xss : cross site scripting
+1. CORS : cross origin resource sharing
+
+## Chiffrement / hashage
+
+### Cryptage / décryptage / codage / décodage
+
+Illisible. 
+
+### Chiffrement
+
+Partager un secret pour que les seules personnes qui connaissent le secret puissent lire le message.
+
+> important : "Reversibilité" : je peux chiffrer et déchiffrer
+
+exemples : A-vaut-K, RSA, ECDSA, ED25519 ...
+
+RSA, ECDSA, ED25519 etc. sont des chiffrements asymétriques : avec une clé publique et une clé privée. (cf connexion à github : `ssh-keygen` pour éviter de taper son login mdp à chaque fois)
+
+### Hachage (hash in english)
+
+Notamment les mots de passe.
+
+C'est quoi ?
+
+> Rend illisible le même message de la même manière, **sans réversibilité**.
+
+Hachage , mais pas "déhachage" (penser au steak).
+
+Pour les BDD de mots de passe, si j'utilisais du chiffrement, la récupération de la clé secrète permettrait d'avoir accès à la liste de tous les mots de passe en clair.
+
+#### Attaque contre la base hachée
+
+Brute force: je calcule un tableau de correspondance entre tous les mots qui existent et les hash.
+
+ex: azerty => ozhfloihdsfhfdvhvgfd
+
+On a eu qques années de protection, mais aujourd'hui on peut trouver des tableaux pré-calculés de hashs de mdp !
+
+#### Protection du moment : le Salt (le grain de sel)
+
+Le but : augmenter artificiellement la taille du mdp pour lutter contre l'augmentation de la puissance de calcul des hackers.
+
+1. inscription :
+  * user => "toto" (4 caractères, bof)
+  * app => `concat("toto" , 256 caractères au pif (salt))`
+  * app => hash ce mdp (de 260 caractères)
+
+2. connexion :
+  * user => "toto"
+  * app => `concat("toto" , avec les mêmes 256 caractères (stockés en clair dans ma bdd))`
+  * app => password verify
+
+Je suis protégé tant que les attaquants n'ont pas le tableau des mdp >= 260 caractères.
+
+Pour éviter qu'un attaquant calcule le tableau (qui n'existe pas encore) uniquement pour mon salt => ce qui revient à calculer le tableau pour les 8 caractères classiques ! donc c'est pas très long.
+
+=> astuce : un salt différent par utilisateur !
+
+### https (ssl)
+
+HTTP : protocole de communication entre machines sur internet.
+
+> Analogie (un peu bancale) : http = description de comment envoyer un courrier à un destinataire (càd: enveloppe + adresse + timbre + exp ...)
+
+=> est-ce que mon courier est protégé ? NON ! on peut ouvrir la lettre et la lire !
+
+idem pour http : si je fais `POST mabanqueprivee.com {identifiant: "pierre99", mdp: "j'adore le code"}` alors n'importe quel équipement réseau qui peut lire les échanges HTTP peut lire votre login/mdp.
+
+> l'idée du https est de chiffrer le contenu de ta requete http ! comme si tu mettais dans ton enveloppe un message codé.
+
+1. le site me passe sa clé publique
+2. j'utilise sa clé pour chiffrer ma demande (et lui envoyer ma clé publique en meme temps)
+3. je lui envoie (et personne ne peut la lire)
+4. le site déchiffre ma demande etc. et me répond en chiffrant avec ma clé publique + sa clé privée !
+
+NB: pour vous : soit acheter un "certificat" à votre hébergeur (ovh, gandi...), soit utiliser letsencrypt.org qui fournit des certificats gratuits.
+
+## Injection SQL
+
+
+
+## CSRF : Cross Site Request Forgery
+
+## XSS : Cross Site Scripting
+
+## CORS : Cross Origin Resource Sharing
+
+## RGPD : Règlement Général de Protection des Données (GDPR)
