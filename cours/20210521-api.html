@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="api">
+<h1>API<a class="headerlink" href="#api" title="Lien permanent vers ce titre">¶</a></h1>
+<blockquote>
+<div><p>Application Programing Interface</p>
+</div></blockquote>
+<p>2 aspects :</p>
+<ol class="simple">
+<li><p>exposer une API (la développer vous-même)</p></li>
+<li><p>utiliser l”API de quelqu”un d”autre</p></li>
+</ol>
+<div class="section" id="creer-une-api-rest">
+<h2>Créer une API <strong>REST</strong><a class="headerlink" href="#creer-une-api-rest" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il existe plein de protocoles pour faire ça. Nous on verra juste les <strong>API REST</strong>.</p>
+<p>Je zappe l”historique et les raisons de leur existence.</p>
+<blockquote>
+<div><p>A noter juste que les urls et les verbes HTTP qu”on verra après sont préexistants (de + de 20 ans) aux API REST. C”est juste une façon maline de les utiliser dans un cadre d”API.</p>
+</div></blockquote>
+<div class="section" id="comment">
+<h3>Comment ?<a class="headerlink" href="#comment" title="Lien permanent vers ce titre">¶</a></h3>
+<ol class="simple">
+<li><p>utiliser les « url » (<code class="docutils literal notranslate"><span class="pre">iri</span></code>) pour représenter des « ressources » (<em>ex: <code class="docutils literal notranslate"><span class="pre">https://api.pokemon.com/pokemons/bulbizarre</span></code></em>, ou <em><code class="docutils literal notranslate"><span class="pre">https://coin.com/bitcoin/price</span></code></em> …) =&gt; dans mon url, je peux <em>« lire »</em> l”élément que je vais manipuler</p></li>
+<li><p>utiliser les « verbes » HTTP pour décrire les actions réalisées : <code class="docutils literal notranslate"><span class="pre">GET</span></code>, <code class="docutils literal notranslate"><span class="pre">POST</span></code>, <code class="docutils literal notranslate"><span class="pre">PUT</span></code>, <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> etc.</p></li>
+<li><p>Les informations renvoyées sont dans un format “données”, ex: <strong>« JSON »</strong>, « YAML », « XML » …</p></li>
+</ol>
+<blockquote>
+<div><p>Indépendant du langage utilisé !! c”est une norme « HTTP », donc au niveau de la requête ! càd de la communication entre le client et le serveur !! Pas au niveau du code !</p>
+</div></blockquote>
+</div>
+<div class="section" id="ressources">
+<h3>Ressources<a class="headerlink" href="#ressources" title="Lien permanent vers ce titre">¶</a></h3>
+<p>C”est à vous (développeur) de déterminer les urls(/iri) des ressources pour que ce soit clair.</p>
+<p>Standard :</p>
+<ol>
+<li><p><code class="docutils literal notranslate"><span class="pre">baseUrl.com/items</span></code> : lister les « items » (c”est le « type » des données, en règle générale, c”est la <code class="docutils literal notranslate"><span class="pre">class</span></code> - au pluriel - de vos entités, ex: <em><code class="docutils literal notranslate"><span class="pre">raouf.com/restaurants</span></code></em>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">baseUrl.com/items/1</span></code> (à généraliser <code class="docutils literal notranslate"><span class="pre">baseUrl.com/items/:id</span></code>) : récupère la ressource d”id 1 (ou d”id <code class="docutils literal notranslate"><span class="pre">:id</span></code>), ou bien utiliser une clé (<code class="docutils literal notranslate"><span class="pre">slug</span></code>) unique (cf mon exemple pokemon : <code class="docutils literal notranslate"><span class="pre">bulbizarre</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">baseUrl.com/items/:id/:action</span></code> : ex: <em><code class="docutils literal notranslate"><span class="pre">tradfast.com/restaurants/12/menu</span></code></em> (qui va renvoyer les mêmes données que si j”avais fait en 2 étapes : <code class="docutils literal notranslate"><span class="pre">tradfast.com/restaurants/12/</span></code> (dedans je lis la valeur de <em>id_menu_restaurant_12</em>) puis  <em><code class="docutils literal notranslate"><span class="pre">tradfast.com/menus/:id_menu_restaurant_12</span></code></em>) =&gt; ici je <strong>déclenche des actions sur la ressource ciblée</strong></p>
+<blockquote>
+<div><p>NB : la version « en 2 fois » est privilégiée, et on garde l”url avec les « :action » pour les actions qui ne pointent pas vers des ressources existantes</p>
+</div></blockquote>
+<p>Exemples d”actions « back » : <code class="docutils literal notranslate"><span class="pre">gretagram.ai/pictures/12/squarify</span></code>, <code class="docutils literal notranslate"><span class="pre">tradfast.com/restaurants/14/like</span></code></p>
+</li>
+</ol>
+<blockquote>
+<div><p>NB : si mon url est du genre <code class="docutils literal notranslate"><span class="pre">csstc.com/index.php?resource=users&amp;id=1</span></code> c”est pareil, mais c”est moche ! et on comprend moins !</p>
+</div></blockquote>
+</div>
+<div class="section" id="verbes-http">
+<h3>Verbes HTTP<a class="headerlink" href="#verbes-http" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Ils servent à indiquer le type d”action effectuée sur la ressource ciblée par l”url.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span></code>: sert à « récupérer » (get) les informations de la ressource (ex: GET <code class="docutils literal notranslate"><span class="pre">https://mangatech.lol/mangas/one-piece</span></code> =&gt; je récupère les infos associées : càd les propriétés de l”entité)</p>
+<p><em>NB :</em> « GET » est l”opération par défaut des navigateurs</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span></code>: sert à « créer » des données (ex: POST <code class="docutils literal notranslate"><span class="pre">https://mangatech.lol/mangas</span></code> + <code class="docutils literal notranslate"><span class="pre">{'title':</span> <span class="pre">'berserk',</span> <span class="pre">'date':</span> <span class="pre">'2021-05-21'}</span></code> =&gt; crée une nouvelle entité « berserk » avec son id etc.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code>: sert à « supprimer » la ressource ciblée (ex: DELETE <code class="docutils literal notranslate"><span class="pre">https://mangatech.lol/mangas/naruto</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PUT</span></code>: sert à « mettre à jour » la ressource. (ex: PUT <code class="docutils literal notranslate"><span class="pre">https://mangatech.lol/mangas/berserk</span></code> + <code class="docutils literal notranslate"><span class="pre">{'title':</span> <span class="pre">'berserk',</span> <span class="pre">'date':</span> <span class="pre">'1991-05-21'}</span></code> =&gt; update l”entité « berserk » avec une nouvelle date)</p></li>
+</ul>
+</div>
+<div class="section" id="donnees-renvoyees-dans-un-format-brut">
+<h3>Données renvoyées dans un format « brut »<a class="headerlink" href="#donnees-renvoyees-dans-un-format-brut" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le plus souvent on renvoie les données sous la forme d”un JSON <strong>et non pas une page html</strong> !!</p>
+<p>=&gt; pas de vue !</p>
+<p>ex :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">class RestaurantController</span>
+<span class="x">{</span>
+<span class="x">    // associée à la route /restaurants/:id</span>
+<span class="x">    function get($id): string</span>
+<span class="x">    {</span>
+<span class="x">        $restaurant = RestaurantRepository-&gt;find($id);</span>
+
+<span class="x">        // On transforme l&#39;objet &quot;$restaurant&quot; qui est de type RestaurantModel, en chaîne de caractère json.</span>
+<span class="x">        return json_encode($restaurant);</span>
+<span class="x">        // avant :</span>
+<span class="x">        // include (&quot;view/restaurant.php&quot;);</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>=&gt; MAIS ALORS ? COMMENT J”AFFICHE UNE JOLIE PAGE ???</p>
+<div class="section" id="reponse">
+<h4>Réponse<a class="headerlink" href="#reponse" title="Lien permanent vers ce titre">¶</a></h4>
+<ol class="simple">
+<li><p>Modifier ses urls pour l”api et les appeler <code class="docutils literal notranslate"><span class="pre">baseUrl.com/api/restaurants/:id</span></code> : ne renvoie que des données alors que sans <code class="docutils literal notranslate"><span class="pre">api/</span></code> on renvoie la version avec « vue »</p></li>
+<li><p><strong>ou</strong> créer un front en pur javascript et les vues sont gérées par le front (et on utilise par exemple jquery pour aller chercher les infos dans le back : <code class="docutils literal notranslate"><span class="pre">$.post('api/restaurants',</span> <span class="pre">{name:</span> <span class="pre">&quot;mcdo&quot;,</span> <span class="pre">adresse:</span> <span class="pre">&quot;1</span> <span class="pre">rue</span> <span class="pre">du</span> <span class="pre">greta,</span> <span class="pre">Noisy&quot;})</span></code>)</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2020</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#git">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#api">API</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/20210521-api.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

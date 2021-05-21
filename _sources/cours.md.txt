@@ -1705,3 +1705,103 @@ Adapter le code du trombi pour les bonnes pratiques en terme d'objets et d'héri
 
 Premier aperçu des namespace.
 
+# Git
+
+## Ajouter un fichier dans .gitignore
+
+Permet de ne jamais le commiter, même s'il est modifié.
+
+### Contenu du fichier .gitignore
+
+Si on veut ignorer `.env.local` et le répertoire `vendor` et tous les fichiers `.tmp` :
+
+```
+//.env.local
+vendor/
+*.tmp
+.env.*
+```
+
+![](./img/git_github.png)
+# API
+
+> Application Programing Interface
+
+2 aspects :
+
+1. exposer une API (la développer vous-même)
+1. utiliser l'API de quelqu'un d'autre
+
+## Créer une API **REST**
+
+Il existe plein de protocoles pour faire ça. Nous on verra juste les __API REST__.
+
+Je zappe l'historique et les raisons de leur existence.
+
+> A noter juste que les urls et les verbes HTTP qu'on verra après sont préexistants (de + de 20 ans) aux API REST. C'est juste une façon maline de les utiliser dans un cadre d'API.
+
+### Comment ?
+
+1. utiliser les "url" (`iri`) pour représenter des "ressources" (_ex: `https://api.pokemon.com/pokemons/bulbizarre`_, ou _`https://coin.com/bitcoin/price`_ ...) => dans mon url, je peux _"lire"_ l'élément que je vais manipuler
+1. utiliser les "verbes" HTTP pour décrire les actions réalisées : `GET`, `POST`, `PUT`, `DELETE` etc.
+1. Les informations renvoyées sont dans un format 'données', ex: **"JSON"**, "YAML", "XML" ...
+
+> Indépendant du langage utilisé !! c'est une norme "HTTP", donc au niveau de la requête ! càd de la communication entre le client et le serveur !! Pas au niveau du code !
+
+### Ressources
+
+C'est à vous (développeur) de déterminer les urls(/iri) des ressources pour que ce soit clair.
+
+Standard :
+
+1. `baseUrl.com/items` : lister les "items" (c'est le "type" des données, en règle générale, c'est la `class` - au pluriel - de vos entités, ex: _`raouf.com/restaurants`_)
+2. `baseUrl.com/items/1` (à généraliser `baseUrl.com/items/:id`) : récupère la ressource d'id 1 (ou d'id `:id`), ou bien utiliser une clé (`slug`) unique (cf mon exemple pokemon : `bulbizarre`)
+3. `baseUrl.com/items/:id/:action` : ex: _`tradfast.com/restaurants/12/menu`_ (qui va renvoyer les mêmes données que si j'avais fait en 2 étapes : `tradfast.com/restaurants/12/` (dedans je lis la valeur de *id_menu_restaurant_12*) puis  _`tradfast.com/menus/:id_menu_restaurant_12`_) => ici je **déclenche des actions sur la ressource ciblée**
+  
+    > NB : la version "en 2 fois" est privilégiée, et on garde l'url avec les ":action" pour les actions qui ne pointent pas vers des ressources existantes
+
+    Exemples d'actions "back" : `gretagram.ai/pictures/12/squarify`, `tradfast.com/restaurants/14/like` 
+
+> NB : si mon url est du genre `csstc.com/index.php?resource=users&id=1` c'est pareil, mais c'est moche ! et on comprend moins !
+
+### Verbes HTTP
+
+Ils servent à indiquer le type d'action effectuée sur la ressource ciblée par l'url.
+
+* `GET`: sert à "récupérer" (get) les informations de la ressource (ex: GET `https://mangatech.lol/mangas/one-piece` => je récupère les infos associées : càd les propriétés de l'entité)
+
+  *NB :* "GET" est l'opération par défaut des navigateurs
+* `POST`: sert à "créer" des données (ex: POST `https://mangatech.lol/mangas` + `{'title': 'berserk', 'date': '2021-05-21'}` => crée une nouvelle entité "berserk" avec son id etc.)
+* `DELETE`: sert à "supprimer" la ressource ciblée (ex: DELETE `https://mangatech.lol/mangas/naruto`)
+* `PUT`: sert à "mettre à jour" la ressource. (ex: PUT `https://mangatech.lol/mangas/berserk` + `{'title': 'berserk', 'date': '1991-05-21'}` => update l'entité "berserk" avec une nouvelle date)
+
+### Données renvoyées dans un format "brut"
+
+Le plus souvent on renvoie les données sous la forme d'un JSON **et non pas une page html** !!
+
+=> pas de vue !
+
+ex : 
+
+```php
+class RestaurantController
+{
+    // associée à la route /restaurants/:id
+    function get($id): string
+    {
+        $restaurant = RestaurantRepository->find($id);
+
+        // On transforme l'objet "$restaurant" qui est de type RestaurantModel, en chaîne de caractère json.
+        return json_encode($restaurant);
+        // avant :
+        // include ("view/restaurant.php");
+    }
+}
+```
+
+=> MAIS ALORS ? COMMENT J'AFFICHE UNE JOLIE PAGE ???
+
+#### Réponse
+
+1. Modifier ses urls pour l'api et les appeler `baseUrl.com/api/restaurants/:id` : ne renvoie que des données alors que sans `api/` on renvoie la version avec "vue"
+2. **ou** créer un front en pur javascript et les vues sont gérées par le front (et on utilise par exemple jquery pour aller chercher les infos dans le back : `$.post('api/restaurants', {name: "mcdo", adresse: "1 rue du greta, Noisy"})`)
