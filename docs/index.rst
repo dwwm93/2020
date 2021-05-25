@@ -6,6 +6,8 @@
 Welcome to Cours Greta DWWM93 2020's documentation!
 ===================================================
 
+.. todo:: Faire comme simplon :  https://simplonco.github.io/lp4-2019/titrePro/
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
