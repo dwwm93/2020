@@ -4,7 +4,8 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Cours TP DWWM &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
@@ -32,9 +33,9 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="cours-tp-dwwm">
+  <section id="cours-tp-dwwm">
 <h1>Cours TP DWWM<a class="headerlink" href="#cours-tp-dwwm" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="mardi-2020-10-06">
+<section id="mardi-2020-10-06">
 <h2>Mardi 2020/10/06<a class="headerlink" href="#mardi-2020-10-06" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
 <li><p>création des répertoires « Code/greta » pour stocker correctement son code</p></li>
@@ -52,7 +53,7 @@
 </li>
 <li><p>présentation html / css / javascript</p></li>
 </ul>
-<div class="section" id="er-projet-rapide">
+<section id="er-projet-rapide">
 <h3>1er projet rapide<a class="headerlink" href="#er-projet-rapide" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>index.html =&gt; choisi parce que c”est la norme des pages d”accueil</p></li>
@@ -60,8 +61,8 @@
 <li><p>tests du style en changeant dynamiquement le style dans la console développeur du navigateur</p></li>
 </ul>
 <p>En live j”ai fait un <code class="docutils literal notranslate"><span class="pre">Code/greta/first/index.html</span></code> aussi, de qualité médiocre pour jouer avec ce qu”il est possible de faire.</p>
-</div>
-<div class="section" id="presentation-projet-du-formateur">
+</section>
+<section id="presentation-projet-du-formateur">
 <h3>Présentation projet du formateur<a class="headerlink" href="#presentation-projet-du-formateur" title="Lien permanent vers ce titre">¶</a></h3>
 <p>J”ai montré vite fait ma page de mariage, mais surtout j”ai codé devant eux en une trentaine de minutes la page « trombi.html » dans le dossier « Code/greta/first », avec bootstrap / material design / des placeholder / du javascript etc.</p>
 <p>Ressources :</p>
@@ -70,33 +71,33 @@
 <li><p><a class="reference external" href="http://avatars.adorable.io">placeholder avatars</a></p></li>
 <li><p><a class="reference external" href="https://mdbootstrap.github.io/bootstrap-material-design/docs/4.0/bootstrap-components/alerts/">bootstrap4 + material design</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="lundi-2020-10-12">
+</section>
+</section>
+<section id="lundi-2020-10-12">
 <h2>Lundi 2020/10/12<a class="headerlink" href="#lundi-2020-10-12" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="selecteurs-css">
+<section id="selecteurs-css">
 <h3>Selecteurs CSS<a class="headerlink" href="#selecteurs-css" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ecrire un menu en haut de sa page : probleme avec les block et les inline. (on ne s”apesantit pas sur le sujet, on laisse juste galérer suffisamment pour qu”ils comprennent que ça marche pas top)</p>
 <p>NB : Si on veut que le lien en haut de la page prenne tout l”élément il faut jouer avec <a class="reference external" href="https://stackoverflow.com/questions/40755950/make-a-tag-to-take-100-height-of-inline-block-parent">« line-height »</a></p>
-</div>
-<div class="section" id="flexbox">
+</section>
+<section id="flexbox">
 <h3>flexbox<a class="headerlink" href="#flexbox" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Introduction à flexbox, <a class="reference external" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">resource ici</a>, qui permet de la mise en page (sur 1 dimension) de façon très très simple.</p>
 <p>On a repris l”exemple précédent, et à la fin on se rend compte qu”il suffit que le parent soir <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">flex;</span></code> pour que directement les enfants s”alignent sur une même ligne de manière propre.</p>
 <p>On a vu comment on les aligne sur l”axe principal (ici horizontal) et sur l”axe secondaire (donc l”axe vertical), avec les propriétés qui se terminent par « -content » (pour l”axe principal) et « -items » pour l”axe secondaire. Tout marche pareil si mon axe principal devient l”axe vertical. (ie <code class="docutils literal notranslate"><span class="pre">flex-direction:column;</span></code>)</p>
 <p>On l”a appliqué sur un TP2 qui consiste à écrire une page d”un journal, avec un bandeau de navigation, une section centrale qui contient 3 articles en colonne côte à côte, puis une section « contact » qui contient du texte et un formulaire, et enfin un footer.</p>
-</div>
-</div>
-<div class="section" id="mardi-2020-10-13">
+</section>
+</section>
+<section id="mardi-2020-10-13">
 <h2>Mardi 2020/10/13<a class="headerlink" href="#mardi-2020-10-13" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Poursuite du TP2 avec révision de flexbox, et des balises les plus courantes (ex: input avec placeholder).</p>
 <p>Notamment on appuyé sur comment faire des liens dans la page (et le rôle des « id »).</p>
-<div class="section" id="id1">
+<section id="id1">
 <h3>flexbox<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Attention : un élément flexbox ne peut gérer que ses enfants directs, pas ses petits enfants ou arrière petits enfants. On a insisté sur ce point.</p>
 <p>Quitte, pour plus de mise en page, à ce que les enfants deviennent eux mêmes des éléments flexbox et qu”ils gèrent leurs propres enfants.</p>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h3>selecteurs CSS<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Révision de comment fonctionnent les selecteurs CSS, comment on les manipule, qu”il faut être le plus précis possible pour ne pas modifier des éléments qu”on ne veut pas modifier, et qu”il faut limiter le nombre d”id et de class, qui ne doivent servir qu”en dernier recours.</p>
 <p>En effet, il vaut mieux éviter d”avoir à changer le code html quand on veut changer un style, il vaut mieux changer juste le css. (exemple: rajouter un élément dans ma barre de nav, sans avoir à lui donner la bonne classe ! mon selecteur CSS est fait de manière à le prendre de toute façon ! au pire on met juste l”id sur le parent « nav »)</p>
@@ -105,9 +106,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">:hover</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:last-child</span></code></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="jeudi-2020-10-15">
+</section>
+</section>
+<section id="jeudi-2020-10-15">
 <h2>Jeudi 2020/10/15<a class="headerlink" href="#jeudi-2020-10-15" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Poursuite du Flexbox et decouvert du responsive &#64;media</p>
 <ul>
@@ -118,11 +119,11 @@
 </ul>
 </li>
 </ul>
-<div class="section" id="id3">
+<section id="id3">
 <h3>flexbox<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h3>
 <p>travail sur TPFlex, utilisation des display, flex-wrap, flex-direction.</p>
-</div>
-<div class="section" id="media">
+</section>
+<section id="media">
 <h3>&#64;media<a class="headerlink" href="#media" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Changement du style CSS en au chamgement du taille de l”ecran</p>
 <ul>
@@ -135,9 +136,9 @@
 <li><p>}</p></li>
 <li><p>}</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="vendredi-2020-10-16">
+</section>
+</section>
+<section id="vendredi-2020-10-16">
 <h2>Vendredi 2020/10/16<a class="headerlink" href="#vendredi-2020-10-16" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Découverte des parametres</p>
 <ul class="simple">
@@ -146,11 +147,11 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">margin</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">border</span></code></p></li>
 </ul>
-<div class="section" id="id4">
+<section id="id4">
 <h3>&#64;media<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Poursuite du TPFlex en responsive</p>
-</div>
-<div class="section" id="positions">
+</section>
+<section id="positions">
 <h3>Positions<a class="headerlink" href="#positions" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Découverte du parametre position et urilisation dasn le fichier position.html et position.css</p>
 <ul class="simple">
@@ -160,21 +161,21 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">absolute</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sticky</span></code></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="lundi-2020-10-19">
+</section>
+</section>
+<section id="lundi-2020-10-19">
 <h2>Lundi 2020/10/19<a class="headerlink" href="#lundi-2020-10-19" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Creation d”un CV à partir d”un model, en utilisent le html et CSS.
 Tous le code demandé pour créee le CV est déjà expliquer dans les cours precedent.
 Le CV doit etre responsive.
 Le model du CV est ajouter sur SLACK en IMAGE
 A la fin de journé le code est aussi envoyé sur SLACK</p>
-</div>
-<div class="section" id="mardi-2020-10-20">
+</section>
+<section id="mardi-2020-10-20">
 <h2>Mardi 2020/10/20<a class="headerlink" href="#mardi-2020-10-20" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Le matin, on continue sur le CV, explication du code du model.
 Hierarchie des balises.</p>
-<div class="section" id="macquetter-une-application">
+<section id="macquetter-une-application">
 <h3>Macquetter une application<a class="headerlink" href="#macquetter-une-application" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Nous avons devouvert le maquettage et disquter des 4 etapes de maquettage
 Photo mis sur SLACK</p>
@@ -184,48 +185,48 @@ Photo mis sur SLACK</p>
 <li><p>Mockup</p></li>
 <li><p>Prototype</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="mercredi-2020-10-21">
+</section>
+</section>
+<section id="mercredi-2020-10-21">
 <h2>Mercredi 2020/10/21<a class="headerlink" href="#mercredi-2020-10-21" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On reprend zoning / wireframe , et on apprend la distinction UX (plutot zoning/wireframe) / UI (plutôt mockup/prototype).</p>
 <p>TP zoning / wireframe pour leur CV, sur diagrams.net.</p>
 <p>Les questions portent sur les choix effectués en terme d”UX (pourquoi tel élément est là,pourquoi il fait cette taille …) et sur les adaptations responsive.</p>
 <p>Présentation d”éléments de design « standards », comme les règles proposées par le material design.</p>
 <p>On a vu également quelques exemples de sites avec un bon UX/UI et d”autres catastrophiques.</p>
-</div>
-<div class="section" id="jeudi-2020-10-22">
+</section>
+<section id="jeudi-2020-10-22">
 <h2>Jeudi 2020/10/22<a class="headerlink" href="#jeudi-2020-10-22" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retour sur les wireframes et réalisation des mockups.</p>
-<div class="section" id="print-css">
+<section id="print-css">
 <h3>Print CSS<a class="headerlink" href="#print-css" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Faire une version du css adaptée à l”impression pour générer un CV imprimé.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://developer.mozilla.org/fr/docs/CSS/Premiers_pas/M%C3%A9dias#Impression">explication macro sur le site de mozilla</a></p></li>
 </ul>
-</div>
-<div class="section" id="todo">
+</section>
+<section id="todo">
 <h3>TODO<a class="headerlink" href="#todo" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://jgthms.com/web-design-in-4-minutes/">web design in 4 minutes</a></p></li>
 <li><p><a class="reference external" href="https://www.internetingishard.com/html-and-css/">interneting is hard</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="lundi-2020-10-26">
+</section>
+</section>
+<section id="lundi-2020-10-26">
 <h2>Lundi 2020/10/26<a class="headerlink" href="#lundi-2020-10-26" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Réalisation du site web pour le cv dont on avait fait le zoning, le wireframe et le mockup.</p>
 <p>Obligation d”utiliser un positionnement fixed ou sticky pour le menu, et obligation de faire un site responsive.</p>
 <p>Ceux qui ont eu le temps on essayé de faire une media query « print » que l”on peut voir en utilisant l”impression par chrome.</p>
-<div class="section" id="id5">
+<section id="id5">
 <h3>Sélecteurs CSS<a class="headerlink" href="#id5" title="Lien permanent vers ce titre">¶</a></h3>
 <p>exo « inversé »: à partir du sélecteur CSS proposer une arborescence HTML qui convient.</p>
 <p>La subtilité s”est trouvée notamment dans le fait d”utiliser l”espace dans le sélecteur, et donc tous les enfants, petits enfants etc. se retrouvaient sélectionnés. Il fallait penser à ce cas là.</p>
-</div>
-</div>
-<div class="section" id="mardi-2020-10-27">
+</section>
+</section>
+<section id="mardi-2020-10-27">
 <h2>Mardi 2020/10/27<a class="headerlink" href="#mardi-2020-10-27" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="javascript">
+<section id="javascript">
 <h3>Javascript<a class="headerlink" href="#javascript" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>définition vs exécution</p></li>
@@ -237,12 +238,12 @@ Photo mis sur SLACK</p>
 </li>
 <li><p>utilisation de la console du navigateur pour tester son code javascript</p></li>
 </ul>
-<div class="section" id="fonction">
+<section id="fonction">
 <h4>Fonction<a class="headerlink" href="#fonction" title="Lien permanent vers ce titre">¶</a></h4>
 <p>C”est une boîte noire avec des entrées et une sortie.</p>
-</div>
-</div>
-<div class="section" id="typage-variables">
+</section>
+</section>
+<section id="typage-variables">
 <h3>Typage variables<a class="headerlink" href="#typage-variables" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>string</p></li>
@@ -250,24 +251,24 @@ Photo mis sur SLACK</p>
 <li><p>array</p></li>
 </ul>
 <p>On n”a pas vu les objets !! et c”est fait exprès :-)</p>
-</div>
-<div class="section" id="commenter-son-code">
+</section>
+<section id="commenter-son-code">
 <h3>Commenter son code !<a class="headerlink" href="#commenter-son-code" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Indispensable ! surtout pour les fonctions javascript.</p>
-</div>
-<div class="section" id="modification-du-html">
+</section>
+<section id="modification-du-html">
 <h3>Modification du html<a class="headerlink" href="#modification-du-html" title="Lien permanent vers ce titre">¶</a></h3>
 <ol class="simple">
 <li><p>on sélectionne l”élément à modifier grâce à un sélecteur CSS <em>qu”on connaît déjà</em>, et grâce aux fonctions <code class="docutils literal notranslate"><span class="pre">document.querySelector(&quot;selecteur&gt;css.complique:first-child&quot;)</span></code>(pour récupérer le premier élément trouvé) et  <code class="docutils literal notranslate"><span class="pre">document.querySelectorAll(&quot;selecteur&gt;css.complique:first-child&quot;)</span></code> (pour récupérer tous les éléments qui correspondent)</p></li>
 <li><p>une fois récupéré dans une variable « elementHtml » (par exemple) on modifie <code class="docutils literal notranslate"><span class="pre">elementHtml.innerText</span> <span class="pre">=</span> <span class="pre">&quot;TOTOTATATITI&quot;</span></code> ou <code class="docutils literal notranslate"><span class="pre">elementHtml.InnerHTML</span> <span class="pre">=</span> <span class="pre">&quot;&lt;h2&gt;Un</span> <span class="pre">nouveau</span> <span class="pre">H2&lt;/h2&gt;&quot;</span></code></p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="mercredi-2020-10-28">
+</section>
+</section>
+<section id="mercredi-2020-10-28">
 <h2>Mercredi 2020/10/28<a class="headerlink" href="#mercredi-2020-10-28" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="javascript-conditions-if">
+<section id="javascript-conditions-if">
 <h3>Javascript conditions IF<a class="headerlink" href="#javascript-conditions-if" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="section" id="decouverte-des-conditions-if-et-exercices">
+<section id="decouverte-des-conditions-if-et-exercices">
 <h4>decouverte des conditions IF  et exercices<a class="headerlink" href="#decouverte-des-conditions-if-et-exercices" title="Lien permanent vers ce titre">¶</a></h4>
 <ul class="simple">
 <li><p>if</p></li>
@@ -283,8 +284,8 @@ Photo mis sur SLACK</p>
 <li><p>&amp;&amp; et</p></li>
 <li><p>|| ou</p></li>
 </ul>
-</div>
-<div class="section" id="si-vrai-true">
+</section>
+<section id="si-vrai-true">
 <h4>si vrai (true)<a class="headerlink" href="#si-vrai-true" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">alert</span><span class="p">(</span><span class="s2">&quot;vrais a == b&quot;</span><span class="p">);</span>
@@ -295,12 +296,12 @@ Photo mis sur SLACK</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="jeudi-2020-10-29">
+</section>
+</section>
+</section>
+<section id="jeudi-2020-10-29">
 <h2>Jeudi 2020/10/29<a class="headerlink" href="#jeudi-2020-10-29" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="javascript-conditions-switch">
+<section id="javascript-conditions-switch">
 <h3>Javascript conditions SWITCH<a class="headerlink" href="#javascript-conditions-switch" title="Lien permanent vers ce titre">¶</a></h3>
 <p>decouverte des conditions SWITCH et exercices
 la condition switch à pour parametre
@@ -323,11 +324,11 @@ valeur ce trouve das se cas</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="lundi-2020-11-02">
+</section>
+</section>
+<section id="lundi-2020-11-02">
 <h2>Lundi 2020/11/02<a class="headerlink" href="#lundi-2020-11-02" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="javascript-boucle-for">
+<section id="javascript-boucle-for">
 <h3>Javascript boucle FOR<a class="headerlink" href="#javascript-boucle-for" title="Lien permanent vers ce titre">¶</a></h3>
 <p>boucle FOR et exercices</p>
 <p>parametre 1  i=0 on commance la boucle par 0
@@ -338,11 +339,11 @@ c++ ancremante la variable i par 1</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="mardi-2020-11-03">
+</section>
+</section>
+<section id="mardi-2020-11-03">
 <h2>Mardi 2020/11/03<a class="headerlink" href="#mardi-2020-11-03" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="javascript-boucle-while">
+<section id="javascript-boucle-while">
 <h3>Javascript boucle WHILE<a class="headerlink" href="#javascript-boucle-while" title="Lien permanent vers ce titre">¶</a></h3>
 <p>boucle WHILE et exercices</p>
 <p>je declare une variable var i=1 pour commance la boucle par 1
@@ -356,11 +357,11 @@ c++ ancremente la variable i par 1</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="lundi-2020-11-09">
+</section>
+</section>
+<section id="lundi-2020-11-09">
 <h2>Lundi 2020/11/09<a class="headerlink" href="#lundi-2020-11-09" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="javascript-tables">
+<section id="javascript-tables">
 <h3>Javascript Tables<a class="headerlink" href="#javascript-tables" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Table array() et exercices</p>
 <p>je decrale une variable « cars » et j”alimente par une tableau
@@ -374,11 +375,11 @@ les taleau fonction par « position » autrement appeler « clé », la prem
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="mardi-2020-11-10">
+</section>
+</section>
+<section id="mardi-2020-11-10">
 <h2>Mardi 2020/11/10<a class="headerlink" href="#mardi-2020-11-10" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="javascript-tp-boutique">
+<section id="javascript-tp-boutique">
 <h3>Javascript TP Boutique<a class="headerlink" href="#javascript-tp-boutique" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Nous avons crée un projet BOUTIQUE pour faire des exercices HTML,CSS et JS</p>
 <p>Le projet à pour but de mettre en place tous ce que nous avons fait depuis le debut des cours.</p>
@@ -388,39 +389,39 @@ les taleau fonction par « position » autrement appeler « clé », la prem
 <li><p>JS, creation des variable des fonctions, des tables, conditions et leurs utlisation,</p></li>
 </ul>
 <p>La structure HTML et CSS est realiser par tous le groupe le jour meme</p>
-</div>
-</div>
-<div class="section" id="jeudi-2020-11-12">
+</section>
+</section>
+<section id="jeudi-2020-11-12">
 <h2>Jeudi 2020/11/12<a class="headerlink" href="#jeudi-2020-11-12" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="exercice-pour-comprendre-les-tableaux">
+<section id="exercice-pour-comprendre-les-tableaux">
 <h3>Exercice pour comprendre les tableaux<a class="headerlink" href="#exercice-pour-comprendre-les-tableaux" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ecrire une liste d”élèves dans un tableau javascript et l”écrire sous forme de liste html grâce à une boucle for.</p>
 <p>Puis ajouter un bouton qui trie la liste par ordre alphabétique et qui la réaffiche.</p>
 <p>Pour ne pas dupliquer le code on utilise une fonction !</p>
-</div>
-<div class="section" id="travail-sur-les-commentaires-dans-le-code">
+</section>
+<section id="travail-sur-les-commentaires-dans-le-code">
 <h3>Travail sur les commentaires dans le code<a class="headerlink" href="#travail-sur-les-commentaires-dans-le-code" title="Lien permanent vers ce titre">¶</a></h3>
-</div>
-<div class="section" id="reprise-du-tp-banque">
+</section>
+<section id="reprise-du-tp-banque">
 <h3>Reprise du TP banque<a class="headerlink" href="#reprise-du-tp-banque" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Adapter le code du formateur qui ne marche que pour le premier compte, pour qu”il marche pour les 2 comptes !</p>
 <p><strong>Sans faire de copier coller</strong></p>
-</div>
-</div>
-<div class="section" id="vendredi-2020-11-13">
+</section>
+</section>
+<section id="vendredi-2020-11-13">
 <h2>Vendredi 2020/11/13<a class="headerlink" href="#vendredi-2020-11-13" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="id6">
+<section id="id6">
 <h3>Reprise du TP banque<a class="headerlink" href="#id6" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Objectif: maîtriser les fonctions.</p>
 <p>On essaie de faire des fonctions qui marchent pour n”importe lequel des comptes bancaires html.</p>
 <p>Alors qu”avant la fonction ne modifiait que le premier compte qu”elle trouvait, il faut maintenant lui donner le compte qu”elle doit modifier.</p>
-</div>
-<div class="section" id="addendum-fonctions">
+</section>
+<section id="addendum-fonctions">
 <h3>Addendum fonctions :<a class="headerlink" href="#addendum-fonctions" title="Lien permanent vers ce titre">¶</a></h3>
 <p><strong>Une fonction est une ACTION</strong>, donc on doit lui dire qui doit l”effectuer, et avec quoi etc.</p>
 <p>=&gt; les arguments sont <strong>indispensables</strong> !</p>
-</div>
-<div class="section" id="installation-git-github">
+</section>
+<section id="installation-git-github">
 <h3>Installation git + github<a class="headerlink" href="#installation-git-github" title="Lien permanent vers ce titre">¶</a></h3>
 <ol class="simple">
 <li><p>création du compte github</p></li>
@@ -432,24 +433,24 @@ les taleau fonction par « position » autrement appeler « clé », la prem
 <li><p>on vérifie que tout est bien affiché sur github</p></li>
 <li><p>profit</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="lundi-2020-11-16">
+</section>
+</section>
+<section id="lundi-2020-11-16">
 <h2>Lundi 2020/11/16<a class="headerlink" href="#lundi-2020-11-16" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="id7">
+<section id="id7">
 <h3>Javascript TP Boutique<a class="headerlink" href="#id7" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Nous avons continuer sur le projet BOUTIQUE en integrent le JS
 Creation des fonction et les tableau et execution à partir du HTML</p>
-</div>
-</div>
-<div class="section" id="mardi-2020-11-17">
+</section>
+</section>
+<section id="mardi-2020-11-17">
 <h2>Mardi 2020/11/17<a class="headerlink" href="#mardi-2020-11-17" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="id8">
+<section id="id8">
 <h3>Javascript TP Boutique<a class="headerlink" href="#id8" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Nous avons continuer sur le projet BOUTIQUE en integrent le JS
 Creation des fonctions, les condition, les boucles et les tableaux et execution à partir du HTML</p>
-</div>
-<div class="section" id="javascript-objet">
+</section>
+<section id="javascript-objet">
 <h3>Javascript Objet<a class="headerlink" href="#javascript-objet" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Decouverte des Objet
 un objet contient des propriétés et des méthodes :</p>
@@ -465,11 +466,11 @@ un objet contient des propriétés et des méthodes :</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">car</span><span class="p">.</span><span class="nx">model</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="jeudi-2020-11-19">
+</section>
+</section>
+<section id="jeudi-2020-11-19">
 <h2>Jeudi 2020/11/19<a class="headerlink" href="#jeudi-2020-11-19" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="travail-sur-les-objets">
+<section id="travail-sur-les-objets">
 <h3>Travail sur les objets<a class="headerlink" href="#travail-sur-les-objets" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Création d”un site web simple pour afficher une liste d”élèves.</p>
 <p>Les élèves sont des objets avec un nom, un prénom et un âge.</p>
@@ -477,8 +478,8 @@ un objet contient des propriétés et des méthodes :</p>
 <p>On a bien noté qu”il fallait utiliser la syntaxe « . » pour accéder à la propriété d”un objet.
 Mais on peut également y accéder en faisant <code class="docutils literal notranslate"><span class="pre">objet[&quot;string_propriete&quot;]</span></code> .
 Exemple : <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3][&quot;length&quot;]</span></code></p>
-</div>
-<div class="section" id="fonction-en-parametre-d-une-fonction">
+</section>
+<section id="fonction-en-parametre-d-une-fonction">
 <h3>Fonction en paramètre d”une fonction<a class="headerlink" href="#fonction-en-parametre-d-une-fonction" title="Lien permanent vers ce titre">¶</a></h3>
 <p>On a essayé de trier la liste des objets. Mais javascript n”est pas capable de décider si un objet est oui ou non plus grand q”un autre !!</p>
 <p>Par exemple est-ce que l”objet <code class="docutils literal notranslate"><span class="pre">{nom:</span> <span class="pre">&quot;Rambo&quot;,</span> <span class="pre">prenom:</span> <span class="pre">&quot;John&quot;}</span></code> est plus grand que l”objet <code class="docutils literal notranslate"><span class="pre">{nom:</span> <span class="pre">&quot;Schwarzenegger&quot;,</span> <span class="pre">prenom:</span> <span class="pre">&quot;Arnold&quot;}</span></code> ?? puisqu”ils font parti tous les 2 de la liste <code class="docutils literal notranslate"><span class="pre">expandables</span></code>.</p>
@@ -490,15 +491,15 @@ Exemple : <code class="docutils literal notranslate"><span class="pre">[1,</span
 </div>
 <p>Et pour l”utiliser il faut la passer, <strong>sans l”appeler</strong> en argument de l”appel de <code class="docutils literal notranslate"><span class="pre">sort()</span></code>, c”est à dire dans notre cas : <code class="docutils literal notranslate"><span class="pre">expandables.sort(comparerBourrin)</span></code>.</p>
 <p>Puis on a essayé de faire une bascule pour se souvenir de l”état de tri (ascendant ou descendant) entre les clics.</p>
-</div>
-</div>
-<div class="section" id="vendredi-2020-11-20">
+</section>
+</section>
+<section id="vendredi-2020-11-20">
 <h2>Vendredi 2020/11/20<a class="headerlink" href="#vendredi-2020-11-20" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="reprise-du-tp-objet">
+<section id="reprise-du-tp-objet">
 <h3>Reprise du TP « objet »<a class="headerlink" href="#reprise-du-tp-objet" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Explications détaillées du TP, revue des concepts de la veille, notamment les appels de fonctions en paramètre d”autres fonctions.</p>
-</div>
-<div class="section" id="condition-ternaire">
+</section>
+<section id="condition-ternaire">
 <h3>Condition « ternaire »<a class="headerlink" href="#condition-ternaire" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Version abrégée du test :</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">condition</span><span class="p">){</span>
@@ -516,8 +517,8 @@ Exemple : <code class="docutils literal notranslate"><span class="pre">[1,</span
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">resultat</span> <span class="o">=</span> <span class="nx">condition</span> <span class="o">?</span> <span class="nx">action1</span><span class="p">()</span> <span class="o">:</span> <span class="mf">0</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="premier-apercu-de-la-methode-bind">
+</section>
+<section id="premier-apercu-de-la-methode-bind">
 <h3>Premier aperçu de la méthode <code class="docutils literal notranslate"><span class="pre">.bind</span></code><a class="headerlink" href="#premier-apercu-de-la-methode-bind" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ce sera important quand on abordera les classes ou React ou les fonctions fléchées ES6, donc on a abordé la méthode <code class="docutils literal notranslate"><span class="pre">.bind</span></code> pour les fonctions.</p>
 <p>On peut « pré-remplir » un argument d”une fonction, sans l”appeler, pour obtenir une fonction avec autant d”arguments disponibles en moins.</p>
@@ -530,26 +531,26 @@ Exemple : <code class="docutils literal notranslate"><span class="pre">[1,</span
 </div>
 <p>On voit que la fonction <code class="docutils literal notranslate"><span class="pre">consulteMangaNaruto</span></code> n”a plus que 2 paramètres. Car elle a déjà un argument qui lui est donné par défaut, c”est « Naruto », donné en première position.</p>
 <p><code class="docutils literal notranslate"><span class="pre">consulteMangaNaruto</span></code> est donc une variable, certes, mais surtout une <strong>fonction</strong> ! qui est renvoyée par la méthode <code class="docutils literal notranslate"><span class="pre">.bind</span></code> de la fonction <code class="docutils literal notranslate"><span class="pre">consulteManga</span></code> - qui est donc en passant également un objet !</p>
-</div>
-<div class="section" id="revisions-html">
+</section>
+<section id="revisions-html">
 <h3>Révisions HTML<a class="headerlink" href="#revisions-html" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Pour se remettre de ces émotions, petite révision HTML grâce au site <a class="reference external" href="https://jgthms.com/web-design-in-4-minutes/">webdesign en 4minutes</a></p>
-</div>
-<div class="section" id="revisions-javascript">
+</section>
+<section id="revisions-javascript">
 <h3>Révisions Javascript<a class="headerlink" href="#revisions-javascript" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Fait tous ensemble collaborativement, reprise depuis les bases, via le tutoriel <a class="reference external" href="https://jgthms.com/javascript-in-14-minutes/">javascript en 14 minutes</a> ! (C”est mensonger, cela nous a pris 2h !!)</p>
-</div>
-</div>
-<div class="section" id="lundi-2020-11-23">
+</section>
+</section>
+<section id="lundi-2020-11-23">
 <h2>Lundi 2020/11/23<a class="headerlink" href="#lundi-2020-11-23" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="decouverte-de-let-et-const">
+<section id="decouverte-de-let-et-const">
 <h3>Decouverte de LET et CONST<a class="headerlink" href="#decouverte-de-let-et-const" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Var = on peut redeclarer et changer sa valeur
 Let = on ne peut pas redeclarer mais on peut changer sa valeur
 Const = on ne peut pas redeclarer mais on peut pas changer sa valeur</p>
 <p>Explications détaillées du TP, revue des concepts de la veille, notamment les appels de fonctions en paramètre d”autres fonctions.</p>
-</div>
-<div class="section" id="variable-let">
+</section>
+<section id="variable-let">
 <h3>Variable LET<a class="headerlink" href="#variable-let" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Example LET :</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">test</span> <span class="o">=</span> <span class="mf">5</span><span class="p">;</span>
@@ -563,8 +564,8 @@ Const = on ne peut pas redeclarer mais on peut pas changer sa valeur</p>
     <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#demoLet&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">test</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="variable-const">
+</section>
+<section id="variable-const">
 <h3>Variable CONST<a class="headerlink" href="#variable-const" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Example CONST :</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span> <span class="kd">const</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">20</span><span class="p">;</span>
@@ -583,24 +584,24 @@ Const = on ne peut pas redeclarer mais on peut pas changer sa valeur</p>
     <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="mardi-2020-11-24">
+</section>
+</section>
+<section id="mardi-2020-11-24">
 <h2>Mardi 2020/11/24<a class="headerlink" href="#mardi-2020-11-24" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="evaluation-html-css-et-javascript">
+<section id="evaluation-html-css-et-javascript">
 <h3>EVALUATION HTML, CSS et JavaScript<a class="headerlink" href="#evaluation-html-css-et-javascript" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Création d’un site de profile de la Classe
 Nom du site DWWM 93</p>
 <p>L’objet de site est de présenter les étudiants du groupe DWWM MTE 93 2021 aux entreprises pour trouver leurs stages.
 Le site doit avoir le logo de GRETA MTE 93 et un menu (Accueil, Formation, Contact), le contenue, et un footer.</p>
-</div>
-<div class="section" id="header">
+</section>
+<section id="header">
 <h3>Header<a class="headerlink" href="#header" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Logo du GRETA MTE 93 et menu (Accueil, Formation, Contact)</p>
-</div>
-<div class="section" id="contenue-au-centre-de-la-page-main">
+</section>
+<section id="contenue-au-centre-de-la-page-main">
 <h3>Contenue au centre de la page (main)<a class="headerlink" href="#contenue-au-centre-de-la-page-main" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="section" id="accueil">
+<section id="accueil">
 <h4>Accueil<a class="headerlink" href="#accueil" title="Lien permanent vers ce titre">¶</a></h4>
 <p>La page d’accueil doit porter une liste des étudiants du DWWM leurs noms, prénom, photos et un bouton pour afficher le profil de l’étudiant dans une fenêtre.
 Le profil doit être afficher dans une fenêtre qui comporte tous les informations de l’étudiants</p>
@@ -625,8 +626,8 @@ Le profil doit être afficher dans une fenêtre qui comporte tous les informatio
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="formation-nouvelle-page">
+</section>
+<section id="formation-nouvelle-page">
 <h4>Formation (nouvelle page)<a class="headerlink" href="#formation-nouvelle-page" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Description de la formation DWWM et son révérenciel
 Contact (nouvelle page)
@@ -640,14 +641,14 @@ Formulaire de contact général (les champs * obligatoire et contrôler)</p>
 <li><p>Message*</p></li>
 <li><p>Bouton d’envoie</p></li>
 </ul>
-</div>
-<div class="section" id="footer">
+</section>
+<section id="footer">
 <h4>Footer<a class="headerlink" href="#footer" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Le contenue en centre « DWWM 2020-2021 – votre prénom et nom»</p>
 <p></p>
-</div>
-</div>
-<div class="section" id="realisation-du-projet-sur-100-points">
+</section>
+</section>
+<section id="realisation-du-projet-sur-100-points">
 <h3>Réalisation du projet sur 100 points<a class="headerlink" href="#realisation-du-projet-sur-100-points" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Le menu doit être crée à partir d’un tableau JS
 Les informations des étudiants doivent venir un objet JS</p>
@@ -675,31 +676,31 @@ Les informations des étudiants doivent venir un objet JS</p>
 </ul>
 <p>Les pages Accueil (index.html), Formation (formation.html) et Contact(contact.html) doit avoir le même design.</p>
 <p>À rendre le projet en .zip ou .rar et elle doit contenir tous les éléments (zoning, wireframe et code) avant 16h le 24/11/2020</p>
-</div>
-</div>
-<div class="section" id="mercredi-2020-11-25">
+</section>
+</section>
+<section id="mercredi-2020-11-25">
 <h2>Mercredi 2020/11/25<a class="headerlink" href="#mercredi-2020-11-25" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Découverte et inscription sur « codingwars.com ».</p>
 <p>Plusieurs exercices réalisés ensemble et corrigés ensemble.</p>
-</div>
-<div class="section" id="jeudi-2020-11-26">
+</section>
+<section id="jeudi-2020-11-26">
 <h2>Jeudi 2020/11/26<a class="headerlink" href="#jeudi-2020-11-26" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Correction en « live coding » de l”évaluation faite le mardi 24.</p>
 <p>cf <a class="reference external" href="https://github.com/dwwm93/2020/tree/master/evaluation/correction">https://github.com/dwwm93/2020/tree/master/evaluation/correction</a>.</p>
 <p>et sur <a class="reference external" href="https://glitch.com/edit/#%21/cypress-obtainable-spandex">glitch</a></p>
-</div>
-<div class="section" id="mercredi-2020-12-02">
+</section>
+<section id="mercredi-2020-12-02">
 <h2>Mercredi 2020/12/02<a class="headerlink" href="#mercredi-2020-12-02" title="Lien permanent vers ce titre">¶</a></h2>
 <p>des exercices pour jquery : <a class="reference external" href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors1">w3schools</a></p>
 <p>=&gt; exercices : selectors , get, set, add, remove, hide and show (modifié)</p>
 <p>l”explication pour l”exercice 6 des selecteurs : https://api.jquery.com/odd-selector/ , c”est équivalent à « nth-child(odd) » d”habitude</p>
 <p>pour l”instant, il n”y a pas besoin d”aller lire cette page !! c”est la doc officielle jquery, mais elle n”est pas très accessible aux débutants</p>
-<p>à savoir : « GET » = récupération des données, donc il s”agit des méthodes jquery qui lisent les valeurs, comme $(“p”).text() ou $(« input#prenom »).val() -&gt; ça va lire le contenu du texte des balises <p> ou lire la valeur des input d”id=prenom !</p>
-<p>quant à « SET » = modification des données, donc on utilise les mêmes méthodes mais en donnant des paramètres qui vont remplacer la valeur actuelle, ex: $(“p”).text(« nouveau texte »)</p>
+<p>à savoir : « GET » = récupération des données, donc il s”agit des méthodes jquery qui lisent les valeurs, comme $(”p”).text() ou $( »input#prenom »).val() -&gt; ça va lire le contenu du texte des balises <p> ou lire la valeur des input d”id=prenom !</p>
+<p>quant à « SET » = modification des données, donc on utilise les mêmes méthodes mais en donnant des paramètres qui vont remplacer la valeur actuelle, ex: $(”p”).text( »nouveau texte »)</p>
 <p>vous pouvez zapper les questions sur les « attributs »</p>
-<div class="section" id="premiere-presentation-de-ajax">
+<section id="premiere-presentation-de-ajax">
 <h3>Première présentation de AJAX<a class="headerlink" href="#premiere-presentation-de-ajax" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="section" id="version-avec-load">
+<section id="version-avec-load">
 <h4>Version avec « load »<a class="headerlink" href="#version-avec-load" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;article#infos&gt;section:first-child&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Je remplis ma section.&quot;</span><span class="p">);</span>
 
@@ -725,8 +726,8 @@ Les informations des étudiants doivent venir un objet JS</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="version-avec-get">
+</section>
+<section id="version-avec-get">
 <h4>Version avec .get<a class="headerlink" href="#version-avec-get" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> *</span>
@@ -744,14 +745,14 @@ Les informations des étudiants doivent venir un objet JS</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="jeudi-2020-12-03">
+</section>
+</section>
+</section>
+<section id="jeudi-2020-12-03">
 <h2>Jeudi 2020/12/03<a class="headerlink" href="#jeudi-2020-12-03" title="Lien permanent vers ce titre">¶</a></h2>
 <p>https://www.w3schools.com/jquery/exercise_jq.asp  aujourd”hui on va se mettre en jambe en faisant « cssClasse », « animate », « events » et « traversing »</p>
 <p>pour les events : https://www.w3schools.com/jquery/jquery_events.asp</p>
-<div class="section" id="exercice">
+<section id="exercice">
 <h3>Exercice :<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>ajoutez plusieurs balises « p » avec un lorem dedans</p></li>
@@ -821,7 +822,7 @@ donc solution :
 </pre></div>
 </div>
 <p>function texteBlanc(){
-$(this).css(“color”, “white”);
+$(this).css(”color”, “white”);
 }</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 <span class="n">MAIS</span> <span class="n">ATTENTION</span> <span class="n">je</span> <span class="n">ne</span> <span class="n">peux</span> <span class="n">plus</span> <span class="n">appeler</span> <span class="n">texteBlanc</span> <span class="n">n</span><span class="s1">&#39;importe où maintenant, sinon this sera &quot;window&quot;! </span>
@@ -837,7 +838,7 @@ $(this).css(“color”, “white”);
 <li></li>
 </ul>
 <p>*/
-$(« article#tableau&gt;table td.nom »).on(« click », function () {
+$( »article#tableau&gt;table td.nom »).on( »click », function () {
 // Je récupère l”élément cliqué de javascript
 let caseCliquee = this;
 // je le transforme en jquery pour pouvoir utiliser les méthodes « faciles »
@@ -854,11 +855,11 @@ $.get(url)
 // On peut donc en extraire des infos :
 let poids = data.weight;
 let img = data.sprites.front_default;      // Puis je cherche à les afficher dans les colonnes adjacentes :
-let colonnes = caseJquery.siblings(« td »);
+let colonnes = caseJquery.siblings( »td »);
 // Je transforme chaque colonne reçue en JQuery pour pouvoir utiliser les méthodes
 // et je les remplis avec les infos.
 // NB: il y a  plein d”autres manières de faire, aussi bonnes voire meilleures que celle ci !
-$(colonnes[0]).html(« <img src='" + img + "' /> »);
+$(colonnes[0]).html( »<img src='" + img + "' /> »);
 $(colonnes[1]).text(poids);
 })
 .fail(function (data) {
@@ -868,7 +869,7 @@ console.log(data);
 // J”affiche l”erreur dans la case à côté :
 caseJquery
 .next()
-.html(« <span style='color: red;'> «  + data.responseText + «  </span> »);
+.html( »<span style='color: red;'> «  + data.responseText + «  </span> »);
 });
 });</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
@@ -918,16 +919,16 @@ ex: formulaire !!
 });
 </pre></div>
 </div>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h3>Exercice<a class="headerlink" href="#id9" title="Lien permanent vers ce titre">¶</a></h3>
 <p>sur la page que vous voulez, avec ajax vous allez faire un GET sur https://jsonplaceholder.typicode.com/users , et afficher le résultat dans un <pre> sans chichi</p>
 <p>si tu veux que ce soit plus joli tu peux mettre direct JSON.stringify(data)</p>
 <p>puis on va faire un « POST » sur la meme url</p>
 <p>par le biais d”un formulaire pour commencer</p>
 <p>SOLUTION : j”ai l”id 11 c”est bon</p>
-</div>
-<div class="section" id="post-jquery">
+</section>
+<section id="post-jquery">
 <h3>POST jquery<a class="headerlink" href="#post-jquery" title="Lien permanent vers ce titre">¶</a></h3>
 <p>le formulaire vous « déplace » vers la cible de l”action, donc vous vous retrouvez sur le site https://jsonplaceholder.typicode.com/users</p>
 <p>avec la réponse id:11</p>
@@ -970,9 +971,9 @@ const data = { nom: &quot;baggins&quot;, prenom: &quot;bilbo&quot; };$.post(url,
 </div>
 <p>BOOTSTRAP https://www.w3schools.com/bootstrap4/</p>
 <p>https://www.w3schools.com/bootstrap4/trybs_template1.htm</p>
-</div>
-</div>
-<div class="section" id="vendredi-2020-12-11">
+</section>
+</section>
+<section id="vendredi-2020-12-11">
 <h2>Vendredi 2020/12/11<a class="headerlink" href="#vendredi-2020-12-11" title="Lien permanent vers ce titre">¶</a></h2>
 <p>bon, on se met en jambes en faisant l”exercice d”hier soir ?</p>
 <p>on essaie de déclencher le $.post en cliquant sur le bouton submit</p>
@@ -1006,7 +1007,7 @@ event.preventDefault() vs. return false
 When I want to prevent other event handlers from executing after a certain event is fired, I can use one of two techniques. I”ll use jQuery in the examples, but this applies to plain-JS as well: 1.</p>
 <p>il y a une différence entre le « event » du formulaire normal, et le « event » de jquery</p>
 <p>ce n”est pas le même « event » !</p>
-<p>celui de jquery il est redispatché à tous les autres (parce que je peux créer plusieurs $(“xxx”).on(“click”,</p>
+<p>celui de jquery il est redispatché à tous les autres (parce que je peux créer plusieurs $(”xxx”).on(”click”,</p>
 <form ...>
   <button onclick='mafunc()' >clic
 ...function mafunc(event){
@@ -1014,8 +1015,8 @@ When I want to prevent other event handlers from executing after a certain event
 }<p>Ici c”est l”event du navigateur</p>
 <p>Par contre si on utilise jquery !</p>
 <p>on va avoir un bouton sans « onclick », et à la place on aura :</p>
-<p>$(“button”).on(“click”, function (event) {..</p>
-<p>ici l”event est un evenment JQUERY pas celui du navigateur, parce que je peux déclarer plusieurs on(“click”, … sur le meme bouton</p>
+<p>$(”button”).on(”click”, function (event) {..</p>
+<p>ici l”event est un evenment JQUERY pas celui du navigateur, parce que je peux déclarer plusieurs on(”click”, … sur le meme bouton</p>
 <p>donc pour un event jquery il faut :</p>
 <p>event.preventDefault()</p>
 <p>et</p>
@@ -1042,7 +1043,7 @@ w3schools.comw3schools.com
 Bootstrap 4 Grid Basic
 Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
 <p>! important !!</p>
-<div class="section" id="id10">
+<section id="id10">
 <h3>Exercice<a class="headerlink" href="#id10" title="Lien permanent vers ce titre">¶</a></h3>
 <p>2/12 sur la premiere et les 2 autres se répartissent le reste pour la page d”exemple,
 avec 3 colonnes</p>
@@ -1054,36 +1055,36 @@ https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp</p>
 <p>https://www.w3schools.com/bootstrap4/bootstrap_modal.asp</p>
 <p>https://bootswatch.com/</p>
 <p>puis ajouter une modale qui contient un form, et essayer de mettre le $.post de ce matin</p>
-</div>
-</div>
-<div class="section" id="jeudi-2020-12-17">
+</section>
+</section>
+<section id="jeudi-2020-12-17">
 <h2>Jeudi 2020/12/17<a class="headerlink" href="#jeudi-2020-12-17" title="Lien permanent vers ce titre">¶</a></h2>
 <p>NB: Pendant ce temps les élèves avaient les réunions pédagogiques.</p>
 <p>On continue le projet de fin d”année avec des conseils sur la mise en page et le code.</p>
-<div class="section" id="mise-en-page-footer">
+<section id="mise-en-page-footer">
 <h3>Mise en page Footer<a class="headerlink" href="#mise-en-page-footer" title="Lien permanent vers ce titre">¶</a></h3>
 <p><a class="reference external" href="https://www.alioze.com/footer">ressource alioze.com</a></p>
 <blockquote>
 <div><p>Tout d’abord, votre pied de page doit être divisé en une section différente pour chacun des éléments : menu de navigation, mentions légales et CGU, appel à l’action (CTA), icônes de réseaux sociaux, etc. Les éléments les plus importants (souvent les informations de contact ou les appels à l’action) doivent être mis en avant.</p>
 </div></blockquote>
-</div>
-<div class="section" id="cta">
+</section>
+<section id="cta">
 <h3>CTA<a class="headerlink" href="#cta" title="Lien permanent vers ce titre">¶</a></h3>
 <blockquote>
 <div><p>CTA = call to action =&gt; « Un call to action - aussi appelé CTA - est un élément cliquable positionné sur une page de site internet, un blog ou un email qui incite vos visiteurs à effectuer une action précise, mais une action utile qui les font avancer dans leur parcours d’achat.
 Il peut prendre la forme d’une image, d’un lien, d’un bouton voire d’un bot et doit être utilisé à toutes les étapes du parcours d’achat. «  (source : https://www.ideagency.fr/blog/call-to-action )</p>
 </div></blockquote>
-</div>
-<div class="section" id="json">
+</section>
+<section id="json">
 <h3>JSON<a class="headerlink" href="#json" title="Lien permanent vers ce titre">¶</a></h3>
 <p>pour rappel : JSON = chaine de caractère (c”est du texte) qui représente un « objet » javascript</p>
 <p>On peut transformer un objet js en json et vice versa grâce à :</p>
 <p><code class="docutils literal notranslate"><span class="pre">JSON.stringify(objet_js)</span></code> : js =&gt; json</p>
 <p><code class="docutils literal notranslate"><span class="pre">JSON.parse(chaine_json)</span></code> : json =&gt; js</p>
-</div>
-<div class="section" id="chaining">
+</section>
+<section id="chaining">
 <h3>Chaining<a class="headerlink" href="#chaining" title="Lien permanent vers ce titre">¶</a></h3>
-<p>:danger:  si vous faites plusieurs « . » en jquery d”affilée (genre $(“#id1”).append(« … »).append(« xx »).on(« click »… , vous etes en train de faire ça : https://www.w3schools.com/JQuery/jquery_chaining.asp</p>
+<p>:danger:  si vous faites plusieurs « . » en jquery d”affilée (genre $(”#id1”).append( »… »).append( »xx »).on( »click »… , vous etes en train de faire ça : https://www.w3schools.com/JQuery/jquery_chaining.asp</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>exemple :
 
 let elem = $(&#39;#id1&#39;);
@@ -1092,8 +1093,8 @@ let res = elem.append(&quot;&lt;p&gt;texte&lt;/p&gt;&quot;);
 </div>
 <p>=&gt; qu”y a til dans « res » ?? la balise « p » ou la balise « #id1 » ?</p>
 <p>donc si on fait <code class="docutils literal notranslate"><span class="pre">res.on(&quot;click&quot;</span> <span class="pre">,</span> <span class="pre">function</span> <span class="pre">(....</span></code> =&gt; quel est l”élément qui déclenche le clic ? le clic sur le p ou le clic sur le “#id1” ? !</p>
-</div>
-<div class="section" id="jquery-each">
+</section>
+<section id="jquery-each">
 <h3>Jquery each<a class="headerlink" href="#jquery-each" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">key</span> <span class="o">&lt;</span> <span class="nx">tableau</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">key</span><span class="o">++</span><span class="p">){</span>
     <span class="kd">let</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">tableau</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
@@ -1108,9 +1109,9 @@ let res = elem.append(&quot;&lt;p&gt;texte&lt;/p&gt;&quot;);
 </pre></div>
 </div>
 <p>c”est jquery qui te fournit key et val à ta place</p>
-</div>
-</div>
-<div class="section" id="vendredi-2020-12-18">
+</section>
+</section>
+<section id="vendredi-2020-12-18">
 <h2>Vendredi 2020/12/18<a class="headerlink" href="#vendredi-2020-12-18" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Dernière ligne droite pour le projet.</p>
 <p>On fait bien attention :</p>
@@ -1127,14 +1128,14 @@ let res = elem.append(&quot;&lt;p&gt;texte&lt;/p&gt;&quot;);
 <ol class="simple">
 <li><p>à l”ordre de déclenchement des instructions, car quand on utilise $.get ou autres fonctions « ajax » (= asynchrone !!), l”ordre d”exécution n”est pas linéaire</p></li>
 </ol>
-<div class="section" id="revisions-jquery-bootstrap">
+<section id="revisions-jquery-bootstrap">
 <h3>Révisions jquery / bootstrap<a class="headerlink" href="#revisions-jquery-bootstrap" title="Lien permanent vers ce titre">¶</a></h3>
-</div>
-</div>
-<div class="section" id="lundi-2021-01-04">
+</section>
+</section>
+<section id="lundi-2021-01-04">
 <h2>Lundi 2021/01/04<a class="headerlink" href="#lundi-2021-01-04" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Début du php !!</p>
-<div class="section" id="presentation">
+<section id="presentation">
 <h3>Présentation<a class="headerlink" href="#presentation" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>PHP = logiciel ET un langage</p></li>
@@ -1149,8 +1150,8 @@ exactement le meme but que lorsqu”on créait des innerHTML en javascript</p>
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="installation">
+</section>
+<section id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h3>
 <ol class="simple">
 <li><p>Ouvrir le terminal intégré dans vscode</p></li>
@@ -1168,11 +1169,11 @@ A Dependency Manager for PHP</p>
 <p>exemple de chemin vers php pour les windows : C:/wamp64/bin/php7.2/php.exe</p>
 <p>ensuite fermer vscode et le rouvrir, puis refaire php -v</p>
 <p>https://www.wampserver.com/</p>
-<div class="section" id="intelephense">
+<section id="intelephense">
 <h4>Intelephense<a class="headerlink" href="#intelephense" title="Lien permanent vers ce titre">¶</a></h4>
-</div>
-</div>
-<div class="section" id="code">
+</section>
+</section>
+<section id="code">
 <h3>Code<a class="headerlink" href="#code" title="Lien permanent vers ce titre">¶</a></h3>
 <p>plusieurs choses :</p>
 <ol class="simple">
@@ -1190,16 +1191,16 @@ A Dependency Manager for PHP</p>
 <li><p>conditions</p></li>
 <li><p>tableaux associatifs</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="mardi-2021-01-05">
+</section>
+</section>
+<section id="mardi-2021-01-05">
 <h2>Mardi 2021/01/05<a class="headerlink" href="#mardi-2021-01-05" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="exercice-pour-s-entrainer-pour-les-fonctions">
+<section id="exercice-pour-s-entrainer-pour-les-fonctions">
 <h3>Exercice pour s”entraîner pour les fonctions<a class="headerlink" href="#exercice-pour-s-entrainer-pour-les-fonctions" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Afficher un tableau sous forme de texte.</p>
 <p>But : utiliser uniquement les fonctions que je fournissais</p>
-</div>
-<div class="section" id="correction-voir-fichiers-associes">
+</section>
+<section id="correction-voir-fichiers-associes">
 <h3>Correction ? (voir fichiers associés)<a class="headerlink" href="#correction-voir-fichiers-associes" title="Lien permanent vers ce titre">¶</a></h3>
 <p>en js on faisait <code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">+=</span> <span class="pre">&quot;toto&quot;</span></code> pour concaténer 2 strings, ici on fait <code class="docutils literal notranslate"><span class="pre">$res</span> <span class="pre">.=</span> <span class="pre">&quot;toto&quot;;</span></code></p>
 <p>c”est égal à <code class="docutils literal notranslate"><span class="pre">res</span> <span class="pre">=</span> <span class="pre">res</span> <span class="pre">+</span> <span class="pre">&quot;toto&quot;</span></code>, et <code class="docutils literal notranslate"><span class="pre">&quot;$res</span> <span class="pre">=</span> <span class="pre">$res</span> <span class="pre">.</span> <span class="pre">&quot;toto&quot;;</span></code></p>
@@ -1268,12 +1269,12 @@ A Dependency Manager for PHP</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">afficheDansLeTerminal($tbl);</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="mardi-2021-01-12">
+</section>
+</section>
+<section id="mardi-2021-01-12">
 <h2>Mardi 2021/01/12<a class="headerlink" href="#mardi-2021-01-12" title="Lien permanent vers ce titre">¶</a></h2>
 <p>phpmyadmin vs mysql vs sql</p>
-<div class="section" id="manipulation-de-phpmyadmin">
+<section id="manipulation-de-phpmyadmin">
 <h3>Manipulation de phpmyadmin<a class="headerlink" href="#manipulation-de-phpmyadmin" title="Lien permanent vers ce titre">¶</a></h3>
 <ol class="simple">
 <li><p>Création des tables à partir du script SQL créé dans looping ou JMerise, la veille à partir du MCD.</p></li>
@@ -1282,8 +1283,8 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 <li><p>Régler les pbs d”auto increment</p></li>
 <li><p>Remplir avec des données</p></li>
 </ol>
-</div>
-<div class="section" id="sql-mysql">
+</section>
+<section id="sql-mysql">
 <h3>SQL /Mysql<a class="headerlink" href="#sql-mysql" title="Lien permanent vers ce titre">¶</a></h3>
 <p>pour nommer les identifiants (clé primaires!), il y a plusieurs formalismes :</p>
 <ul class="simple">
@@ -1294,11 +1295,11 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 </ul>
 <p>mais ça ne pose aucun pb quel que soit le choix</p>
 <p>Par contre tout ce qui n”est pas comme ça, est probablement un mauvais choix</p>
-</div>
-<div class="section" id="tables-de-jointures-reexpliquees">
+</section>
+<section id="tables-de-jointures-reexpliquees">
 <h3>Tables de jointures réexpliquées<a class="headerlink" href="#tables-de-jointures-reexpliquees" title="Lien permanent vers ce titre">¶</a></h3>
-</div>
-<div class="section" id="ldd">
+</section>
+<section id="ldd">
 <h3>LDD<a class="headerlink" href="#ldd" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">article</span><span class="p">(</span>
    <span class="n">id</span> <span class="nb">INT</span>  <span class="n">AUTO_INCREMENT</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="p">,</span>
@@ -1306,8 +1307,8 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 <span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="decouverte-des-requetes-lmd">
+</section>
+<section id="decouverte-des-requetes-lmd">
 <h3>Découverte des requêtes LMD<a class="headerlink" href="#decouverte-des-requetes-lmd" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Jusqu”à présent, on a utilisé du « LDD » (CREATE , ALTER …) pour donner les instructions à mysql sur comment créer la structure des données</p>
 <p>now il est temps d”utiliser le LMD !</p>
@@ -1343,7 +1344,7 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 <p>:danger:</p>
 <p>là c”est comme les « + » et les « x » qd vous étiez au collège : qui gagne ??!!</p>
 <p>une idée de réponse : <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">utilisateur</span> <span class="pre">WHERE</span> <span class="pre">(nom</span> <span class="pre">=</span> <span class="pre">'dusse'</span> <span class="pre">OR</span> <span class="pre">prenom</span> <span class="pre">=</span> <span class="pre">'jean-claude')</span> <span class="pre">AND</span> <span class="pre">age</span> <span class="pre">&gt;</span> <span class="pre">50;</span></code></p>
-<div class="section" id="insert">
+<section id="insert">
 <h4>INSERT<a class="headerlink" href="#insert" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">ma_table</span> <span class="p">(</span><span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">,</span> <span class="p">...)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">,</span> <span class="p">...);</span>
 </pre></div>
@@ -1357,10 +1358,10 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 <blockquote>
 <div><p>permet de modifier tous les enregistrements (les lignes quoi) qui correspondent à la condition du WHERE</p>
 </div></blockquote>
-</div>
-</div>
-</div>
-<div class="section" id="mercredi-2021-01-13">
+</section>
+</section>
+</section>
+<section id="mercredi-2021-01-13">
 <h2>Mercredi 2021/01/13<a class="headerlink" href="#mercredi-2021-01-13" title="Lien permanent vers ce titre">¶</a></h2>
 <p>finalement on a vu quoi : on peut représenter ses données sous forme d”entités et de relations dans un MCD, en fonction des buts de l”application</p>
 <p>ça nous permet de manière automatique de transformer ce modèle « théorique » ,  en modèle physique interprétable directement par les logiciels de base de données</p>
@@ -1374,7 +1375,7 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 <p>et pour le LMD on a vu <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> pour lire les données, <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> pour créer des données et <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> pour modifier des données</p>
 <p>l”intérêt de ce langage c”est qu”on peut l”exécuter sans interface graphique (sans phpmyadmin donc), directement depuis le php ! donc on va être en mesure depuis notre site d”aller lire des infos en base, les modifier, les créer etc.</p>
 <p>:ordinateur: :tada: :gâteau: :informaticienne: :clavier: :homme_technologue:</p>
-<div class="section" id="projet-informatique">
+<section id="projet-informatique">
 <h3>Projet informatique<a class="headerlink" href="#projet-informatique" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ordre à suivre :</p>
 <ol class="simple">
@@ -1382,8 +1383,8 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 <li><p>conception (MERISE, wireframes, use case, UI/UX)</p></li>
 <li><p>réalisation (back et front , dans l”ordre que vous voulez, mais le back est nécessaire au front, l”inverse non, donc probablement qu”il faudra commencer un peu + sur le back)</p></li>
 </ol>
-</div>
-<div class="section" id="merise">
+</section>
+<section id="merise">
 <h3>Merise<a class="headerlink" href="#merise" title="Lien permanent vers ce titre">¶</a></h3>
 <p>En terme de Merise, les rappels pour le MCD :</p>
 <ul class="simple">
@@ -1394,8 +1395,8 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 <p>lors de la transformation en modèle physique , il faudra créer les fameuses contraintes, càd les colonnes qui vont contenir les clés primaires et étrangères</p>
 <p>et :danger:  : si la relation entre 2 entités est ManyToMany (ie : plusieurs entités de type A peuvent être liées à plusieurs entités de type B, ex: user et role) alors ces colonnes seront stockées dans une nouvelle table !!</p>
 <p>ceci étant comme tout est automatisé à partir du MCD dans looping / jmerise , ça peut être transparent pour vous. Mais sans logiciel vous seriez obligés de faire le MLD intermédiaire oui</p>
-</div>
-<div class="section" id="suite-sql">
+</section>
+<section id="suite-sql">
 <h3>Suite SQL<a class="headerlink" href="#suite-sql" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">ma_table</span> <span class="k">WHERE</span> <span class="n">condition_pour_selectionner_mon_element_à_supprimer</span><span class="p">;</span>
 </pre></div>
@@ -1413,23 +1414,23 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 </div>
 <p>c”est normal, tu essaies de supprimer une clé primaire, alors qu”elle est référencée par une clé étrangère qque part !</p>
 <p>=&gt; il faut supprimer dans l”ordre inverse des insertions qu”on a faites hier !!!</p>
-</div>
-<div class="section" id="reprise-du-tp2">
+</section>
+<section id="reprise-du-tp2">
 <h3>Reprise du TP2<a class="headerlink" href="#reprise-du-tp2" title="Lien permanent vers ce titre">¶</a></h3>
 <ol class="simple">
 <li><p>connexion à la bdd avec le fichier <code class="docutils literal notranslate"><span class="pre">connexion.php</span></code></p></li>
 <li><p>requetage et affichage dans un tableau html dans <code class="docutils literal notranslate"><span class="pre">accueil.php</span></code></p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="jeudi-2021-01-21">
+</section>
+</section>
+<section id="jeudi-2021-01-21">
 <h2>Jeudi 2021/01/21<a class="headerlink" href="#jeudi-2021-01-21" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="mcd-contraintes-relations">
+<section id="mcd-contraintes-relations">
 <h3>MCD + Contraintes / Relations<a class="headerlink" href="#mcd-contraintes-relations" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Explications MCD / Merise, notamment la différence entre les relations (MCD) et leur traduction en MPD/SQL : les contraintes.</p>
 <p><img alt="MCD" src="img/2021-01-21_10-20-22.png" /></p>
-</div>
-<div class="section" id="php-pdo">
+</section>
+<section id="php-pdo">
 <h3>PHP PDO<a class="headerlink" href="#php-pdo" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Explications fonctionnement requêtage de BDD avec PDO et php.</p>
 <ul class="simple">
@@ -1439,40 +1440,40 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 </ul>
 <p><img alt="pdo" src="img/2021_01_21_0j4_Kleki.png" />
 <img alt="pdo2" src="img/2021_01_21_0ju_Kleki.png" /></p>
-</div>
-<div class="section" id="poo-programmation-orientee-objet">
+</section>
+<section id="poo-programmation-orientee-objet">
 <h3>POO : Programmation orientée objet<a class="headerlink" href="#poo-programmation-orientee-objet" title="Lien permanent vers ce titre">¶</a></h3>
 <p><img alt="poo" src="img/2021_01_21_0l3_Kleki.png" />
 <img alt="poo2" src="img/2021_01_21_0r6_Kleki.png" /></p>
-</div>
-</div>
-<div class="section" id="vendredi-2021-01-22">
+</section>
+</section>
+<section id="vendredi-2021-01-22">
 <h2>Vendredi 2021/01/22<a class="headerlink" href="#vendredi-2021-01-22" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Mise en pratique POO sur le projet de news</p>
 <p>Voir le code <a class="reference external" href="https://github.com/dwwm93/2020/2021-01-22-news">ici</a></p>
-</div>
-<div class="section" id="lundi-2021-01-25">
+</section>
+<section id="lundi-2021-01-25">
 <h2>Lundi 2021/01/25<a class="headerlink" href="#lundi-2021-01-25" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On continue la transformation du site de news en objet.</p>
 <p>On commence notamment à faire de l”objet même pour les classes « non entités ». On commence aussi à séparer les « Model » des « Vues ».</p>
-</div>
-<div class="section" id="mardi-2021-01-26">
+</section>
+<section id="mardi-2021-01-26">
 <h2>Mardi 2021/01/26<a class="headerlink" href="#mardi-2021-01-26" title="Lien permanent vers ce titre">¶</a></h2>
 <p>À partir du code fait la veille, on détermine l”organisation utilisée, et on apprend le MVC.</p>
-<div class="section" id="mvc">
+<section id="mvc">
 <h3>MVC<a class="headerlink" href="#mvc" title="Lien permanent vers ce titre">¶</a></h3>
 <p><img alt="mvc" src="img/2021_01_26_0go_Kleki.png" /></p>
 <p>C”est un design pattern très pratique pour répartir les responsabilités.</p>
 <p>Il faut bien connaitre tout et ne pas oublier le Router.</p>
-</div>
-<div class="section" id="application-au-projet-news">
+</section>
+<section id="application-au-projet-news">
 <h3>Application au projet « news »<a class="headerlink" href="#application-au-projet-news" title="Lien permanent vers ce titre">¶</a></h3>
-</div>
-</div>
-<div class="section" id="mercredi-2021-02-03">
+</section>
+</section>
+<section id="mercredi-2021-02-03">
 <h2>Mercredi 2021/02/03<a class="headerlink" href="#mercredi-2021-02-03" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Reprise des cours objet précédents</p>
-<div class="section" id="uml">
+<section id="uml">
 <h3>UML<a class="headerlink" href="#uml" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Présentation</p>
 <ul class="simple">
@@ -1482,7 +1483,7 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 <p>=&gt; c”est un langage : utilisé pour communiquer entre différents métiers</p>
 <p>Il y a bcp de schémas différents en UML, + qu”en Merise (MCD, MLD …) !</p>
 <p>On va se concentrer sur 2 schémas en ce qui nous concerne : Diagramme de Cas d”Utilisation, et Diagramme de Classe</p>
-<div class="section" id="diagramme-de-cas-d-utilisation">
+<section id="diagramme-de-cas-d-utilisation">
 <h4>Diagramme de cas d”utilisation<a class="headerlink" href="#diagramme-de-cas-d-utilisation" title="Lien permanent vers ce titre">¶</a></h4>
 <p>permet de voir qui agit sur le système (acteur), et ce qu”il peut faire (utilisations).</p>
 <p>on n”a pas le choix :</p>
@@ -1495,12 +1496,12 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 <p>FORMALISME obligatoire :
 meme les bonshommes moches sont dans la norme !</p>
 <p>NB : utile en phase de conception !</p>
-<p>include : buy book —-&gt; open account : le cas d”utilisation « open account » est « nécessaire » (« inclus ») dans le cas d”utilsation « acheter livre »</p>
+<p>include : buy book —-&gt; open account : le cas d”utilisation « open account » est « nécessaire » ( »inclus ») dans le cas d”utilsation « acheter livre »</p>
 <p>extends : search——&gt; buy : il indique que « search » peut venir « compléter » le cas d”utilisation « buy »</p>
 <p>il faut garder le mot « extends » ou « inclide » à cote de la fleche sinon on ne peut pas les distinguer</p>
 <p>du point de vue de « buy » les 2 flches n”ont pas la même direction</p>
-</div>
-<div class="section" id="diagramme-de-classe">
+</section>
+<section id="diagramme-de-classe">
 <h4>Diagramme de classe<a class="headerlink" href="#diagramme-de-classe" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------</span>
 <span class="o">|</span>      <span class="n">Ma_classe</span>                      <span class="o">|</span>
@@ -1518,7 +1519,7 @@ meme les bonshommes moches sont dans la norme !</p>
 <p>Un diagramme de classe, permet de représenter… des classes :tada:</p>
 <p>càd son nom, ses propriétés et ses méthodes + l”héritage et relations (par les flèches/traits)</p>
 <p>Donc un parent =&gt; plusieurs enfants, un enfant =&gt; un parent</p>
-<div class="section" id="void">
+<section id="void">
 <h5>void<a class="headerlink" href="#void" title="Lien permanent vers ce titre">¶</a></h5>
 <p>dans les types des propriétés, des arguments ou des retours, on trouve : « int », « string » etc.</p>
 <p>un des types « speciaux » c”est void : c”est pour un retour de fonction <em>QUI NE RETOURNE RIEN</em></p>
@@ -1532,14 +1533,14 @@ meme les bonshommes moches sont dans la norme !</p>
 </pre></div>
 </div>
 <p>si je fais <code class="docutils literal notranslate"><span class="pre">$return</span> <span class="pre">=</span> <span class="pre">supprimeProfil(1);</span></code> =&gt; dans $return il n”y a … rien (void)</p>
-</div>
-<div class="section" id="heritage">
+</section>
+<section id="heritage">
 <h5>Héritage<a class="headerlink" href="#heritage" title="Lien permanent vers ce titre">¶</a></h5>
 <p>ATTENTION la fleche de l”héritage, est « blanche » !! (triangulaire) (modifié)</p>
 <p>c”est une comme ça –|&gt; et pas une comme ça —&gt;</p>
 <p>la flèche standard a une autre signification, donc à ne pas utiliser par erreur</p>
-</div>
-<div class="section" id="relations">
+</section>
+<section id="relations">
 <h5>Relations<a class="headerlink" href="#relations" title="Lien permanent vers ce titre">¶</a></h5>
 <p>on vient de voir les relations</p>
 <p>et les flèches « triangle » c”est l”héritage</p>
@@ -1547,29 +1548,159 @@ meme les bonshommes moches sont dans la norme !</p>
 <p>NB: static = souligné, protected = #</p>
 <p>https://creately.com/blog/diagrams/class-diagram-relationships/</p>
 <p><img alt="résumé" src="img/Class-Diagram-Relationships.png" /></p>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="jeudi-2021-02-04">
+</section>
+</section>
+</section>
+</section>
+<section id="jeudi-2021-02-04">
 <h2>Jeudi 2021/02/04<a class="headerlink" href="#jeudi-2021-02-04" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="revisions-diagramme-de-classe">
+<section id="revisions-diagramme-de-classe">
 <h3>Révisions diagramme de classe<a class="headerlink" href="#revisions-diagramme-de-classe" title="Lien permanent vers ce titre">¶</a></h3>
 <p>En particulier approfondissement des notions d”héritage et des types de données.</p>
-</div>
-<div class="section" id="live-coding">
+</section>
+<section id="live-coding">
 <h3>Live coding<a class="headerlink" href="#live-coding" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Adapter le code du trombi pour les bonnes pratiques en terme d”objets et d”héritage.</p>
 <p>Premier aperçu des namespace.</p>
+</section>
+</section>
+<section id="jeudi-2021-02-11">
+<h2>Jeudi 2021/02/11<a class="headerlink" href="#jeudi-2021-02-11" title="Lien permanent vers ce titre">¶</a></h2>
+<p>https://learn.web-develop.me/courses/developpement-moderne-avec-apiplatform-symfony-et-[…]introduction/358032-mettre-en-place-vscode-pour-travailler</p>
+<p>Paramétrage de uwamp pour passer en php7.2 minimum (réinstallation composer etc.)</p>
+<p>Puis installation de symfony 5 avec</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>composer create-project symfony/website-skeleton trombi
+</pre></div>
 </div>
+<p>Puis installation du <a class="reference external" href="symfony.com/download">logiciel symfony</a> (on aurait pu l”utiliser
+aussi pour faire le nouveau projet)</p>
+<p>NB: au GRETA il faut récupérer le fichier symfony.exe donné par un camarade qui a pu l”installer
+(dans <code class="docutils literal notranslate"><span class="pre">C:\Programmes\Symfony\symfony.exe</span></code> par ex)</p>
+<p>ATTENTION : il y a le FRAMEWORK symfony, qu”on utilise, et il y a  le LOGICIEL symfony.exe qui est fait par les memes gens et qui va fournir un serveur comme wamp</p>
+<p>Puis on commence à travailler sur les controllers et les templates.</p>
+<p>cf vidéo <a class="reference external" href="https://www.youtube.com/watch?v=UTusmVpwJXo">lior chamla symfony</a></p>
+<p>=&gt; Symfony fait du MVC !</p>
+<p>Model = Doctrine , Controller = Controller (sic), View = Twig</p>
+<p>« doctrine » et « twig » ce sont des noms de « marques », càd le nom des logiciels qui vont gérer la vue et le model</p>
+<p><code class="docutils literal notranslate"><span class="pre">php</span> <span class="pre">bin/console</span> <span class="pre">make:controller</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">=&gt;</span> <span class="pre">ProfilController</span></code></p>
+<p>dans la navbar, au lieu de mettre directement la route <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">href=&quot;/&quot;&gt;accueil&lt;/a&gt;</span></code> , on va utiliser le name de la route pour le récupérer : <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">href=&quot;{{</span> <span class="pre">path('home')</span> <span class="pre">}}&quot;&gt;accueil&lt;/a&gt;</span></code></p>
+<p>pour rappel, on avait <code class="docutils literal notranslate"><span class="pre">&#64;Route(&quot;/&quot;,</span> <span class="pre">name=&quot;home&quot;)</span></code></p>
+</section>
+<section id="vendredi-2021-02-12">
+<h2>Vendredi 2021/02/12<a class="headerlink" href="#vendredi-2021-02-12" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">/**</span>
+<span class="x"> * @Route(&quot;/profile/13&quot;, name=&quot;profile_show&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function show(){</span>
+<span class="x">    $this-&gt;render(&#39;profile/show.html.twig&#39;);</span>
+<span class="x">}</span>
+</pre></div>
 </div>
-</div>
-<div class="section" id="git">
+<p>=&gt; <code class="docutils literal notranslate"><span class="pre">templates/profile/show.html.twig</span></code></p>
+<p>au greta : <code class="docutils literal notranslate"><span class="pre">./symfony.exe</span> <span class="pre">server:start</span></code> en étant dans le rep trombi.</p>
+<section id="css-js">
+<h3>CSS / JS<a class="headerlink" href="#css-js" title="Lien permanent vers ce titre">¶</a></h3>
+<p>pour mettre des css ou des js à vous, il faut les déposer dans le répertoire public, genre dans <code class="docutils literal notranslate"><span class="pre">public/css</span></code></p>
+<p>et ensuite dans le template <code class="docutils literal notranslate"><span class="pre">base.html.twig</span></code> =&gt; ajouter le link stylesheet vers <code class="docutils literal notranslate"><span class="pre">/css/MAFEUILLEDESTYLE.css</span></code> (ne pas oublier le <code class="docutils literal notranslate"><span class="pre">/</span></code> du début)
+(donc sans indiquer « public » dans le base html ).</p>
+</section>
+<section id="mvc-symfony-model">
+<h3>MVC Symfony : Model<a class="headerlink" href="#mvc-symfony-model" title="Lien permanent vers ce titre">¶</a></h3>
+<p>ORM = Object Relational Mapper</p>
+<p>Pour info les timestamp pour la base de données :</p>
+<ul class="simple">
+<li><p>31:00 entity + manager + repository</p></li>
+<li><p>33:20 migrations</p></li>
+<li><p>34:54 fixtures</p></li>
+<li><p>36:00 TP création db</p></li>
+<li><p>37:51 TP création table / entity</p></li>
+<li><p>42:25 TP creation migration</p></li>
+<li><p>45:30 TP fixtures</p></li>
+<li><p>50:00 Utilisation des repository + twig pour afficher infos</p></li>
+<li><p>1:03:00 Injection de dépendances</p></li>
+</ul>
+</section>
+<section id="connexion-db">
+<h3>Connexion db<a class="headerlink" href="#connexion-db" title="Lien permanent vers ce titre">¶</a></h3>
+<p>dans .env, la variable qui vous intéresse : <code class="docutils literal notranslate"><span class="pre">DATABASE_URL</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">DATABASE_URL=</span> <span class="pre">PROTOCOL://LOGIN:PASSWORD&#64;HOSTNAME:PORT/DBNAME</span></code></p>
+<p>protocol = le type de bdd utilisée =&gt; donc nous on décommente celui « mysql » et on commente le « postgresql » !</p>
+<p>pour tous ceux qui sont sur uWamp :</p>
+<p>il faut modifier le fichier <code class="docutils literal notranslate"><span class="pre">UwAmp\bin\php\php7.2.7\php.ini</span></code> pour enlever le <code class="docutils literal notranslate"><span class="pre">;</span></code> devant <code class="docutils literal notranslate"><span class="pre">pdo_mysql</span></code> (donc cherchez ça dans le fichier )</p>
+<p>(et aussi fileinfo et intl)</p>
+</section>
+</section>
+<section id="mardi-2021-02-16">
+<h2>Mardi 2021/02/16<a class="headerlink" href="#mardi-2021-02-16" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans symfony, le « Model » est découpé en 3 : (et c”est géré par l”ORM Doctrine)</p>
+<ul class="simple">
+<li><p>Entity =&gt; la classe associée à la donnée (penser « MCD » =&gt; conception)</p></li>
+<li><p>Repository =&gt; la classe qui permet de requêter les données depuis la base et les transformer en version « objet »</p></li>
+<li><p>Manager =&gt; ce qui permet de faire les modifications depuis un « objet » vers la base</p></li>
+</ul>
+<section id="objectif-de-la-matinee">
+<h3>Objectif de la matinée :<a class="headerlink" href="#objectif-de-la-matinee" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>afficher la liste des profils sur la page « /profil » avec des images et façon « trombi » donc avec des cards (https://www.w3schools.com/bootstrap4/bootstrap_cards.asp) « photo de profil + nom + prenom » (un peu comme vithurshan)</p></li>
+<li><p>afficher un profil complet sur la page « profil/{id} » avec toutes les  informations du profil</p></li>
+<li><p>dans la navbar, un lien « profils », un lien « postes » (voir point 5) et  le lien accueil</p></li>
+<li><p>afficher les 3 derniers profils sur la page d”accueil « / »</p></li>
+<li><p>créer les pages « /poste » et « /poste/{id} » pour lister les métiers  disponibles ( »etudiant », « professeur », « stagiaire » …) (l »entité  « Poste » aura juste un « id » et un « titre »)</p></li>
+</ul>
+<p>=&gt; templating / styles : twig - bootstrap</p>
+<p>=&gt; création entity / controller / fixtures (pour Poste)</p>
+<p>=&gt; requête « custom » avec le repository</p>
+<p>pour la requete custom : <code class="docutils literal notranslate"><span class="pre">$repo</span> <span class="pre">=</span>&#160; <span class="pre">$this-&gt;getDoctrine()-&gt;getRepository(Profil::class);</span></code>  et  <code class="docutils literal notranslate"><span class="pre">$repo-&gt;findBy(</span> <span class="pre">[</span> <span class="pre">],</span> <span class="pre">['id'</span> <span class="pre">=&gt;</span> <span class="pre">'DESC'],</span> <span class="pre">3);</span></code> et je vous expliquerai les paramètres qu”on est en train d”utiliser</p>
+</section>
+<section id="styles">
+<h3>styles<a class="headerlink" href="#styles" title="Lien permanent vers ce titre">¶</a></h3>
+<p>dans  <code class="docutils literal notranslate"><span class="pre">public/</span></code> tu mets <code class="docutils literal notranslate"><span class="pre">css/styles.css</span></code>, et dans <code class="docutils literal notranslate"><span class="pre">base.html.twig</span></code> tu  mets <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;stylesheet&quot;</span> <span class="pre">src=&quot;/css/styles.css&quot;</span> <span class="pre">/&gt;</span></code></p>
+</section>
+</section>
+<section id="mercredi-2021-02-17">
+<h2>Mercredi 2021/02/17<a class="headerlink" href="#mercredi-2021-02-17" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="suite-symfony">
+<h3>Suite symfony :<a class="headerlink" href="#suite-symfony" title="Lien permanent vers ce titre">¶</a></h3>
+<p>pour ne pas commiter « vendor » =&gt; il faut mettre dans <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> :  le chemin relatif depuis le fichier gitignore vers « vendor/ »</p>
+<p>le but sera de faire un CRUD =&gt; « Create Read Update Delete » des entités, grâce au  controller. Nous on fait juste « R » pour l”instant !!</p>
+</section>
+<section id="injection-de-dependances">
+<h3>injection de dépendances<a class="headerlink" href="#injection-de-dependances" title="Lien permanent vers ce titre">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">function</span> <span class="pre">index(ProfilRepository</span> <span class="pre">$repo):</span> <span class="pre">void</span>&#160; <span class="pre">{</span> <span class="pre">}</span></code></p>
+<p>ça marche aussi pour les Entité dans le controller : <code class="docutils literal notranslate"><span class="pre">#&#64;Route('/profil/{id}',</span> <span class="pre">...)</span> <span class="pre">public</span> <span class="pre">function</span> <span class="pre">show</span> <span class="pre">(Profil</span> <span class="pre">$profil):</span> <span class="pre">void</span> <span class="pre">{</span> <span class="pre">}</span></code></p>
+</section>
+<section id="forms">
+<h3>Forms<a class="headerlink" href="#forms" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Avancée sur la vidéo symfony sur les forms de Lior Chamla</p>
+</section>
+</section>
+<section id="lundi-2021-02-22">
+<h2>Lundi 2021/02/22<a class="headerlink" href="#lundi-2021-02-22" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Cours en présentiel + distanciel</p>
+<section id="approfondissement-des-forms">
+<h3>Approfondissement des Forms<a class="headerlink" href="#approfondissement-des-forms" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Live coding symfony + CUD (sans R) pour les profils</p>
+</section>
+</section>
+<section id="mardi-2021-02-23">
+<h2>Mardi 2021/02/23<a class="headerlink" href="#mardi-2021-02-23" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="relations-entre-entites">
+<h3>Relations entre entités<a class="headerlink" href="#relations-entre-entites" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Avec vidéo de Lior, détail des relations ManyToMany, OneToMany etc.</p>
+</section>
+<section id="aspect-securite">
+<h3>Aspect Sécurité<a class="headerlink" href="#aspect-securite" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Présentation des firewalls, encoders et providers, et leur utilisation / mise en pratique pour la sécurité sur symfony.</p>
+</section>
+</section>
+</section>
+<section id="git">
 <h1>Git<a class="headerlink" href="#git" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="ajouter-un-fichier-dans-gitignore">
+<section id="ajouter-un-fichier-dans-gitignore">
 <h2>Ajouter un fichier dans .gitignore<a class="headerlink" href="#ajouter-un-fichier-dans-gitignore" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Permet de ne jamais le commiter, même s”il est modifié.</p>
-<div class="section" id="contenu-du-fichier-gitignore">
+<section id="contenu-du-fichier-gitignore">
 <h3>Contenu du fichier .gitignore<a class="headerlink" href="#contenu-du-fichier-gitignore" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Si on veut ignorer <code class="docutils literal notranslate"><span class="pre">.env.local</span></code> et le répertoire <code class="docutils literal notranslate"><span class="pre">vendor</span></code> et tous les fichiers <code class="docutils literal notranslate"><span class="pre">.tmp</span></code> :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//.</span><span class="n">env</span><span class="o">.</span><span class="n">local</span>
@@ -1579,11 +1710,11 @@ meme les bonshommes moches sont dans la norme !</p>
 </pre></div>
 </div>
 <p><img alt="img/git_github.png" src="img/git_github.png" /></p>
-</div>
-</div>
-<div class="section" id="vendredi-21-05-2021">
+</section>
+</section>
+<section id="vendredi-21-05-2021">
 <h2>Vendredi 21/05/2021<a class="headerlink" href="#vendredi-21-05-2021" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="api">
+<section id="api">
 <h3>API<a class="headerlink" href="#api" title="Lien permanent vers ce titre">¶</a></h3>
 <blockquote>
 <div><p>Application Programing Interface</p>
@@ -1593,15 +1724,15 @@ meme les bonshommes moches sont dans la norme !</p>
 <li><p>exposer une API (la développer vous-même)</p></li>
 <li><p>utiliser l”API de quelqu”un d”autre</p></li>
 </ol>
-</div>
-<div class="section" id="creer-une-api-rest">
+</section>
+<section id="creer-une-api-rest">
 <h3>Créer une API <strong>REST</strong><a class="headerlink" href="#creer-une-api-rest" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Il existe plein de protocoles pour faire ça. Nous on verra juste les <strong>API REST</strong>.</p>
 <p>Je zappe l”historique et les raisons de leur existence.</p>
 <blockquote>
 <div><p>A noter juste que les urls et les verbes HTTP qu”on verra après sont préexistants (de + de 20 ans) aux API REST. C”est juste une façon maline de les utiliser dans un cadre d”API.</p>
 </div></blockquote>
-<div class="section" id="comment">
+<section id="comment">
 <h4>Comment ?<a class="headerlink" href="#comment" title="Lien permanent vers ce titre">¶</a></h4>
 <ol class="simple">
 <li><p>utiliser les « url » (<code class="docutils literal notranslate"><span class="pre">iri</span></code>) pour représenter des « ressources » (<em>ex: <code class="docutils literal notranslate"><span class="pre">https://api.pokemon.com/pokemons/bulbizarre</span></code></em>, ou <em><code class="docutils literal notranslate"><span class="pre">https://coin.com/bitcoin/price</span></code></em> …) =&gt; dans mon url, je peux <em>« lire »</em> l”élément que je vais manipuler</p></li>
@@ -1611,8 +1742,8 @@ meme les bonshommes moches sont dans la norme !</p>
 <blockquote>
 <div><p>Indépendant du langage utilisé !! c”est une norme « HTTP », donc au niveau de la requête ! càd de la communication entre le client et le serveur !! Pas au niveau du code !</p>
 </div></blockquote>
-</div>
-<div class="section" id="ressources">
+</section>
+<section id="ressources">
 <h4>Ressources<a class="headerlink" href="#ressources" title="Lien permanent vers ce titre">¶</a></h4>
 <p>C”est à vous (développeur) de déterminer les urls(/iri) des ressources pour que ce soit clair.</p>
 <p>Standard :</p>
@@ -1629,8 +1760,8 @@ meme les bonshommes moches sont dans la norme !</p>
 <blockquote>
 <div><p>NB : si mon url est du genre <code class="docutils literal notranslate"><span class="pre">csstc.com/index.php?resource=users&amp;id=1</span></code> c”est pareil, mais c”est moche ! et on comprend moins !</p>
 </div></blockquote>
-</div>
-<div class="section" id="verbes-http">
+</section>
+<section id="verbes-http">
 <h4>Verbes HTTP<a class="headerlink" href="#verbes-http" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Ils servent à indiquer le type d”action effectuée sur la ressource ciblée par l”url.</p>
 <ul>
@@ -1641,8 +1772,8 @@ meme les bonshommes moches sont dans la norme !</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code>: sert à « supprimer » la ressource ciblée (ex: DELETE <code class="docutils literal notranslate"><span class="pre">https://mangatech.lol/mangas/naruto</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PUT</span></code>: sert à « mettre à jour » la ressource. (ex: PUT <code class="docutils literal notranslate"><span class="pre">https://mangatech.lol/mangas/berserk</span></code> + <code class="docutils literal notranslate"><span class="pre">{'title':</span> <span class="pre">'berserk',</span> <span class="pre">'date':</span> <span class="pre">'1991-05-21'}</span></code> =&gt; update l”entité « berserk » avec une nouvelle date)</p></li>
 </ul>
-</div>
-<div class="section" id="donnees-renvoyees-dans-un-format-brut">
+</section>
+<section id="donnees-renvoyees-dans-un-format-brut">
 <h4>Données renvoyées dans un format « brut »<a class="headerlink" href="#donnees-renvoyees-dans-un-format-brut" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Le plus souvent on renvoie les données sous la forme d”un JSON <strong>et non pas une page html</strong> !!</p>
 <p>=&gt; pas de vue !</p>
@@ -1663,21 +1794,21 @@ meme les bonshommes moches sont dans la norme !</p>
 </pre></div>
 </div>
 <p>=&gt; MAIS ALORS ? COMMENT J”AFFICHE UNE JOLIE PAGE ???</p>
-<div class="section" id="reponse">
+<section id="reponse">
 <h5>Réponse<a class="headerlink" href="#reponse" title="Lien permanent vers ce titre">¶</a></h5>
 <ol class="simple">
 <li><p>Modifier ses urls pour l”api et les appeler <code class="docutils literal notranslate"><span class="pre">baseUrl.com/api/restaurants/:id</span></code> : ne renvoie que des données alors que sans <code class="docutils literal notranslate"><span class="pre">api/</span></code> on renvoie la version avec « vue »</p></li>
 <li><p><strong>ou</strong> créer un front en pur javascript et les vues sont gérées par le front (et on utilise par exemple jquery pour aller chercher les infos dans le back : <code class="docutils literal notranslate"><span class="pre">$.post('api/restaurants',</span> <span class="pre">{name:</span> <span class="pre">&quot;mcdo&quot;,</span> <span class="pre">adresse:</span> <span class="pre">&quot;1</span> <span class="pre">rue</span> <span class="pre">du</span> <span class="pre">greta,</span> <span class="pre">Noisy&quot;})</span></code>)</p></li>
 </ol>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="securite">
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="securite">
 <h1>Sécurité<a class="headerlink" href="#securite" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Mega important</p>
-<div class="section" id="vos-idees">
+<section id="vos-idees">
 <h2>Vos idées ?<a class="headerlink" href="#vos-idees" title="Lien permanent vers ce titre">¶</a></h2>
 <ol class="simple">
 <li><p>prepare sql - injection sql</p></li>
@@ -1696,14 +1827,14 @@ meme les bonshommes moches sont dans la norme !</p>
 <li><p>xss : cross site scripting</p></li>
 <li><p>CORS : cross origin resource sharing</p></li>
 </ol>
-</div>
-<div class="section" id="chiffrement-hashage">
+</section>
+<section id="chiffrement-hashage">
 <h2>Chiffrement / hashage<a class="headerlink" href="#chiffrement-hashage" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="cryptage-decryptage-codage-decodage">
+<section id="cryptage-decryptage-codage-decodage">
 <h3>Cryptage / décryptage / codage / décodage<a class="headerlink" href="#cryptage-decryptage-codage-decodage" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Illisible.</p>
-</div>
-<div class="section" id="chiffrement">
+</section>
+<section id="chiffrement">
 <h3>Chiffrement<a class="headerlink" href="#chiffrement" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Partager un secret pour que les seules personnes qui connaissent le secret puissent lire le message.</p>
 <blockquote>
@@ -1711,8 +1842,8 @@ meme les bonshommes moches sont dans la norme !</p>
 </div></blockquote>
 <p>exemples : A-vaut-K, RSA, ECDSA, ED25519 …</p>
 <p>RSA, ECDSA, ED25519 etc. sont des chiffrements asymétriques : avec une clé publique et une clé privée. (cf connexion à github : <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code> pour éviter de taper son login mdp à chaque fois)</p>
-</div>
-<div class="section" id="hachage-hash-in-english">
+</section>
+<section id="hachage-hash-in-english">
 <h3>Hachage (hash in english)<a class="headerlink" href="#hachage-hash-in-english" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Notamment les mots de passe.</p>
 <p>C”est quoi ?</p>
@@ -1721,13 +1852,13 @@ meme les bonshommes moches sont dans la norme !</p>
 </div></blockquote>
 <p>Hachage , mais pas « déhachage » (penser au steak).</p>
 <p>Pour les BDD de mots de passe, si j”utilisais du chiffrement, la récupération de la clé secrète permettrait d”avoir accès à la liste de tous les mots de passe en clair.</p>
-<div class="section" id="attaque-contre-la-base-hachee">
+<section id="attaque-contre-la-base-hachee">
 <h4>Attaque contre la base hachée<a class="headerlink" href="#attaque-contre-la-base-hachee" title="Lien permanent vers ce titre">¶</a></h4>
 <p><strong>Brute force:</strong> je calcule un tableau de correspondance entre tous les mots qui existent et les hash.</p>
 <p>ex: azerty =&gt; ozhfloihdsfhfdvhvgfd</p>
 <p>On a eu qques années de protection, mais aujourd”hui on peut trouver des tableaux pré-calculés de hashs de mdp !</p>
-</div>
-<div class="section" id="protection-du-moment-le-salt-le-grain-de-sel">
+</section>
+<section id="protection-du-moment-le-salt-le-grain-de-sel">
 <h4>Protection du moment : le Salt (le grain de sel)<a class="headerlink" href="#protection-du-moment-le-salt-le-grain-de-sel" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Le but : augmenter artificiellement la taille du mdp pour lutter contre l”augmentation de la puissance de calcul des hackers.</p>
 <ol class="simple">
@@ -1749,9 +1880,9 @@ meme les bonshommes moches sont dans la norme !</p>
 <p>Je suis protégé tant que les attaquants n”ont pas le tableau des mdp &gt;= 260 caractères.</p>
 <p>Pour éviter qu”un attaquant calcule le tableau (qui n”existe pas encore) uniquement pour mon salt =&gt; ce qui revient à calculer le tableau pour les 8 caractères classiques ! donc c”est pas très long.</p>
 <p>=&gt; astuce : un salt différent par utilisateur !</p>
-</div>
-</div>
-<div class="section" id="https-ssl">
+</section>
+</section>
+<section id="https-ssl">
 <h3>https (ssl)<a class="headerlink" href="#https-ssl" title="Lien permanent vers ce titre">¶</a></h3>
 <p>HTTP : protocole de communication entre machines sur internet.</p>
 <blockquote>
@@ -1762,7 +1893,7 @@ meme les bonshommes moches sont dans la norme !</p>
 <blockquote>
 <div><p>l”idée du https est de chiffrer le contenu de ta requete http ! comme si tu mettais dans ton enveloppe un message codé.</p>
 </div></blockquote>
-<div class="section" id="cle-publique-cle-privee">
+<section id="cle-publique-cle-privee">
 <h4>Clé publique / clé privée<a class="headerlink" href="#cle-publique-cle-privee" title="Lien permanent vers ce titre">¶</a></h4>
 <p>C”est une paire de secrets, ça s”appelle du chiffrement asymétrique !</p>
 <p>Grâce à des calculs mathématiques, je peux :</p>
@@ -1771,8 +1902,8 @@ meme les bonshommes moches sont dans la norme !</p>
 <li><p>chiffrer un message avec ma clé publique : seuls ceux qui ont ma clé privée (moi) peuvent déchiffrer le message =&gt; confidentialité</p></li>
 </ul>
 <p>=&gt; tout repose sur la sécurité de la clé privée ! ne doit pas être accessible !</p>
-</div>
-<div class="section" id="demarche">
+</section>
+<section id="demarche">
 <h4>Démarche<a class="headerlink" href="#demarche" title="Lien permanent vers ce titre">¶</a></h4>
 <ol class="simple">
 <li><p>le site me passe sa clé publique</p></li>
@@ -1782,10 +1913,10 @@ meme les bonshommes moches sont dans la norme !</p>
 <li><p>le site déchiffre ma demande etc. et me répond en chiffrant avec ma clé publique + sa clé privée !</p></li>
 </ol>
 <p>NB: pour vous : soit acheter un « certificat » à votre hébergeur (ovh, gandi…), soit utiliser letsencrypt.org qui fournit des certificats gratuits.</p>
-</div>
-</div>
-</div>
-<div class="section" id="injection-sql">
+</section>
+</section>
+</section>
+<section id="injection-sql">
 <h2>Injection SQL<a class="headerlink" href="#injection-sql" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Réussir à faire exécuter du SQL par le site ciblé (victime).</p>
 <ul class="simple">
@@ -1812,7 +1943,7 @@ AND password = $password
 <li><p><code class="docutils literal notranslate"><span class="pre">login:</span> <span class="pre">&quot;&quot;;DROP</span> <span class="pre">DATABASE;</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">login:</span> <span class="pre">&quot;&quot;;UPDATE</span> <span class="pre">user</span> <span class="pre">SET</span> <span class="pre">admin=1</span> <span class="pre">WHERE</span> <span class="pre">login=mon_login;</span></code></p></li>
 </ul>
-<div class="section" id="comment-on-se-protege">
+<section id="comment-on-se-protege">
 <h3>Comment on se protège ?<a class="headerlink" href="#comment-on-se-protege" title="Lien permanent vers ce titre">¶</a></h3>
 <p>=&gt; <strong>requêtes préparées</strong></p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
@@ -1822,26 +1953,26 @@ AND password = $password
 </pre></div>
 </div>
 <p>Dans un premier temps, le SGBD écrit la requête correcte ! Puis il met dedans les variables <strong>qui ne peuvent plus influencer la requête</strong>. Donc il va chercher un login qui vaut “ » »;DROP DATABASE” au lieu de réécrire la requête.</p>
-<div class="section" id="sans-prepare">
+<section id="sans-prepare">
 <h4>Sans prepare :<a class="headerlink" href="#sans-prepare" title="Lien permanent vers ce titre">¶</a></h4>
 <ol class="simple">
 <li><p>j”écris mes chaînes de caractères SQL</p></li>
 <li><p>je crée les requêtes associées</p></li>
 </ol>
-</div>
-<div class="section" id="avec-prepare">
+</section>
+<section id="avec-prepare">
 <h4>Avec prepare :<a class="headerlink" href="#avec-prepare" title="Lien permanent vers ce titre">¶</a></h4>
 <ol class="simple">
 <li><p>je crée la requête valide</p></li>
 <li><p>j”insère ma chaîne de caractère</p></li>
 </ol>
-</div>
-</div>
-</div>
-<div class="section" id="csrf-cross-site-request-forgery-ou-xsrf">
+</section>
+</section>
+</section>
+<section id="csrf-cross-site-request-forgery-ou-xsrf">
 <h2>CSRF : Cross Site Request Forgery (ou XSRF)<a class="headerlink" href="#csrf-cross-site-request-forgery-ou-xsrf" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Un attaquant profite du fait que vous êtes loggé sur un site lambda, pour vous faire valider sur un site tiers un formulaire qui pointe vers le site lambda.</p>
-<div class="section" id="exemple">
+<section id="exemple">
 <h3>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h3>
 <ol class="simple">
 <li><p>je suis loggé sur tradfast de raouf</p></li>
@@ -1850,22 +1981,22 @@ AND password = $password
 <li><p>le form en question : <code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">action=&quot;tradfast.com/user/petithacker&quot;&gt;&lt;input</span> <span class="pre">name=&quot;admin&quot;</span> <span class="pre">value=&quot;1&quot;/&gt;&lt;/form&gt;</span></code> (et non pas un envoi d”iphone XXX)</p></li>
 <li><p>petithacker est maintenant admin sur le site de raouf, si l”utilisateur connecté en 1 avait les droits d”effectuer le POST du form.</p></li>
 </ol>
-</div>
-<div class="section" id="id11">
+</section>
+<section id="id11">
 <h3>Comment on se protège ?<a class="headerlink" href="#id11" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Je dois m”assurer que le formulaire vient bien de chez moi !</p>
 <p>=&gt; j”ajoute un champ caché <strong>aléatoire</strong> !! genre un token (hash ou autre) et il faut le stocker en session pour comparer le token reçu et le token généré dans le formulaire (stocké donc).</p>
 <p>=&gt; <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">csrf</span></code></p>
-</div>
-</div>
-<div class="section" id="xss-cross-site-scripting">
+</section>
+</section>
+<section id="xss-cross-site-scripting">
 <h2>XSS : Cross Site Scripting<a class="headerlink" href="#xss-cross-site-scripting" title="Lien permanent vers ce titre">¶</a></h2>
 <p>! nom un peu trop vague.</p>
-<div class="section" id="principe">
+<section id="principe">
 <h3>Principe<a class="headerlink" href="#principe" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Je crée un script (php, js, etc.) et je parviens à le faire exécuter par l”utilisateur que j”attaque.</p>
-</div>
-<div class="section" id="exemple-bien-standard">
+</section>
+<section id="exemple-bien-standard">
 <h3>Exemple bien standard<a class="headerlink" href="#exemple-bien-standard" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Je poste un commentaire dans un formulaire d”un forum :</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;you have been pwnd&quot;</span><span class="p">);</span>
@@ -1880,8 +2011,8 @@ AND password = $password
 </pre></div>
 </div>
 <p>ou j”ai uploadé un fichier php <code class="docutils literal notranslate"><span class="pre">image.png</span></code> et le php s”exécute quand j”affiche ma photo de profil…</p>
-</div>
-<div class="section" id="comment-je-me-protege">
+</section>
+<section id="comment-je-me-protege">
 <h3>Comment je me protège ?<a class="headerlink" href="#comment-je-me-protege" title="Lien permanent vers ce titre">¶</a></h3>
 <blockquote>
 <div><p>En codant correctement !</p>
@@ -1890,29 +2021,29 @@ AND password = $password
 <li><p>empêcher les caractères spéciaux dans les champs texte (escape special chars…)</p></li>
 <li><p>en vérifiant le mime/type et extension des fichiers uploadés et en les renommant pour éviter leur exécution éventuelle</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="cors-cross-origin-resource-sharing">
+</section>
+</section>
+<section id="cors-cross-origin-resource-sharing">
 <h2>CORS : Cross Origin Resource Sharing<a class="headerlink" href="#cors-cross-origin-resource-sharing" title="Lien permanent vers ce titre">¶</a></h2>
 <blockquote>
 <div><p>! c”est une protection intégrée au navigateur, pas au serveur !</p>
 </div></blockquote>
 <p>Empêcher (ou autoriser) l”accès à certaines ressources par le navigateur.</p>
-<div class="section" id="id12">
+<section id="id12">
 <h3>Exemple<a class="headerlink" href="#id12" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Je veux que les requêtes vers « api.tourismeform.com » ne proviennent que du site « tourismeform.com ».</p>
 <p>Cela évite que quelqu”un essaie de récupérer des informations depuis un autre site. (genre si je suis sur <code class="docutils literal notranslate"><span class="pre">hackervaillant.com</span></code>)</p>
 <blockquote>
 <div><p>! cela ne marchera que si l”utilisateur utilise un navigateur récent. (si vous passez par curl, postman ou ie6 ce sera toujours possible)</p>
 </div></blockquote>
-</div>
-<div class="section" id="nota-bene">
+</section>
+<section id="nota-bene">
 <h3>Nota Bene<a class="headerlink" href="#nota-bene" title="Lien permanent vers ce titre">¶</a></h3>
 <p>C”est <code class="docutils literal notranslate"><span class="pre">api.tourismeform.com</span></code> qui indique au navigateur qui a le droit d”accéder à ses pages, et c”est le <em>navigateur</em> qui fait la vérification.</p>
 <p>C”est à vous, <em>développeur</em>, de bien paramétrer votre back pour autoriser les bons domaines à vous requêter.</p>
-</div>
-</div>
-<div class="section" id="rgpd-reglement-general-sur-la-protection-des-donnees-gdpr">
+</section>
+</section>
+<section id="rgpd-reglement-general-sur-la-protection-des-donnees-gdpr">
 <h2>RGPD : Règlement Général sur la Protection des Données (GDPR)<a class="headerlink" href="#rgpd-reglement-general-sur-la-protection-des-donnees-gdpr" title="Lien permanent vers ce titre">¶</a></h2>
 <blockquote>
 <div><p>C”est le truc qui va vous envoyer en prison (https://www.legalplace.fr/guides/rgpd-sanction/) si vous faites pas votre taf correctement.</p>
@@ -1934,15 +2065,15 @@ AND password = $password
 </ul>
 <p>https://www.cnil.fr/sites/default/files/atoms/files/bpi-cnil-rgpd_guide-tpe-pme.pdf</p>
 <p>cf campagne de pub de signal https://signal.org/blog/the-instagram-ads-you-will-never-see/ : on sait qui vous êtes même si vous bloquez la pub.</p>
-<div class="section" id="en-cas-d-infraction">
+<section id="en-cas-d-infraction">
 <h3>En cas d”infraction<a class="headerlink" href="#en-cas-d-infraction" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>jusqu”à 4% (ou 20 millions €) du Chiffre d”Affaire mondial de l”entreprise (sachant que la marge des entreprises est en moyenne 30%, ça fait 1/6 minimum des bénéfices)</p></li>
 <li><p><a class="reference external" href="https://www.legalplace.fr/guides/rgpd-sanction/">prison and co</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="social-engineering">
+</section>
+</section>
+<section id="social-engineering">
 <h2>Social Engineering<a class="headerlink" href="#social-engineering" title="Lien permanent vers ce titre">¶</a></h2>
 <p>LE truc le plus utilisé pour le piratage !!</p>
 <blockquote>
@@ -1950,12 +2081,12 @@ AND password = $password
 </div></blockquote>
 <p>Il s”agit de faire grandir la confiance que les gens vous font, petit à petit.</p>
 <p>ex: assistante du pdg qui fait des virements en pensant que le pdg a demandé.</p>
-<div class="section" id="phishing">
+<section id="phishing">
 <h3>Phishing<a class="headerlink" href="#phishing" title="Lien permanent vers ce titre">¶</a></h3>
 <p>!!</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -1974,7 +2105,7 @@ AND password = $password
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Cours TP DWWM</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#mardi-2020-10-06">Mardi 2020/10/06</a></li>
@@ -2019,6 +2150,12 @@ AND password = $password
 <li class="toctree-l2"><a class="reference internal" href="#mardi-2021-01-26">Mardi 2021/01/26</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mercredi-2021-02-03">Mercredi 2021/02/03</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#jeudi-2021-02-04">Jeudi 2021/02/04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jeudi-2021-02-11">Jeudi 2021/02/11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vendredi-2021-02-12">Vendredi 2021/02/12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mardi-2021-02-16">Mardi 2021/02/16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mercredi-2021-02-17">Mercredi 2021/02/17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lundi-2021-02-22">Lundi 2021/02/22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mardi-2021-02-23">Mardi 2021/02/23</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#git">Git</a><ul>
@@ -2051,7 +2188,7 @@ AND password = $password
   <h3 id="searchlabel">Recherche rapide</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -2073,7 +2210,7 @@ AND password = $password
       &copy;2020, Esat + Marc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

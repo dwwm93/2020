@@ -4,7 +4,8 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Cours TP DWWM &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
@@ -31,9 +32,9 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="cours-tp-dwwm">
+  <section id="cours-tp-dwwm">
 <h1>Cours TP DWWM<a class="headerlink" href="#cours-tp-dwwm" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="mardi-2020-10-06">
+<section id="mardi-2020-10-06">
 <h2>Mardi 2020/10/06<a class="headerlink" href="#mardi-2020-10-06" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
 <li><p>création des répertoires « Code/greta » pour stocker correctement son code</p></li>
@@ -51,7 +52,7 @@
 </li>
 <li><p>présentation html / css / javascript</p></li>
 </ul>
-<div class="section" id="er-projet-rapide">
+<section id="er-projet-rapide">
 <h3>1er projet rapide<a class="headerlink" href="#er-projet-rapide" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>index.html =&gt; choisi parce que c”est la norme des pages d”accueil</p></li>
@@ -59,8 +60,8 @@
 <li><p>tests du style en changeant dynamiquement le style dans la console développeur du navigateur</p></li>
 </ul>
 <p>En live j”ai fait un <code class="docutils literal notranslate"><span class="pre">Code/greta/first/index.html</span></code> aussi, de qualité médiocre pour jouer avec ce qu”il est possible de faire.</p>
-</div>
-<div class="section" id="presentation-projet-du-formateur">
+</section>
+<section id="presentation-projet-du-formateur">
 <h3>Présentation projet du formateur<a class="headerlink" href="#presentation-projet-du-formateur" title="Lien permanent vers ce titre">¶</a></h3>
 <p>J”ai montré vite fait ma page de mariage, mais surtout j”ai codé devant eux en une trentaine de minutes la page « trombi.html » dans le dossier « Code/greta/first », avec bootstrap / material design / des placeholder / du javascript etc.</p>
 <p>Ressources :</p>
@@ -69,33 +70,33 @@
 <li><p><a class="reference external" href="http://avatars.adorable.io">placeholder avatars</a></p></li>
 <li><p><a class="reference external" href="https://mdbootstrap.github.io/bootstrap-material-design/docs/4.0/bootstrap-components/alerts/">bootstrap4 + material design</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="lundi-2020-10-12">
+</section>
+</section>
+<section id="lundi-2020-10-12">
 <h2>Lundi 2020/10/12<a class="headerlink" href="#lundi-2020-10-12" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="selecteurs-css">
+<section id="selecteurs-css">
 <h3>Selecteurs CSS<a class="headerlink" href="#selecteurs-css" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ecrire un menu en haut de sa page : probleme avec les block et les inline. (on ne s”apesantit pas sur le sujet, on laisse juste galérer suffisamment pour qu”ils comprennent que ça marche pas top)</p>
 <p>NB : Si on veut que le lien en haut de la page prenne tout l”élément il faut jouer avec <a class="reference external" href="https://stackoverflow.com/questions/40755950/make-a-tag-to-take-100-height-of-inline-block-parent">« line-height »</a></p>
-</div>
-<div class="section" id="flexbox">
+</section>
+<section id="flexbox">
 <h3>flexbox<a class="headerlink" href="#flexbox" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Introduction à flexbox, <a class="reference external" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">resource ici</a>, qui permet de la mise en page (sur 1 dimension) de façon très très simple.</p>
 <p>On a repris l”exemple précédent, et à la fin on se rend compte qu”il suffit que le parent soir <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">flex;</span></code> pour que directement les enfants s”alignent sur une même ligne de manière propre.</p>
 <p>On a vu comment on les aligne sur l”axe principal (ici horizontal) et sur l”axe secondaire (donc l”axe vertical), avec les propriétés qui se terminent par « -content » (pour l”axe principal) et « -items » pour l”axe secondaire. Tout marche pareil si mon axe principal devient l”axe vertical. (ie <code class="docutils literal notranslate"><span class="pre">flex-direction:column;</span></code>)</p>
 <p>On l”a appliqué sur un TP2 qui consiste à écrire une page d”un journal, avec un bandeau de navigation, une section centrale qui contient 3 articles en colonne côte à côte, puis une section « contact » qui contient du texte et un formulaire, et enfin un footer.</p>
-</div>
-</div>
-<div class="section" id="mardi-2020-10-13">
+</section>
+</section>
+<section id="mardi-2020-10-13">
 <h2>Mardi 2020/10/13<a class="headerlink" href="#mardi-2020-10-13" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Poursuite du TP2 avec révision de flexbox, et des balises les plus courantes (ex: input avec placeholder).</p>
 <p>Notamment on appuyé sur comment faire des liens dans la page (et le rôle des « id »).</p>
-<div class="section" id="id1">
+<section id="id1">
 <h3>flexbox<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Attention : un élément flexbox ne peut gérer que ses enfants directs, pas ses petits enfants ou arrière petits enfants. On a insisté sur ce point.</p>
 <p>Quitte, pour plus de mise en page, à ce que les enfants deviennent eux mêmes des éléments flexbox et qu”ils gèrent leurs propres enfants.</p>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h3>selecteurs CSS<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Révision de comment fonctionnent les selecteurs CSS, comment on les manipule, qu”il faut être le plus précis possible pour ne pas modifier des éléments qu”on ne veut pas modifier, et qu”il faut limiter le nombre d”id et de class, qui ne doivent servir qu”en dernier recours.</p>
 <p>En effet, il vaut mieux éviter d”avoir à changer le code html quand on veut changer un style, il vaut mieux changer juste le css. (exemple: rajouter un élément dans ma barre de nav, sans avoir à lui donner la bonne classe ! mon selecteur CSS est fait de manière à le prendre de toute façon ! au pire on met juste l”id sur le parent « nav »)</p>
@@ -104,9 +105,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">:hover</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:last-child</span></code></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="jeudi-2020-10-15">
+</section>
+</section>
+<section id="jeudi-2020-10-15">
 <h2>Jeudi 2020/10/15<a class="headerlink" href="#jeudi-2020-10-15" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Poursuite du Flexbox et decouvert du responsive &#64;media</p>
 <ul>
@@ -117,11 +118,11 @@
 </ul>
 </li>
 </ul>
-<div class="section" id="id3">
+<section id="id3">
 <h3>flexbox<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h3>
 <p>travail sur TPFlex, utilisation des display, flex-wrap, flex-direction.</p>
-</div>
-<div class="section" id="media">
+</section>
+<section id="media">
 <h3>&#64;media<a class="headerlink" href="#media" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Changement du style CSS en au chamgement du taille de l”ecran</p>
 <ul>
@@ -134,9 +135,9 @@
 <li><p>}</p></li>
 <li><p>}</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="vendredi-2020-10-16">
+</section>
+</section>
+<section id="vendredi-2020-10-16">
 <h2>Vendredi 2020/10/16<a class="headerlink" href="#vendredi-2020-10-16" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Découverte des parametres</p>
 <ul class="simple">
@@ -145,11 +146,11 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">margin</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">border</span></code></p></li>
 </ul>
-<div class="section" id="id4">
+<section id="id4">
 <h3>&#64;media<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Poursuite du TPFlex en responsive</p>
-</div>
-<div class="section" id="positions">
+</section>
+<section id="positions">
 <h3>Positions<a class="headerlink" href="#positions" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Découverte du parametre position et urilisation dasn le fichier position.html et position.css</p>
 <ul class="simple">
@@ -159,21 +160,21 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">absolute</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sticky</span></code></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="lundi-2020-10-19">
+</section>
+</section>
+<section id="lundi-2020-10-19">
 <h2>Lundi 2020/10/19<a class="headerlink" href="#lundi-2020-10-19" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Creation d”un CV à partir d”un model, en utilisent le html et CSS.
 Tous le code demandé pour créee le CV est déjà expliquer dans les cours precedent.
 Le CV doit etre responsive.
 Le model du CV est ajouter sur SLACK en IMAGE
 A la fin de journé le code est aussi envoyé sur SLACK</p>
-</div>
-<div class="section" id="mardi-2020-10-20">
+</section>
+<section id="mardi-2020-10-20">
 <h2>Mardi 2020/10/20<a class="headerlink" href="#mardi-2020-10-20" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Le matin, on continue sur le CV, explication du code du model.
 Hierarchie des balises.</p>
-<div class="section" id="macquetter-une-application">
+<section id="macquetter-une-application">
 <h3>Macquetter une application<a class="headerlink" href="#macquetter-une-application" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Nous avons devouvert le maquettage et disquter des 4 etapes de maquettage
 Photo mis sur SLACK</p>
@@ -183,48 +184,48 @@ Photo mis sur SLACK</p>
 <li><p>Mockup</p></li>
 <li><p>Prototype</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="mercredi-2020-10-21">
+</section>
+</section>
+<section id="mercredi-2020-10-21">
 <h2>Mercredi 2020/10/21<a class="headerlink" href="#mercredi-2020-10-21" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On reprend zoning / wireframe , et on apprend la distinction UX (plutot zoning/wireframe) / UI (plutôt mockup/prototype).</p>
 <p>TP zoning / wireframe pour leur CV, sur diagrams.net.</p>
 <p>Les questions portent sur les choix effectués en terme d”UX (pourquoi tel élément est là,pourquoi il fait cette taille …) et sur les adaptations responsive.</p>
 <p>Présentation d”éléments de design « standards », comme les règles proposées par le material design.</p>
 <p>On a vu également quelques exemples de sites avec un bon UX/UI et d”autres catastrophiques.</p>
-</div>
-<div class="section" id="jeudi-2020-10-22">
+</section>
+<section id="jeudi-2020-10-22">
 <h2>Jeudi 2020/10/22<a class="headerlink" href="#jeudi-2020-10-22" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retour sur les wireframes et réalisation des mockups.</p>
-<div class="section" id="print-css">
+<section id="print-css">
 <h3>Print CSS<a class="headerlink" href="#print-css" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Faire une version du css adaptée à l”impression pour générer un CV imprimé.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://developer.mozilla.org/fr/docs/CSS/Premiers_pas/M%C3%A9dias#Impression">explication macro sur le site de mozilla</a></p></li>
 </ul>
-</div>
-<div class="section" id="todo">
+</section>
+<section id="todo">
 <h3>TODO<a class="headerlink" href="#todo" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://jgthms.com/web-design-in-4-minutes/">web design in 4 minutes</a></p></li>
 <li><p><a class="reference external" href="https://www.internetingishard.com/html-and-css/">interneting is hard</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="lundi-2020-10-26">
+</section>
+</section>
+<section id="lundi-2020-10-26">
 <h2>Lundi 2020/10/26<a class="headerlink" href="#lundi-2020-10-26" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Réalisation du site web pour le cv dont on avait fait le zoning, le wireframe et le mockup.</p>
 <p>Obligation d”utiliser un positionnement fixed ou sticky pour le menu, et obligation de faire un site responsive.</p>
 <p>Ceux qui ont eu le temps on essayé de faire une media query « print » que l”on peut voir en utilisant l”impression par chrome.</p>
-<div class="section" id="id5">
+<section id="id5">
 <h3>Sélecteurs CSS<a class="headerlink" href="#id5" title="Lien permanent vers ce titre">¶</a></h3>
 <p>exo « inversé »: à partir du sélecteur CSS proposer une arborescence HTML qui convient.</p>
 <p>La subtilité s”est trouvée notamment dans le fait d”utiliser l”espace dans le sélecteur, et donc tous les enfants, petits enfants etc. se retrouvaient sélectionnés. Il fallait penser à ce cas là.</p>
-</div>
-</div>
-<div class="section" id="mardi-2020-10-27">
+</section>
+</section>
+<section id="mardi-2020-10-27">
 <h2>Mardi 2020/10/27<a class="headerlink" href="#mardi-2020-10-27" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="javascript">
+<section id="javascript">
 <h3>Javascript<a class="headerlink" href="#javascript" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>définition vs exécution</p></li>
@@ -236,12 +237,12 @@ Photo mis sur SLACK</p>
 </li>
 <li><p>utilisation de la console du navigateur pour tester son code javascript</p></li>
 </ul>
-<div class="section" id="fonction">
+<section id="fonction">
 <h4>Fonction<a class="headerlink" href="#fonction" title="Lien permanent vers ce titre">¶</a></h4>
 <p>C”est une boîte noire avec des entrées et une sortie.</p>
-</div>
-</div>
-<div class="section" id="typage-variables">
+</section>
+</section>
+<section id="typage-variables">
 <h3>Typage variables<a class="headerlink" href="#typage-variables" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>string</p></li>
@@ -249,20 +250,20 @@ Photo mis sur SLACK</p>
 <li><p>array</p></li>
 </ul>
 <p>On n”a pas vu les objets !! et c”est fait exprès :-)</p>
-</div>
-<div class="section" id="commenter-son-code">
+</section>
+<section id="commenter-son-code">
 <h3>Commenter son code !<a class="headerlink" href="#commenter-son-code" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Indispensable ! surtout pour les fonctions javascript.</p>
-</div>
-<div class="section" id="modification-du-html">
+</section>
+<section id="modification-du-html">
 <h3>Modification du html<a class="headerlink" href="#modification-du-html" title="Lien permanent vers ce titre">¶</a></h3>
 <ol class="simple">
 <li><p>on sélectionne l”élément à modifier grâce à un sélecteur CSS <em>qu”on connaît déjà</em>, et grâce aux fonctions <code class="docutils literal notranslate"><span class="pre">document.querySelector(&quot;selecteur&gt;css.complique:first-child&quot;)</span></code>(pour récupérer le premier élément trouvé) et  <code class="docutils literal notranslate"><span class="pre">document.querySelectorAll(&quot;selecteur&gt;css.complique:first-child&quot;)</span></code> (pour récupérer tous les éléments qui correspondent)</p></li>
 <li><p>une fois récupéré dans une variable « elementHtml » (par exemple) on modifie <code class="docutils literal notranslate"><span class="pre">elementHtml.innerText</span> <span class="pre">=</span> <span class="pre">&quot;TOTOTATATITI&quot;</span></code> ou <code class="docutils literal notranslate"><span class="pre">elementHtml.InnerHTML</span> <span class="pre">=</span> <span class="pre">&quot;&lt;h2&gt;Un</span> <span class="pre">nouveau</span> <span class="pre">H2&lt;/h2&gt;&quot;</span></code></p></li>
 </ol>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -281,7 +282,7 @@ Photo mis sur SLACK</p>
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#git">Git</a></li>
@@ -299,7 +300,7 @@ Photo mis sur SLACK</p>
   <h3 id="searchlabel">Recherche rapide</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -321,7 +322,7 @@ Photo mis sur SLACK</p>
       &copy;2020, Esat + Marc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

@@ -39,12 +39,13 @@
             
   <h1 id="search-documentation">Recherche</h1>
   
-  <div id="fallback" class="admonition warning">
-  <script>$('#fallback').hide();</script>
+  <noscript>
+  <div class="admonition warning">
   <p>
     Veuillez activer le JavaScript pour que la recherche fonctionne.
   </p>
   </div>
+  </noscript>
   
   
   <p>
@@ -53,7 +54,7 @@
   
   
   <form action="" method="get">
-    <input type="text" name="q" aria-labelledby="search-documentation" value="" />
+    <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
     <input type="submit" value="rechercher" />
     <span id="search-progress" style="padding-left: 10px"></span>
   </form>
@@ -81,7 +82,7 @@
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="cours.html">Cours TP DWWM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cours.html#git">Git</a></li>
@@ -111,7 +112,7 @@
       &copy;2020, Esat + Marc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

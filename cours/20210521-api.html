@@ -4,7 +4,8 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Vendredi 21/05/2021 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
@@ -31,9 +32,9 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="vendredi-21-05-2021">
+  <section id="vendredi-21-05-2021">
 <h1>Vendredi 21/05/2021<a class="headerlink" href="#vendredi-21-05-2021" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="api">
+<section id="api">
 <h2>API<a class="headerlink" href="#api" title="Lien permanent vers ce titre">¶</a></h2>
 <blockquote>
 <div><p>Application Programing Interface</p>
@@ -43,15 +44,15 @@
 <li><p>exposer une API (la développer vous-même)</p></li>
 <li><p>utiliser l”API de quelqu”un d”autre</p></li>
 </ol>
-</div>
-<div class="section" id="creer-une-api-rest">
+</section>
+<section id="creer-une-api-rest">
 <h2>Créer une API <strong>REST</strong><a class="headerlink" href="#creer-une-api-rest" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il existe plein de protocoles pour faire ça. Nous on verra juste les <strong>API REST</strong>.</p>
 <p>Je zappe l”historique et les raisons de leur existence.</p>
 <blockquote>
 <div><p>A noter juste que les urls et les verbes HTTP qu”on verra après sont préexistants (de + de 20 ans) aux API REST. C”est juste une façon maline de les utiliser dans un cadre d”API.</p>
 </div></blockquote>
-<div class="section" id="comment">
+<section id="comment">
 <h3>Comment ?<a class="headerlink" href="#comment" title="Lien permanent vers ce titre">¶</a></h3>
 <ol class="simple">
 <li><p>utiliser les « url » (<code class="docutils literal notranslate"><span class="pre">iri</span></code>) pour représenter des « ressources » (<em>ex: <code class="docutils literal notranslate"><span class="pre">https://api.pokemon.com/pokemons/bulbizarre</span></code></em>, ou <em><code class="docutils literal notranslate"><span class="pre">https://coin.com/bitcoin/price</span></code></em> …) =&gt; dans mon url, je peux <em>« lire »</em> l”élément que je vais manipuler</p></li>
@@ -61,8 +62,8 @@
 <blockquote>
 <div><p>Indépendant du langage utilisé !! c”est une norme « HTTP », donc au niveau de la requête ! càd de la communication entre le client et le serveur !! Pas au niveau du code !</p>
 </div></blockquote>
-</div>
-<div class="section" id="ressources">
+</section>
+<section id="ressources">
 <h3>Ressources<a class="headerlink" href="#ressources" title="Lien permanent vers ce titre">¶</a></h3>
 <p>C”est à vous (développeur) de déterminer les urls(/iri) des ressources pour que ce soit clair.</p>
 <p>Standard :</p>
@@ -79,8 +80,8 @@
 <blockquote>
 <div><p>NB : si mon url est du genre <code class="docutils literal notranslate"><span class="pre">csstc.com/index.php?resource=users&amp;id=1</span></code> c”est pareil, mais c”est moche ! et on comprend moins !</p>
 </div></blockquote>
-</div>
-<div class="section" id="verbes-http">
+</section>
+<section id="verbes-http">
 <h3>Verbes HTTP<a class="headerlink" href="#verbes-http" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ils servent à indiquer le type d”action effectuée sur la ressource ciblée par l”url.</p>
 <ul>
@@ -91,8 +92,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code>: sert à « supprimer » la ressource ciblée (ex: DELETE <code class="docutils literal notranslate"><span class="pre">https://mangatech.lol/mangas/naruto</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PUT</span></code>: sert à « mettre à jour » la ressource. (ex: PUT <code class="docutils literal notranslate"><span class="pre">https://mangatech.lol/mangas/berserk</span></code> + <code class="docutils literal notranslate"><span class="pre">{'title':</span> <span class="pre">'berserk',</span> <span class="pre">'date':</span> <span class="pre">'1991-05-21'}</span></code> =&gt; update l”entité « berserk » avec une nouvelle date)</p></li>
 </ul>
-</div>
-<div class="section" id="donnees-renvoyees-dans-un-format-brut">
+</section>
+<section id="donnees-renvoyees-dans-un-format-brut">
 <h3>Données renvoyées dans un format « brut »<a class="headerlink" href="#donnees-renvoyees-dans-un-format-brut" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Le plus souvent on renvoie les données sous la forme d”un JSON <strong>et non pas une page html</strong> !!</p>
 <p>=&gt; pas de vue !</p>
@@ -113,16 +114,16 @@
 </pre></div>
 </div>
 <p>=&gt; MAIS ALORS ? COMMENT J”AFFICHE UNE JOLIE PAGE ???</p>
-<div class="section" id="reponse">
+<section id="reponse">
 <h4>Réponse<a class="headerlink" href="#reponse" title="Lien permanent vers ce titre">¶</a></h4>
 <ol class="simple">
 <li><p>Modifier ses urls pour l”api et les appeler <code class="docutils literal notranslate"><span class="pre">baseUrl.com/api/restaurants/:id</span></code> : ne renvoie que des données alors que sans <code class="docutils literal notranslate"><span class="pre">api/</span></code> on renvoie la version avec « vue »</p></li>
 <li><p><strong>ou</strong> créer un front en pur javascript et les vues sont gérées par le front (et on utilise par exemple jquery pour aller chercher les infos dans le back : <code class="docutils literal notranslate"><span class="pre">$.post('api/restaurants',</span> <span class="pre">{name:</span> <span class="pre">&quot;mcdo&quot;,</span> <span class="pre">adresse:</span> <span class="pre">&quot;1</span> <span class="pre">rue</span> <span class="pre">du</span> <span class="pre">greta,</span> <span class="pre">Noisy&quot;})</span></code>)</p></li>
 </ol>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -141,7 +142,7 @@
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#git">Git</a></li>
@@ -159,7 +160,7 @@
   <h3 id="searchlabel">Recherche rapide</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -181,7 +182,7 @@
       &copy;2020, Esat + Marc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

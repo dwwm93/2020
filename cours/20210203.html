@@ -4,7 +4,8 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Mercredi 2021/02/03 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
@@ -31,10 +32,10 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="mercredi-2021-02-03">
+  <section id="mercredi-2021-02-03">
 <h1>Mercredi 2021/02/03<a class="headerlink" href="#mercredi-2021-02-03" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Reprise des cours objet précédents</p>
-<div class="section" id="uml">
+<section id="uml">
 <h2>UML<a class="headerlink" href="#uml" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Présentation</p>
 <ul class="simple">
@@ -44,7 +45,7 @@
 <p>=&gt; c”est un langage : utilisé pour communiquer entre différents métiers</p>
 <p>Il y a bcp de schémas différents en UML, + qu”en Merise (MCD, MLD …) !</p>
 <p>On va se concentrer sur 2 schémas en ce qui nous concerne : Diagramme de Cas d”Utilisation, et Diagramme de Classe</p>
-<div class="section" id="diagramme-de-cas-d-utilisation">
+<section id="diagramme-de-cas-d-utilisation">
 <h3>Diagramme de cas d”utilisation<a class="headerlink" href="#diagramme-de-cas-d-utilisation" title="Lien permanent vers ce titre">¶</a></h3>
 <p>permet de voir qui agit sur le système (acteur), et ce qu”il peut faire (utilisations).</p>
 <p>on n”a pas le choix :</p>
@@ -57,12 +58,12 @@
 <p>FORMALISME obligatoire :
 meme les bonshommes moches sont dans la norme !</p>
 <p>NB : utile en phase de conception !</p>
-<p>include : buy book —-&gt; open account : le cas d”utilisation « open account » est « nécessaire » (« inclus ») dans le cas d”utilsation « acheter livre »</p>
+<p>include : buy book —-&gt; open account : le cas d”utilisation « open account » est « nécessaire » ( »inclus ») dans le cas d”utilsation « acheter livre »</p>
 <p>extends : search——&gt; buy : il indique que « search » peut venir « compléter » le cas d”utilisation « buy »</p>
 <p>il faut garder le mot « extends » ou « inclide » à cote de la fleche sinon on ne peut pas les distinguer</p>
 <p>du point de vue de « buy » les 2 flches n”ont pas la même direction</p>
-</div>
-<div class="section" id="diagramme-de-classe">
+</section>
+<section id="diagramme-de-classe">
 <h3>Diagramme de classe<a class="headerlink" href="#diagramme-de-classe" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------</span>
 <span class="o">|</span>      <span class="n">Ma_classe</span>                      <span class="o">|</span>
@@ -80,7 +81,7 @@ meme les bonshommes moches sont dans la norme !</p>
 <p>Un diagramme de classe, permet de représenter… des classes :tada:</p>
 <p>càd son nom, ses propriétés et ses méthodes + l”héritage et relations (par les flèches/traits)</p>
 <p>Donc un parent =&gt; plusieurs enfants, un enfant =&gt; un parent</p>
-<div class="section" id="void">
+<section id="void">
 <h4>void<a class="headerlink" href="#void" title="Lien permanent vers ce titre">¶</a></h4>
 <p>dans les types des propriétés, des arguments ou des retours, on trouve : « int », « string » etc.</p>
 <p>un des types « speciaux » c”est void : c”est pour un retour de fonction <em>QUI NE RETOURNE RIEN</em></p>
@@ -94,14 +95,14 @@ meme les bonshommes moches sont dans la norme !</p>
 </pre></div>
 </div>
 <p>si je fais <code class="docutils literal notranslate"><span class="pre">$return</span> <span class="pre">=</span> <span class="pre">supprimeProfil(1);</span></code> =&gt; dans $return il n”y a … rien (void)</p>
-</div>
-<div class="section" id="heritage">
+</section>
+<section id="heritage">
 <h4>Héritage<a class="headerlink" href="#heritage" title="Lien permanent vers ce titre">¶</a></h4>
 <p>ATTENTION la fleche de l”héritage, est « blanche » !! (triangulaire) (modifié)</p>
 <p>c”est une comme ça –|&gt; et pas une comme ça —&gt;</p>
 <p>la flèche standard a une autre signification, donc à ne pas utiliser par erreur</p>
-</div>
-<div class="section" id="relations">
+</section>
+<section id="relations">
 <h4>Relations<a class="headerlink" href="#relations" title="Lien permanent vers ce titre">¶</a></h4>
 <p>on vient de voir les relations</p>
 <p>et les flèches « triangle » c”est l”héritage</p>
@@ -109,10 +110,10 @@ meme les bonshommes moches sont dans la norme !</p>
 <p>NB: static = souligné, protected = #</p>
 <p>https://creately.com/blog/diagrams/class-diagram-relationships/</p>
 <p><img alt="résumé" src="../_images/Class-Diagram-Relationships.png" /></p>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -131,7 +132,7 @@ meme les bonshommes moches sont dans la norme !</p>
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#git">Git</a></li>
@@ -149,7 +150,7 @@ meme les bonshommes moches sont dans la norme !</p>
   <h3 id="searchlabel">Recherche rapide</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -171,7 +172,7 @@ meme les bonshommes moches sont dans la norme !</p>
       &copy;2020, Esat + Marc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

@@ -1,0 +1,10 @@
+## Mardi 2021/02/23
+
+### Relations entre entités
+
+Avec vidéo de Lior, détail des relations ManyToMany, OneToMany etc.
+
+### Aspect Sécurité
+
+Présentation des firewalls, encoders et providers, et leur utilisation / mise en pratique pour la sécurité sur symfony.
+

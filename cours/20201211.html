@@ -4,7 +4,8 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Vendredi 2020/12/11 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
@@ -31,7 +32,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="vendredi-2020-12-11">
+  <section id="vendredi-2020-12-11">
 <h1>Vendredi 2020/12/11<a class="headerlink" href="#vendredi-2020-12-11" title="Lien permanent vers ce titre">¶</a></h1>
 <p>bon, on se met en jambes en faisant l”exercice d”hier soir ?</p>
 <p>on essaie de déclencher le $.post en cliquant sur le bouton submit</p>
@@ -65,7 +66,7 @@ event.preventDefault() vs. return false
 When I want to prevent other event handlers from executing after a certain event is fired, I can use one of two techniques. I”ll use jQuery in the examples, but this applies to plain-JS as well: 1.</p>
 <p>il y a une différence entre le « event » du formulaire normal, et le « event » de jquery</p>
 <p>ce n”est pas le même « event » !</p>
-<p>celui de jquery il est redispatché à tous les autres (parce que je peux créer plusieurs $(“xxx”).on(“click”,</p>
+<p>celui de jquery il est redispatché à tous les autres (parce que je peux créer plusieurs $(”xxx”).on(”click”,</p>
 <form ...>
   <button onclick='mafunc()' >clic
 ...function mafunc(event){
@@ -73,8 +74,8 @@ When I want to prevent other event handlers from executing after a certain event
 }<p>Ici c”est l”event du navigateur</p>
 <p>Par contre si on utilise jquery !</p>
 <p>on va avoir un bouton sans « onclick », et à la place on aura :</p>
-<p>$(“button”).on(“click”, function (event) {..</p>
-<p>ici l”event est un evenment JQUERY pas celui du navigateur, parce que je peux déclarer plusieurs on(“click”, … sur le meme bouton</p>
+<p>$(”button”).on(”click”, function (event) {..</p>
+<p>ici l”event est un evenment JQUERY pas celui du navigateur, parce que je peux déclarer plusieurs on(”click”, … sur le meme bouton</p>
 <p>donc pour un event jquery il faut :</p>
 <p>event.preventDefault()</p>
 <p>et</p>
@@ -101,7 +102,7 @@ w3schools.comw3schools.com
 Bootstrap 4 Grid Basic
 Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java and XML.</p>
 <p>! important !!</p>
-<div class="section" id="exercice">
+<section id="exercice">
 <h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
 <p>2/12 sur la premiere et les 2 autres se répartissent le reste pour la page d”exemple,
 avec 3 colonnes</p>
@@ -113,8 +114,8 @@ https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp</p>
 <p>https://www.w3schools.com/bootstrap4/bootstrap_modal.asp</p>
 <p>https://bootswatch.com/</p>
 <p>puis ajouter une modale qui contient un form, et essayer de mettre le $.post de ce matin</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -133,7 +134,7 @@ https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp</p>
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#git">Git</a></li>
@@ -151,7 +152,7 @@ https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp</p>
   <h3 id="searchlabel">Recherche rapide</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -173,7 +174,7 @@ https://www.w3schools.com/bootstrap4/bootstrap_button_groups.asp</p>
       &copy;2020, Esat + Marc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

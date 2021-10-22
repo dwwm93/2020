@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Mardi 2021/02/16 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="mardi-2021-02-16">
+<h1>Mardi 2021/02/16<a class="headerlink" href="#mardi-2021-02-16" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Dans symfony, le « Model » est découpé en 3 : (et c”est géré par l”ORM Doctrine)</p>
+<ul class="simple">
+<li><p>Entity =&gt; la classe associée à la donnée (penser « MCD » =&gt; conception)</p></li>
+<li><p>Repository =&gt; la classe qui permet de requêter les données depuis la base et les transformer en version « objet »</p></li>
+<li><p>Manager =&gt; ce qui permet de faire les modifications depuis un « objet » vers la base</p></li>
+</ul>
+<section id="objectif-de-la-matinee">
+<h2>Objectif de la matinée :<a class="headerlink" href="#objectif-de-la-matinee" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>afficher la liste des profils sur la page « /profil » avec des images et façon « trombi » donc avec des cards (https://www.w3schools.com/bootstrap4/bootstrap_cards.asp) « photo de profil + nom + prenom » (un peu comme vithurshan)</p></li>
+<li><p>afficher un profil complet sur la page « profil/{id} » avec toutes les  informations du profil</p></li>
+<li><p>dans la navbar, un lien « profils », un lien « postes » (voir point 5) et  le lien accueil</p></li>
+<li><p>afficher les 3 derniers profils sur la page d”accueil « / »</p></li>
+<li><p>créer les pages « /poste » et « /poste/{id} » pour lister les métiers  disponibles ( »etudiant », « professeur », « stagiaire » …) (l »entité  « Poste » aura juste un « id » et un « titre »)</p></li>
+</ul>
+<p>=&gt; templating / styles : twig - bootstrap</p>
+<p>=&gt; création entity / controller / fixtures (pour Poste)</p>
+<p>=&gt; requête « custom » avec le repository</p>
+<p>pour la requete custom : <code class="docutils literal notranslate"><span class="pre">$repo</span> <span class="pre">=</span>&#160; <span class="pre">$this-&gt;getDoctrine()-&gt;getRepository(Profil::class);</span></code>  et  <code class="docutils literal notranslate"><span class="pre">$repo-&gt;findBy(</span> <span class="pre">[</span> <span class="pre">],</span> <span class="pre">['id'</span> <span class="pre">=&gt;</span> <span class="pre">'DESC'],</span> <span class="pre">3);</span></code> et je vous expliquerai les paramètres qu”on est en train d”utiliser</p>
+</section>
+<section id="styles">
+<h2>styles<a class="headerlink" href="#styles" title="Lien permanent vers ce titre">¶</a></h2>
+<p>dans  <code class="docutils literal notranslate"><span class="pre">public/</span></code> tu mets <code class="docutils literal notranslate"><span class="pre">css/styles.css</span></code>, et dans <code class="docutils literal notranslate"><span class="pre">base.html.twig</span></code> tu  mets <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;stylesheet&quot;</span> <span class="pre">src=&quot;/css/styles.css&quot;</span> <span class="pre">/&gt;</span></code></p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2020</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#git">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#securite">Sécurité</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/20210216.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Vendredi 2021/02/12 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="vendredi-2021-02-12">
+<h1>Vendredi 2021/02/12<a class="headerlink" href="#vendredi-2021-02-12" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">/**</span>
+<span class="x"> * @Route(&quot;/profile/13&quot;, name=&quot;profile_show&quot;)</span>
+<span class="x"> */</span>
+<span class="x">public function show(){</span>
+<span class="x">    $this-&gt;render(&#39;profile/show.html.twig&#39;);</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>=&gt; <code class="docutils literal notranslate"><span class="pre">templates/profile/show.html.twig</span></code></p>
+<p>au greta : <code class="docutils literal notranslate"><span class="pre">./symfony.exe</span> <span class="pre">server:start</span></code> en étant dans le rep trombi.</p>
+<section id="css-js">
+<h2>CSS / JS<a class="headerlink" href="#css-js" title="Lien permanent vers ce titre">¶</a></h2>
+<p>pour mettre des css ou des js à vous, il faut les déposer dans le répertoire public, genre dans <code class="docutils literal notranslate"><span class="pre">public/css</span></code></p>
+<p>et ensuite dans le template <code class="docutils literal notranslate"><span class="pre">base.html.twig</span></code> =&gt; ajouter le link stylesheet vers <code class="docutils literal notranslate"><span class="pre">/css/MAFEUILLEDESTYLE.css</span></code> (ne pas oublier le <code class="docutils literal notranslate"><span class="pre">/</span></code> du début)
+(donc sans indiquer « public » dans le base html ).</p>
+</section>
+<section id="mvc-symfony-model">
+<h2>MVC Symfony : Model<a class="headerlink" href="#mvc-symfony-model" title="Lien permanent vers ce titre">¶</a></h2>
+<p>ORM = Object Relational Mapper</p>
+<p>Pour info les timestamp pour la base de données :</p>
+<ul class="simple">
+<li><p>31:00 entity + manager + repository</p></li>
+<li><p>33:20 migrations</p></li>
+<li><p>34:54 fixtures</p></li>
+<li><p>36:00 TP création db</p></li>
+<li><p>37:51 TP création table / entity</p></li>
+<li><p>42:25 TP creation migration</p></li>
+<li><p>45:30 TP fixtures</p></li>
+<li><p>50:00 Utilisation des repository + twig pour afficher infos</p></li>
+<li><p>1:03:00 Injection de dépendances</p></li>
+</ul>
+</section>
+<section id="connexion-db">
+<h2>Connexion db<a class="headerlink" href="#connexion-db" title="Lien permanent vers ce titre">¶</a></h2>
+<p>dans .env, la variable qui vous intéresse : <code class="docutils literal notranslate"><span class="pre">DATABASE_URL</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">DATABASE_URL=</span> <span class="pre">PROTOCOL://LOGIN:PASSWORD&#64;HOSTNAME:PORT/DBNAME</span></code></p>
+<p>protocol = le type de bdd utilisée =&gt; donc nous on décommente celui « mysql » et on commente le « postgresql » !</p>
+<p>pour tous ceux qui sont sur uWamp :</p>
+<p>il faut modifier le fichier <code class="docutils literal notranslate"><span class="pre">UwAmp\bin\php\php7.2.7\php.ini</span></code> pour enlever le <code class="docutils literal notranslate"><span class="pre">;</span></code> devant <code class="docutils literal notranslate"><span class="pre">pdo_mysql</span></code> (donc cherchez ça dans le fichier )</p>
+<p>(et aussi fileinfo et intl)</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2020</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#git">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#securite">Sécurité</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/20210212.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

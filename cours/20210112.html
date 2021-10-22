@@ -4,7 +4,8 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Mardi 2021/01/12 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
@@ -31,10 +32,10 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="mardi-2021-01-12">
+  <section id="mardi-2021-01-12">
 <h1>Mardi 2021/01/12<a class="headerlink" href="#mardi-2021-01-12" title="Lien permanent vers ce titre">¶</a></h1>
 <p>phpmyadmin vs mysql vs sql</p>
-<div class="section" id="manipulation-de-phpmyadmin">
+<section id="manipulation-de-phpmyadmin">
 <h2>Manipulation de phpmyadmin<a class="headerlink" href="#manipulation-de-phpmyadmin" title="Lien permanent vers ce titre">¶</a></h2>
 <ol class="simple">
 <li><p>Création des tables à partir du script SQL créé dans looping ou JMerise, la veille à partir du MCD.</p></li>
@@ -43,8 +44,8 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 <li><p>Régler les pbs d”auto increment</p></li>
 <li><p>Remplir avec des données</p></li>
 </ol>
-</div>
-<div class="section" id="sql-mysql">
+</section>
+<section id="sql-mysql">
 <h2>SQL /Mysql<a class="headerlink" href="#sql-mysql" title="Lien permanent vers ce titre">¶</a></h2>
 <p>pour nommer les identifiants (clé primaires!), il y a plusieurs formalismes :</p>
 <ul class="simple">
@@ -55,11 +56,11 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 </ul>
 <p>mais ça ne pose aucun pb quel que soit le choix</p>
 <p>Par contre tout ce qui n”est pas comme ça, est probablement un mauvais choix</p>
-</div>
-<div class="section" id="tables-de-jointures-reexpliquees">
+</section>
+<section id="tables-de-jointures-reexpliquees">
 <h2>Tables de jointures réexpliquées<a class="headerlink" href="#tables-de-jointures-reexpliquees" title="Lien permanent vers ce titre">¶</a></h2>
-</div>
-<div class="section" id="ldd">
+</section>
+<section id="ldd">
 <h2>LDD<a class="headerlink" href="#ldd" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">article</span><span class="p">(</span>
    <span class="n">id</span> <span class="nb">INT</span>  <span class="n">AUTO_INCREMENT</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="p">,</span>
@@ -67,8 +68,8 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 <span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="decouverte-des-requetes-lmd">
+</section>
+<section id="decouverte-des-requetes-lmd">
 <h2>Découverte des requêtes LMD<a class="headerlink" href="#decouverte-des-requetes-lmd" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Jusqu”à présent, on a utilisé du « LDD » (CREATE , ALTER …) pour donner les instructions à mysql sur comment créer la structure des données</p>
 <p>now il est temps d”utiliser le LMD !</p>
@@ -104,7 +105,7 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 <p>:danger:</p>
 <p>là c”est comme les « + » et les « x » qd vous étiez au collège : qui gagne ??!!</p>
 <p>une idée de réponse : <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">utilisateur</span> <span class="pre">WHERE</span> <span class="pre">(nom</span> <span class="pre">=</span> <span class="pre">'dusse'</span> <span class="pre">OR</span> <span class="pre">prenom</span> <span class="pre">=</span> <span class="pre">'jean-claude')</span> <span class="pre">AND</span> <span class="pre">age</span> <span class="pre">&gt;</span> <span class="pre">50;</span></code></p>
-<div class="section" id="insert">
+<section id="insert">
 <h3>INSERT<a class="headerlink" href="#insert" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">ma_table</span> <span class="p">(</span><span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">,</span> <span class="p">...)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">,</span> <span class="p">...);</span>
 </pre></div>
@@ -118,9 +119,9 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 <blockquote>
 <div><p>permet de modifier tous les enregistrements (les lignes quoi) qui correspondent à la condition du WHERE</p>
 </div></blockquote>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -139,7 +140,7 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#git">Git</a></li>
@@ -157,7 +158,7 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
   <h3 id="searchlabel">Recherche rapide</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -179,7 +180,7 @@ entre le MCD et le MLD, et l”absence de « relation » dans le MLD, même si
       &copy;2020, Esat + Marc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

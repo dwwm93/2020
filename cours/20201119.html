@@ -4,7 +4,8 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Jeudi 2020/11/19 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
@@ -31,9 +32,9 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="jeudi-2020-11-19">
+  <section id="jeudi-2020-11-19">
 <h1>Jeudi 2020/11/19<a class="headerlink" href="#jeudi-2020-11-19" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="travail-sur-les-objets">
+<section id="travail-sur-les-objets">
 <h2>Travail sur les objets<a class="headerlink" href="#travail-sur-les-objets" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Création d”un site web simple pour afficher une liste d”élèves.</p>
 <p>Les élèves sont des objets avec un nom, un prénom et un âge.</p>
@@ -41,8 +42,8 @@
 <p>On a bien noté qu”il fallait utiliser la syntaxe « . » pour accéder à la propriété d”un objet.
 Mais on peut également y accéder en faisant <code class="docutils literal notranslate"><span class="pre">objet[&quot;string_propriete&quot;]</span></code> .
 Exemple : <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3][&quot;length&quot;]</span></code></p>
-</div>
-<div class="section" id="fonction-en-parametre-d-une-fonction">
+</section>
+<section id="fonction-en-parametre-d-une-fonction">
 <h2>Fonction en paramètre d”une fonction<a class="headerlink" href="#fonction-en-parametre-d-une-fonction" title="Lien permanent vers ce titre">¶</a></h2>
 <p>On a essayé de trier la liste des objets. Mais javascript n”est pas capable de décider si un objet est oui ou non plus grand q”un autre !!</p>
 <p>Par exemple est-ce que l”objet <code class="docutils literal notranslate"><span class="pre">{nom:</span> <span class="pre">&quot;Rambo&quot;,</span> <span class="pre">prenom:</span> <span class="pre">&quot;John&quot;}</span></code> est plus grand que l”objet <code class="docutils literal notranslate"><span class="pre">{nom:</span> <span class="pre">&quot;Schwarzenegger&quot;,</span> <span class="pre">prenom:</span> <span class="pre">&quot;Arnold&quot;}</span></code> ?? puisqu”ils font parti tous les 2 de la liste <code class="docutils literal notranslate"><span class="pre">expandables</span></code>.</p>
@@ -54,8 +55,8 @@ Exemple : <code class="docutils literal notranslate"><span class="pre">[1,</span
 </div>
 <p>Et pour l”utiliser il faut la passer, <strong>sans l”appeler</strong> en argument de l”appel de <code class="docutils literal notranslate"><span class="pre">sort()</span></code>, c”est à dire dans notre cas : <code class="docutils literal notranslate"><span class="pre">expandables.sort(comparerBourrin)</span></code>.</p>
 <p>Puis on a essayé de faire une bascule pour se souvenir de l”état de tri (ascendant ou descendant) entre les clics.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -74,7 +75,7 @@ Exemple : <code class="docutils literal notranslate"><span class="pre">[1,</span
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#git">Git</a></li>
@@ -92,7 +93,7 @@ Exemple : <code class="docutils literal notranslate"><span class="pre">[1,</span
   <h3 id="searchlabel">Recherche rapide</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -114,7 +115,7 @@ Exemple : <code class="docutils literal notranslate"><span class="pre">[1,</span
       &copy;2020, Esat + Marc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

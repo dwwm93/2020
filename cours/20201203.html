@@ -4,7 +4,8 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Jeudi 2020/12/03 &#8212; Documentation Cours Greta DWWM93 2020 1.0</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
@@ -31,11 +32,11 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="jeudi-2020-12-03">
+  <section id="jeudi-2020-12-03">
 <h1>Jeudi 2020/12/03<a class="headerlink" href="#jeudi-2020-12-03" title="Lien permanent vers ce titre">¶</a></h1>
 <p>https://www.w3schools.com/jquery/exercise_jq.asp  aujourd”hui on va se mettre en jambe en faisant « cssClasse », « animate », « events » et « traversing »</p>
 <p>pour les events : https://www.w3schools.com/jquery/jquery_events.asp</p>
-<div class="section" id="exercice">
+<section id="exercice">
 <h2>Exercice :<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
 <li><p>ajoutez plusieurs balises « p » avec un lorem dedans</p></li>
@@ -105,7 +106,7 @@ donc solution :
 </pre></div>
 </div>
 <p>function texteBlanc(){
-$(this).css(“color”, “white”);
+$(this).css(”color”, “white”);
 }</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 <span class="n">MAIS</span> <span class="n">ATTENTION</span> <span class="n">je</span> <span class="n">ne</span> <span class="n">peux</span> <span class="n">plus</span> <span class="n">appeler</span> <span class="n">texteBlanc</span> <span class="n">n</span><span class="s1">&#39;importe où maintenant, sinon this sera &quot;window&quot;! </span>
@@ -121,7 +122,7 @@ $(this).css(“color”, “white”);
 <li></li>
 </ul>
 <p>*/
-$(« article#tableau&gt;table td.nom »).on(« click », function () {
+$( »article#tableau&gt;table td.nom »).on( »click », function () {
 // Je récupère l”élément cliqué de javascript
 let caseCliquee = this;
 // je le transforme en jquery pour pouvoir utiliser les méthodes « faciles »
@@ -138,11 +139,11 @@ $.get(url)
 // On peut donc en extraire des infos :
 let poids = data.weight;
 let img = data.sprites.front_default;      // Puis je cherche à les afficher dans les colonnes adjacentes :
-let colonnes = caseJquery.siblings(« td »);
+let colonnes = caseJquery.siblings( »td »);
 // Je transforme chaque colonne reçue en JQuery pour pouvoir utiliser les méthodes
 // et je les remplis avec les infos.
 // NB: il y a  plein d”autres manières de faire, aussi bonnes voire meilleures que celle ci !
-$(colonnes[0]).html(« <img src='" + img + "' /> »);
+$(colonnes[0]).html( »<img src='" + img + "' /> »);
 $(colonnes[1]).text(poids);
 })
 .fail(function (data) {
@@ -152,14 +153,14 @@ console.log(data);
 // J”affiche l”erreur dans la case à côté :
 caseJquery
 .next()
-.html(« <span style='color: red;'> «  + data.responseText + «  </span> »);
+.html( »<span style='color: red;'> «  + data.responseText + «  </span> »);
 });
 });</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -178,7 +179,7 @@ caseJquery
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html">Cours TP DWWM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#git">Git</a></li>
@@ -196,7 +197,7 @@ caseJquery
   <h3 id="searchlabel">Recherche rapide</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -218,7 +219,7 @@ caseJquery
       &copy;2020, Esat + Marc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
